@@ -13,7 +13,7 @@ if (time == 1)
 	//end_battle();
 	//destroy_battle();
 	
-	op.textCC=["The thing!"];
+	op.textCC=[name_from+" the thing!"];
 	
 	if (oMenuBattle.singleStack)
 	{

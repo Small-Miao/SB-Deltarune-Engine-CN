@@ -32,6 +32,6 @@ if (page == "room")
 	if tap_confirm()
 	{
 		page=0;
-		transition(,function(){ room_goto(oMenuDebug.cursor); },function(){ op.playerX=room_width/2; op.playerY=room_height/2; op.mode="overworld"; reset_party_position(); })
+		transition(,function(){ room_goto(oMenuDebug.cursor); },function(){ op.playerX=room_width/2; op.playerY=room_height/2; op.mode="overworld"; reset_party_position(); camera_reset(); })
 	}
 }

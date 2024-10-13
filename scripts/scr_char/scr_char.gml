@@ -60,7 +60,7 @@ function char_animate(_numb=0,_delay=1,_image_speed=-1,_sprite=-1,_subimg=-1,_x=
 	
 	if (_numb == 0 or _numb == 1 or _numb == 2)
 	{
-		with (oChar) { if (type == "pep" and numb == _numb) { cutsceneHappened=true; } }
+		with (oChar) { if (type == "pep" and numb == _numb) or (type == "follower") { cutsceneHappened=true; } }
 	}
 	
 	if (op.battleTime > 40) { if (_x != -1) { _x+=(op.x-160); } if (_y != -1) { _y+=(op.y-120); } }
