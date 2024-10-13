@@ -91,6 +91,8 @@ function has_progress(_value)
 
 function menu_room()
 {
+	op.menuRoomTime=3;
+	
 	op.mode=0;
 	instance_destroy(oChar);
 }

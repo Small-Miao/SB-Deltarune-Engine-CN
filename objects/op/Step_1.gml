@@ -197,9 +197,12 @@ if (col != noone and mode == "overworld")
 	transition(,function(){ op.previousRoom=room; op.locationText="Skip"; room_goto(op.transitionInfo[1]); master_reset(); },
 				function()
 				{
-					op.mode="overworld"; op.cameraMode="overworld"; op.locationCCcheck=false;
-					with(oMarker) { if (r == op.transitionInfo[0]) { op.playerX=x; op.playerY=y; if (op.transitionInfo[2] != -1) { op.playerDirection=op.transitionInfo[2]; } } }
-					reset_party_position();
+					if (op.menuRoomTime == 0)
+					{
+						op.mode="overworld"; op.cameraMode="overworld"; op.locationCCcheck=false;
+						with(oMarker) { if (r == op.transitionInfo[0]) { op.playerX=x; op.playerY=y; if (op.transitionInfo[2] != -1) { op.playerDirection=op.transitionInfo[2]; } } }
+						reset_party_position();
+					}
 				});
 }
 

@@ -74,4 +74,6 @@ if (mode == "battle")
 		++i;
 	}
 }else{ battleTime=0; }
-if (op.retryBattleTimer > 0) { --op.retryBattleTimer; }
+
+if (retryBattleTimer > 0) { --retryBattleTimer; }
+if (menuRoomTime > 0) { --menuRoomTime; }

@@ -13,11 +13,8 @@ if (tapConfirm) and !(page == "buy" and has_progress(string(saveCur[0])+"="+stri
 use_cursor();
 
 ++time;
-if (time == 1)
+if (time == 2)
 {
-	menu_room();
-	op.mode="shop";
-	
 	music(sstr._music,true);
 	
 	items=[];
