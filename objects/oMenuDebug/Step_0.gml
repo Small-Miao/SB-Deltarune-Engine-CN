@@ -10,6 +10,7 @@ if (page == "start")
 	if tap_confirm(0) { if (op.noclip) { op.noclip=false; }else{ op.noclip=true; } force_undo(0); }
 	if tap_confirm(1) { page="room"; cursor=0; }
 	if tap_confirm(2) { room_goto(rMainMenu); }
+	if tap_confirm(3) { instance_create_depth(0,0,-9999,oMenuSave); instance_destroy(); }
 }
 
 //

@@ -25,6 +25,7 @@ if (debug)
 	print(string(mouse_x)+","+string(mouse_y),mouse_x-(x-160),mouse_y-(y-120),,,,,,,c_red);
 	if mouse_check_button(mb_right) { clipboard_set_text(string(mouse_x)+","+string(mouse_y)) }
 }
+
 //print(op.checkpointProgress,0,0,,,,,,,c_blue);
 //if (op.mode == "battle") { print(oMenuBattle.mode,0,0,,,,,,,c_lime); }
 
@@ -38,4 +39,4 @@ if (false)
 	}
 }
 
-print([sFace_Susie,sFace_Ralsei,sFace_RalseiHat,sFace_Lancer],0,0,,,,,,,c_yellow,c_red,,,,["fade"]);
+//print([sFace_Susie,sFace_Ralsei,sFace_RalseiHat,sFace_Lancer],0,0,,,,,,,c_yellow,c_red,,,,["fade"]);

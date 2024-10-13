@@ -1,28 +1,3 @@
-func_match=function()
-{
-	// You can also set font's or any other value here:
-	if (face != -1)
-	{
-		if (face[0] == FACE.SUSIE) { voice=txt_sus; }
-		
-		if (face[0] == FACE.RALSEI or face[0] == FACE.RALSEIHAT) { voice=txt_ral; }
-		
-		if (face[0] == FACE.LANCER) { voice=txt_lan; }
-	}
-}
-
-//
-//
-//
-
-//
-//
-//
-
-//
-//
-//
-
 if (op.mode == "overworld") { op.mode="cutscene"; }
 with (oMenuOverworld) { endMenu=true; }
 
@@ -83,11 +58,15 @@ func_spaceAdd=function(_string,_mult=1)
 	}
 	else
 	{
-		if (font == fDetermination) { _step=8; }
-		if (font == fDotum) { _step=9; }
+		_step=variant_font(font);
 		
 		return((_step+info._xOffset)*_mult);
 	}
+}
+
+func_match=function()
+{
+	if (face != -1) { variant_match(face[0]); }
 }
 
 forceWhiteSymbols=true;

@@ -60,13 +60,7 @@ function addPlace(_room=-1,_text)
 //
 // Set Shortcut Rooms
 
-if (true)
-{
-	addPlace(rRoom6,"Gizmo Test");
-	addPlace(rRoom7,"Music Test");
-	addPlace(rPush,"Push");
-	//addPlace(rRoom1,"Room 1");
-}
+variant_shortcutdoor();
 
 //
 //

@@ -28,9 +28,7 @@ res_i();
 
 function draw_boxColor(_x,_y)
 {
-	boxC=c_gray;
-	if (rec[cursor]._recChapter == 1) { boxC=c_purple; }
-	if (rec[cursor]._recChapter == 2) { boxC=c_aqua; }
+	boxC=variant_recruits(rec[cursor]._recChapter);
 	
 	draw_ext(sPixel,0,_x,_y,208/2,153/2);
 	draw_rectangle_color(_x+0.5,_y+0.5,_x+0.5+204/2,_y+0.5+149/2,0,0,boxC,boxC,false);

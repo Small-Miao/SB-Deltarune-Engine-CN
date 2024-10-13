@@ -4,5 +4,14 @@ master_reset();
 
 op.mode="debug";
 
-options=["noclip","room_goto","main menu"];
+//
+//
+//
+
+options=["noclip","room_goto","main menu","save menu"];
+
+//
+//
+//
+
 extra=[]; repeat(array_length(options)) { array_push(extra,""); }
