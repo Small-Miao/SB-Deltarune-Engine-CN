@@ -167,9 +167,9 @@ function effect_slidedust(_x=x,_y=y)
 	instance_create_depth(_x,_y,-_y,oSlideDustEffect);
 }
 
-function effect_feildtext(_text="Song title goes here",_x=0,_y=0)
+function effect_fieldtext(_text="Song title goes here",_x=0,_y=0)
 {
-	with (instance_create_depth(_x,_y,-9999,oFeildTextEffect))
+	with (instance_create_depth(_x,_y,-9999,oFieldTextEffect))
 	{
 		text=_text;
 	}

@@ -44,9 +44,9 @@ function declare_gamestats()
 	add_party("pep_kris");
 	add_party("pep_susie");
 	add_party("pep_ralsei");
-	set_party_stats(0,100,3,3,0,1,1,"item_woodBlade",,,["spell_check"]);
-	set_party_stats(1,200,4,2,3,1,1,"item_maneAx",,,["spell_rudeBuster","spell_ultimateHeal"]);
-	set_party_stats(2,300,2,3,5,1,1,"item_redScarf",,,["spell_pacify","spell_healPrayer"]);
+	set_party_stats(0,100,10,3,0,1,1,"item_woodBlade",,,["spell_check"]);
+	set_party_stats(1,200,10,3,5,1,1,"item_maneAx",,,["spell_rudeBuster","spell_ultimateHeal"]);
+	set_party_stats(2,300,10,3,7,1,1,"item_redScarf",,,["spell_pacify","spell_healPrayer"]);
 	
 	add_item("item_cellPhone",true);
 	

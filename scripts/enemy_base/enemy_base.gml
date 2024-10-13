@@ -39,7 +39,7 @@ function enemy_base() constructor
 	
 	_hp=300;
 	_attack=10;
-	_defense=5;
+	_defense=0;
 	_money=100;
 	
 	_handler=oHandler_Basic;
