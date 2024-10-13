@@ -1,2 +1,2 @@
 # SB-Deltarune-Engine
-Made with GameMaker v2023.2.0.87
+Made with the latest version of GameMaker
