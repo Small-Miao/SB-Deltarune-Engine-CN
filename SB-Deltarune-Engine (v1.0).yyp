@@ -232,6 +232,7 @@
     {"id":{"name":"mus_darkness","path":"sounds/mus_darkness/mus_darkness.yy",},},
     {"id":{"name":"oEnemyWall","path":"objects/oEnemyWall/oEnemyWall.yy",},},
     {"id":{"name":"sKris_FallBackLight","path":"sprites/sKris_FallBackLight/sKris_FallBackLight.yy",},},
+    {"id":{"name":"oSpell_Action","path":"objects/oSpell_Action/oSpell_Action.yy",},},
     {"id":{"name":"oInteract","path":"objects/oInteract/oInteract.yy",},},
     {"id":{"name":"sFace_RalseiHat","path":"sprites/sFace_RalseiHat/sFace_RalseiHat.yy",},},
     {"id":{"name":"cc_itemChest","path":"scripts/cc_itemChest/cc_itemChest.yy",},},

@@ -61,7 +61,7 @@ textFadeAlpha=0;
 // Finished Variables
 image_alpha=0; reset_keys(); reset_cursor(); cursor=-1;
 
-boxImage=3; boxImageSpeed=0.1;
+boxImage=3; boxImageSpeed=0.1; stackFix=0;
 battleSticks=[1,3,7]; battleRaise=[0,0,0]; hudY=0;
 battleTime=0; forceTextWait=0;
 retryBattleTimer=0; menuPrompt=[0,0,0,0];

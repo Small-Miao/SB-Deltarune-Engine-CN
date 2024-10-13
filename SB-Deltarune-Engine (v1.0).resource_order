@@ -191,6 +191,7 @@
     {"name":"mus_darkness","order":1,"path":"sounds/mus_darkness/mus_darkness.yy",},
     {"name":"oEnemyWall","order":8,"path":"objects/oEnemyWall/oEnemyWall.yy",},
     {"name":"sKris_FallBackLight","order":6,"path":"sprites/sKris_FallBackLight/sKris_FallBackLight.yy",},
+    {"name":"oSpell_Action","order":2,"path":"objects/oSpell_Action/oSpell_Action.yy",},
     {"name":"oInteract","order":2,"path":"objects/oInteract/oInteract.yy",},
     {"name":"sFace_RalseiHat","order":2,"path":"sprites/sFace_RalseiHat/sFace_RalseiHat.yy",},
     {"name":"sKris_Victory","order":10,"path":"sprites/sKris_Victory/sKris_Victory.yy",},

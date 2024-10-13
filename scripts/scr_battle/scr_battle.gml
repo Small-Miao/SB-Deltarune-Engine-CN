@@ -194,6 +194,8 @@ function destroy_battle(_justDelete=false)
 
 function declare_battle(_begin=false)
 {
+	op.stackFix=0;
+	
 	updatestruct_party();
 	
 	var i=0;

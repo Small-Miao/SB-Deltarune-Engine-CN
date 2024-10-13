@@ -46,6 +46,7 @@ if (proceedLine and done)
 	if (info._moveAfter and info._func == -1) { op.mode="overworld"; }
 	if (info._func != -1) { info._func(); }
 	
+	op.stackFix=0;
 	op.textCC=[]; op.funcCC=-1; op.faceCC=-1;
 	
 	instance_destroy(oMenuOverworldLight);

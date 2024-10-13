@@ -11,7 +11,7 @@ if (enemyHere[0] and op.battle_enemyTired[0]) or (enemyHere[1] and op.battle_ene
 
 if (page != "done")
 {
-	oChar.brightMode=0;
+	oChar.brightMode=0; op.stackFix=0;
 	
 	waitDelay=2;
 	if (array_length(undo) == 0 and array_length(partyUndo) != 0)
@@ -322,7 +322,7 @@ if (priority != -2 and waitDelay == 0)
 			// Spawn Spell
 			if (sel_priority[priority_counter] == priority and sel_object[priority_counter] != -1)
 			{
-				if (priority != -1) { wait=true; stackJump=0; }else{ priorityNegative=true; ++stackJump; }
+				if (priority != -1) { wait=true; stackJump=0; op.stackFix=0; }else{ priorityNegative=true; ++stackJump; }
 				with (instance_create_depth(0,0,-9999,sel_object[priority_counter])) { declare_spell(); }
 				if (priority == 4) { priority_counter=2; } /*FIGHT*/
 			}
