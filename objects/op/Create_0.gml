@@ -6,7 +6,6 @@ debug=true;
 //
 
 noclip=false;
-pathsOn=true;
 
 //
 //

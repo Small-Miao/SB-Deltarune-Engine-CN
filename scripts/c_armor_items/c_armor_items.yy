@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "c_armor_items",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Structs_Items",
-    "path": "folders/Structs/Structs_Items.yy",
+  "$GMScript":"v1",
+  "%Name":"c_armor_items",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"c_armor_items",
+  "parent":{
+    "name":"Structs_Items",
+    "path":"folders/Structs/Structs_Items.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

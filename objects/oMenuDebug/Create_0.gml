@@ -4,5 +4,5 @@ master_reset();
 
 op.mode="debug";
 
-options=["noclip","room_goto","main menu","paths"];
+options=["noclip","room_goto","main menu"];
 extra=[]; repeat(array_length(options)) { array_push(extra,""); }

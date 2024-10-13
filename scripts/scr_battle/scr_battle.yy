@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "scr_battle",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Scripts_Battle",
-    "path": "folders/Scripts/Scripts_Battle.yy",
+  "$GMScript":"v1",
+  "%Name":"scr_battle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_battle",
+  "parent":{
+    "name":"Scripts_Battle",
+    "path":"folders/Scripts/Scripts_Battle.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

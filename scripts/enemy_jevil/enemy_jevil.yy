@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "enemy_jevil",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Structs_Enemys",
-    "path": "folders/Structs/Structs_Enemys.yy",
+  "$GMScript":"v1",
+  "%Name":"enemy_jevil",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"enemy_jevil",
+  "parent":{
+    "name":"Structs_Enemys",
+    "path":"folders/Structs/Structs_Enemys.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "shop_base",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Structs_Base",
-    "path": "folders/Structs/Structs_Base.yy",
+  "$GMScript":"v1",
+  "%Name":"shop_base",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"shop_base",
+  "parent":{
+    "name":"Structs_Base",
+    "path":"folders/Structs/Structs_Base.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "cc_flavourText",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Cutscenes_General",
-    "path": "folders/Structs/Structs_Cutscenes/Cutscenes_General.yy",
+  "$GMScript":"v1",
+  "%Name":"cc_flavourText",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cc_flavourText",
+  "parent":{
+    "name":"Cutscenes_General",
+    "path":"folders/Structs/Structs_Cutscenes/Cutscenes_General.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

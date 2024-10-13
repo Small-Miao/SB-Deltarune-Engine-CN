@@ -1,4 +1,4 @@
-setup_battle(["enemy_viro","enemy_ambu","enemy_ambu"],,,,,,,,,["stopEnd"]);
+setup_battle(["enemy_viro","enemy_ambu","enemy_ambu"]);
 
 //
 

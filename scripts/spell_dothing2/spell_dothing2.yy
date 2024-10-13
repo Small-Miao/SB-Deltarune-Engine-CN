@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "spell_dothing2",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Spell_Act",
-    "path": "folders/Structs/Structs_Spells/Spell_Act.yy",
+  "$GMScript":"v1",
+  "%Name":"spell_dothing2",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"spell_dothing2",
+  "parent":{
+    "name":"Spell_Act",
+    "path":"folders/Structs/Structs_Spells/Spell_Act.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

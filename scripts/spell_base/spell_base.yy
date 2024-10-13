@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "spell_base",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Structs_Base",
-    "path": "folders/Structs/Structs_Base.yy",
+  "$GMScript":"v1",
+  "%Name":"spell_base",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"spell_base",
+  "parent":{
+    "name":"Structs_Base",
+    "path":"folders/Structs/Structs_Base.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "cc_shopExit",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Cutscenes_Shop",
-    "path": "folders/Structs/Structs_Cutscenes/Cutscenes_Shop.yy",
+  "$GMScript":"v1",
+  "%Name":"cc_shopExit",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cc_shopExit",
+  "parent":{
+    "name":"Cutscenes_Shop",
+    "path":"folders/Structs/Structs_Cutscenes/Cutscenes_Shop.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

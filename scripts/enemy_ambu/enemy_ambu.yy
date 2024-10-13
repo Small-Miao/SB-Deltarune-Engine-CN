@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "enemy_ambu",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Structs_Enemys",
-    "path": "folders/Structs/Structs_Enemys.yy",
+  "$GMScript":"v1",
+  "%Name":"enemy_ambu",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"enemy_ambu",
+  "parent":{
+    "name":"Structs_Enemys",
+    "path":"folders/Structs/Structs_Enemys.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

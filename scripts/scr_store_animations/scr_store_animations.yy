@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "scr_store_animations",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Structs",
-    "path": "folders/Structs.yy",
+  "$GMScript":"v1",
+  "%Name":"scr_store_animations",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_store_animations",
+  "parent":{
+    "name":"Structs",
+    "path":"folders/Structs.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

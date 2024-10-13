@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "pep_susie",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Structs_People",
-    "path": "folders/Structs/Structs_People.yy",
+  "$GMScript":"v1",
+  "%Name":"pep_susie",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"pep_susie",
+  "parent":{
+    "name":"Structs_People",
+    "path":"folders/Structs/Structs_People.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
