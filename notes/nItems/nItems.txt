@@ -1,0 +1,4 @@
+seed:
+	"everyone"      :   effects everyone on the team instead of just one person.
+	
+	"noShopTitle"   :   Removes the text in a shop that says the item type.

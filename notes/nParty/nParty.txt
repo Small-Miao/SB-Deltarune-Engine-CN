@@ -1,0 +1,2 @@
+seed:
+	"greed"   :   For this party member you can't replace an armore with nothing and downgrade the weapon. (Susie has this)

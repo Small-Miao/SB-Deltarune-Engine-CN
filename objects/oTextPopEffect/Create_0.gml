@@ -1,0 +1,10 @@
+text="Skip";
+font=1;
+sep=1;
+width=1;
+xscale=1;
+yscale=1;
+angle=1;
+c1=1; c2=1; c3=1; c4=1;
+alpha=1;
+seed=[];

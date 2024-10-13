@@ -1,0 +1,91 @@
+function create_char(_type=0,_numb=-1,_x=0,_y=0,_walkSprites=-1,_seed=[])
+{
+	with (instance_create_depth(_x,_y,-9999,oChar))
+	{
+		type=_type;
+		numb=_numb;
+		seed=_seed;
+		if (_walkSprites != -1) { walkSprites=_walkSprites; }
+		
+		if (type == "follower") { followerNumb=op.setFollowerNumb; op.setFollowerNumb=-1; }
+	}
+}
+
+function create_char_enemy(_numb=-1,_x=0,_y=0,_enemyStruct=-1,_path=-1,_pathSpeed=2,_seed=[])
+{
+	if (array_contains(op.killRooms,room) and op.mode != "battle") { return; }
+	
+	with (instance_create_depth(_x,_y,-9999,oChar))
+	{
+		struct(_enemyStruct); strString=_enemyStruct;
+		
+		walkSprites=[str._spriteWalk];
+		
+		type="enemy"; numb=_numb; seed=_seed;
+		path=_path; pathSpeed=_pathSpeed;
+		
+		if (op.mode == "battle")
+		{
+			reaction=[false,999,999,true,true,999];
+			image_speed=1;
+		}
+	}
+}
+
+//
+
+function char(_numb=0)
+{
+	var _self=-1;
+	with (oChar) { if (numb == _numb) { _self=self; } }
+	return (_self);
+}
+
+function char_exists(_numb=0,_destroyOffscreen)
+{
+	offscreen=false;
+	var exists=false;
+	with (oChar) { if (numb == _numb) { exists=true; if (x < op.x-160 or x > op.x+160 or y < op.y-120 or y > op.y+120) { other.offscreen=true; if (_destroyOffscreen) { instance_destroy(); } } } }
+	
+	if (_destroyOffscreen and offscreen) { exists=false; }
+	
+	return(exists);
+}
+
+function char_animate(_numb=0,_delay=1,_image_speed=-1,_sprite=-1,_subimg=-1,_x=-1,_y=-1,_funcBegin=-1,_funcEnd=-1,_seed=[])
+{
+	if (_numb == 0 and op.mode == "overworld") { op.mode="cutscene"; }
+	
+	//
+	
+	if (_numb == 0 or _numb == 1 or _numb == 2)
+	{
+		with (oChar) { if (type == "pep" and numb == _numb) { cutsceneHappened=true; } }
+	}
+	
+	if (op.battleTime > 40) { if (_x != -1) { _x+=(op.x-160); } if (_y != -1) { _y+=(op.y-120); } }
+	
+	with (oChar) { if (numb == _numb) {
+		if array_contains(_seed,"override") { animate=[]; animateCheck=true; subnumber=false; }
+		
+		array_push(animate,[_delay,_delay,_image_speed,_sprite,_subimg,_x,_y,-1,-1,_funcBegin,_funcEnd,_seed]);
+	} }
+}
+
+//
+//
+//
+
+function add_follower(_numbOffset=1,_numb="a",_walkSprites,_slideSprite=sSusie_Slide,_x=0,_y=0)
+{
+	array_push(op.followers,[_numbOffset,_walkSprites,_numb,_slideSprite]);
+	op.setFollowerNumb=array_length(op.followers)-1;
+	
+	create_char("follower",_numb,_x,_y,_walkSprites);
+}
+
+function remove_follower(_arrayNumb=0)
+{
+	with (oChar) { if (type == "follower" and followerNumb == _arrayNumb) { instance_destroy(); } }
+	array_delete(op.followers,_arrayNumb,1);
+}

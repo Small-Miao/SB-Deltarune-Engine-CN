@@ -1,0 +1,15 @@
+Press F1 to open the debug menu, you can make this menu unaccessible at the top of the op creation event.
+
+Recruits background colors can be added in the object: oMenuRecruits create event.
+function: draw_boxColor(_x,_y)
+
+Setting shortcut door locations is done in the object: oShortcutDoor create event.
+
+If you use a face in the bottom textbox during a battle, or at any time in general, you can adjust
+ it's possition outside of the sprite at the bottom of the (DRAW GUI END) in the (oDialouge) object.
+
+//
+//
+//
+
+Use the function declare_gamestats() to set every party members stats when you start a new file.

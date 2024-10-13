@@ -1,0 +1,226 @@
+++time; ti+=pi; ++dodgeTimer;
+if !(time mod 30) { ++seconds; }
+if (seconds == 60) { seconds=0; ++minutes; }
+
+if (array_length(item) == 12) { fullJustItem=true; }else{ fullJustItem=false; }
+
+if (array_length(item) == 12 and !array_contains(storage,-1)) { fullItem=true; }else{ fullItem=false; }
+if (!array_contains(weapon,-1)) { fullWeapon=true; }else{ fullWeapon=false; }
+if (!array_contains(armor,-1)) { fullArmor=true; }else{ fullArmor=false; }
+
+//
+
+use_keys();
+if (walkTimeOut > 0) { --walkTimeOut; reset_keys(); }
+if !(mode == "overworld" or mode == "slide") { walkTimeOut=3; reset_keys(); }
+
+if (key_left()) { keyRight=false; } if (key_up()) { keyDown=false; }
+
+// Run
+if (forceRun > 0) { --forceRun; }
+if ((key_cancel() and !op.option_autoRun) or (!key_cancel() and op.option_autoRun)) or (forceRun > 0) { ++runTimer; }else{ runTimer=0; }
+if (runTimer > 60) { walkMult=2.25; }else if (runTimer > 10) { walkMult=2; }else if (runTimer > 0) { walkMult=1.5; }else{ walkMult=1; }
+if (world == "dark") { walkSpeed=2; }else{ walkSpeed=2.75; /*walkMult=clamp(walkMult,1,2);*/ }
+
+pastXY=[playerX,playerY];
+
+//
+//
+//
+
+// Move player
+if (!noclip)
+{
+	if (movement == "overworld")
+	{
+		playerX+=round( ((key_right()-key_left())*walkSpeed*walkMult)*2 )/2;
+		playerY+=round( ((key_down()-key_up())*walkSpeed*walkMult)*2 )/2;
+	}
+
+	if (movement == "slide")
+	{
+		if !(time mod 4) { effect_slidedust(playerX,playerY); }
+	
+		playerX+=round( ((key_right()-key_left())*walkSpeed*walkMult)*2 )/2;
+		playerY+=6;
+	}
+}
+else
+{
+	playerX+=round( ((key_right()-key_left())*8)*2 )/2;
+	playerY+=round( ((key_down()-key_up())*8)*2 )/2;
+}
+
+//
+//
+//
+
+var col=instance_place(playerX,playerY,oWall);
+if (col != noone) { if (col.sticky) { playerX=pastXY[0]; playerY=pastXY[1];; } }
+
+if (world == "dark") { playerSubimg+=max(walkSpeed,abs(pastXY[0]-playerX)*walkSpeed,abs(pastXY[1]-playerY)*walkSpeed)/30; }
+if (world == "light") { playerSubimg+=max(walkSpeed,abs(pastXY[0]-playerX)*walkSpeed,abs(pastXY[1]-playerY)*walkSpeed)/60; }
+if (playerSubimg < 1) { playerSubimg=1; }
+
+if (mode == "overworld" and !noclip)
+{
+	// Wall collision
+	wallCounter=1; wallCheck=true;
+	
+	while place_meeting(playerX,playerY,oWall)
+	{
+		if (!place_meeting(playerX-wallCounter,playerY,oWall) and wallCheck) { playerX-=wallCounter; wallCheck=false; runTimer=0; }
+		if (!place_meeting(playerX+wallCounter,playerY,oWall) and wallCheck) { playerX+=wallCounter; wallCheck=false; runTimer=0; }
+		if (!place_meeting(playerX,playerY-wallCounter,oWall) and wallCheck) { playerY-=wallCounter; wallCheck=false; runTimer=0; }
+		if (!place_meeting(playerX,playerY+wallCounter,oWall) and wallCheck) { playerY+=wallCounter; wallCheck=false; runTimer=0; }
+	
+		if (!place_meeting(playerX+wallCounter,playerY-wallCounter,oWall) and wallCheck) { playerX+=wallCounter; playerY-=wallCounter; wallCheck=false; runTimer=0; }
+		if (!place_meeting(playerX+wallCounter,playerY+wallCounter,oWall) and wallCheck) { playerX+=wallCounter; playerY+=wallCounter; wallCheck=false; runTimer=0; }
+		if (!place_meeting(playerX-wallCounter,playerY-wallCounter,oWall) and wallCheck) { playerX-=wallCounter; playerY-=wallCounter; wallCheck=false; runTimer=0; }
+		if (!place_meeting(playerX-wallCounter,playerY+wallCounter,oWall) and wallCheck) { playerX-=wallCounter; playerY+=wallCounter; wallCheck=false; runTimer=0; }
+		++wallCounter;
+	}
+
+	while place_meeting(playerX,playerY,oSlopeUL) { runTimer=0; if key_left() { ++playerY; } if key_up() { ++playerX; } }
+	while place_meeting(playerX,playerY,oSlopeUR) { runTimer=0; if key_right() { ++playerY; } if key_up() { --playerX; } }
+	while place_meeting(playerX,playerY,oSlopeDL) { runTimer=0; if key_left() { --playerY; } if key_down() { ++playerX; } }
+	while place_meeting(playerX,playerY,oSlopeDR) { runTimer=0; if key_right() { --playerY; } if key_down() { --playerX; } }
+}
+else
+{
+	inputWait=false;
+}
+
+oPlayerCol.x=playerX;
+oPlayerCol.y=playerY;
+
+// Fix walking animation
+if key_up() and !(key_down() or key_left() or key_right()) { playerDirection="up"; }
+if key_down() and !(key_up() or key_left() or key_right()) { playerDirection="down"; }
+if key_left() and !(key_up() or key_down() or key_right()) { playerDirection="left"; }
+if key_right() and !(key_up() or key_down() or key_left()) { playerDirection="right"; }
+
+if (key_up() and playerDirection == "down") { playerDirection="up"; }
+if (key_down() and playerDirection == "up") and !key_up() { playerDirection="down"; }
+if (key_left() and playerDirection == "right") { playerDirection="left"; }
+if (key_right() and playerDirection == "left") and !key_left() { playerDirection="right"; }
+
+if (movement == "slide") { playerDirection="down"; }
+
+//
+//
+// Insert XYDerMove
+
+if (pastXY[0] == playerX and pastXY[1] == playerY) or (mode != "overworld")
+{
+	moving=false;
+	
+	runTimer=0;
+	playerSubimg=0;
+	partyPos[0][2]=playerDirection;
+}
+else
+{
+	moving=true;
+	
+	inputWait=true;
+	
+	if (noclip) { playerDirection="down"; playerSubimg=0; }
+	
+	array_insert(partyPos,0,[playerX,playerY,playerDirection,playerSubimg,movement]); 
+}
+
+//
+//
+//
+
+// Touch dodge zone
+if (dodge_applyShaders)
+{
+	dodge_applyShaders=false;
+	
+	// function layer_shader_start();
+	function layer_shader_start()
+	{
+	    if (event_type == ev_draw and event_number == ev_draw_normal)
+	    {
+			draw_ext(sPixel,0,0,0,room_width,room_height,,0,op.dodge_alpha*0.5);
+			
+	        shader_set(sha_rgb);
+			
+			shader_set_uniform_f(shader_get_uniform(sha_rgb,"col_r"),0);
+			shader_set_uniform_f(shader_get_uniform(sha_rgb,"col_g"),0);
+			shader_set_uniform_f(shader_get_uniform(sha_rgb,"col_b"),0);
+			shader_set_uniform_f(shader_get_uniform(sha_rgb,"col_a"),-1+op.dodge_alpha);
+	    }
+	}
+
+	// function layer_shader_end();
+	function layer_shader_end()
+	{
+	    if (event_type == ev_draw and event_number == ev_draw_normal)
+	    {
+			shader_reset();
+	    }
+	}
+
+	// apply shaders
+	var lay_id=layer_get_id("dodge");
+	layer_script_begin(lay_id,layer_shader_start);
+	layer_script_end(lay_id,layer_shader_end);
+}
+
+if (place_meeting(playerX,playerY,oDodgeZone) and dodgeTimer > 5 and mode == "overworld")
+{
+	isBoss=false;
+	
+	dodge=true;
+	if (dodge_alpha < 1) { dodge_alpha+=0.1; if (dodge_alpha == 0.1) { instance_destroy(oSoul); instance_create_depth(0,0,-room_height,oSoul); } }
+}
+else
+{
+	dodge=false;
+	if (dodge_hit > 0) { --dodge_hit; }
+	if (dodge_alpha > 0) { dodge_alpha-=0.1; if (dodge_alpha == 0) { instance_destroy(oSoul); } }
+}
+
+//
+//
+//
+
+// Touch door and change room
+col=instance_place(playerX,playerY,oDoor);
+if (col != noone and mode == "overworld")
+{
+	transitionInfo=[room,col.r,col.d]; mode=0; with (oChar) { reaction[0]=false; }
+	op.locationCC=-1;
+	transition(,function(){ op.previousRoom=room; op.locationText="Skip"; room_goto(op.transitionInfo[1]); master_reset(); },
+				function()
+				{
+					op.mode="overworld"; op.cameraMode="overworld"; op.locationCCcheck=false;
+					with(oMarker) { if (r == op.transitionInfo[0]) { op.playerX=x; op.playerY=y; if (op.transitionInfo[2] != -1) { op.playerDirection=op.transitionInfo[2]; } } }
+					reset_party_position();
+				});
+}
+
+// Interact
+if tap_confirm()
+{
+	if (playerDirection == "up") { col=instance_place(playerX,playerY-12,oInteract); }
+	if (playerDirection == "down") { col=instance_place(playerX,playerY+12,oInteract); }
+	if (playerDirection == "left") { col=instance_place(playerX-12,playerY,oInteract); }
+	if (playerDirection == "right") { col=instance_place(playerX+12,playerY,oInteract); }
+	
+	if (col != noone) { if (col.func != -1) {
+		col.check=true;
+		if (!is_array(col.func)) { col.func(); }else{ col.func[col.counter](); col.counter++; if (col.counter >= array_length(col.func)) { col.counter--; } }
+	} }
+}
+
+// Overworld Menu
+if (tap_menu() and mode == "overworld" and !dodge)
+{
+	dodge_hit=0;
+	if (world == "dark") { instance_create_depth(0,0,-9999,oMenuOverworld); }
+	if (world == "light") { instance_create_depth(0,0,-9999,oMenuOverworldLight); }
+}

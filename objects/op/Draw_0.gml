@@ -1,0 +1,1 @@
+print(playerSubimg,30,30);

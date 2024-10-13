@@ -1,0 +1,37 @@
+seed:
+	"enemyGlide"                                   :   makes the enemy go back to where it stood when the battle ends if (isBoss == true)
+	"keeptarget"                                   :   will not reset the target variable to -1 when a pattern ends
+
+	"xspare0" or "xspare1" or "xspare2"            :   puts an x graphic over the mercy meter of the coresponding enemy
+	"grayspare0" or "grayspare1" or "grayspare2"   :   puts an x graphic over the mercy meter of the coresponding enemy
+
+	"corner"                                       :   Makes the soul spawn from the top right corner.
+
+	"stopEnd"                                      :   Instead of ending the battle when all enemy's are gone ob.endSignal is set to true (that's "OB" NOT "OP")
+
+
+
+variables:
+	oMenuBattle.target        :   Will target and only hurt that party member or everyone set to (0 or 1 or 2 or "all") (-1 means dont target (default))
+	
+	oMenuBattle.enemyStatus   :   Will give an enemy a status next to their name if they are not tiered. ( ex: oMenuBattle.enemyStatus[1]="(Warned)" )
+	
+	oMenuBattle.loop          :   Will make it so that the battle freeze after the enemy's turn ends if loop is set to false. Everything will resume when it's set to true.
+	
+	
+	
+functions:
+	enemy_extraStats()   :   Will temporarely increase an enemys stats. The time you insert is the amount of turns it will take for the effect to ware off.
+	
+	party_extraStats()   :   Will temporarely increase a party members stats. The time you insert is the amount of turns it will take for the effect to ware off.
+	
+	add_enemy()          :   Use this to add an enemy to the board while the battle has already started (this should only be used to replace enemy's that are already gone from battle)
+	
+	force_enemyTurn()    :   Will force the enemy turn to start.
+	
+	force_partyTurn()    :   Will force the party turn to start.
+	
+
+
+other:
+	Setting the battels music to -1 will keep the overworld music

@@ -1,0 +1,1 @@
+func=function(){ start_battle(); };

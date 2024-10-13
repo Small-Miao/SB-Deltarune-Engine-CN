@@ -1,0 +1,34 @@
+commands:
+
+	format: {command:value1}
+
+	"{setup}"   :   can set up a different command to be done when you tybe the # symbol ( ex: {setup:delay:10} )
+	
+	
+	
+	"{color}"   :   changes the color the text is being printed in             ( ex: {color:yellow} or {hex:FFFF00} )
+	
+	"{color}"   :   changes the color the text is being printed in             ( ex: {color:yellow} or {hex:FFFF00} )
+	
+	"{jump}"    :   will force the text to start printing on the next row      ( ex: "* And it was {jump} * Epic" )
+	
+	"{delay}"   :   will make the text printer pause for the designated frames ( ex: "* And it was {delay:10} Epic" )
+	
+	"{func}"    :   will trigger a function from the variable (_funcAny) in the struct. First time the command is used it triggers _funcAny[0]; second time _funcAny[1] and so on.
+
+
+
+seed:
+
+	"noConfirm"      :   will make it so that pressing Z and C doens't do anything.
+	
+	"proportional"   :   will make the text proportional instead of mono spaced.
+
+proceedAnimate:
+
+	"fade"   :   Makes the text fade out when you proceed the text.
+
+other:
+
+	you can use the variable op.ccImage to make stuff animate a little when dialogue is being printed. It sets to 0 when all dialogue is visible.
+	op.ccLine also exists, it is set to the dialogue's current line.

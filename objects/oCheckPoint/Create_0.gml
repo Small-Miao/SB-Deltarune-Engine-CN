@@ -1,0 +1,1 @@
+i=string(op.une)+"="+string(room)+"checkpoint"; ++op.une;

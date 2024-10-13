@@ -1,0 +1,23 @@
+{
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "snd_rudebusterswing",
+  "audioGroupId": {
+    "name": "audiogroup_default",
+    "path": "audiogroups/audiogroup_default",
+  },
+  "bitDepth": 1,
+  "bitRate": 128,
+  "compression": 0,
+  "conversionMode": 0,
+  "duration": 0.953379,
+  "parent": {
+    "name": "Sounds_SoundEffects",
+    "path": "folders/Sounds/Sounds_SoundEffects.yy",
+  },
+  "preload": false,
+  "sampleRate": 44100,
+  "soundFile": "snd_rudebusterswing.wav",
+  "type": 1,
+  "volume": 1.0,
+}

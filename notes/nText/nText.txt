@@ -1,0 +1,31 @@
+print()
+	seed:
+	
+	"fa_center"               :   Will set the pivot in the middle.
+	"fa_right"                :   Will set the pivot on the right side.
+	
+	"menu" or "menu_yellow"   :   Will allow the text to interact with the menu variabels.
+	(Include in the seed the page value and the cursor value like so : ["start",i])
+	
+	"soul1" or "soul2" or "soul3" or "soul4"   :   Will draw a soul next to the menu word.
+	
+	"bc1"    :   Will give the text a thin drop shadow based on the color of the text.
+	"bc2"    :   Will give the text a thick black drop shadow.
+	"bc3"    :   (Why does this have to exist oh my god)
+	"bc4"    :   Will give the text a dark blue outline.
+	
+	"fade"   :   Will apply a cool unused effect to the text.
+	"blur"   :   Will make the text blurry like in the opening where you create your character.
+	
+get_text()
+	(Will return an array of strings from the csv document included in the game files based on the key word you put in)
+	
+get_text_string()
+	(Works the same as get_text() but returns a single string instead)
+	
+
+
+other:
+
+	To add new propper faces with auto voice you must first create a face enum in op creation event line 0.
+	Then you add the voice in oDialogue creation event line 0. (Among other things)

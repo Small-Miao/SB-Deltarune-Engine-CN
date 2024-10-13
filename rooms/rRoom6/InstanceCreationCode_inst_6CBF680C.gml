@@ -1,0 +1,1 @@
+func=[function(){ start_cutscene("cc_test1"); },function(){ start_cutscene("cc_base"); }];
