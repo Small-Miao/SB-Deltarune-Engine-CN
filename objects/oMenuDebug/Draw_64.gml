@@ -1,4 +1,5 @@
-if (op.noclip) { extra[0]=" (ON)"; }else{ extra[0]=" (OFF)"; }
+if (op.noclip)  { extra[0]=" (ON)"; }else{ extra[0]=" (OFF)"; }
+if (op.pathsOn) { extra[3]=" (ON)"; }else{ extra[3]=" (OFF)"; }
 
 //
 //

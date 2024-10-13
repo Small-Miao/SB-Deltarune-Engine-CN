@@ -1,23 +1,12 @@
 variant_face();
 
-//
-//
-//
-
-//
-//
-//
-
-//
-//
-//
-
 showHitboxes=true;
 debug=true;
 
 //
 
 noclip=false;
+pathsOn=true;
 
 //
 //

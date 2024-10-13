@@ -259,7 +259,7 @@ if (op.mode != "battle")
 	{
 		if (time == 1)
 		{
-			path_start(path,pathSpeed,true,false);
+			if (op.pathsOn) { path_start(path,pathSpeed,true,false); }
 			reaction[1]=clamp(str._reactionTime,1,999);
 		}
 		if (time > 10 and distance_to_object(oPlayerCol) <= 40 and array_length(animate) == 0 and !reaction[0] and op.mode == "overworld" and !array_contains(seed,"oblivious") and !array_contains(op.winRooms,room)) { if (str._reactionTime != 0) { sound(snd_exclamation); } path_end(); reaction[0]=true; }
