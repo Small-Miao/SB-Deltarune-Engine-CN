@@ -8,6 +8,7 @@ function cc_gameOver() : cc_base() constructor
 	_box=[-1];
 	_printSeed=[[]];
 	_xOffset=4; _yOffset=20;
+	_voice=[-1];
 	_textSpeed=[3];
 	_moveAfter=false;
 	
