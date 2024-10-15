@@ -65,11 +65,21 @@ function char_animate(_numb=0,_delay=1,_image_speed=-1,_sprite=-1,_subimg=-1,_x=
 	
 	if (op.battleTime > 40) { if (_x != -1) { _x+=(op.x-160); } if (_y != -1) { _y+=(op.y-120); } }
 	
+	var findChar=-1;
+	
 	with (oChar) { if (numb == _numb) {
+		findChar=self;
+		
 		if array_contains(_seed,"override") { animate=[]; animateCheck=true; subnumber=false; }
 		
 		array_push(animate,[_delay,_delay,_image_speed,_sprite,_subimg,_x,_y,-1,-1,_funcBegin,_funcEnd,_seed]);
 	} }
+	
+	if (findChar != -1)
+	{
+		if (_funcBegin != -1) { findChar.animate[array_length(findChar.animate)-1][9]=method(findChar,_funcBegin); }
+		if (_funcEnd != -1) { findChar.animate[array_length(findChar.animate)-1][10]=method(findChar,_funcEnd); }
+	}
 }
 
 //
