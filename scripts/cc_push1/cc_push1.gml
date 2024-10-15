@@ -12,6 +12,8 @@ function cc_push1() : cc_base() constructor
 		,"* He is dead!"
 	];
 	
+	_y=[156,1];
+	
 	_face=[
 		[FACE.SUSIE,23]
 		,[FACE.LANCER,2]
@@ -29,7 +31,11 @@ function cc_push1() : cc_base() constructor
 		,function()
 		{
 			camera_move(30,220,180);
-			char_animate(0,30,1,,,180,240,,,["faceUp"]); char_animate(1,30,1,,,220,230,,,["faceUp"]); char_animate(2,30,1,,,260,240,,,["faceUp"]);
+			char_animate(0,30,1,,,180,240,,,["faceUp"]);
+			char_animate(1,30,1,,,220,230,,,["faceUp"]); 
+			char_animate(2,30,1,,,260,240,,,["faceUp"]);
+			
+			char_animate("followerN",30,1,,,220,280,,,["faceUp"]);
 		}
 		,-1
 		,function()

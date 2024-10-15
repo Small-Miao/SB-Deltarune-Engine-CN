@@ -3,10 +3,10 @@ function variant_face()
 	// Faces exists
 	enum FACE
 	{
-		SUSIE = 49,
-		RALSEI = 47,
-		RALSEIHAT = 48,
-		LANCER = 46
+		SUSIE = 50,
+		RALSEI = 48,
+		RALSEIHAT = 49,
+		LANCER = 47
 	}
 }
 
