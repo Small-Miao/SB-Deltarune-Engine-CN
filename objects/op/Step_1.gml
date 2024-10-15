@@ -194,7 +194,7 @@ if (col != noone and mode == "overworld")
 {
 	transitionInfo=[room,col.r,col.d]; mode=0; with (oChar) { reaction[0]=false; }
 	op.locationCC=-1;
-	transition(,function(){ op.previousRoom=room; op.locationText="Skip"; room_goto(op.transitionInfo[1]); master_reset(); },
+	transition(,function(){ op.previousRoom=room; op.locationText="Skip"; op.fountainON=false; room_goto(op.transitionInfo[1]); master_reset(); },
 				function()
 				{
 					if (op.menuRoomTime == 0)

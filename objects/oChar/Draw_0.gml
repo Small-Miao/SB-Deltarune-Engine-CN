@@ -45,7 +45,17 @@ if (time > 0 and drawON)
 	//
 	//
 	//
-	draw_ext(sprite_index,image_index,x+extraX,y+extraY,xscale,,,,,bright);
+	if (op.fountainON)
+	{
+		gpu_set_fog(true,oFountain.color,0,0);
+		draw_ext(sprite_index,image_index,x+extraX,y+extraY-2,xscale,,,image_blend,,bright);
+		gpu_set_fog(false,0,0,0);
+		draw_ext(sprite_index,image_index,x+extraX,y+extraY-4,xscale,-3,,0,,bright);
+		image_blend=0;
+	}else{ image_blend=c_white; }
+	
+	// Draw normal
+	draw_ext(sprite_index,image_index,x+extraX,y+extraY,xscale,,,image_blend,,bright);
 	//
 	//
 	//

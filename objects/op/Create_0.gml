@@ -49,6 +49,7 @@ battleTime=0; forceTextWait=0;
 retryBattleTimer=0; menuPrompt=[0,0,0,0];
 inputWait=true; dogRandom=0; setFollowerNumb=-1;
 shortcutDoorRoom=-1; quitTime=0; dodgeTimer=0;
+fountainON=false;
 soul4XY=[0,0];
 
 une=0;

@@ -1,0 +1,1 @@
+func=function(){ oFountain.anMode=1; }

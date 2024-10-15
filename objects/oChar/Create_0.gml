@@ -23,6 +23,7 @@ findAngle=-1;
 //
 
 bright=0; brightMode=0; colorFlash=[0,0,0];
+image_blend=c_white;
 
 seed=[];
 extraX=0; extraY=0;
