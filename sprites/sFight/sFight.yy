@@ -30,8 +30,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Sprites_Battle",
-    "path":"folders/Sprites/Sprites_Battle.yy",
+    "name":"UI_NumberExistence",
+    "path":"folders/Sprites/Sprites_UI/UI_NumberExistence.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -329,7 +329,7 @@
     {"name":"sFace_Lancer","order":3,"path":"sprites/sFace_Lancer/sFace_Lancer.yy",},
     {"name":"sFace_Ralsei","order":1,"path":"sprites/sFace_Ralsei/sFace_Ralsei.yy",},
     {"name":"sFace_RalseiHat","order":2,"path":"sprites/sFace_RalseiHat/sFace_RalseiHat.yy",},
-    {"name":"sFight","order":6,"path":"sprites/sFight/sFight.yy",},
+    {"name":"sFight","order":4,"path":"sprites/sFight/sFight.yy",},
     {"name":"sFightBack","order":7,"path":"sprites/sFightBack/sFightBack.yy",},
     {"name":"sFontDamage","order":2,"path":"sprites/sFontDamage/sFontDamage.yy",},
     {"name":"sFontGold","order":3,"path":"sprites/sFontGold/sFontGold.yy",},
