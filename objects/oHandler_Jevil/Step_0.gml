@@ -1,16 +1,12 @@
-use_keys();
-
-//
-
 if (execute)
 {
 	execute=false; op.textCC=["Nothing"];
 	
-	++i;
+	//
+	//
+	//
 	
-	//
-	//
-	//
+	++i;
 	
 	if (i > 3) { i=1; }
 	

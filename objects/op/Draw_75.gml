@@ -26,6 +26,8 @@ if (debug)
 	if mouse_check_button(mb_right) { clipboard_set_text(string(mouse_x)+","+string(mouse_y)) }
 }
 
+print(room,0,0);
+
 //print(op.checkpointProgress,0,0,,,,,,,c_blue);
 //if (op.mode == "battle") { print(oMenuBattle.mode,0,0,,,,,,,c_lime); }
 

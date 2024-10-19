@@ -6,3 +6,12 @@ walkXY[2]=clamp(walkXY[2],-walkXY[4],walkXY[4])
 
 x+=walkXY[0];
 y+=walkXY[2];
+
+//
+//
+//
+
+if array_contains(seed,"something")
+{
+	
+}

@@ -15,5 +15,6 @@ function cc_gameOver() : cc_base() constructor
 	_func=function()
 	{
 		oMenuGameOver.page="sel";
+		instance_destroy(oSoulBreakEffect);
 	}
 }

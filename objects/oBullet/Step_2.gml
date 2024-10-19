@@ -17,3 +17,13 @@ if (place_meeting(x,y,oGraze) and !grazed and oSoul.iframes == 0)
 	
 	sound(snd_graze);
 }
+
+//
+//
+//
+
+if (array_contains(seed,"mask") and oMenuBattle.exists_box)
+{
+	visible=false;
+	array_push(oBattleBox.bulletInfo,[sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha]);
+}

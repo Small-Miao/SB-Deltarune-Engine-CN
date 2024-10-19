@@ -4,3 +4,11 @@ depth=-(room_height+1000);
 delay=15;
 counter=delay;
 mult=8;
+
+//
+//
+//
+
+bulletInfo=[];
+bulletMask=-1;
+bc=0;

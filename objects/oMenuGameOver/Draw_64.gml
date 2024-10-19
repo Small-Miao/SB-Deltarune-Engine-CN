@@ -1,3 +1,5 @@
+
+
 if (time < 45) { if surface_exists(op.dieSprite) { draw_surface_ext(op.dieSprite,0,0,0.5,0.5,0,c_white,1); } }
 
 if (time > 145)

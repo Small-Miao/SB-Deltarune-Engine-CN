@@ -10,11 +10,11 @@ if (counter > 0)
 	{
 		if (oMenuBattle.boxScaleXY[0] > saveScale[0])
 		{
-			effect_fade(sprite_index,1,x,y,image_xscale-(oMenuBattle.boxScaleXY[0]-saveScale[0])/(delay*6),image_yscale-(oMenuBattle.boxScaleXY[1]-saveScale[1])/(delay*6),image_angle,,,depth-100);
+			effect_fade(sprite_index,1,x,y,image_xscale-(oMenuBattle.boxScaleXY[0]-saveScale[0])/(delay*6),image_yscale-(oMenuBattle.boxScaleXY[1]-saveScale[1])/(delay*6),image_angle,,,depth-300);
 		}
 		else
 		{
-			effect_fade(sprite_index,1,x,y,image_xscale,image_yscale,image_angle,,,depth-100+counter*5);
+			effect_fade(sprite_index,1,x,y,image_xscale,image_yscale,image_angle,,,depth-300+counter*5);
 		}
 	}
 	

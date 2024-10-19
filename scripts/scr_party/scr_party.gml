@@ -161,9 +161,11 @@ function party_damage(_numb=0,_amount=100)
 		draw_surface_ext(application_surface,0,0,1,1,0,c_white,1);
 		surface_reset_target();
 		
-		op.mode="dead"; instance_create_depth(0,0,-9999,oMenuGameOver);
+		instance_create_depth(0,0,-9999,oMenuGameOver);
 		
-		if (op.mode == "battle") { destroy_battle(true); }else{ room_goto(rEmpty); op.dodge_hit=0; }
+		if (op.mode == "battle") { op.mode="dead"; destroy_battle(true); }else{ room_goto(rEmpty); op.dodge_hit=0; }
+		
+		op.mode="dead";
 	}
 }
 

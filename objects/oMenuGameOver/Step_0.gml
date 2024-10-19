@@ -1,4 +1,5 @@
 ++time;
+if (time == 1) { op.mode="dead"; }
 
 if (time == 45) { instance_create_depth(op.x+XY[0],op.y+XY[1],-9999,oSoulBreakEffect); }
 if (time == 150) { music(mus_defeat); }
@@ -54,6 +55,24 @@ if (page == "sel" and !stop)
 		if ((tap_left() or tap_up()) and i) { i=false; cursor=1; }
 		if (tap_right() and i) { i=false; cursor=2; }
 		
-		if tap_confirm() { music_stop(); stop=true; op.retryBattleTimer=10; reset_party_position(); file_load("battle"); start_battle(); instance_destroy(); }
+		if tap_confirm()
+		{
+			music_stop();
+			stop=true;
+			op.retryBattleTimer=10;
+			reset_party_position();
+			file_load("battle");
+			//
+			res_j();
+			repeat(array_length(op.party))
+			{
+				char(j).x=battle_partyXY[j][0]+(op.x-160);
+				char(j).y=battle_partyXY[j][1]+(op.y-120);
+				++j;
+			}
+			//
+			start_battle();
+			instance_destroy();
+		}
 	}
 }

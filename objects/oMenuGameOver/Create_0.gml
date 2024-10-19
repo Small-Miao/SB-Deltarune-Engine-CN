@@ -1,7 +1,6 @@
 time=0;
 
 op.dodge_hit=0; op.hudY=125;
-op.mode="dead";
 
 reset_keys();
 reset_cursor();

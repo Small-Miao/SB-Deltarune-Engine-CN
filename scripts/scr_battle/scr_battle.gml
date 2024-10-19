@@ -159,6 +159,8 @@ function destroy_battle(_justDelete=false)
 	
 	if (!_justDelete) { op.mode="battleOver"; op.battleTime=0; }
 	
+	with (oRun) { if (type == "pattern") { instance_destroy(); } }
+	
 	i=0;
 	repeat(3)
 	{
@@ -168,8 +170,8 @@ function destroy_battle(_justDelete=false)
 	
 	//
 	
-	if (op.isBoss) { audio_stop_all(); }
-	op.isBoss=false;
+	if (op.isBoss) { audio_stop_all(); sound(snd_hurt) }
+	if (op.mode != "dead") { op.isBoss=false; }
 	
 	instance_destroy(oMenuBattle);
 	instance_destroy(oBattleBC);
