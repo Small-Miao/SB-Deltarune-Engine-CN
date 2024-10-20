@@ -69,7 +69,7 @@ function pep_base() constructor
 	//
 	
 	_lockSpell=-1;
-	// (0 for select enemy [ex: hit or spare])   (1 for select party member [ex: heal party])
+	// (0 for select enemy [ex: hit or spare])   (1 for select party member [ex: heal prayer])
 	_lockToType=0;
 	
 	// Encounter Kills Data Change

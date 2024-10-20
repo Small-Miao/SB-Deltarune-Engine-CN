@@ -28,15 +28,14 @@ if (page == "sel" and !stop)
 		
 		if tap_confirm()
 		{
-			music_stop();
+			music_stop(); 
 			
 			audio_sound_pitch(snd_dtranslw,1);
 			audio_sound_gain(snd_dtranslw,1,0);
 			sound(snd_dtranslw);
 			
 			stop=true;
-			op.isBoss=false;
-			transition("darkExit",function() { instance_destroy(oMenuGameOver); if (array_length(op.checkpointProgress) == 0) { file_load(); }else{ file_load("overworld"); } });
+			transition("darkExit",function() { op.isBoss=false; instance_destroy(oMenuGameOver); if (array_length(op.checkpointProgress) == 0) { file_load(); }else{ file_load("overworld"); } });
 		}
 	}
 	
@@ -63,13 +62,7 @@ if (page == "sel" and !stop)
 			reset_party_position();
 			file_load("battle");
 			//
-			res_j();
-			repeat(array_length(op.party))
-			{
-				char(j).x=battle_partyXY[j][0]+(op.x-160);
-				char(j).y=battle_partyXY[j][1]+(op.y-120);
-				++j;
-			}
+			
 			//
 			start_battle();
 			instance_destroy();

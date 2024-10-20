@@ -51,7 +51,7 @@ function enemy_jevil() : enemy_base() constructor
 	_recElement="CARD";
 	
 	_infoText=[
-		"It's Jevil wow this is amazing I never though I'd see the day waow isn't this crazy it is really him!"
+		"It's Jevil wow this is amazing I never thought I'd see the day waow isn't this crazy it is really him!"
 		,"CHAOS"
 		,"ORDER"
 	];

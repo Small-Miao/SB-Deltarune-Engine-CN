@@ -83,7 +83,7 @@ if (mode == "red")
 if (oMenuBattle.exists_box)
 {
 	x=clamp(x,(oBattleBox.x-oMenuBattle.boxScaleXY[0]/2)+6,(oBattleBox.x+oMenuBattle.boxScaleXY[0]/2)-6);
-	y=clamp(y,(oBattleBox.y-oMenuBattle.boxScaleXY[0]/2)+6,(oBattleBox.y+oMenuBattle.boxScaleXY[0]/2)-6);
+	y=clamp(y,(oBattleBox.y-oMenuBattle.boxScaleXY[1]/2)+6,(oBattleBox.y+oMenuBattle.boxScaleXY[1]/2)-6);
 }
 else
 {

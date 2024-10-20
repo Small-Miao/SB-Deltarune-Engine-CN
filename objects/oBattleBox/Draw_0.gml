@@ -8,7 +8,7 @@ if (counter == 0 and array_length(bulletInfo) > 0)
 
 	draw_clear_alpha(c_white,0);
 
-	draw_ext(sBattleBox,2,x*2,y*2,(image_xscale-0.25)*2,(image_yscale-0.25)*2,image_angle,0);
+	draw_ext(sBattleBox,2,(x-(op.x-160))*2,(y-(op.y-120))*2,(image_xscale-0.25)*2,(image_yscale-0.25)*2,image_angle,0);
 
 	//
 	//
@@ -19,7 +19,7 @@ if (counter == 0 and array_length(bulletInfo) > 0)
 	bc=0;
 	repeat(array_length(bulletInfo))
 	{
-		draw_ext(bulletInfo[bc][0],bulletInfo[bc][1],bulletInfo[bc][2]*2,bulletInfo[bc][3]*2,bulletInfo[bc][4]*2,bulletInfo[bc][5]*2,bulletInfo[bc][6],bulletInfo[bc][7],bulletInfo[bc][8],0);
+		draw_ext(bulletInfo[bc][0],bulletInfo[bc][1],(bulletInfo[bc][2]-(op.x-160))*2,(bulletInfo[bc][3]-(op.y-120))*2,bulletInfo[bc][4]*2,bulletInfo[bc][5]*2,bulletInfo[bc][6],bulletInfo[bc][7],bulletInfo[bc][8],0);
 		++bc;
 	}
 
@@ -31,5 +31,5 @@ if (counter == 0 and array_length(bulletInfo) > 0)
 
 	surface_reset_target();
 
-	draw_surface_ext(bulletMask,0,0,0.5,0.5,0,c_white,1);
+	draw_surface_ext(bulletMask,op.x-160,op.y-120,0.5,0.5,0,c_white,1);
 }

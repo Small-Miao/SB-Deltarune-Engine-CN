@@ -65,16 +65,20 @@ function start_battle()
 	
 	if (op.battle_background[0]) { op.battle_background=[true,true]; instance_create_depth(0,0,-room_height,oBattleBC); }
 	
-	var counter=0, counter2=0;
+	var counter=0, counter2=0, glideDelay=15;
 	
 	// Party
 	repeat(array_length(op.party))
 	{
-		//if (op.retryBattleTimer > 0) { char(counter).x=op.x; char(counter).y=op.battle_partyXY[counter][1]+(op.y-120); }
+		if (op.retryBattleTimer > 0)
+		{
+			char_animate(counter,1,0,,,op.battle_partyXY[counter][0]+(op.x-160),op.battle_partyXY[counter][1]+(op.y-120));
+			glideDelay=1;
+		}
 		
 		array_push(op.save_partyXY,[char(counter).x,char(counter).y,char(counter).sprite_index,char(counter).direction_]);
 		
-		char_animate(counter,15,0,op.party[counter]._spriteGlide,0,op.battle_partyXY[counter][0]+(op.x-160),op.battle_partyXY[counter][1]+(op.y-120),,function(){ if (other.numb == 0) { sound(snd_weaponpullfast); } },["fadeEffect"]);
+		char_animate(counter,glideDelay,0,op.party[counter]._spriteGlide,0,op.battle_partyXY[counter][0]+(op.x-160),op.battle_partyXY[counter][1]+(op.y-120),,function(){ if (other.numb == 0) { sound(snd_weaponpullfast); } },["fadeEffect"]);
 		char_animate(counter,15,1,op.party[counter]._spriteEnterBattle,0,,,,,["subnumber"]);
 		char_animate(counter,1,1,op.party[counter]._spriteIdle,0);
 		
