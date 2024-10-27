@@ -28,8 +28,9 @@ function enemy_base() constructor
 	_boubleOffsetXY=[-40,-20];
 	_slashOffsetXY=[0,-20];
 	
-	// Overworld exclamation wait time
+	// Overworld exclamation
 	_reactionTime=30;
+	_runSpeed=3;
 	_exclamationOffset=-50;
 	
 	//

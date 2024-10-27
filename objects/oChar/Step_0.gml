@@ -274,7 +274,7 @@ if (op.mode != "battle")
 	
 	if (reaction[0] and reaction[1] == 0 and op.mode == "overworld")
 	{
-		if (reaction[2] < 3) { reaction[2]+=0.5; }
+		if (reaction[2] < str._runSpeed) { reaction[2]+=0.5; reaction[2]=clamp(reaction[2],-999,str._runSpeed); }
 		dWalkXY=[dcos(point_direction(x,y,op.playerX,op.playerY))*reaction[2],dsin(point_direction(x,y,op.playerX,op.playerY))*reaction[2]];
 		reaction[3]=true;
 		x+=dWalkXY[0];

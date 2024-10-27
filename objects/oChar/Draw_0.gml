@@ -54,6 +54,8 @@ if (time > 0 and drawON)
 		image_blend=0;
 	}else{ image_blend=c_white; }
 	
+	//
+	//
 	// Draw normal
 	draw_ext(sprite_index,image_index,x+extraX,y+extraY,xscale,,,image_blend,,bright);
 	//
