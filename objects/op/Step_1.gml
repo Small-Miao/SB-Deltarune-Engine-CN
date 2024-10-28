@@ -10,7 +10,7 @@ if (!array_contains(armor,-1)) { fullArmor=true; }else{ fullArmor=false; }
 
 //
 
-use_keys();
+use_keys(); if (op.forceNotMove) { reset_keys(); }
 if (walkTimeOut > 0) { --walkTimeOut; reset_keys(); }
 if !(mode == "overworld" or mode == "slide") { walkTimeOut=3; reset_keys(); }
 
@@ -199,9 +199,13 @@ if (col != noone and mode == "overworld")
 				{
 					if (op.menuRoomTime == 0)
 					{
-						op.mode="overworld"; op.cameraMode="overworld"; op.locationCCcheck=false;
+						op.mode="overworld"; op.cameraMode="overworld";
+						op.locationCCcheck=false;
 						with(oMarker) { if (r == op.transitionInfo[0]) { op.playerX=x; op.playerY=y; if (op.transitionInfo[2] != -1) { op.playerDirection=op.transitionInfo[2]; } } }
 						reset_party_position();
+						
+						if (!op.canMoveAfter) { op.mode="cutscene"; op.cameraMode=0; }
+						op.canMoveAfter=true;
 					}
 				});
 }

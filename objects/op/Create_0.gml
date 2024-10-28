@@ -51,6 +51,8 @@ inputWait=true; dogRandom=0; setFollowerNumb=-1;
 shortcutDoorRoom=-1; quitTime=0; dodgeTimer=0;
 fountainON=false;
 soul4XY=[0,0];
+dieSprite=-1;
+forceNotMove=false; canMoveAfter=true;
 
 une=0;
 dead=false;
@@ -115,7 +117,6 @@ checkpointProgress=[];
 continueOrders=false;
 isBoss=false;
 endCC=-1;
-dieSprite=-1;
 
 battle_enemyTouchInfo=[];
 

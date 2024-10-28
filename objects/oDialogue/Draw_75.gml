@@ -130,13 +130,7 @@ if (line > -1 and array_length(info._dialogue) > 0 and hideBox == 0)
 	{
 		// Face adjust and stuff
 		
-		faceXY=[0,0];
-		if (face[0] == FACE.SUSIE) { faceXY=[-5,-5]; }
-		
-		if (op.mode == "battle")
-		{
-			if (face[0] == FACE.RALSEI or face[0] == FACE.RALSEIHAT) { faceXY=[-5,-5]; }
-		}
+		variant_face_offset();
 		
 		if (faceAnimate == -1) { faceExtraImage=0; }
 		if (faceAnimate == 0) and !(time mod 8) { if (faceExtraImage == 0) { faceExtraImage=1; }else{ faceExtraImage=0; } }

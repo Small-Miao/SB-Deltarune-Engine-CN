@@ -14,6 +14,8 @@ function master_reset()
 	
 	op.darkEntranceRoom=-1;
 	
+	op.forceNotMove=false;
+	
 	update_allData();
 }
 
@@ -100,4 +102,20 @@ function menu_room()
 function set_mode(_mode="overworld")
 {
 	op.mode=_mode;
+}
+
+//
+//
+//
+
+function regular_room_transition(_room,_canMoveAfter=true)
+{
+	with(instance_create_depth(op.playerX,op.playerY,9999,oDoor))
+	{
+		r=_room;
+	}
+	op.forceNotMove=true;
+	set_mode("overworld");
+	
+	op.canMoveAfter=_canMoveAfter;
 }

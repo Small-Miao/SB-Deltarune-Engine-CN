@@ -27,5 +27,5 @@ get_text_string()
 
 other:
 
-	To add new propper faces with auto voice you must first create a face enum in op creation event line 0.
-	Then you add the voice in oDialogue creation event line 0. (Among other things)
+	To add new propper faces with auto voice you must first create a face enum in scr_variant.
+	Then you add the voice's there as well. (Among other things)

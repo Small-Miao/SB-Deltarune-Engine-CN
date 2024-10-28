@@ -55,6 +55,7 @@
     {"name":"inst_B89EA2E","path":"rooms/rRoom6/rRoom6.yy",},
     {"name":"inst_1099CC2B","path":"rooms/rRoom6/rRoom6.yy",},
     {"name":"inst_4625B3FB","path":"rooms/rRoom6/rRoom6.yy",},
+    {"name":"inst_F5136A","path":"rooms/rRoom6/rRoom6.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -108,6 +109,7 @@
         {"$GMRInstance":"v1","%Name":"inst_B89EA2E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_B89EA2E","objectId":{"name":"oEnemyWall","path":"objects/oEnemyWall/oEnemyWall.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":0.5,"x":120.0,"y":390.0,},
         {"$GMRInstance":"v1","%Name":"inst_1099CC2B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1099CC2B","objectId":{"name":"oEnemyWall","path":"objects/oEnemyWall/oEnemyWall.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":0.5,"x":120.0,"y":320.0,},
         {"$GMRInstance":"v1","%Name":"inst_4625B3FB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4625B3FB","objectId":{"name":"oEnemyWall","path":"objects/oEnemyWall/oEnemyWall.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.5,"scaleY":4.0,"x":110.0,"y":320.0,},
+        {"$GMRInstance":"v1","%Name":"inst_F5136A","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_F5136A","objectId":{"name":"oInteract","path":"objects/oInteract/oInteract.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":400.0,"y":440.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"dodge","depth":100,"effectEnabled":true,"effectType":"none","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"dodge","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":24,"SerialiseWidth":32,"TileCompressedData":[
           -76,-2147483648,-5,0,-27,-2147483648,-5,0,-21,-2147483648,6,1,2,3,4,1,2,-5,0,-18,-2147483648,-3,1,8,

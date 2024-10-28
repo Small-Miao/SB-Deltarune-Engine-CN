@@ -33,7 +33,7 @@ order=array_reverse(order);
 
 if (op.showHitboxes and !forceHide) { draw_self(); }
 
-//
+//draw chars
 
 i=0;
 repeat(array_length(order))

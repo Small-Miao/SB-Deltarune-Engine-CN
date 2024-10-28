@@ -66,7 +66,7 @@ func_spaceAdd=function(_string,_mult=1)
 
 func_match=function()
 {
-	if (face != -1) { variant_match(face[0]); }
+	if (face != -1) { variant_face_match(face[0]); }
 }
 
 forceWhiteSymbols=true;

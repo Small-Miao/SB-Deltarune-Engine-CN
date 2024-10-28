@@ -3,7 +3,7 @@ seed:
 	"keeptarget"                                   :   will not reset the target variable to -1 when a pattern ends
 
 	"xspare0" or "xspare1" or "xspare2"            :   puts an x graphic over the mercy meter of the coresponding enemy
-	"grayspare0" or "grayspare1" or "grayspare2"   :   puts an x graphic over the mercy meter of the coresponding enemy
+	"grayspare0" or "grayspare1" or "grayspare2"   :   makes the enemy's mercy meter gray of the coresponding enemy (Also you can't select this enemy)
 
 	"corner"                                       :   Makes the soul spawn from the top right corner.
 

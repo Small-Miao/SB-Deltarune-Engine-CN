@@ -76,7 +76,6 @@ if (tap_confirm() and canPress) or (forceNext)
 	}
 }
 
-
 //
 //
 //

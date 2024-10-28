@@ -29,6 +29,7 @@ function enemy_base() constructor
 	_slashOffsetXY=[0,-20];
 	
 	// Overworld exclamation
+	_reactionDistance=40;
 	_reactionTime=30;
 	_runSpeed=3;
 	_exclamationOffset=-50;

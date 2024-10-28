@@ -10,9 +10,7 @@ function variant_face()
 	}
 }
 
-//
-
-function variant_match(_face)
+function variant_face_match(_face)
 {
 	// You can also set font's or any other value here:
 	if (_face == FACE.SUSIE) { voice=txt_sus; }
@@ -22,6 +20,19 @@ function variant_match(_face)
 	if (_face == FACE.LANCER) { voice=txt_lan; }
 }
 
+function variant_face_offset()
+{
+	faceXY=[0,0];
+	if (face[0] == FACE.SUSIE) { faceXY=[-5,-5]; }
+		
+	if (op.mode == "battle")
+	{
+		if (face[0] == FACE.RALSEI or face[0] == FACE.RALSEIHAT) { faceXY=[-5,-5]; }
+	}
+}
+
+//
+//
 //
 
 function variant_font(_font)
