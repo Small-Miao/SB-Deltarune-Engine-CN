@@ -72,11 +72,15 @@ function cc_base() constructor
 	
 	if (op.mode == "battle")
 	{
-		_box=[-1]; _x=[-2]; _y=[156+18+op.stackFix*14]; _xScale=[296];
+		_box=[-1];
+		_x=[-2];
+		_y=[156+18+op.stackFix*14];
+		_xScale=[296];
 		
 		if (oMenuBattle.stackJump != 0) { ++op.stackFix; }
 		
-		_yOffset=14; _moveAfter=false;
+		_yOffset=14;
+		_moveAfter=false;
 		
 		if (op.continueOrders) { op.continueOrders=false; _func=function(){ continue_orders(); } }
 		
@@ -96,7 +100,10 @@ function cc_base() constructor
 	
 	if (op.mode == "shop")
 	{
-		_x=[0]; _y=[120]; _xScale=[320]; _yScale=[120];
+		_x=[0];
+		_y=[120];
+		_xScale=[320];
+		_yScale=[120];
 		_box=[-1];
 		
 		_moveAfter=false;

@@ -1,3 +1,10 @@
+function variant_csv()
+{
+	op.csvText=load_csv("DR text.csv");
+}
+
+//
+
 function variant_face()
 {
 	// Faces exists

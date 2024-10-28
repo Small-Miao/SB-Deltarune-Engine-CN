@@ -110,7 +110,7 @@
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
-    {"$GMIncludedFile":"","%Name":"DR text - Blad1.csv","CopyToMask":3035426170322551022,"filePath":"datafiles","name":"DR text - Blad1.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"DR text.csv","CopyToMask":3035426170322551022,"filePath":"datafiles","name":"DR text.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],
@@ -245,6 +245,8 @@
     {"id":{"name":"cc_shopThin","path":"scripts/cc_shopThin/cc_shopThin.yy",},},
     {"id":{"name":"cc_test1","path":"scripts/cc_test1/cc_test1.yy",},},
     {"id":{"name":"cc_test2","path":"scripts/cc_test2/cc_test2.yy",},},
+    {"id":{"name":"cc_test3","path":"scripts/cc_test3/cc_test3.yy",},},
+    {"id":{"name":"cc_test4","path":"scripts/cc_test4/cc_test4.yy",},},
     {"id":{"name":"cc_youWon","path":"scripts/cc_youWon/cc_youWon.yy",},},
     {"id":{"name":"d_special_items","path":"scripts/d_special_items/d_special_items.yy",},},
     {"id":{"name":"enemy_ambu","path":"scripts/enemy_ambu/enemy_ambu.yy",},},

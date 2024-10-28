@@ -1,3 +1,9 @@
+get the template from link:
+
+	https://docs.google.com/spreadsheets/d/1hj0DLNNkepahaFvXPdy9alGS68qjq8zwKMC-3khYpx0/edit?usp=sharing
+
+
+
 commands:
 
 	format: {command:value1}

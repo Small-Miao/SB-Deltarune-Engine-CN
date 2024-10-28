@@ -1,0 +1,1 @@
+func=function(){ start_cutscene("cc_test4"); }

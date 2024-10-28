@@ -195,6 +195,8 @@
     {"name":"cc_shopExit","order":2,"path":"scripts/cc_shopExit/cc_shopExit.yy",},
     {"name":"cc_shopThin","order":1,"path":"scripts/cc_shopThin/cc_shopThin.yy",},
     {"name":"cc_test2","order":3,"path":"scripts/cc_test2/cc_test2.yy",},
+    {"name":"cc_test3","order":5,"path":"scripts/cc_test3/cc_test3.yy",},
+    {"name":"cc_test4","order":6,"path":"scripts/cc_test4/cc_test4.yy",},
     {"name":"cc_youWon","order":4,"path":"scripts/cc_youWon/cc_youWon.yy",},
     {"name":"d_special_items","order":4,"path":"scripts/d_special_items/d_special_items.yy",},
     {"name":"enemy_ambu","order":1,"path":"scripts/enemy_ambu/enemy_ambu.yy",},

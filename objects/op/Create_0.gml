@@ -22,7 +22,7 @@ reset_keys(); time=0; ti=0;
 seconds=0; minutes=0;
 locationText="Skip"; locationCC=-1; locationCCcheck=false;
 
-csvText=load_csv("DR text - Blad1.csv");
+variant_csv();
 language=1;
 
 option_volume=60;
