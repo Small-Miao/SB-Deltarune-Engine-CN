@@ -12,6 +12,7 @@ function master_reset()
 	op.dodge_hit=0;
 	op.dodge=false; op.dodge_alpha=0; op.dodgeTimer=0;
 	
+	op.fountainON=false;
 	op.darkEntranceRoom=-1;
 	
 	op.forceNotMove=false;

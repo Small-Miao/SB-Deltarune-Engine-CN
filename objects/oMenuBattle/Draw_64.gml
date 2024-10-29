@@ -197,7 +197,12 @@ else
 	print("X",9+tpX,79,,,,,,,c_yellow);
 }
 
+//
+//
+//
 
+draw_ext(sPixel,0,0,0,-999,999,,0);
+draw_ext(sPixel,0,320,0,999,999,,0);
 
 //
 /*

@@ -1,1 +1,1 @@
-func=function(){ regular_room_transition(rRoom4,false); }
+func=function(){ regular_room_transition(rRoom4); }
