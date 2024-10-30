@@ -4,6 +4,7 @@ if (place_meeting(x,y,oPlayerCol) and check)
 {
 	check=false;
 	if (func != -1) { func(); }
+	if (destroy) { instance_destroy(); }
 }
 
 if (!place_meeting(x,y,oPlayerCol) and !check)

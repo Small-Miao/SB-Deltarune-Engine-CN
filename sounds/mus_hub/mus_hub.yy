@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":512.3483,
+  "duration":75.336,
   "name":"mus_hub",
   "parent":{
     "name":"Sounds_Music",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mus_hub.ogg",
+  "soundFile":"mus_hub.mp3",
   "type":1,
   "volume":1.0,
 }
