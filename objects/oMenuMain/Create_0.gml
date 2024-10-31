@@ -1,5 +1,6 @@
 reset_keys();
 reset_cursor(); page="start";
+
 master_reset();
 
 //

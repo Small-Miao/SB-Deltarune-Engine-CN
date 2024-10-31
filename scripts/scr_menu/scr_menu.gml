@@ -1,7 +1,9 @@
 function reset_cursor()
 {
 	page=0;
-	cursor=0; saveCur=[0,0,0,0,0,0];
+	cursor=0;
+	
+	saveCur=[0,0,0,0,0,0];
 	fix=false; grab=0;
 	
 	offset=0; offsetPress=0;
