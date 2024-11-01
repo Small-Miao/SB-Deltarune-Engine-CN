@@ -9,8 +9,8 @@
   "name":"oSpell_Plus",
   "overriddenProperties":[],
   "parent":{
-    "name":"Spells_Act",
-    "path":"folders/Objects/Objects_Battle/Battle_Spells/Spells_Act.yy",
+    "name":"Spells_Obscure",
+    "path":"folders/Objects/Objects_Battle/Battle_Spells/Spells_Obscure.yy",
   },
   "parentObjectId":null,
   "persistent":false,

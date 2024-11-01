@@ -1,4 +1,4 @@
-// Draws proportional text in draw events
+//draws proportional text in draw events
 function print(_text="Skip",_x=0,_y=0,_font=fDetermination,_sep=12,_width=320,_xscale=1,_yscale=1,_angle=0,_c1=c_white,_c2=c_white,_c3=c_white,_c4=c_white,_alpha=1,_seed=[])
 {
 	var xOffset=0, yOffset=0;
@@ -14,14 +14,15 @@ function print(_text="Skip",_x=0,_y=0,_font=fDetermination,_sep=12,_width=320,_x
 		}
 	}
 	
-	//
+	
+	//set halign
 	draw_set_halign(fa_left);
 	draw_set_font(_font);
-	//
 	
 	if array_contains(_seed,"fa_center") { draw_set_halign(fa_center); }
 	if array_contains(_seed,"fa_right") { draw_set_halign(fa_right); }
 	
+	//menu mode
 	if (array_contains(_seed,"menu") or array_contains(_seed,"menu_yellow"))
 	{
 		if (array_contains(_seed,page) and array_contains(_seed,cursor))
@@ -42,14 +43,15 @@ function print(_text="Skip",_x=0,_y=0,_font=fDetermination,_sep=12,_width=320,_x
 		}
 	}
 	
+	//moves the text over when a face is draw next to it in battle
 	if array_contains(_seed,"partyHelp") { _x+=15*array_length(grab[i]._partyHelp); }
 	
-	//
-	//
-	//
 	
+	
+	//set all other colors to the first one if only the first one got modified
 	if (_c1 != c_white and _c2 == c_white and _c3 == c_white and _c4 == c_white) { _c2=_c1; _c3=_c1; _c4=_c1; }
 	
+	//draw text background
 	if array_contains(_seed,"bc1")
 	{
 		var _c1d=0, _c2d=0, _c3d=0, _c4d=0;
@@ -69,21 +71,27 @@ function print(_text="Skip",_x=0,_y=0,_font=fDetermination,_sep=12,_width=320,_x
 		draw_text_ext_transformed_color(_x+xOffset,_y+yOffset+1,_text,_sep,_width,_xscale,_yscale,_angle,_c1d,_c1d,_c1d,_c1d,_alpha);
 	}
 	
-	//
 	
+	
+	//draw fade effect
 	if array_contains(_seed,"fade")
 	{
 		xOffset+=dcos(op.time*10)*0.5; yOffset+=dsin(op.time*10)*0.5;
 	}
 	
+	
+	
 	//
 	//
-	//
+	//main draw text
 	draw_text_ext_transformed_color(_x+xOffset,_y+yOffset,_text,_sep,_width,_xscale,_yscale,_angle,_c1,_c2,_c3,_c4,_alpha);
 	//
 	//
 	//
 	
+	
+	
+	//draw fade effect
 	if array_contains(_seed,"fade")
 	{
 		var _fadeAlpha=0;
@@ -96,6 +104,7 @@ function print(_text="Skip",_x=0,_y=0,_font=fDetermination,_sep=12,_width=320,_x
 		}
 	}
 	
+	//draw blurry text
 	if array_contains(_seed,"blur")
 	{ 
 		var _blurAlpha=(0.3 + (sin(op.time / 14)) * 0.1) * 0.75;
@@ -112,12 +121,19 @@ function print(_text="Skip",_x=0,_y=0,_font=fDetermination,_sep=12,_width=320,_x
 	}
 }
 
-// Spawns all types of dialogue boxes
+
+
+//spawns all types of dialogue boxes and custcenes
 function start_cutscene(_struct_text,_forceTextWait=0,_continueOrders=false)
 {
+	//makes it so you can't press confirm to procced within the amount of frames you enter
 	op.forceTextWait=_forceTextWait;
+	//in battels if true, once the dialouge is done will make the next chosen player actions happen
 	op.continueOrders=_continueOrders;
 	
+	
+	
+	//spawn oDialogue object
 	with (instance_create_depth(0,0,-9999,oDialogue))
 	{
 		struct(_struct_text);
@@ -125,11 +141,9 @@ function start_cutscene(_struct_text,_forceTextWait=0,_continueOrders=false)
 	}
 }
 
-//
-//
-//
 
-// Returns an array from the csv document   (Don't change)
+
+//returns an array from the csv document
 function get_text(_realText){
 	var i=0, array=[];
 	
@@ -140,7 +154,7 @@ function get_text(_realText){
 	return (array);
 }
 
-// Returns a single string from the csv document   (Don't change)
+//returns a single string from the csv document
 function get_text_string(_realText){
 	var i=0;
 	while (op.csvText[# 0,i] != _realText) { i++; }

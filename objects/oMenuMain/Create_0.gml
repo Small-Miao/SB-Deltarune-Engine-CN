@@ -3,9 +3,5 @@ reset_cursor(); page="start";
 
 master_reset();
 
-//
-//
-//
-
 drText=["Skip"];
-//get_text("mgo_1")
+//get_text("mgo_1");

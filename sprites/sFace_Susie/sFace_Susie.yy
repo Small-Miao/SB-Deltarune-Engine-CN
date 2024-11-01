@@ -94,8 +94,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"Faces_Big",
-    "path":"folders/Fonts/Faces_Big.yy",
+    "name":"Fonts_Faces_Big",
+    "path":"folders/Fonts/Fonts_Faces_Big.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

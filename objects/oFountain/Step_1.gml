@@ -2,9 +2,11 @@ time+=anSpeed;
 upY+=anSpeed;
 if (upY >= 140) { upY-=140; }
 
-
 color=make_color_rgb(clamp(_r,128,255),clamp(_g,128,255),clamp(_b,128,255));
 
+
+
+//animate colors
 if (anMode == 0)
 {
 	if (mode == 5) { _b-=cspeed; if (_b <= 128) { mode=0; } }
@@ -20,6 +22,9 @@ if (anMode == 0)
 	if (mode == 0) { _g+=cspeed; if (_g >= 255) { mode=1; } }
 }
 
+
+
+//animate closing
 if (anMode == 1)
 {
 	++anModeTime;

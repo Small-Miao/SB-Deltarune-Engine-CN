@@ -1,10 +1,12 @@
+//set r to what room you want this to take you to
+//set targetXY to where in the next room you want to put the player
+//func will be run when you step into the light
+
 r=room;
 targetXY=[100,100];
 func=-1;
 
-//
-//
-//
+
 
 res_i(); res_j();
 
@@ -19,9 +21,9 @@ grav=1;
 isFloor=false;
 time=0;
 
-//
-//
-// Make ralsei move up and wave:
+
+
+//uncomment to make ralsei move up and wave every time
 
 /*
 func=function()

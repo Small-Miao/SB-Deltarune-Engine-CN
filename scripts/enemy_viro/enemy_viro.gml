@@ -12,13 +12,12 @@ function enemy_viro() : enemy_base() constructor
 	
 	_name="Virovirokun";
 	
-	//
+	
 	
 	_hp=75;
 	_attack=20;
 	_defense=5;
 	
-	// Recruit Stuff
 	_recRequiredAmount=3;
 	_recChapter=1;
 	_recLV=7;

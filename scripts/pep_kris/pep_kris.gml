@@ -2,7 +2,7 @@ function pep_kris() : pep_base() constructor
 {
 	_infoText=["Kris","Tactician\nCommands the party\nby ACTs. Sometimes."];
 	
-	//
+	
 	
 	_numberExistence=0;
 	
@@ -13,7 +13,7 @@ function pep_kris() : pep_base() constructor
 	
 	_seed=["act"];
 	
-	// Battle
+	
 	
 	_UIcolor=make_color_rgb(0,255,255);
 	_UIface=sKris_Face;
@@ -22,7 +22,7 @@ function pep_kris() : pep_base() constructor
 	
 	_damageColor=merge_color(c_aqua,c_white,0.5);
 	
-	//
+	
 	
 	_drawPower=function()
 	{

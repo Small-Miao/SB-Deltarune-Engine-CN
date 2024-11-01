@@ -1,3 +1,4 @@
+//item chest scene
 function cc_itemChest() : cc_base() constructor
 {
 	_dialogue=op.textCC[0];

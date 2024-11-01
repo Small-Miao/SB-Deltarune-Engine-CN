@@ -1,8 +1,13 @@
 updatestruct_items();
 
-time=0; surfTP=-1;
+time=0;
+surfTP=-1;
 
-tp=0; pastTP=0; tpUse=0; tpShow=[0,0,0]; tpX=-30;
+tp=0;
+pastTP=0;
+tpUse=0;
+tpShow=[0,0,0];
+tpX=-30;
 
 tp=0;
 
@@ -12,16 +17,22 @@ reset_keys();
 reset_cursor(); saveCur=[[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]];
 master_reset(); op.cameraMode=0; op.menuPep=0;
 
-//
 
-enemyAttackExtra=[0,0,0];  partyAttackExtra=[0,0,0];
-enemyDefenseExtra=[0,0,0]; partyDefenseExtra=[0,0,0];
-extraStatsTimer=[0,0,0];   extraPartyStatsTimer=[0,0,0];
+
+enemyAttackExtra=[0,0,0]; 
+partyAttackExtra=[0,0,0];
+
+enemyDefenseExtra=[0,0,0];
+partyDefenseExtra=[0,0,0];
+
+extraStatsTimer=[0,0,0];
+extraPartyStatsTimer=[0,0,0];
 
 enemyStatus=["","",""];
 
 loop=true;
-normalEnd=true; if array_contains(op.battle_seed,"stopEnd") { normalEnd=false; }
+normalEnd=true;
+if array_contains(op.battle_seed,"stopEnd") { normalEnd=false; }
 
 declare_battle(true);
 
@@ -33,16 +44,12 @@ sideText=["",""];
 knockX=[0,0,0];
 canSpare=false; canTired=false;
 
-//
-//
-//
 
-//
-//
-// Spawn Handler
-res_i(); repeat(array_length(op.battle_enemy)) { with (instance_create_depth(0,0,0,op.battle_enemy[i]._handler)) { declare_handler(other.i); } ++i; }
 
-// find pacify
+//spawn handlers
+res_i(); repeat (array_length(op.battle_enemy)) { with (instance_create_depth(0,0,0,op.battle_enemy[i]._handler)) { declare_handler(other.i); } ++i; }
+
+//find pacify
 pacify=[[],""];
 res_i();
 repeat(array_length(op.party))
@@ -52,8 +59,6 @@ repeat(array_length(op.party))
 	++i;
 }
 
-//
-//
-//
+
 
 drText=get_text("t_menuBattle");

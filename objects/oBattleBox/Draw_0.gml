@@ -1,5 +1,6 @@
 draw_self();
 
+//draw bullet mask surface
 if (counter == 0 and array_length(bulletInfo) > 0)
 {
 	if !(surface_exists(bulletMask)) { bulletMask=surface_create(640,480); }
@@ -9,10 +10,8 @@ if (counter == 0 and array_length(bulletInfo) > 0)
 	draw_clear_alpha(c_white,0);
 
 	draw_ext(sBattleBox,2,(x-(op.x-160))*2,(y-(op.y-120))*2,(image_xscale-0.25)*2,(image_yscale-0.25)*2,image_angle,0);
-
-	//
-	//
-	//
+	
+	
 
 	gpu_set_colorwriteenable(1,1,1,0);
 
@@ -24,11 +23,9 @@ if (counter == 0 and array_length(bulletInfo) > 0)
 	}
 
 	gpu_set_colorwriteenable(1,1,1,1);
-
-	//
-	//
-	//
-
+	
+	
+	
 	surface_reset_target();
 
 	draw_surface_ext(bulletMask,op.x-160,op.y-120,0.5,0.5,0,c_white,1);

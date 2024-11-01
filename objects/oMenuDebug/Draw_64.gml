@@ -1,8 +1,6 @@
 if (op.noclip)  { extra[0]=" (ON)"; }else{ extra[0]=" (OFF)"; }
 
-//
-//
-//
+
 
 if (page == "start")
 {
@@ -10,14 +8,14 @@ if (page == "start")
 	print("- Debug menu -",2+50,15,fDotum,,,0.5,0.5,,c_red,,,,,["fa_center"]);
 	
 	res_i();
-	repeat(array_length(options))
+	repeat (array_length(options))
 	{
 		print(options[i]+extra[i],20,30+i*10,fDotum,,,0.5,0.5,,,,,,,["menu_yellow","soul4","start",i]);
 		++i;
 	}
 }
 
-//
+
 
 if (page == "room")
 {

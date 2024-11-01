@@ -1,33 +1,28 @@
 draw_party_hud();
 sideText=["",""];
 
-//
-//
-//
 
-// Enemy Select (Draw)
+
+//enemy select (Draw)
 if (page == "enemy_select")
 {
 	if (sel_priority[op.menuPep] != -1) { print("HP",212,186,,,,,0.5); } print("MERCY",262,186,,,,,0.5);
 	
 	res_i();
-	repeat(3)
+	repeat (3)
 	{
 		if (enemyHere[i])
 		{
 			i1=[c_white,c_white]; i2=make_color_rgb(0,178,255);
 			
-			//op.battle_enemySpare[i]=100;
-			//op.battle_enemyTired[i]=true;
-			
 			if (op.battle_enemySpare[i] >= 100) { i1=[c_yellow,c_yellow]; }
 			if (op.battle_enemyTired[i]) { i1=[i2,i2]; }
 			if (op.battle_enemySpare[i] >= 100 and op.battle_enemyTired[i]) { i1=[c_yellow,i2]; }
 			
-			// Name
+			//name
 			print(op.battle_enemy[i]._name,40,191.5+15*i,,,,,,,i1[0],i1[1],i1[1],i1[0],,["menu","soul1","enemy_select",i]);
 			
-			// HP %
+			//HP%
 			if (sel_priority[op.menuPep] != -1)
 			{
 				draw_ext(sPixel,0,210,190+15*i,40.5,8,,c_maroon);
@@ -35,7 +30,7 @@ if (page == "enemy_select")
 				print(string( ceil((op.battle_enemyHP[i]/op.battle_enemy[i]._hp)*100) )+"%",212,194+15*i,,,,,0.5);
 			}
 			
-			// Spare %
+			//spare %
 			draw_ext(sPixel,0,260,190+15*i,40.5,8,,make_color_rgb(255,80,32));
 			draw_ext(sPixel,0,260,190+15*i,40.5*(op.battle_enemySpare[i]/100),8,,c_yellow);
 			
@@ -44,7 +39,7 @@ if (page == "enemy_select")
 			if array_contains(op.battle_seed,"grayspare"+string(i)) { draw_ext(sBattleCov,0,260,190+15*i,0.5,0.5); }
 			if array_contains(op.battle_seed,"xspare"+string(i)) { draw_ext(sBattleCov,1,260,190+15*i,0.5,0.5); }
 			
-			// Symbols
+			//symbols
 			i1=string_width(op.battle_enemy[i]._name);
 			if (op.battle_enemySpare[i] >= 100) { draw_ext(sBattleSymbols,0,50+i1,192.5+15*i,0.5,0.5); }
 			if (op.battle_enemyTired[i])
@@ -57,18 +52,20 @@ if (page == "enemy_select")
 				print(enemyStatus[i],70-16+i1,191.5+15*i,,,,,,,c_gray);
 			}
 			
-			// Magic Action Text
+			//magic action text
 			if (sel_priority[op.menuPep] == -1) { print(magicActionText,147,191.5+15*i,,,,,,,op.party[op.menuPep]._actionColor); }
 		}
 		++i;
 	}
 }
 
-// People Select (Draw)
+
+
+//draw people select
 if (page == "people_select")
 {
 	res_i();
-	repeat(array_length(op.party))
+	repeat (array_length(op.party))
 	{
 		print(op.party[i]._infoText[0],40,191.5+15*i,,,,,,,,,,,,["menu","soul1","people_select",i]);
 		
@@ -78,13 +75,15 @@ if (page == "people_select")
 	}
 }
 
-// Act/Magic Select (Draw)
+
+
+//draw act/magic select
 if (page == "act_select" or page == "magic_select")
 {
 	tpShow[2]=grab[cursor]._tp;
 	
 	res_i();
-	repeat(array_length(grab))
+	repeat (array_length(grab))
 	{
 		i4=c_white; if (grab[i]._isPacify and canTired) { i4=make_color_rgb(0,178,255); }
 		if (page == "magic_select")
@@ -96,7 +95,7 @@ if (page == "act_select" or page == "magic_select")
 		
 		i1=15; i2=191.5+floor(i/2)*15;
 		if (i mod 2) { i1+=115; }
-		i3=0; repeat(array_length(grab[i]._partyHelp)) { draw_ext(op.party[existence_to_numb(grab[i]._partyHelp[i3])]._UIface,1,i1+15*i3,i2-4,0.5,0.5); ++i3; }
+		i3=0; repeat (array_length(grab[i]._partyHelp)) { draw_ext(op.party[existence_to_numb(grab[i]._partyHelp[i3])]._UIface,1,i1+15*i3,i2-4,0.5,0.5); ++i3; }
 		print(grab[i]._infoText[0],i1,i2,,,,,,,i4,,,,,["partyHelp","menu","soul2","act_select","magic_select",i]);
 		++i;
 	}
@@ -106,16 +105,15 @@ if (page == "act_select" or page == "magic_select")
 		sideText[0]=grab[cursor]._infoText[array_length(grab[cursor]._infoText)-1];
 		if (grab[cursor]._tp > 0) { sideText[1]=string(grab[cursor]._tp)+"% TP"; }
 	}
-	
-	//print(grab[cursor]._partyHelp,0,0);
-	//print(op.spells[0][0]._partyHelp,0,20);
 }
 
-// Item Select (Draw)
+
+
+//draw item select
 if (page == "item_select")
 {
 	res_i();
-	repeat(array_length(op.item))
+	repeat (array_length(op.item))
 	{
 		i1=15; i2=191.5+floor(i/2)*15;
 		if (i mod 2) { i1+=115; }
@@ -146,16 +144,15 @@ if (page == "item_select")
 	}
 }
 
-//
-//
-// Side Text (Draw)
+
+
+//draw side text
 print(sideText[0],250,191.5,,16,60,,,,c_gray);
 print(sideText[1],250,191.5+32,,,,,,,c_orange);
 
-//
-//
-// Draw TP bar
 
+
+//draw TP bar
 if (pastTP != tp) { tpShow[1]=tp-pastTP; }
 tpShow[0]+=(tp-tpShow[0])/3;
 tpShow[1]+=(0-tpShow[1])/5;
@@ -197,14 +194,13 @@ else
 	print("X",9+tpX,79,,,,,,,c_yellow);
 }
 
-//
-//
-//
 
+
+//draw border
 draw_ext(sPixel,0,0,0,-999,999,,0);
 draw_ext(sPixel,0,320,0,999,999,,0);
 
-//
+
 /*
 print("alongside: "+string(alongside)+" faimd: "+string(faimd),0,3+8*0,,,,0.5,0.5,,,,,,,["bc2"]);
 print("saveCur: "+string(saveCur),0,3+8*1,,,,0.5,0.5,,,,,,,["bc2"]);
@@ -215,6 +211,5 @@ print("enemy/person selected: "+string(sel_person),0,3+8*5,,,,0.5,0.5,,,,,,,["bc
 print("object: "+string(sel_object),0,3+8*6,,,,0.5,0.5,,,,,,,["bc2"]);
 //print("item: "+string(sel_item),0,3+8*6,,,,0.5,0.5,,,,,,,["bc2"]);
 
-
-
 print(sel_person,0,3+8*1,,,,0.5,0.5,,,,,,,["bc2"]);
+*/

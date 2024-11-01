@@ -1,1 +1,1 @@
-res_all();
+counter=0;

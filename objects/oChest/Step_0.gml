@@ -1,3 +1,5 @@
+form=0; key=false;
+
 if (get != -1)
 {
 	struct(get);
@@ -10,10 +12,9 @@ if (get != -1)
 
 if (money != -1) { form=3; get=money; }
 
-//
-//
-//
 
+
+//spawn oInteract in place of this object
 with (instance_create_depth(x,y,-y,oInteract))
 {
 	res_i(); i1=[other.form,other.get,other.key];

@@ -2,8 +2,8 @@
 use_keys(true);
 
 pastTP=tp; tpShow[2]=0;
-lockedPast=[]; res_i(); repeat(3) { array_push(lockedPast,locked[i]); ++i; }
-res_i(); repeat(array_length(op.party)) { if (knockX[i] > 0) { --knockX[i]; char(i).extraX=-knockX[i]; } ++i; }
+lockedPast=[]; res_i(); repeat (3) { array_push(lockedPast,locked[i]); ++i; }
+res_i(); repeat (array_length(op.party)) { if (knockX[i] > 0) { --knockX[i]; char(i).extraX=-knockX[i]; } ++i; }
 
 canSpare=false; canTired=false;
 if (enemyHere[0] and op.battle_enemySpare[0] >= 100) or (enemyHere[1] and op.battle_enemySpare[1] >= 100) or (enemyHere[2] and op.battle_enemySpare[2] >= 100) { canSpare=true; }
@@ -26,12 +26,16 @@ if (page != "done")
 			cursor=faimd[op.menuPep];
 			if (sel_item[op.menuPep][0] != -1) { if (sel_item[op.menuPep][0]._removeItem) { array_insert(op.item,sel_item[op.menuPep][1],sel_item[op.menuPep][0]); sel_item[op.menuPep]=[]; } }
 			
-			//
+			
 			
 			res_i();
-			repeat(array_length(op.party))
+			repeat (array_length(op.party))
 			{
-				if (!locked[i] and i >= op.menuPep) { faceImage[i]=1; if (op.hp[i] > 0 and char(i).sprite_index != op.party[i]._spriteIdle) { char_animate(i,1,1,op.party[i]._spriteIdle,0,,,,,["override"]); } }
+				if (!locked[i] and i >= op.menuPep)
+				{
+					faceImage[i]=1;
+					if (op.hp[i] > 0 and char(i).sprite_index != op.party[i]._spriteIdle) { char_animate(i,1,1,op.party[i]._spriteIdle,0,,,,,["override"]); }
+				}
 				++i;
 			}
 			
@@ -48,9 +52,9 @@ else
 
 if (op.mode == "battle") { op.hudY+=(0-op.hudY)/2; }else{ op.hudY+=(125-op.hudY)/2; }
 
-//
-//
-// Buttons
+
+
+//buttons
 if (page == 0)
 {
 	grab=[]; grab2=[]; tpUse=0; alongside[op.menuPep]=[];
@@ -157,21 +161,21 @@ if (page == "act_select")
 	{
 		fix=false; grab=[]; grab2=[];
 		
-		res_i(); repeat(array_length(op.spells[op.menuPep])) { array_push(grab,op.spells[op.menuPep][i]); ++i; }
+		res_i(); repeat (array_length(op.spells[op.menuPep])) { array_push(grab,op.spells[op.menuPep][i]); ++i; }
 		res_i();
-		repeat(array_length(op.battle_enemy[sel_person[op.menuPep]]._spells))
+		repeat (array_length(op.battle_enemy[sel_person[op.menuPep]]._spells))
 		{
 			struct(op.battle_enemy[sel_person[op.menuPep]]._spells[i]);
 			i2=true; i3=0;
-			repeat(array_length(str._partyHelp)) { if (existence_to_numb(str._partyHelp[i3]) == -1) { i2=false; } ++i3; }
+			repeat (array_length(str._partyHelp)) { if (existence_to_numb(str._partyHelp[i3]) == -1) { i2=false; } ++i3; }
 			if (i2) { array_push(grab,str); }
 			++i;
 		}
 		
 		res_i();
-		repeat(array_length(grab))
+		repeat (array_length(grab))
 		{
-			res_j(); repeat(array_length(grab[i]._partyHelp)) { j1=existence_to_numb(grab[i]._partyHelp[j]); if (op.hp[j1] < 1) { array_push(grab2,i); } ++j; }
+			res_j(); repeat (array_length(grab[i]._partyHelp)) { j1=existence_to_numb(grab[i]._partyHelp[j]); if (op.hp[j1] < 1) { array_push(grab2,i); } ++j; }
 			++i;
 		}
 	}
@@ -184,13 +188,13 @@ if (page == "act_select")
 		{
 			if (cursor >= array_length(op.spells[op.menuPep]) and array_length(grab[cursor]._partyHelp) == 0) { sel_priority[op.menuPep]=-1; }
 			
-			res_i(); repeat(array_length(grab[cursor]._partyHelp)) { locked[existence_to_numb(grab[cursor]._partyHelp[i])]=true; ++i; }
+			res_i(); repeat (array_length(grab[cursor]._partyHelp)) { locked[existence_to_numb(grab[cursor]._partyHelp[i])]=true; ++i; }
 			sel_object[op.menuPep]=grab[cursor]._object;
 			alongside[op.menuPep]=grab[cursor]._partyHelp;
 		
 			char_animate(op.menuPep,1,0+(array_length(op.party[op.menuPep]._spriteAct) > 1),op.party[op.menuPep]._spriteAct[0],0);
 		
-			res_i(); repeat(array_length(alongside[op.menuPep])) { i1=existence_to_numb(alongside[op.menuPep][i]); faceImage[i1]=4+sel_priority[op.menuPep]; char_animate(i1,1,0+(array_length(op.party[i1]._spriteAct) > 1),op.party[i1]._spriteAct[0],0); ++i; }
+			res_i(); repeat (array_length(alongside[op.menuPep])) { i1=existence_to_numb(alongside[op.menuPep][i]); faceImage[i1]=4+sel_priority[op.menuPep]; char_animate(i1,1,0+(array_length(op.party[i1]._spriteAct) > 1),op.party[i1]._spriteAct[0],0); ++i; }
 			next_party();
 		}
 		else
@@ -210,14 +214,14 @@ if (page == "magic_select")
 		fix=false; grab=[];
 		
 		res_i(); i1=clamp(op.party[op.menuPep]._numberExistence,0,array_length(op.battle_magicActions)-1);
-		repeat(array_length(op.battle_magicActions[i1]))
+		repeat (array_length(op.battle_magicActions[i1]))
 		{
 			struct(op.battle_magicActions[i1][i]);
 			array_push(grab,str);
 			++i;
 		}
 		
-		res_i(); repeat(array_length(op.spells[op.menuPep])) { array_push(grab,op.spells[op.menuPep][i]); ++i; }
+		res_i(); repeat (array_length(op.spells[op.menuPep])) { array_push(grab,op.spells[op.menuPep][i]); ++i; }
 	}
 	
 	sel_magicAction[op.menuPep]=-1;
@@ -258,7 +262,7 @@ if (page == "item_select")
 			if (op.item[cursor]._tp > 0)
 			{
 				sel_object[op.menuPep]=-1; res_i(); i=op.item[cursor]._tp;
-				char(op.menuPep).brightMode="fade"; char(op.menuPep).bright=1; repeat(10) { effect_star(char(op.menuPep).x+irandom_range(-8,8),char(op.menuPep).y-irandom_range(0,24),["tp"]); }
+				char(op.menuPep).brightMode="fade"; char(op.menuPep).bright=1; repeat (10) { effect_star(char(op.menuPep).x+irandom_range(-8,8),char(op.menuPep).y-irandom_range(0,24),["tp"]); }
 				if (sel_item[op.menuPep][0]._removeItem) { array_delete(op.item,cursor,1); }
 				next_party(); tp+=i;
 			}
@@ -276,33 +280,26 @@ if (page == "item_select")
 	}
 }
 
-//
-//
-//
 
-//
-//
-//
 
-//
-//
-//
 
-// Execute orders
+
+
+//execute orders
 if (priority != -2 and waitDelay == 0)
 {
 	res_i(); singleStack=false;
-	repeat(array_length(op.party)) { if (sel_priority[i] == -1) { ++i1; } ++i; }
+	repeat (array_length(op.party)) { if (sel_priority[i] == -1) { ++i1; } ++i; }
 	if (i1 == 1) { singleStack=true; }else{ singleStack=false; }
 	
 	with (oDialogue) { if array_contains(info._seed,"flavour") { instance_destroy(); } }
 	
-	// act == 0
-	// item == 1
-	// spare == 2
-	// magic == 3 (if it's a S orR-ACTION then it's 0) 
-	// fight == 4
-	// defend == 5
+	//act == 0
+	//item == 1
+	//spare == 2
+	//magic == 3 (if it's a S orR-ACTION then it's 0) 
+	//fight == 4
+	//defend == 5
 	
 	while (!wait)
 	{
@@ -345,7 +342,7 @@ if (priority != -2 and waitDelay == 0)
 			if (array_contains(enemyHere,true))
 			{
 				res_i();
-				repeat(array_length(op.party))
+				repeat (array_length(op.party))
 				{
 					if (op.hp[i] > 0)
 					{
@@ -356,34 +353,29 @@ if (priority != -2 and waitDelay == 0)
 				}
 			}
 			
-			//
-			
 			force_enemyTurn();
-			
-			//
 		}
 	}
 }
 if (waitDelay > 0) { --waitDelay; }
 
-//
-//
-// Start patterns
 
+
+//start patterns
 if (handler and handlerCounter <= 0)
 {
 	handler=false;
 	instance_destroy(oDialogue);
 	
 	res_i();
-	repeat(array_length(op.battle_enemy))
+	repeat (array_length(op.battle_enemy))
 	{
-		if (patterns[i] != -1) { with(instance_create_depth(0,0,-9999,oRun)) { type="pattern"; numb=other.i; step=oMenuBattle.patterns[other.i]; } }
+		if (patterns[i] != -1) { with (instance_create_depth(0,0,-9999,oRun)) { type="pattern"; numb=other.i; step=oMenuBattle.patterns[other.i]; } }
 		++i;
 	}
 }
 
-//
+
 
 if (exists_timer)
 {
@@ -394,8 +386,8 @@ if (exists_timer)
 		
 		if (timer == 0)
 		{
-			if (exists_soul) { exists_soul=false; with(oSoul) { counter=delay; } }
-			if (exists_box) { exists_box=false; with(oBattleBox) { counter=delay; } }
+			if (exists_soul) { exists_soul=false; with (oSoul) { counter=delay; } }
+			if (exists_box) { exists_box=false; with (oBattleBox) { counter=delay; } }
 			
 			instance_destroy(oBullet); with (oRun) { if (type == "pattern") { instance_destroy(); } }
 			
@@ -405,7 +397,7 @@ if (exists_timer)
 		if (loop)
 		{
 			res_i();
-			repeat(array_length(op.party))
+			repeat (array_length(op.party))
 			{
 				char_animate(i,15,,,,op.battle_partyXY[i][0],op.battle_partyXY[i][1],,,["autooff"]);
 				if (op.hp[i] > 0 and char(i).sprite_index != op.party[i]._spriteIdle) { char_animate(i,1,1,op.party[i]._spriteIdle,0); }
@@ -414,34 +406,44 @@ if (exists_timer)
 			}
 		
 			res_i();
-			repeat(array_length(op.battle_enemy))
+			repeat (array_length(op.battle_enemy))
 			{
 				char_animate("ene"+string(i),15,,,,op.battle_enemyXY[i][0],op.battle_enemyXY[i][1],,,["autooff"]);
 				if (char("ene"+string(i)).sprite_index != op.battle_enemy[i]._spriteIdle) { char_animate("ene"+string(i),1,,op.battle_enemy[i]._spriteIdle,1); }
 				++i;
 			}
-		
-			// Get new flavour Text
-		
+			
+			//get new flavour text
 			res_i(); i1=true; while (!enemyHere[i] or i1) { i1=false; i=irandom_range(0,array_length(op.battle_enemy)-1); }
 			if (!op.isBoss) { op.battle_flavourText=op.battle_enemy[i]._flavourRandom[irandom_range(0,array_length(op.battle_enemy[i]._flavourRandom)-1)]; }
 		
 			if (canTired)
 			{
-				res_i(); repeat(array_length(op.battle_enemy)) { if (enemyHere[i] and op.battle_enemyTired[i]) { op.battle_flavourText=op.battle_enemy[i]._flavourTired; } ++i; }
+				res_i();
+				repeat (array_length(op.battle_enemy))
+				{
+					if (enemyHere[i] and op.battle_enemyTired[i]) { op.battle_flavourText=op.battle_enemy[i]._flavourTired; }
+					++i;
+				}
 			}
+			
 			if (canSpare)
 			{
-				res_i(); repeat(array_length(op.battle_enemy)) { if (enemyHere[i] and op.battle_enemySpare[i] == 100) { op.battle_flavourText=op.battle_enemy[i]._flavourSpare; } ++i; }
-			
+				res_i();
+				repeat (array_length(op.battle_enemy))
+				{
+					if (enemyHere[i] and op.battle_enemySpare[i] == 100) { op.battle_flavourText=op.battle_enemy[i]._flavourSpare; }
+					++i;
+				}
 			}
 		}
 	}
 }
 
-//
-//
-//
+
+
+
+
 
 tp=clamp(tp,0,100);
 if (time > 1) { with (oDialogue) { if array_contains(info._seed,"flavour") { if (other.page == 0) { visible=true; }else{ visible=false; } } } }

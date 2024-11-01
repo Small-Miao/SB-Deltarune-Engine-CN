@@ -37,8 +37,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Fonts",
-    "path":"folders/Fonts.yy",
+    "name":"Fonts_Sprites",
+    "path":"folders/Fonts/Fonts_Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

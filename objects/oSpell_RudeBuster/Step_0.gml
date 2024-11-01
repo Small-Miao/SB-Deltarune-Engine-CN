@@ -9,17 +9,23 @@ if (time == 1)
 	start_cutscene("cc_anything",30+12,true);
 }
 
+
+
 if (time == 30)
 {
 	sound(snd_rudebusterswing);
 	effect_rudebuster(char(numb_from).x+10,char(numb_from).y-20,char("ene"+string(numb_to)).x,char("ene"+string(numb_to)).y-20);
 }
 
+
+
 if (time >= 30)
 {
 	use_keys();
 	if tap_confirm() { damageExtra=30; }
 }
+
+
 
 if (time == 30+12)
 {

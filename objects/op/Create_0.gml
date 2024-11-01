@@ -1,17 +1,18 @@
 variant_face();
+fileVer=1;
 
+
+
+//debug Variables
 showHitboxes=true;
 debug=true;
 
-//
-
 noclip=false;
 
-//
-//
-//
 
-fileVer=1;
+
+//settings, creating fonts from sprites, world time & language
+	//what file you are currently on (0, 1 or 2)
 fileOn=0;
 
 display_set_gui_size(320,240);
@@ -20,9 +21,9 @@ instance_create_depth(0,0,0,oPlayerCol);
 
 reset_keys(); time=0; ti=0;
 seconds=0; minutes=0;
-locationText="Skip"; locationCC=-1; locationCCcheck=false;
 
 variant_csv();
+	//the row text is grabed from in the csv file
 language=1;
 
 option_volume=60;
@@ -38,10 +39,12 @@ fontGold=font_add_sprite_ext(sFontGold,"1234567890-+%/",true,0);
 
 textFadeAlpha=0;
 
-//
-//
-// Finished Variables
+
+
+//finished Variables (you don't have to use or set these)
 image_alpha=0; reset_keys(); reset_cursor(); cursor=-1;
+
+#region
 
 boxImage=3; boxImageSpeed=0.1; stackFix=0;
 battleSticks=[1,3,7]; battleRaise=[0,0,0]; hudY=0;
@@ -62,57 +65,84 @@ promptCursor=0;
 structAt=0;
 previousRoom=-1;
 
-//
-//
-//
+#endregion
 
+
+
+//special variables
 transitionInfo=[];
 overworldMenuSaveCursor=[0,0,0];
 
-textCC=[]; funcCC=-1; faceCC=-1;
+	//you can set these variables and then run start_cutscene("cc_anything"); if you just want some small dialouge and not a whole cutscene
+	//check the cc_anything struct for more info
+textCC=[];
+funcCC=-1;
+faceCC=-1;
+
 ccImage=0; ccLine=0;
 
-fullJustItem=false; fullItem=false; fullWeapon=false; fullArmor=false;
+	//is automaticaly set to true if the corresponding inventory is full
+fullJustItem=false;
+fullItem=false;
+fullWeapon=false;
+fullArmor=false;
 
-// // // Variables
+	//this variable (should usually) automaticaly be set to whatever party member you are sellecting in any cenario
+partyOn=0;
+
+
+
+//control variables
 world="dark";
 mode=0;
 movement="overworld";
 
+	//check the script catagory scr_camera for camera control
 cameraMode="overworld"; camOffsetX=0; camOffsetY=0;
-camShakeX=0; camShakeY=0; camShake=[0,0];
+camShakeX=0;
+camShakeY=0;
+camShake=[0,0];
 camMove=[0,0,0,0,0,0,0,0,0,0];
 
-currentMusic=-1; pastMusic=-1;
+	//there are custom audio functions that control music and sound. Check the script catagory scr_sound
+currentMusic=-1;
+pastMusic=-1;
 
-//
+	//in a oCreate object whatever you set this text to will be what 
+locationText="Skip";
+locationCC=-1;
+locationCCcheck=false;
 
-partyOn=0;
 
-//
-//
-//
 
-// Data
+//declare and reset data
 declare_gamestats();
 
-//
-//
-//
 
-// Overworld
+
+//overworld
 partyPos=[[0,0,"down",0,"overworld"]]; pastXY=[0,0];
 
-playerX=x; playerY=y; playerSubimg=0; playerDirection="down"; walkSpeed=2; walkMult=1; runTimer=0; walkTimeOut=0; moving=false;
-wallCounter=0; wallCheck=true;
+playerX=x;
+playerY=y;
+playerSubimg=0;
+playerDirection="down";
+
+walkSpeed=2;
+walkMult=1;
+runTimer=0;
+walkTimeOut=0;
+moving=false;
+
+wallCounter=0;
+wallCheck=true;
 forceRun=0;
 
 checkpointProgress=[];
 
-//
-//
-//
 
+
+//battle variables
 continueOrders=false;
 isBoss=false;
 endCC=-1;
@@ -121,8 +151,15 @@ battle_enemyTouchInfo=[];
 
 battle_enemyString=[];
 battle_enemy=[];
-battle_enemyXY=[]; battle_partyXY=[]; battle_magicActions=[];
-battle_enemyHP=[0,0,0]; battle_enemySpare=[0,0,0]; battle_enemyTired=[false,false,false];
+
+battle_enemyXY=[];
+battle_partyXY=[];
+
+battle_magicActions=[];
+
+battle_enemyHP=[0,0,0];
+battle_enemySpare=[0,0,0];
+battle_enemyTired=[false,false,false];
 
 battle_background=[false,false];
 battle_music=-1;
@@ -133,12 +170,14 @@ menuPep=0;
 save_partyXY=[];
 gainMoney=0;
 
-oldEnemyXY=[]; killedAny=false;
+	//is set to false when any battle begins. Is set to true when you kill atleast one enemy in battle. (Not for bosses)
+killedAny=false;
 
-//
-//
-//
+oldEnemyXY=[];
 
+
+
+//overworld dodging variables
 dodge=false;
 dodge_applyShaders=true;
 dodge_alpha=0;

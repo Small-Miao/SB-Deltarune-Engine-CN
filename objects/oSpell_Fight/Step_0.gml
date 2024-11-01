@@ -3,6 +3,8 @@ use_keys();
 if (bright > 0) { bright-=0.1; }
 if (tapConfirm) { bright=1; }
 
+
+
 if (done)
 {
 	++doneTime;
@@ -10,7 +12,7 @@ if (done)
 	if (doneTime == 60) { continue_orders(); }
 }
 
-//
+
 
 canPress=false; forceNext=false;
 res_i();
@@ -30,6 +32,7 @@ repeat(array_length(op.party))
 	if (i1 and !done) { done=true; }
 	++i;
 }
+
 
 
 if (tap_confirm() and canPress) or (forceNext)
@@ -76,18 +79,6 @@ if (tap_confirm() and canPress) or (forceNext)
 	}
 }
 
-//
-//
-//
+
 
 ++time;
-
-if (time == 1)
-{
-	
-}
-
-if (time == 20)
-{
-	
-}

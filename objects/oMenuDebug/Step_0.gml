@@ -13,7 +13,7 @@ if (page == "start")
 	if tap_confirm(3) { instance_create_depth(0,0,-9999,oMenuSave); instance_destroy(); }
 }
 
-//
+
 
 if (page == "room")
 {

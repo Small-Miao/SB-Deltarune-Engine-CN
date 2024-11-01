@@ -8,7 +8,7 @@ var info=[];
 var order=[];
 var i=0, i1=0, checkY=0;
 
-//
+
 
 with(oChar)
 {
@@ -29,12 +29,11 @@ while (array_length(info) != 0)
 }
 order=array_reverse(order);
 
-//
+
 
 if (op.showHitboxes and !forceHide) { draw_self(); }
 
 //draw chars
-
 i=0;
 repeat(array_length(order))
 {
@@ -52,6 +51,6 @@ repeat(array_length(order))
 	++i;
 }
 
-//
+
 
 if (draw != -1) { draw(); }

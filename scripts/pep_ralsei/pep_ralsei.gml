@@ -23,7 +23,7 @@ function pep_ralsei() : pep_base() constructor
 	_spriteBall=sRalsei_Ball;
 	_spriteSlide=sRalsei_Slide;
 	
-	//
+	
 	
 	_numberExistence=2;
 	
@@ -34,7 +34,7 @@ function pep_ralsei() : pep_base() constructor
 	_attributeValue=[97,0];
 	_attributeSymbols=[0,2];
 	
-	// Battle
+	
 	
 	_UIcolor=make_color_rgb(0,255,0);
 	_UIface=sRalsei_Face;

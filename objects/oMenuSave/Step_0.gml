@@ -23,7 +23,7 @@ if (page == "start")
 	}
 }
 
-//
+
 
 if (page == "save")
 {
@@ -39,7 +39,7 @@ if (page == "save")
 	if tap_menu() { if file_exists("save"+string(cursor)) { file_delete("save"+string(cursor)); } }
 }
 
-//
+
 
 if (page == "ask")
 {
@@ -53,7 +53,7 @@ if (page == "ask")
 	}
 }
 
-//
+
 
 if (page != "filesaved") { readyToSave=true; }
 if (page == "filesaved")

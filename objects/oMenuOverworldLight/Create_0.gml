@@ -4,16 +4,12 @@ reset_keys();
 reset_cursor(); page="start"; cursor=op.overworldMenuSaveCursor[0];
 master_reset();
 
-op.mode="menuOverworldLight";
+sound(snd_menumove);
 
 time=0;
 
-//
+op.mode="menuOverworldLight";
 
-sound(snd_menumove);
 
-//
-//
-//
 
 drText=get_text("t_menuOverworldLight");

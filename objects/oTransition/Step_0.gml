@@ -5,7 +5,7 @@ if (mode == "fade")
 	if (counter == 2) { image_alpha-=0.1; if (image_alpha <= 0) { instance_destroy(); } }
 }
 
-//
+
 
 if (mode == "darkExit")
 {
@@ -17,8 +17,14 @@ if (mode == "darkExit")
 	}
 	if (counter == 28) { if (func != -1) { func(); } }
 	if (counter == 29) { if (func2 != -1) { func2(); } }
-	if (counter == 30) { i-=255/10; if (i <= 0) { instance_destroy(); } }
+	if (counter == 30)
+	{
+		i-=255/10;
+		if (i <= 0) { instance_destroy(); }
+	}
 }
+
+
 
 if (mode == "shortcut")
 {
@@ -31,6 +37,7 @@ if (mode == "shortcut")
 	if (counter == 39) { if (func2 != -1) { func2(); } }
 	if (counter == 40)
 	{
-		image_alpha-=0.1; if (image_alpha <= 0) { instance_destroy(); }
+		image_alpha-=0.1;
+		if (image_alpha <= 0) { instance_destroy(); }
 	}
 }

@@ -1,3 +1,5 @@
+//declares and resets the games major stats
+//run this when you launch a new save file
 function declare_gamestats()
 {
 	op.progress=[];
@@ -13,7 +15,7 @@ function declare_gamestats()
 
 	op.partyPosOffset=[0,0,0];
 	op.followers=[];
-	//
+	
 	op.hp=[300,300,150];
 	op.hpMax=[300,300,300];
 	op.attack=[10,10,10];
@@ -25,7 +27,7 @@ function declare_gamestats()
 
 	op.equipped=[[-1,-1,-1],[-1,-1,-1],[-1,-1,-1]]; /* struct */
 	op.spells=[[],[],[]]; /* struct */
-	//
+	
 	op.item=[]; /* struct */
 	op.storage=array_create(24,-1); /* struct */
 	op.itemKey=[]; /* struct */
@@ -39,7 +41,7 @@ function declare_gamestats()
 	repeat(0) { add_itemlight("item_base"); }
 	op.cell=[];
 	repeat(0) { add_cell("item_base"); }
-	//
+	
 	op.allData=[];
 	
 	add_party("pep_kris");
@@ -50,6 +52,4 @@ function declare_gamestats()
 	set_party_stats(2,300,10,3,7,1,1,"item_redScarf",,,["spell_pacify","spell_healPrayer"]);
 	
 	add_item("item_cellPhone",true);
-	
-	//op.party=[];
 }

@@ -1,3 +1,5 @@
+//this function sets up the stats that the battle will have
+//like the enemy types, music used, background type, enemy and party member x&y positions & other things related
 function setup_battle(_enemyStructs=["enemy_base"],_flavourTextFirst="SKIP",_partyXY=-1,_enemyXY=-1,magic_actions=[[],["spell_standard"]],_isBoss=false,_battle_music=mus_rudeBuster,_endCC=-1,_background=true,_seed=[])
 {
 	var counter=0;
@@ -47,8 +49,9 @@ function setup_battle(_enemyStructs=["enemy_base"],_flavourTextFirst="SKIP",_par
 	op.battle_background=[_background,false];
 }
 
-//
 
+
+//this function starts the battle with the stats that was set up previously
 function start_battle()
 {
 	instance_destroy(ob); instance_create_depth(0,0,0,ob);
@@ -67,8 +70,8 @@ function start_battle()
 	
 	var counter=0, counter2=0, glideDelay=15;
 	
-	// Party
-	repeat(array_length(op.party))
+	//move party to the left (or wherever)
+	repeat (array_length(op.party))
 	{
 		if (op.retryBattleTimer > 0)
 		{
@@ -88,14 +91,14 @@ function start_battle()
 	char_animate(0,1,,,,,,function()
 	{
 		instance_create_depth(0,0,0,oMenuBattle); with (oChar) { if (type == "enemy" and !(numb == "ene0" or numb == "ene1" or numb == "ene2")) { instance_destroy(); } }
-		res_i(); repeat(array_length(op.battle_enemy)) { char_animate("ene"+string(i),1,1,op.battle_enemy[i]._spriteIdle,0); ++i; }
+		res_i(); repeat (array_length(op.battle_enemy)) { char_animate("ene"+string(i),1,1,op.battle_enemy[i]._spriteIdle,0); ++i; }
 		
 		if (op.battle_music != -1) { music(op.battle_music); }
 	});
 	
-	// Battle Enemy
+	//move or create enemys
 	counter=0;
-	repeat(array_length(op.battle_enemy))
+	repeat (array_length(op.battle_enemy))
 	{
 		op.oldEnemyXY=[];
 		array_push(op.oldEnemyXY,[char("ene"+string(counter)).x,char("ene"+string(counter)).y]);
@@ -111,7 +114,7 @@ function start_battle()
 				if (op.battle_enemyTouchInfo[0] == op.battle_enemyString[counter]) { anyExists=true; }
 			}
 			
-			// Spawn enemy char
+			//spawn enemy char if they don't exist
 			if (anyExists)
 			{
 				create_char_enemy("ene"+string(counter),op.battle_enemyTouchInfo[2],op.battle_enemyTouchInfo[3],op.battle_enemyString[counter]);
@@ -126,18 +129,19 @@ function start_battle()
 		++counter;
 	}
 	
-	//
-	
-	// Delete enemy Char that isn't in the battle
+	//delete enemy char that isn't part the battle
 	with (oChar) { if (type == "enemy") { xscale=1; reaction[0]=false; reaction[1]=0; } }
 }
 
+
+
+//run this function to end the battle
 function end_battle()
 {
 	instance_destroy(oDialogue);
 	
 	var i=0;
-	repeat(array_length(op.party))
+	repeat (array_length(op.party))
 	{
 		if (op.killedAny and !op.isBoss)
 		{
@@ -157,6 +161,7 @@ function end_battle()
 	start_cutscene("cc_youWon",40);
 }
 
+//run this function to forcefully destroy every battle element
 function destroy_battle(_justDelete=false)
 {
 	var i=0;
@@ -166,13 +171,13 @@ function destroy_battle(_justDelete=false)
 	with (oRun) { if (type == "pattern") { instance_destroy(); } }
 	
 	i=0;
-	repeat(3)
+	repeat (3)
 	{
 		if (oMenuBattle.sel_object[i] != -1) { instance_destroy(oMenuBattle.sel_object[i]); }
 		++i;
 	}
 	
-	//
+	
 	
 	if (op.isBoss) { audio_stop_all(); sound(snd_hurt) }
 	if (op.mode != "dead") { op.isBoss=false; }
@@ -190,14 +195,11 @@ function destroy_battle(_justDelete=false)
 }
 
 
-//
-//
-//
 
-//
-//
-//
 
+
+
+//this resets all battle information every time your turn starts
 function declare_battle(_begin=false)
 {
 	op.stackFix=0;
@@ -219,7 +221,7 @@ function declare_battle(_begin=false)
 	forceSpeak=[-1,-1,-1];
 	magicActionText="";
 	
-	//
+	
 	
 	sel_button=[-1,-1,-1,-1];
 	sel_priority=[-2,-2,-2];
@@ -230,7 +232,7 @@ function declare_battle(_begin=false)
 	
 	sel_magicAction=[-1,-1,-1];
 	
-	//
+	
 	
 	handler=false;
 	handlerCounter=0;
@@ -240,7 +242,7 @@ function declare_battle(_begin=false)
 	wait=true; waitDelay=0;
 	stackAction=false; priorityNegative=false; stackJump=0; singleStack=false;
 	
-	//
+	
 	
 	exists_soul=false;
 	exists_box=false;
@@ -248,10 +250,10 @@ function declare_battle(_begin=false)
 	
 	boxScaleXY=[0,0];
 	
-	//
+	
 	
 	i=0;
-	repeat(3)
+	repeat (3)
 	{
 		if (extraStatsTimer[i] > 0) { --extraStatsTimer[i]; }
 		if (extraStatsTimer[i] == 0) { enemyAttackExtra[i]=0; enemyDefenseExtra[i]=0; }
@@ -259,7 +261,7 @@ function declare_battle(_begin=false)
 	}
 	
 	i=0;
-	repeat(array_length(op.party))
+	repeat (array_length(op.party))
 	{
 		if (extraPartyStatsTimer[i] > 0) { --extraPartyStatsTimer[i]; }
 		if (extraPartyStatsTimer[i] == 0) { partyAttackExtra[i]=0; partyDefenseExtra[i]=0; }
@@ -268,14 +270,10 @@ function declare_battle(_begin=false)
 	
 	start_cutscene("cc_flavourText");
 	
-	if (_begin)
-	{
-		
-	}
-	else
+	if (!_begin)
 	{
 		i=0;
-		repeat(array_length(op.party))
+		repeat (array_length(op.party))
 		{
 			if (op.hp[i] < 1)
 			{
@@ -286,10 +284,9 @@ function declare_battle(_begin=false)
 		}
 	}
 	
-	//
-	//
-	//
 	
+	
+	//when your turn starts this makes it so that the turn starts on the first party memmber who isn't dead
 	var check=true;
 	
 	op.menuPep=0;
@@ -302,8 +299,9 @@ function declare_battle(_begin=false)
 	if (!check) { next_party(true); }
 }
 
-//
 
+
+//declares  usefull variables in spell objects
 function declare_spell()
 {
 	time=0;
@@ -316,6 +314,7 @@ function declare_spell()
 	name_from=op.party[numb_from]._infoText[0];
 }
 
+//declares usefull variables in handler objects
 function declare_handler(_numb)
 {
 	numb_from=_numb;
@@ -323,10 +322,9 @@ function declare_handler(_numb)
 	execute=false;
 }
 
-//
-//
-//
 
+
+//run this in the creation event for a spell object to make the coresonding partymembers automaticaly do their default animations
 function default_spell_animation()
 {
 	var _pc=oMenuBattle.priority_counter;
@@ -337,7 +335,7 @@ function default_spell_animation()
 	var counter=0;
 	var _i1=0;
 	
-	repeat(array_length(oMenuBattle.alongside[_pc])+1)
+	repeat (array_length(oMenuBattle.alongside[_pc])+1)
 	{
 		if (counter == 0) { _i1=existence_to_numb(op.party[_pc]._numberExistence); }else{ _i1=existence_to_numb(oMenuBattle.alongside[_pc][counter-1]); }
 		
@@ -359,14 +357,9 @@ function default_spell_animation()
 	oMenuBattle.alongside[_pc]=[];
 }
 
-//
-//
-//
 
-//
-//
-//
 
+//this is run when you finish selecting what a single party member should do and moves you over to the next (it skips dead party members)
 function next_party(_forceDone=false)
 {
 	var go=true, menuClamp=clamp(op.menuPep,0,array_length(op.party)-1);
@@ -399,7 +392,7 @@ function next_party(_forceDone=false)
 		wait=false; mode="spells";
 		
 		stackAction=false; priorityNegative=false; stackJump=-1;
-		var i=0, i1=0; repeat(array_length(op.party)) { if (sel_priority[i] == -1) { ++i1; } ++i; } if (i1 > 1) { stackAction=true; }
+		var i=0, i1=0; repeat (array_length(op.party)) { if (sel_priority[i] == -1) { ++i1; } ++i; } if (i1 > 1) { stackAction=true; }
 	}
 	else
 	{
@@ -409,13 +402,15 @@ function next_party(_forceDone=false)
 	undo=[];
 }
 
-//
 
+
+//forcefully makes it the partys turn
 function force_partyTurn()
 {
 	with (oMenuBattle) { reset_cursor(); saveCur=[[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]]; declare_battle(); }
 }
 
+//forcefully makes it the enemys turn
 function force_enemyTurn()
 {
 	oMenuBattle.stackJump=0;
@@ -423,7 +418,7 @@ function force_enemyTurn()
 	oMenuBattle.handlerCounter=0;
 	
 	var i=0;
-	repeat(array_length(op.battle_enemy))
+	repeat (array_length(op.battle_enemy))
 	{
 		if (oMenuBattle.enemyHere[i]) { ++oMenuBattle.handlerCounter; with(op.battle_enemy[i]._handler) { execute=true; } }
 		++i;
@@ -432,17 +427,17 @@ function force_enemyTurn()
 	if (!array_contains(oMenuBattle.enemyHere,true)) { oMenuBattle.handler=false; if (oMenuBattle.normalEnd) { end_battle(); }else{ ob.endSignal=true; } }else{ oMenuBattle.mode="talk"; }
 }
 
-//
-//
-//
 
+
+//this will end the current party member action and start the next one
+//you can also make this function be automaticaly run after dialouge by checking a box in the start_cutscene script
 function continue_orders()
 {
 	var check=false;
 	var i=0;
 	
 	i=0;
-	repeat(array_length(op.party))
+	repeat (array_length(op.party))
 	{
 		if !(char(i).x == op.battle_partyXY[i][0]+(op.x-160) or char(i).y == op.battle_partyXY[i][1]+(op.y-120))
 		{
@@ -456,6 +451,9 @@ function continue_orders()
 	if (check) { oMenuBattle.waitDelay=0; }
 }
 
+
+
+//sets what attack pattern an enemy should use
 function set_pattern(_pattern=-1,_numb=-1)
 {
 	if (_numb == -1)

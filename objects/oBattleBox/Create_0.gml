@@ -5,9 +5,7 @@ delay=15;
 counter=delay;
 mult=8;
 
-//
-//
-//
+
 
 bulletInfo=[];
 bulletMask=-1;

@@ -1,3 +1,4 @@
+//move bullet
 walkXY[0]+=walkXY[1];
 walkXY[2]+=walkXY[3];
 
@@ -7,10 +8,9 @@ walkXY[2]=clamp(walkXY[2],-walkXY[4],walkXY[4])
 x+=walkXY[0];
 y+=walkXY[2];
 
-//
-//
-//
 
+
+//special
 if array_contains(seed,"something")
 {
 	

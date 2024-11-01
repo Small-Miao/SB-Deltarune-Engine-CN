@@ -6,9 +6,7 @@ op.soul4XY=[72.5,76];
 
 rec=[];
 
-//
-//struct(op.recruits[0][0]); op.recruits=[]; repeat(15) { array_push(op.recruits,[instanceof(str),10,1]); }
-//
+
 
 res_i();
 repeat(array_length(op.recruits))
@@ -20,11 +18,7 @@ repeat(array_length(op.recruits))
 
 res_i();
 
-//
-//
-//
-//
-//
+
 
 function draw_boxColor(_x,_y)
 {
@@ -35,8 +29,6 @@ function draw_boxColor(_x,_y)
 	draw_ext(rec[cursor]._recSprite,op.time/rec[cursor]._recDivide,_x+round(208/4),_y-8+round(153/2));
 }
 
-//
-//
-//
+
 
 drText=get_text("t_menuRecruits");

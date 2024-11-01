@@ -16,7 +16,7 @@ if (page == "start")
 	print(op.locationText,160,89,,,,,,,,,,,,["fa_center"]);
 }
 
-//
+
 
 if (page == "save" or page == "ask")
 {
@@ -27,10 +27,8 @@ if (page == "save" or page == "ask")
 	draw_ext(sMenu,17,37,150,493/2);
 	draw_ext(sMenu,17,37,192,493/2);
 	
-	//
-	
 	res_i();
-	repeat(4)
+	repeat (4)
 	{
 		i2=c_white; if (i == cursor+1) { i2=c_yellow; }
 		drawFile(0,i1,i2,12*(i > 0),i-1);
@@ -42,7 +40,7 @@ if (page == "save" or page == "ask")
 	print(drText[1],139,201,,,,,,,,,,,,["menu_yellow","soul1","save",3]);
 }
 
-//
+
 
 if (page == "ask")
 {
@@ -58,7 +56,7 @@ if (page == "ask")
 	print(drText[1],175,166,,,,,,,,,,,,["menu_yellow","soul1","ask",1]);
 }
 
-//
+
 
 if (page == "filesaved")
 {
@@ -68,10 +66,8 @@ if (page == "filesaved")
 	draw_ext(sMenu,17,37,108,493/2);
 	draw_ext(sMenu,17,37,150,493/2);
 	
-	//
-	
 	res_i();
-	repeat(4)
+	repeat (4)
 	{
 		i2=c_dkgray; if (i == 0) { i2=c_yellow; }
 		if (i-1 == op.fileOn) { print(drText[7],160,28+i1,,,,,,,c_yellow,,,,,["fa_center"]); }else{ drawFile(0,i1,i2,12*(i > 0),i-1); }

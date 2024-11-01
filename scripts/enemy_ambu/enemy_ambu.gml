@@ -13,11 +13,10 @@ function enemy_ambu() : enemy_base() constructor
 	_hp=100;
 	_attack=50;
 	
-	//
+	
 	
 	_runSpeed=1;
 	
-	// Recruit Stuff
 	_recRequiredAmount=7;
 	_recChapter=2;
 	_recLV=5;

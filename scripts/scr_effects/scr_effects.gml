@@ -1,3 +1,4 @@
+//spawns bouncy battle text
 function effect_number(_number=100,_x,_y,_color=c_white,_font=op.fontDamage,_spriteImage=-1,_seed=[])
 {
 	if (op.battleTime > 40) { _x+=(op.x-160); _y+=(op.y-120); }
@@ -15,8 +16,9 @@ function effect_number(_number=100,_x,_y,_color=c_white,_font=op.fontDamage,_spr
 	}
 }
 
-//
 
+
+//spawns a sprites that fades out and then deletes itself
 function effect_fade(_sprite,_subimg=0,_x=x,_y=y,_xscale=1,_yscale=1,_rot=0,_col=c_white,_bright=0,_depth=-y,_seed=[],_startFunc=-1)
 {
 	with(instance_create_depth(_x,_y,-_y,oFadeEffect))
@@ -40,8 +42,9 @@ function effect_fade(_sprite,_subimg=0,_x=x,_y=y,_xscale=1,_yscale=1,_rot=0,_col
 	}
 }
 
-//
 
+
+//spawns a star effect that fades out after a while (used when healing)
 function effect_star(_x,_y,_seed)
 {
 	with (instance_create_depth(_x,_y,-9999,oStarEffect))
@@ -50,6 +53,9 @@ function effect_star(_x,_y,_seed)
 	}
 }
 
+
+
+//spawns a sprite that animates untuil it reaches the final frame and then it deletes itself
 function effect_subnumber(_sprite,_subimg=0,_x=x,_y=y,_xscale=1,_yscale=1,_rot=0,_col=c_white,_bright=0,_depth=-y,_seed=[])
 {
 	with(instance_create_depth(_x,_y,-_y,oSubnumberEffect))
@@ -73,6 +79,9 @@ function effect_subnumber(_sprite,_subimg=0,_x=x,_y=y,_xscale=1,_yscale=1,_rot=0
 	}
 }
 
+
+
+//spawns the text that apears over party members UI when they eat food
 function effect_textpop(_text="Skip",_x=200,_y=200,_font=fDetermination,_sep=12,_width=320,_xscale=1,_yscale=1,_angle=0,_c1=c_white,_c2=c_white,_c3=c_white,_c4=c_white,_alpha=1,_seed=[])
 {
 	with(instance_create_depth(_x,_y,-9999,oTextPopEffect))
@@ -90,6 +99,9 @@ function effect_textpop(_text="Skip",_x=200,_y=200,_font=fDetermination,_sep=12,
 	}
 }
 
+
+
+//this effect transitions usualy susie and kris when they are falling into the dark world. It masks their sprites and turns them from light world to dark world sprites.
 function effect_darkentrance(_numb)
 {
 	with(instance_create_depth(0,0,-9999,oDarkEntranceEffect))
@@ -98,6 +110,9 @@ function effect_darkentrance(_numb)
 	}
 }
 
+
+
+//spawns the small faces that can apear in text boxes
 function effect_smallface(_face=FACE.SUSIE,_image=1,_text="Skip",_x=150,_y=42,_font=fDetermination,_sep=12,_width=320,_angle=0,_c1=c_white,_c2=c_white,_c3=c_white,_c4=c_white,_alpha=1,_seed=[])
 {
 	--_image;
@@ -121,6 +136,9 @@ function effect_smallface(_face=FACE.SUSIE,_image=1,_text="Skip",_x=150,_y=42,_f
 	}
 }
 
+
+
+//spawns the numbers that apear when you recruit an enemy
 function effect_recruit(_enemyNumb,_recruitNumb)
 {
 	var _x=op.battle_enemyXY[_enemyNumb][0];
@@ -135,6 +153,9 @@ function effect_recruit(_enemyNumb,_recruitNumb)
 	}
 }
 
+
+
+//spawns a bunch of Z's before pacifying the enemy
 function effect_pacify(_enemyNumb)
 {
 	var _x=op.battle_enemyXY[_enemyNumb][0];
@@ -145,11 +166,15 @@ function effect_pacify(_enemyNumb)
 	instance_create_depth(_x,_y,0,oPacifyEffect);
 }
 
+
+
+//spawns the rude buster effect (can be used outside of battle)
 function effect_rudebuster(_x,_y,_targetX,_targetY)
 {
 	with (instance_create_depth(_x,_y,0,oRudeBusterEffect)) { targetXY=[_targetX,_targetY]; }
 }
 
+//spawns the bad explotion effect
 function effect_badexplosion(_x=x,_y=y,_depth=-9999,_image_speed=1,_sound=snd_badexplosion,_xscale=1,_yscale=1)
 {
 	if (_sound != -1) { sound(_sound); }
@@ -162,11 +187,17 @@ function effect_badexplosion(_x=x,_y=y,_depth=-9999,_image_speed=1,_sound=snd_ba
 	}
 }
 
+
+
+//spawns the dust that apears when you slide down a cliff
 function effect_slidedust(_x=x,_y=y)
 {
 	instance_create_depth(_x,_y,-_y,oSlideDustEffect);
 }
 
+
+
+//spawns text in the upper right corner of the screen akin to the "feild of hopes and dreams" text that only apears once in chapter 1
 function effect_fieldtext(_text="Song title goes here",_x=0,_y=0)
 {
 	with (instance_create_depth(_x,_y,-9999,oFieldTextEffect))

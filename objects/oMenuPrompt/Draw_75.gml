@@ -1,7 +1,10 @@
-if (op.mode != "battle") { draw_box(op.menuPrompt[0],op.menuPrompt[1],op.menuPrompt[2],op.menuPrompt[3],["red"]); }
+if (op.mode != "battle")
+{
+	draw_box(op.menuPrompt[0],op.menuPrompt[1],op.menuPrompt[2],op.menuPrompt[3],["red"]);
+}
 
 res_i();
-repeat(array_length(func))
+repeat (array_length(func))
 {
 	i1="A";
 	if (fa[i] == "C") { i1="fa_center"; }

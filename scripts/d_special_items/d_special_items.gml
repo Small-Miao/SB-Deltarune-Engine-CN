@@ -10,7 +10,7 @@ function item_cellPhone() : item_base() constructor
 	}
 }
 
-//
+
 
 function item_ballOfJunk() : item_base() constructor
 {

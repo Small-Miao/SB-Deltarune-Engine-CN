@@ -1,31 +1,37 @@
+//places all party members ontop of kris + advanced mode
 function reset_party_position(_keepPos=false)
 {
 	op.inputWait=true;
 	
 	with (oChar) { if (type == "pep") { instance_destroy(oChar); } }
+	
 	if (!_keepPos)
 	{
 		op.partyPos=array_create((array_length(op.party)+array_length(op.followers))*12,[op.playerX,op.playerY,op.playerDirection,0,"overworld"]);
 	}
 	
 	var i=0;
-	repeat(array_length(op.party)) 
+	repeat (array_length(op.party)) 
 	{
 		if (op.world == "dark") or (op.world == "light" and !op.party[i]._isDarkner) { create_char("pep",i); }
 		++i;
 	}
 	
 	i=0;
-	repeat(array_length(op.followers)) { op.setFollowerNumb=i; create_char("follower",op.followers[i][2],,,op.followers[i][1]); ++i; }
+	repeat (array_length(op.followers)) { op.setFollowerNumb=i; create_char("follower",op.followers[i][2],,,op.followers[i][1]); ++i; }
 	
 	with (oChar) { oChar.walkOffset=0; }
 }
 
+//will make the party seamlessly walk back in line after cutscene
 function party_lerp()
 {
 	with (oChar) { if (numb == 1 or numb == 2) { oChar.cutsceneStarted=true; oChar.cutsceneHappened=true oChar.walkOffset=0; } }
 }
 
+
+
+//increase party member health
 function party_heal(_numb=0,_amount=[100],_everyone=false,_autoHeal=false)
 {
 	var i=0, grab=0, image=-1, pastHP=-1;
@@ -86,8 +92,9 @@ function party_heal(_numb=0,_amount=[100],_everyone=false,_autoHeal=false)
 	}
 }
 
-//
 
+
+//decrease party member health
 function party_damage(_numb=0,_amount=100)
 {
 	var i=0, _hp=0, check=false;
@@ -137,12 +144,10 @@ function party_damage(_numb=0,_amount=100)
 		effect_number(_amount,char(_numb).x-15,char(_numb).y-15);
 	}
 	
-	//
-	//
-	//
+	
 	
 	i=0; _hp=0; check=true;
-	repeat(array_length(op.party))
+	repeat (array_length(op.party))
 	{
 		_hp+=op.hp[i];
 		if (op.hp[i] > 0) { check=false; }
@@ -169,10 +174,9 @@ function party_damage(_numb=0,_amount=100)
 	}
 }
 
-//
-//
-//
 
+
+//forcefully sets a party members stats
 function set_party_stats(_numb=1,_hpMax=100,_attack=0,_defense=0,_magic=0,_guts=3,_level=1,_weapon,_armor1=-1,_armor2=-1,_spells=[])
 {
 	op.hp[_numb]=_hpMax;
@@ -209,11 +213,9 @@ function set_party_stats(_numb=1,_hpMax=100,_attack=0,_defense=0,_magic=0,_guts=
 	}
 	
 	var i=0;
-	repeat(array_length(_spells)) { add_spell(_numb,_spells[i]); ++i; }
+	repeat (array_length(_spells)) { add_spell(_numb,_spells[i]); ++i; }
 	
-	//
-	//
-	//
+	
 	
 	update_allData();
 }

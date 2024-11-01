@@ -1,3 +1,4 @@
+//updates all the structs in all item arrays (makes it so you can put if checks in the structs)
 function updatestruct_items()
 {
 	var i=0;
@@ -7,6 +8,7 @@ function updatestruct_items()
 	i=0; repeat(array_length(op.cell)) { struct(instanceof(op.cell[i])); op.cell[i]=str; ++i; }
 }
 
+//updates all the structs in the party arrays (makes it so you can put if checks in the structs)
 function updatestruct_party()
 {
 	var i=0;

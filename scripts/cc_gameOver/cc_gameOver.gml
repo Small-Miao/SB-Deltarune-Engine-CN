@@ -1,3 +1,4 @@
+//game over scene
 function cc_gameOver() : cc_base() constructor
 {
 	_dialogue=["This is not your fate...!","Please, {jump} {delay:3} don't give up!"];

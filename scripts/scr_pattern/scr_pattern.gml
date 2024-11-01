@@ -1,3 +1,5 @@
+//sets the stats for an attack pattern
+//soul mode, box size & other things related
 function pattern_objects(_boxX=160,_boxY=85,_boxXscale=74,_boxYscale=74,_timer=100,_spawnSoul=true,_soulMode="red",_spawnBox=true)
 {
 	oMenuBattle.mode="dodge";
@@ -30,10 +32,9 @@ function pattern_objects(_boxX=160,_boxY=85,_boxXscale=74,_boxYscale=74,_timer=1
 	if (!oMenuBattle.exists_timer) { oMenuBattle.exists_timer=true; oMenuBattle.timer=_timer; }
 }
 
-//
-//
-//
 
+
+//spawns a battle bullet (ext) (use this for overworld bullets as well to set the damage)
 function spawn_bullet_ext(_sprite=sBullet,_subimg=0,_x=0,_y=0,_xscale=1,_yscale=1,_imageAngle=0,_direction=0,_col=c_white,_alpha=1,_walkXY=[0,0,0,0,10],_tp=1,_damage=-1,_seed=[])
 {
 	if (op.mode == "battle") { _x+=(op.x-160); _y+=(op.y-120); }
@@ -61,6 +62,7 @@ function spawn_bullet_ext(_sprite=sBullet,_subimg=0,_x=0,_y=0,_xscale=1,_yscale=
 	}
 }
 
+//spawns a battle bullet
 function spawn_bullet(_sprite=sBullet,_subimg=0,_x=0,_y=0,_walkXY=[0,0,0,0,10],_damage=-1,_seed=[])
 {
 	spawn_bullet_ext(_sprite,_subimg,_x,_y,,,,,,,_walkXY,,_damage,_seed);

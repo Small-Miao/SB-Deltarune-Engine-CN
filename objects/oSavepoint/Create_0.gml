@@ -1,3 +1,6 @@
+//when the room starts set (op.locationText) to a string in order to name the room when you save
+//when the room starts set op.locationCC to the string of a cutscene struct if you want there to be a text box before you accses the save menu 
+
 with (instance_create_depth(x,y+10,-y,oInteract))
 {
 	sprite_index=sSavepoint

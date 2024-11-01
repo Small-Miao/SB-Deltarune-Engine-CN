@@ -9,8 +9,8 @@
   "name":"oSpell_Template",
   "overriddenProperties":[],
   "parent":{
-    "name":"Spells_Act",
-    "path":"folders/Objects/Objects_Battle/Battle_Spells/Spells_Act.yy",
+    "name":"Spells_Common",
+    "path":"folders/Objects/Objects_Battle/Battle_Spells/Spells_Common.yy",
   },
   "parentObjectId":null,
   "persistent":false,

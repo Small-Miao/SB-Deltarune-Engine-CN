@@ -20,8 +20,6 @@ moveSoul=function(_x,_y)
 stop=false;
 stopAlpha=0;
 
-//
-//
-//
+
 
 drText=get_text("t_menuGameOver");

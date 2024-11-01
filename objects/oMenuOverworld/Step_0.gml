@@ -3,9 +3,13 @@ if (page == "mainMenuRoom") { reset_keys(); }
 if (page != "bind") { use_cursor(); }
 ++time;
 
+
+
 top=true;
 if (keybindGlow > 0) { keybindGlow-=0.1; }
 op.hudY+=(46-op.hudY)/2;
+
+
 
 if (page == 0)
 {
@@ -20,9 +24,7 @@ if (page == 0)
 	if tap_confirm(3) { page="config1"; cursor=0; }
 }
 
-//
-//
-//
+
 
 if (page == "item1")
 {
@@ -77,7 +79,7 @@ if (page == "itemUSEUSE" or page == "itemTOSSUSE")
 				res_i();
 				if array_contains(op.item[saveCur[1]]._seed,"everyone")
 				{
-					repeat(array_length(op.party))
+					repeat (array_length(op.party))
 					{
 						op.overworldMenuSaveCursor[2]=i; reactionSet(op.item[saveCur[1]]._reactionText[op.party[i]._numberExistence]);
 						++i;
@@ -89,9 +91,9 @@ if (page == "itemUSEUSE" or page == "itemTOSSUSE")
 					reactionSet(op.item[saveCur[1]]._reactionText[op.party[op.menuPep]._numberExistence]);
 				}
 				
-				// Extra reactions (_forceReact)
+				//extra reactions (_forceReact)
 				res_i();
-				repeat(array_length(op.item[saveCur[1]]._forceReact))
+				repeat (array_length(op.item[saveCur[1]]._forceReact))
 				{
 					op.overworldMenuSaveCursor[2]=existence_to_numb(op.item[saveCur[1]]._forceReact[i][0]);
 					if (op.overworldMenuSaveCursor[2] != op.menuPep and op.overworldMenuSaveCursor[2] != -1)
@@ -108,9 +110,7 @@ if (page == "itemUSEUSE" or page == "itemTOSSUSE")
 	}
 }
 
-//
-//
-//
+
 
 if (page == "equip1" or page == "power1")
 {
@@ -144,7 +144,7 @@ if (page == "weaarm")
 	
 	saveCur[3]=clamp(saveCur[3],0,5); saveCur[4]=clamp(saveCur[4],0,5);
 	
-	//
+	
 	
 	vertical_cursor(48); if (saveCur[0] == 0) { saveCur[1]=cursor; }else{ saveCur[2]=cursor; }
 	
@@ -170,9 +170,7 @@ if (page == "weaarm")
 	}
 }
 
-//
-//
-//
+
 
 if (page == "spells")
 {
@@ -181,9 +179,7 @@ if (page == "spells")
 	if tap_confirm() { force_undo(0); }
 }
 
-//
-//
-//
+
 
 if (page == "config1")
 {
@@ -224,7 +220,7 @@ if (page == "bind" and !keybindWait)
 {
 	res_i();
 	i1="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"; i2=-1; i3=-1;
-	repeat(string_length(i1))
+	repeat (string_length(i1))
 	{
 		++i;
 		if (i2 == -1) { if keyboard_check(ord(string_char_at(i1,i))) { i3=1; i2=string_char_at(i1,i); } }
@@ -241,7 +237,7 @@ if (page == "bind" and !keybindWait)
 	if (i2 != -1)
 	{
 		res_j();
-		repeat(7) { if (op.keybinds[j][1] == i2) { op.keybinds[j]=[op.keybinds[cursor][0],op.keybinds[cursor][1]]; } ++j; }
+		repeat (7) { if (op.keybinds[j][1] == i2) { op.keybinds[j]=[op.keybinds[cursor][0],op.keybinds[cursor][1]]; } ++j; }
 		
 		reset_keys();
 		op.keybinds[cursor]=[i3,i2];

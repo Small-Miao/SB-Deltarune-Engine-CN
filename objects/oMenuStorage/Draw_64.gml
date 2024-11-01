@@ -3,19 +3,17 @@ draw_ext(sPixel,0,22,62,(561-8)/2,(310-7)/2,,0);
 
 draw_ext(sPixel,0,20,137.5,561/2,2);
 
-//
-//
-//
 
+
+//draw pocket
 itemText="---";
 res_i();
 
-// Draw POCKET
 if (page == "start") { i1=c_gray; }else{ i1=c_dkgray; }
 print(drText[0],30.5,70.5,fDotum,,,0.5,0.5,,i1);
 
 res_i();
-repeat(12)
+repeat (12)
 {
 	i1=77.5; i2=72.5+floor(i/2)*10;
 	if (i mod 2) { i1+=110; }
@@ -28,20 +26,18 @@ repeat(12)
 	++i;
 }
 
-//
-//
-//
 
+
+//draw storage
 res_i();
 
-// Draw STORAGE
 if (page == "storage") { i1=c_gray; }else{ i1=c_dkgray; }
 print(drText[1],30.5,70.5+75,fDotum,,,0.5,0.5,,i1);
 print(drText[2],30.5,70.5+110,fDotum,,,0.5,0.5,,i1);
 print(string(storagePage+1)+"/2",30.5,70.5+120,fDotum,,,0.5,0.5,,i1);
 
 res_i();
-repeat(12)
+repeat (12)
 {
 	i1=77.5; i2=72.5+75+floor(i/2)*10;
 	if (i mod 2) { i1+=110; }
@@ -62,9 +58,7 @@ if (page == "storage")
 draw_ext(sPixel,,0,0,320,40,,0);
 print(itemText,10,9,,16);
 
-//
-//
-// Draw Soul4 Cursor
 
+
+//darw soul cursor
 draw_ext(sSoul2,0,op.soul4XY[0],op.soul4XY[1],0.25,0.25);
-//print(op.soul4XY);

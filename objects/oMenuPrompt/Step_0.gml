@@ -1,8 +1,6 @@
 use_keys();
 
-//
-//
-//
+
 
 if (cursor == -1)
 {
@@ -25,7 +23,7 @@ if (cursor == -1)
 	}
 }
 
-//
+
 
 if (cursor == 0)
 {
@@ -46,7 +44,7 @@ if (cursor == 0)
 	}
 }
 
-//
+
 
 if (cursor == 1)
 {
@@ -66,7 +64,8 @@ if (cursor == 1)
 		if tap_down() { cursor=3; }
 	}
 }
-//
+
+
 
 if (cursor == 2)
 {
@@ -82,12 +81,16 @@ if (cursor == 2)
 	}
 }
 
+
+
 if (cursor == 3)
 {
 	if tap_up() { cursor=0; }
 	if tap_left() { cursor=1; }
 	if tap_right() { cursor=2; }
 }
+
+
 
 if (cursor != -1 and tap_confirm())
 {

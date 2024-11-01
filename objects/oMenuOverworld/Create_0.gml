@@ -1,9 +1,5 @@
 mainMenuRoom=rMainMenu;
 
-//
-//
-//
-
 updatestruct_items(); updatestruct_party();
 
 reset_keys();
@@ -13,7 +9,7 @@ op.mode="menuOverworld";
 
 time=0;
 
-//
+
 
 endMenu=false;
 introY=1;
@@ -23,9 +19,7 @@ keybindGlow=0;
 
 op.menuPep=-1;
 
-//
-//
-//
+
 
 reactionText=["","",""];
 reactionAlpha=[0,0,0];
@@ -36,9 +30,7 @@ reactionSet=function(_text)
 	reactionAlpha[op.overworldMenuSaveCursor[2]]=6;
 }
 
-//
-//
-//
+
 
 drText=get_text("t_menuOverworld");
 drTextSettings=get_text("t_menuOverworldSettings");

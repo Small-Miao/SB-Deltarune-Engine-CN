@@ -9,9 +9,7 @@ bet="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 type="";
 alpha=0;
 
-//
-//
-//
+
 
 typeLength=12;
 topText="TOP TEXT";
@@ -21,8 +19,6 @@ funcEnd=-1;
 
 draw=-1;
 
-//
-//
-//
+
 
 drText=get_text("t_menuWriter");

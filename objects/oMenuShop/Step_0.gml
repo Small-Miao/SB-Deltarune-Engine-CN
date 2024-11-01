@@ -1,8 +1,10 @@
 use_keys(); if (page == 0) { reset_keys(); }
 
-//
+
+
 if (tapCancel) and (page == "buy" or page == "sell" or page == "talk") { spawnFlavour=true; }
-//
+
+
 
 if (tapCancel and page == "buy2") { spawnThin=true; textThin=[sstr._textBuy[1]]; }
 if (tapCancel) and (page == "sellItem" or page == "sellWeapon" or page =="sellArmor" or page == "sellStorage") { spawnThin=true; textThin=[sstr._textSell[0]]; }
@@ -19,7 +21,7 @@ if (time == 2)
 	
 	items=[];
 	res_i();
-	repeat(4)
+	repeat (4)
 	{
 		struct(sstr._items[i]); array_push(items,str);
 		++i;
@@ -28,9 +30,7 @@ if (time == 2)
 	sprite=sstr._spriteIdle;
 }
 
-//
-//
-//
+
 
 if (dialogueDone) { dialogueDone=false; force_undo(0); spawnThin=true; textThin=[sstr._textTalk]; sprite=sstr._spriteIdle; }
 if (page == "buy" or page == "buy2") { nudge-=4; }else{ nudge+=4; } nudge=clamp(nudge,-60,0);
@@ -51,7 +51,7 @@ if (page == "start")
 	if (page == "talk") { spawnThin=true; textThin=[sstr._textTalk]; cursor=0; }
 }
 
-//
+
 
 if (page == "buy" or page == "buy2")
 {
@@ -78,7 +78,7 @@ if (page == "buy")
 	}
 }
 
-//
+
 
 if (page == "buy2")
 {
@@ -118,7 +118,7 @@ if (page == "buy2")
 	if tap_confirm(1) { spawnThin=true; textThin=[sstr._textBuy[1]]; force_undo(1); }
 }
 
-//
+
 
 if (page == "sell")
 {
@@ -133,26 +133,26 @@ if (page == "sell")
 	if tap_confirm(1)
 	{
 		page="sellWeapon"; spawnThin=true;
-		res_i(); i1=true; repeat(array_length(op.weapon)) { if (op.weapon[i] != -1) { i1=false; } ++i; }
+		res_i(); i1=true; repeat (array_length(op.weapon)) { if (op.weapon[i] != -1) { i1=false; } ++i; }
 		if (i1) { force_undo(0); textThin=[sstr._textSell[4]]; }else{ cursor=0; textThin=[sstr._textSell[2]]; }
 	}
 	if tap_confirm(2)
 	{
 		page="sellArmor"; spawnThin=true;
-		res_i(); i1=true; repeat(array_length(op.armor)) { if (op.armor[i] != -1) { i1=false; } ++i; }
+		res_i(); i1=true; repeat (array_length(op.armor)) { if (op.armor[i] != -1) { i1=false; } ++i; }
 		if (i1) { force_undo(0); textThin=[sstr._textSell[4]]; }else{ cursor=0; textThin=[sstr._textSell[3]]; }
 	}
 	if tap_confirm(3)
 	{
 		page="sellStorage"; spawnThin=true;
-		res_i(); i1=true; repeat(array_length(op.storage)) { if (op.storage[i] != -1) { i1=false; } ++i; }
+		res_i(); i1=true; repeat (array_length(op.storage)) { if (op.storage[i] != -1) { i1=false; } ++i; }
 		if (i1) { force_undo(0); textThin=[sstr._textSell[4]]; }else{ cursor=0; textThin=[sstr._textSell[1]]; }
 	}
 	
 	if tap_confirm(4) { spawnFlavour=true; force_undo(1); }
 }
 
-//
+
 
 if (page == "sellItem" or page == "sellWeapon" or page == "sellArmor" or page == "sellStorage")
 {
@@ -187,6 +187,8 @@ if (page == "sellItem" or page == "sellWeapon" or page == "sellArmor" or page ==
 		if (sellArray[saveCur[2]] == -1) { force_undo(0); spawnThin=true; textThin=[sstr._textSell[8]]; }else if (!sellArray[saveCur[2]]._canSell) { force_undo(0); spawnThin=true; textThin=[sstr._textSell[9]]; }
 	}
 }
+
+
 
 if (page == "sellYN")
 {
@@ -228,7 +230,7 @@ if (page == "sellYN")
 	if tap_confirm(1) { force_undo(1); spawnThin=true; textThin=[sstr._textSell[6]]; }
 }
 
-//
+
 
 if (page == "talk")
 {
@@ -255,9 +257,6 @@ if (page == "talk")
 }
 
 
-//
-//
-//
 
 if (page != "start") { checkOtherMenu=true; }
 
@@ -274,9 +273,9 @@ if (spawnThin)
 	spawnThin=false;
 	op.textCC=textThin;
 	
-	i=0; repeat(array_length(sstr._textFlavour)) { if (op.textCC[0] == sstr._textFlavour[i] and sstr._spriteFlavour[i] != -1) { sprite=sstr._spriteFlavour[i]; } ++i; }
-	i=0; repeat(array_length(sstr._textBuy)) { if (op.textCC[0] == sstr._textBuy[i] and sstr._spriteBuy[i] != -1) { sprite=sstr._spriteBuy[i]; } ++i; }
-	i=0; repeat(array_length(sstr._textSell)) { if (op.textCC[0] == sstr._textSell[i] and sstr._spriteSell[i] != -1) { sprite=sstr._spriteSell[i]; } ++i; }
+	i=0; repeat (array_length(sstr._textFlavour)) { if (op.textCC[0] == sstr._textFlavour[i] and sstr._spriteFlavour[i] != -1) { sprite=sstr._spriteFlavour[i]; } ++i; }
+	i=0; repeat (array_length(sstr._textBuy)) { if (op.textCC[0] == sstr._textBuy[i] and sstr._spriteBuy[i] != -1) { sprite=sstr._spriteBuy[i]; } ++i; }
+	i=0; repeat (array_length(sstr._textSell)) { if (op.textCC[0] == sstr._textSell[i] and sstr._spriteSell[i] != -1) { sprite=sstr._spriteSell[i]; } ++i; }
 	
 	start_cutscene("cc_shopThin");
 }

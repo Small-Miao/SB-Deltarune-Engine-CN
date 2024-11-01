@@ -1,5 +1,3 @@
-
-
 if (time < 45) { if surface_exists(op.dieSprite) { draw_surface_ext(op.dieSprite,0,0,0.5,0.5,0,c_white,1); } }
 
 if (time > 145)
@@ -27,9 +25,7 @@ if (page == "sel")
 	if (op.isBoss) { print(drText[2],160,184+20,,,,,,,,,,,alpha[1],["fa_center","menu_yellow","sel",3]); }
 }
 
-//
-//
-//
+
 
 draw_ext(sPixel,0,0,0,9999,9999,,0,stopAlpha);
 if (stopAlpha < 1 and stopAlpha > 0) { stopAlpha+=0.1; }

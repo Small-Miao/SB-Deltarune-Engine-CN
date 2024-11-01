@@ -1,3 +1,4 @@
+//returns a string of which direction something is moveing
 function pos_to_ang(_x1,_y1,_x2,_y2,_returnNumb=false)
 {
 	var angle=point_direction(_x1,_y1,_x2,_y2);
@@ -10,8 +11,9 @@ function pos_to_ang(_x1,_y1,_x2,_y2,_returnNumb=false)
 	return(0);
 }
 
-//
 
+
+//insert a numberExistence value and turns it into the partys position
 function existence_to_numb(__numberExistence=0)
 {
 	var counter=0;
@@ -23,36 +25,40 @@ function existence_to_numb(__numberExistence=0)
 	return(-1);
 }
 
-//
 
+
+//insert the name of a color and get that colors index back
 function string_to_color(_string="red")
 {
 	switch (_string)
 	{
-		case "aqua"    : return(c_aqua);    break;
-		case "black"   : return(c_black);   break;
-		case "blue"    : return(c_blue);    break;
-		case "dkgray"  : return(c_dkgray);  break;
-		case "fuchsia" : return(c_fuchsia); break;
-		case "gray"    : return(c_gray);    break;
-		case "green"   : return(c_green);   break;
-		case "lime"    : return(c_lime);    break;
-		case "ltgray"  : return(c_ltgray);  break;
-		case "maroon"  : return(c_maroon);  break;
-		case "navy"    : return(c_navy);    break;
-		case "olive"   : return(c_olive);   break;
-		case "orange"  : return(c_orange);  break;
-		case "purple"  : return(c_purple);  break;
-		case "red"     : return(c_red);     break;
-		case "silver"  : return(c_silver);  break;
-		case "teal"    : return(c_teal);    break;
-		case "white"   : return(c_white);   break;
-		case "yellow"  : return(c_yellow);  break;
+		case "aqua"    : return(c_aqua);
+		case "black"   : return(c_black);
+		case "blue"    : return(c_blue);
+		case "dkgray"  : return(c_dkgray);
+		case "fuchsia" : return(c_fuchsia);
+		case "gray"    : return(c_gray);
+		case "green"   : return(c_green);
+		case "lime"    : return(c_lime);
+		case "ltgray"  : return(c_ltgray);
+		case "maroon"  : return(c_maroon);
+		case "navy"    : return(c_navy);
+		case "olive"   : return(c_olive);
+		case "orange"  : return(c_orange);
+		case "purple"  : return(c_purple);
+		case "red"     : return(c_red);
+		case "silver"  : return(c_silver);
+		case "teal"    : return(c_teal);
+		case "white"   : return(c_white);
+		case "yellow"  : return(c_yellow);
 		
 		case "alex" : return(make_color_rgb(128,0,70)); break;
 	}
 }
- 
+
+
+
+//insert a hex code of a color and get that colors index back
 function hex_to_dec(_hex) 
 {
     var dec = 0;
@@ -66,6 +72,9 @@ function hex_to_dec(_hex)
     return dec;
 }
 
+
+
+//return the string of the keybind of the chosen key
 function get_keybind(_numb)
 {
 	if (op.keybinds[_numb][0] == 0)
@@ -77,14 +86,9 @@ function get_keybind(_numb)
 	}else{ return(op.keybinds[_numb][1]); }
 }
 
-//
-//
-//
 
-//
-//
-//
 
+//returns how many of an ability your party currently has combined
 function ability_amount(_ability)
 {
 	var i=0, j=0, found=0;

@@ -1,4 +1,4 @@
-// Declares keyboard variables
+//declares keyboard variables
 function reset_keys() {
 	keyUp=false; tymeUp=2; tapUp=false;
 	keyDown=false; tymeDown=2; tapDown=false;
@@ -11,7 +11,7 @@ function reset_keys() {
 	menuSound=true;
 }
 
-// Allows for keyboard inputs
+//allows for keyboard inputs
 function use_keys(_sound=false) {
 	
 	menuSound=_sound;
@@ -24,15 +24,7 @@ function use_keys(_sound=false) {
 	if (op.keybinds[5][0] == 0) { keyCancel=keyboard_check(op.keybinds[5][1]);  }else{ keyCancel=keyboard_check(ord(op.keybinds[5][1])); }
 	if (op.keybinds[6][0] == 0) { keyMenu=keyboard_check(op.keybinds[6][1]);    }else{ keyMenu=keyboard_check(ord(op.keybinds[6][1])); }
 	
-	/*
-	keyUp=keyboard_check(vk_up);
-	keyDown=keyboard_check(vk_down);
-	keyLeft=keyboard_check(vk_left);
-	keyRight=keyboard_check(vk_right);
-	keyConfirm=keyboard_check(ord("Z"));
-	keyCancel=keyboard_check(ord("X"));
-	keyMenu=keyboard_check(ord("C"));
-	*/
+	
 	
 	if (keyboard_check(vk_enter)) { keyConfirm=true; }
 	if (keyboard_check(vk_shift)) { keyCancel=true; }
@@ -55,7 +47,7 @@ function use_keys(_sound=false) {
 	if (keyMenu and tymeMenu == 1)       { tapMenu=true;    }else{ tapMenu=false; }
 }
 
-// Hold keys input
+//hold keys input
 function key_up() { return(keyUp); }
 function key_down() { return(keyDown); }
 function key_left() { return(keyLeft); }
@@ -64,7 +56,7 @@ function key_confirm() { return(keyConfirm); }
 function key_cancel() { return(keyCancel); } 
 function key_menu() { return(keyMenu); }
 
-// Tap keys input
+//tap keys input
 function tap_up(_cursor=-1) { if (_cursor == -1) { if (tapUp) { tapUp=false; return(true); }else{ return(false); } }else{  if (tapUp and _cursor == cursor) { tapUp=false; return(true); }else{ return(false); }  } }
 function tap_down(_cursor=-1) { if (_cursor == -1) { if (tapDown) { tapDown=false; return(true); }else{ return(false); } }else{  if (tapDown and _cursor == cursor) { tapDown=false; return(true); }else{ return(false); }  } }
 function tap_left(_cursor=-1) { if (_cursor == -1) { if (tapLeft) { tapLeft=false; return(true); }else{ return(false); } }else{  if (tapLeft and _cursor == cursor) { tapLeft=false; return(true); }else{ return(false); }  } }
@@ -72,96 +64,3 @@ function tap_right(_cursor=-1) { if (_cursor == -1) { if (tapRight) { tapRight=f
 function tap_confirm(_cursor=-1,_sound=true) { if (_cursor == -1) { if (tapConfirm) { if (_sound and menuSound) { sound(snd_select); } tapConfirm=false; tapCancel=false; tapMenu=false; frame=true; return(true); }else{ return(false); } }else{  if (tapConfirm and _cursor == cursor) { if (_sound and menuSound) { sound(snd_select); } tapConfirm=false; tapCancel=false; tapMenu=false; return(true); }else{ return(false); }  } }
 function tap_cancel(_cursor=-1,_sound=true) { var _s=snd_menumove; if (op.mode == "menuOverworld") { _s=snd_smallswing; } if (_cursor == -1) { if (tapCancel) { if (_sound and menuSound) { sound(_s); } tapConfirm=false; tapCancel=false; tapMenu=false; return(true); }else{  return(false); } }else{  if (tapCancel and _cursor == cursor) { if (_sound and menuSound) { sound(_s); } tapConfirm=false; tapCancel=false; tapMenu=false; return(true); }else{  return(false); }  } }
 function tap_menu(_cursor=-1,_sound=true) { if (_cursor == -1) { if (tapMenu) { if (_sound and menuSound) { sound(snd_menumove); } tapConfirm=false; tapCancel=false; tapMenu=false; return(true); }else{ return(false); } }else{  if (tapMenu and _cursor == cursor) { if (_sound and menuSound) { sound(snd_menumove); } tapConfirm=false; tapCancel=false; tapMenu=false; return(true); }else{ return(false); }  } }
-
-/*
-function tap_up(_cursor=-1)
-{
-	var result=false;
-	
-    if (_cursor == -1) 
-		result=tapUp; 
-    else if (tapUp and _cursor == cursor) 
-		result=true; 
-		
-    tapUp=false;
-    return result;
-}
-
-function tap_down(_cursor=-1)
-{
-	var result=false;
-	
-    if (_cursor == -1) 
-		result=tapDown; 
-    else if (tapDown and _cursor == cursor) 
-		result=true; 
-		
-    tapDown=false;
-    return result;
-}
-
-function tap_left(_cursor=-1)
-{
-	var result=false;
-	
-    if (_cursor == -1) 
-		result=tapLeft; 
-    else if (tapLeft and _cursor == cursor) 
-		result=true; 
-		
-    tapLeft=false;
-    return result;
-}
-
-function tap_right(_cursor=-1)
-{
-	var result=false;
-	
-    if (_cursor == -1) 
-		result=tapRight; 
-    else if (tapRight and _cursor == cursor) 
-		result=true; 
-		
-    tapRight=false;
-    return result;
-}
-
-function tap_confirm(_cursor=-1)
-{
-	var result=false;
-	
-    if (_cursor == -1) 
-		result=tapConfirm; 
-    else if (tapConfirm and _cursor == cursor) 
-		result=true; 
-		
-    tapConfirm=false;
-    return result;
-}
-
-function tap_cancel(_cursor=-1)
-{
-	var result=false;
-	
-    if (_cursor == -1) 
-		result=tapCancel; 
-    else if (tapCancel and _cursor == cursor) 
-		result=true; 
-		
-    tapCancel=false;
-    return result;
-}
-
-function tap_menu(_cursor=-1)
-{
-	var result=false;
-	
-    if (_cursor == -1) 
-		result=tapMenu; 
-    else if (tapMenu and _cursor == cursor) 
-		result=true; 
-		
-    tapMenu=false;
-    return result;
-}
-*/

@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Faces_Small",
-    "path":"folders/Fonts/Faces_Small.yy",
+    "name":"Fonts_Faces_Small",
+    "path":"folders/Fonts/Fonts_Faces_Small.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,6 +1,6 @@
 use_keys(true);
 
-//
+
 
 if (tapUp and page == "start") or (tapLeft and page == "more")
 {
@@ -18,7 +18,7 @@ if (tapDown and page == "start") or (tapRight and page == "more")
 
 if (array_length(rec) < 10) { offsetPress=0; offset=0; }
 
-//
+
 
 if (page == "start")
 {
@@ -29,7 +29,7 @@ if (page == "start")
 	if tap_cancel() { instance_destroy(); op.mode="overworld"; }
 }
 
-//
+
 
 if (page == "more")
 {

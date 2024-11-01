@@ -20,7 +20,7 @@ function pep_susie() : pep_base() constructor
 	_spriteUnAct=sSusie_UnAct;
 	_spriteSlash=sSusie_Slash;
 	
-	//
+	
 	
 	_spriteDEjump=sSusie_JumpLight;
 	_spriteDEfallBack=sSusie_FallBackLight;
@@ -33,7 +33,7 @@ function pep_susie() : pep_base() constructor
 	_spriteRise=sSusie_Rise;
 	_spriteSlide=sSusie_Slide;
 	
-	//
+	
 	
 	_numberExistence=1;
 	
@@ -44,11 +44,11 @@ function pep_susie() : pep_base() constructor
 	
 	_seed=["greed"];
 	
-	//
+	
 	
 	_greedText=["I'm too GOOD for that.","Hey, hands off!"];
 	
-	// Battle
+	
 	
 	_UIcolor=make_color_rgb(255,0,255);
 	_UIface=sSusie_Face;

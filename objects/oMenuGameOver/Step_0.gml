@@ -4,9 +4,7 @@ if (time == 1) { op.mode="dead"; }
 if (time == 45) { instance_create_depth(op.x+XY[0],op.y+XY[1],-9999,oSoulBreakEffect); }
 if (time == 150) { music(mus_defeat); }
 
-//op.isBoss=true;
 
-//
 
 use_keys();
 
@@ -61,9 +59,9 @@ if (page == "sel" and !stop)
 			op.retryBattleTimer=10;
 			reset_party_position();
 			file_load("battle");
-			//
 			
-			//
+			
+			
 			start_battle();
 			instance_destroy();
 		}

@@ -12,7 +12,7 @@ if (page == "start")
 	if tap_confirm(2) { if (array_length(op.cell) == 0) { force_undo(0); }else{ page="cell" cursor=0; } }
 }
 
-//
+
 
 if (page == "item")
 {
@@ -31,7 +31,7 @@ if (page == "item2")
 	
 }
 
-//
+
 
 if (page == "stat")
 {
@@ -39,7 +39,6 @@ if (page == "stat")
 }
 
 
-//
 
 if (page == "cell")
 {

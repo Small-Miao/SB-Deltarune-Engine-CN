@@ -2,7 +2,7 @@ function enemy_jevil() : enemy_base() constructor
 {
 	_name="Jevil";
 	
-	//
+	
 	
 	_spriteWalk=sJevil_Sad;
 	_spriteTouch=sJevil_Smile;
@@ -14,7 +14,7 @@ function enemy_jevil() : enemy_base() constructor
 	
 	_drawFunc="draw_ene_jevil";
 	
-	//
+	
 	
 	_textRandom=[];
 	
@@ -27,13 +27,13 @@ function enemy_jevil() : enemy_base() constructor
 	_boubleOffsetXY=[-40,-20];
 	_slashOffsetXY=[0,-20];
 	
-	// Overworld exclamation wait time
+	
+	
 	_reactionTime=0;
 	_exclamationOffset=-50;
 	
-	//
 	
-	// Act options:
+	
 	_spells=["spell_plus","spell_dothing1","spell_dothing2","spell_dothing3","spell_dothing4"];
 	
 	_hp=125;
@@ -44,7 +44,8 @@ function enemy_jevil() : enemy_base() constructor
 	_handler=oHandler_Jevil;
 	_patterns=[];
 	
-	// Recruit Stuff
+	
+	
 	_recRequiredAmount=1;
 	_recChapter=0;
 	_recLV=10;

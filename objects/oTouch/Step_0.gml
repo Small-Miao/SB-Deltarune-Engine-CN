@@ -1,5 +1,6 @@
 if (op.showHitboxes) { image_alpha=1; }else{ image_alpha=0; }
 
+//step on
 if (place_meeting(x,y,oPlayerCol) and check)
 {
 	check=false;
@@ -7,6 +8,7 @@ if (place_meeting(x,y,oPlayerCol) and check)
 	if (destroy) { instance_destroy(); }
 }
 
+//step off
 if (!place_meeting(x,y,oPlayerCol) and !check)
 {
 	check=true;

@@ -19,7 +19,7 @@ if (page == "start")
 	
 	
 	res_i();
-	repeat(array_length(rec))
+	repeat (array_length(rec))
 	{
 		if (i > -1+offset and i < 9+offset)
 		{
@@ -39,9 +39,7 @@ if (page == "start")
 	}
 }
 
-//
-//
-//
+
 
 if (page == "more")
 {
@@ -53,7 +51,7 @@ if (page == "more")
 	
 	print(drText[7]+" ["+get_keybind(5)+"] "+drText[8],40,204,,,,,,,,,,,,["menu","soul4","more",cursor]);
 	
-	//
+	
 	
 	draw_boxColor(39.5,34.5);
 	
@@ -79,9 +77,8 @@ if (page == "more")
 	print(drText[15],280,164,,,,0.5,,,,,,,,["fa_right"]);
 }
 
-//
-//
-// Draw Soul4 Cursor
 
+
+//darw soul cursor
 draw_ext(sSoul,0,op.soul4XY[0]-6,op.soul4XY[1]+5,0.5,0.5);
 //print(op.soul4XY);

@@ -1,8 +1,13 @@
+//creates a struct based on a string and puts it in the (str) variable
+
 function struct(_struct_text)
 {
 	str=asset_get_index(_struct_text); str=new str();
 }
 
+
+
+//check if an array contains a struct
 function has_struct(_array,_struct_text)
 {
 	op.structAt=-1;
@@ -27,10 +32,9 @@ function has_struct(_array,_struct_text)
 	return(false);
 }
 
-//
-//
-//
 
+
+//add a party member to the party
 function add_party(_struct_text)
 {
 	update_allData();
@@ -48,6 +52,7 @@ function add_party(_struct_text)
 	update_stats();
 }
 
+//remove a party member from the party
 function remove_party(__numberExistence)
 {
 	update_allData();
@@ -69,10 +74,9 @@ function remove_party(__numberExistence)
 	update_stats();
 }
 
-//
-//
-//
 
+
+//add an item to your dark world inventory
 function add_item(_struct_text,_key=false,_cc=false)
 {
 	struct(_struct_text);
@@ -123,6 +127,7 @@ function add_item(_struct_text,_key=false,_cc=false)
 	}
 }
 
+//add a weapon to your dark world inventory
 function add_weapon(_struct_text,_cc=false)
 {
 	struct(_struct_text);
@@ -147,6 +152,7 @@ function add_weapon(_struct_text,_cc=false)
 	}
 }
 
+//add a armor to your dark world inventory
 function add_armor(_struct_text,_cc=false)
 {
 	struct(_struct_text);
@@ -171,6 +177,9 @@ function add_armor(_struct_text,_cc=false)
 	}
 }
 
+
+
+//increase money
 function add_money(_money=1,_cc=false)
 {
 	op.money+=_money;
@@ -186,6 +195,8 @@ function add_money(_money=1,_cc=false)
 	}
 }
 
+
+//adds a spell to a party member in your current party
 function add_spell(_pep,_struct_text)
 {
 	struct(_struct_text);
@@ -193,10 +204,9 @@ function add_spell(_pep,_struct_text)
 	array_push(op.spells[_pep],str);
 }
 
-//
-//
-//
 
+
+// [[[ OUTDATED LEAVE BE ]]]
 function equip_item(_pep=0,_spot=0,_grab=0)
 {
 	sound(snd_equip);
@@ -214,10 +224,9 @@ function equip_item(_pep=0,_spot=0,_grab=0)
 	if (store2 != -1) { op.attack[_pep]+=store2._attack; op.defense[_pep]+=store2._defense; op.magic[_pep]+=store2._magic; op.ability[_pep][_spot]=store2._ability; }
 }
 
-//
-//
-//
 
+
+//add an item to your light world inventory
 function add_itemlight(_struct_text)
 {
 	struct(_struct_text);
@@ -225,6 +234,7 @@ function add_itemlight(_struct_text)
 	op.overworldMenuSaveCursor=[0,0,0,0,0,0,0,0,0];
 }
 
+//add a cell to your light world inventory (cells are just item structs)
 function add_cell(_struct_text)
 {
 	struct(_struct_text);
@@ -232,10 +242,9 @@ function add_cell(_struct_text)
 	op.overworldMenuSaveCursor=[0,0,0,0,0,0,0,0,0];
 }
 
-//
-//
-//
 
+
+//spawn the shop object with information from a struct
 function create_shop(_struct_text="shop_base")
 {
 	with (instance_create_depth(0,0,-9999,oMenuShop))
@@ -246,14 +255,13 @@ function create_shop(_struct_text="shop_base")
 	}
 }
 
-//
-//
-//
 
-//
-//
-//
 
+
+
+
+//in item structs you can add reaction text with this function so you don't have to put an empty space for kris every single time
+//set the struct variable (_reactionText) to what this function returns
 function auto_kris_reaction(_array=["(Susie item Text)","(Ralsei item Text)"])
 {
 	var array=[""], i=0;

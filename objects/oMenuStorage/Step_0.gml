@@ -10,7 +10,7 @@ if (page == "start")
 	if tap_cancel() { instance_destroy(); op.mode="overworld"; }
 }
 
-//
+
 
 if (page == "storage")
 {

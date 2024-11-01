@@ -26,7 +26,13 @@ if (page == "start")
 					if (time == 1) { master_reset(); reset_party_position(); persistent=false; instance_destroy(); }
 				}
 			}
-			op.x=160; op.y=120; op.playerX=100; op.playerY=100; op.mode="overworld";
+			
+			op.x=160;
+			op.y=120;
+			op.playerX=100;
+			op.playerY=100;
+			op.mode="overworld";
+			
 			room_goto(rRoom1);
 		}
 	}

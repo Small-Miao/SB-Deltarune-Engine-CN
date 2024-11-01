@@ -7,8 +7,6 @@ itemText=0;
 
 op.soul4XY=[72.5,76];
 
-//
-//
-//
+
 
 drText=get_text("t_menuStorage");

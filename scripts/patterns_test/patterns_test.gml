@@ -1,5 +1,6 @@
 function pattern1()
 {
+	//only runs the first frame the pattern is created
 	if (time == 1)
 	{
 		pattern_objects();
@@ -14,10 +15,13 @@ function pattern1()
 
 function pattern2()
 {
+	//only runs the first frame the pattern is created
 	if (time == 1)
 	{
 		pattern_objects(,,,110,100);
 	}
+	
+	
 	
 	if !(time mod 10)
 	{
@@ -30,16 +34,16 @@ function pattern2()
 
 function pattern3()
 {
+	//only runs the first frame the pattern is created
 	if (time == 1)
 	{
 		pattern_objects(,,,,,,,false);
 	}
 	
+	
+	
 	if !(time mod 3)
 	{
 		spawn_bullet_ext(,,irandom_range(0,320),0,0.5,0.5,,,,,[0,0,0,0.1,10]);
 	}
-	
-	//force_partyTurn();
-	//instance_destroy();
 }

@@ -1,6 +1,6 @@
 function item_amberCard() : item_base() constructor
 {
-	_infoText=["Amber Card","afdasdf","adsfadf","asdfasd"];
+	_infoText=["Amber Card","This card\nis sticky"];
 	
 	_attack=1;
 	_defense=1;
@@ -11,7 +11,7 @@ function item_amberCard() : item_base() constructor
 
 function item_whiteRibbon() : item_base() constructor
 {
-	_infoText=["White Ribbon","adwedf","adfafd","Cuteness"];
+	_infoText=["White Ribbon","the item you find\nin that maze from chapter 1","a","Cuteness"];
 	
 	_attack=3;
 	_defense=3;
@@ -19,5 +19,6 @@ function item_whiteRibbon() : item_base() constructor
 	
 	_ability="cute";
 	
+	//susie doesn't want to equip this
 	_cantHave=[1];
 }

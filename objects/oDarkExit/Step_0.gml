@@ -15,7 +15,7 @@ if (place_meeting(x,y,oPlayerCol) and check and !isFloor and time > 5)
 	res_i();
 	repeat(j-1) { ++i; i1+=40/i; }
 	
-	//
+	
 	
 	if (j == 1)
 	{
@@ -76,9 +76,7 @@ if (!check and !isFloor)
 	}
 }
 
-//
-//
-//
+
 
 if (op.darkEntranceRoom != -1)
 { instance_destroy(); }

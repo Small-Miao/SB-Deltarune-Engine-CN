@@ -1,3 +1,4 @@
+//damages the enemy and makes them run away if they run out of HP
 function enemy_damage(_from,_to=0,_accuracy=1,_pickDamage=-1,_sound=true)
 {
 	if array_contains(oMenuBattle.enemyHere,true)
@@ -76,10 +77,9 @@ function enemy_damage(_from,_to=0,_accuracy=1,_pickDamage=-1,_sound=true)
 	}
 }
 
-//
-//
-//
 
+
+//adds mercy percent to an enemy
 function enemy_mercy(_numb=0,_amount=1,_sound=true)
 {
 	var image=-1, color=c_white;
@@ -93,20 +93,23 @@ function enemy_mercy(_numb=0,_amount=1,_sound=true)
 	++oMenuBattle.eneUp[_numb];
 }
 
+//sets an enemy to be tired
 function enemy_tired(_numb=0,_set=true)
 {
 	op.battle_enemyTired[_numb]=_set;
 }
 
+//this function will force the enemy to say something when it's their turn to speak
+//You can run this in custom spell objects to make the enemy have a reaction to what you just did
 function force_speak(_numb=0,_text="Skip",_xscale=100)
 {
 	oMenuBattle.forceSpeak[_numb]=[_text,_xscale];
 }
 
-//
-//
-//
 
+
+//will remove the enemy from battle if it has 100% spare (and sparing it of course)
+//this also adds random encounter enemys to the recruits
 function enemy_spare(_numb,_tiredSpare=false)
 {
 	var _char="ene"+string(_numb);
@@ -165,10 +168,9 @@ function enemy_spare(_numb,_tiredSpare=false)
 	}
 }
 
-//
-//
-//
 
+
+//increase stats for an enemy temporarily
 function enemy_extraStats(_numb,_attack,_defense,_time)
 {
 	oMenuBattle.enemyAttackExtra[_numb]+=_attack;
@@ -176,8 +178,9 @@ function enemy_extraStats(_numb,_attack,_defense,_time)
 	oMenuBattle.extraStatsTimer[_numb]+=_time;
 }
 
-//
 
+
+//adds a new enemy into battle during a battle
 function add_enemy(_struct_text,_numb=0,_xOffset=0,_yOffset=0,_animateSeed=[])
 {
 	op.battle_enemyString[_numb]="enemy_ambu"; struct(op.battle_enemyString[_numb]);

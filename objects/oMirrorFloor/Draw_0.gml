@@ -2,7 +2,7 @@ var info=[];
 var order=[];
 var i=0, i1=0, checkY=0;
 
-//
+
 
 with(oChar)
 {
@@ -22,11 +22,11 @@ while (array_length(info) != 0)
 	array_delete(info,i1,1);
 }
 
-//
+
 
 if (op.showHitboxes and !forceHide) { draw_self(); }
 
-//
+
 
 if (!surface_exists(surf)) { surf=surface_create(room_width,room_height); }
 
@@ -34,6 +34,7 @@ surface_set_target(surf);
 
 draw_clear_alpha(c_white,0);
 
+//draw chars
 i=0;
 repeat(array_length(order))
 {
@@ -48,6 +49,6 @@ surface_reset_target();
 
 draw_surface_ext(surf,0,0,1,1,0,c_white,draw_alpha);
 
-//
+
 
 if (draw != -1) { draw(); }

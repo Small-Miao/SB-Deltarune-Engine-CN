@@ -19,17 +19,15 @@ while has_progress(string(talkChecks[1])+"="+string(talkChecks[talkChecks[1]])+"
 while has_progress(string(talkChecks[2])+"="+string(talkChecks[talkChecks[2]])+"="+string(room)+"talk") { ++talkChecks[2]; }
 while has_progress(string(talkChecks[3])+"="+string(talkChecks[talkChecks[3]])+"="+string(room)+"talk") { ++talkChecks[3]; }
 
-//
+
 
 dialogueDone=false;
 
-//
+
 
 sprite=sPixel; image=0;
 nudge=0;
 
-//
-//
-//
+
 
 drText=get_text("t_menuShop");

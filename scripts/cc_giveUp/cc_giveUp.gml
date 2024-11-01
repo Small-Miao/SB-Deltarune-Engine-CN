@@ -1,3 +1,4 @@
+//give up scene
 function cc_giveUp() : cc_base() constructor
 {
 	_dialogue=["THEN THE WORLD {delay:10} {jump} WAS COVERED {delay:10} {jump} IN DARKNESS."];

@@ -1,4 +1,4 @@
-camera_move()   :   Moves the camera
+camera_move()    :   Moves the camera
 
 camera_reset()   :   Puts the camera back on the player.
 

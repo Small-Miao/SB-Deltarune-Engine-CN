@@ -3,6 +3,8 @@ if (mode == "fade" or mode == "shortcut")
 	draw_ext(sPixel,,,,320,240,,0,image_alpha);
 }
 
+
+
 if (mode == "darkExit")
 {
 	gpu_set_blendmode(bm_add);

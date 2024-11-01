@@ -1,3 +1,4 @@
+//the same ass draw_sprite_ext but with a brightness value
 function draw_ext(_sprite,_subimg=0,_x=0,_y=0,_xscale=1,_yscale=1,_rot=0,_col=c_white,_alpha=1,_bright=0)
 {
 	if (_bright != 0)
@@ -18,10 +19,9 @@ function draw_ext(_sprite,_subimg=0,_x=0,_y=0,_xscale=1,_yscale=1,_rot=0,_col=c_
 	}
 }
 
-//
-//
-//
 
+
+//draws the dialouge box and animates it in the dark world. (also draws the light world box when you are in the light world)
 function draw_box(_x,_y,_xscale=32,_yscale=32,_seed=[])
 {
 	var color=c_white;
@@ -38,24 +38,15 @@ function draw_box(_x,_y,_xscale=32,_yscale=32,_seed=[])
 	if (op.world == "light") or (array_contains(_seed,"light")) { draw_ext(sBox,6,_x,_y,_xscale/32,_yscale/32,,color); }
 }
 
-//
-//
-//
 
-//
-//
-//
 
-//
-//
-//
-
+//draws the party member hud that you see in battle and in the dark world overowlrd menu
 function draw_party_hud()
 {
 	draw_ext(sPixel,0,0,162.5+op.hudY,320,100,,0); if (op.mode == "battle") { draw_ext(sPixel,0,0,162.5+op.hudY,320,1,,make_color_rgb(51,32,51)); }
 
 	res_i();
-	repeat(array_length(op.party))
+	repeat (array_length(op.party))
 	{
 		if (op.menuPep == i and op.mode == "battle") { if (op.battleRaise[i] < 9) { op.battleRaise[i]-=2; }else{ op.battleRaise[i]-=5; } }else{ op.battleRaise[i]+=7; }
 		op.battleRaise[i]=clamp(op.battleRaise[i],0,16);
@@ -72,9 +63,9 @@ function draw_party_hud()
 		{
 			if (op.mode == "battle")
 			{
-				// Draw waves
+				//draw waves
 				res_j();
-				repeat(3)
+				repeat (3)
 				{
 					draw_ext(sPixel,0,i1[0]-1+round(op.battleSticks[j]*2)/2,i1[1]+19.5,1,100,,op.party[i]._UIcolor,(20-op.battleSticks[j])/20);
 					draw_ext(sPixel,0,i1[0]+106.5-round(op.battleSticks[j]*2)/2,i1[1]+19.5,1,100,,op.party[i]._UIcolor,(20-op.battleSticks[j])/20);
@@ -94,9 +85,9 @@ function draw_party_hud()
 		
 		if (op.mode == "battle")
 		{
-			// Draw buttons
+			//draw buttons
 			res_j();
-			repeat(array_length(op.party[i]._buttons))
+			repeat (array_length(op.party[i]._buttons))
 			{
 				draw_ext(sButtons,(op.party[i]._buttons[j]*3)+(j == faimd[op.menuPep] and op.menuPep == i),i1[0]+10+j*17.5+(5-array_length(op.party[i]._buttons))*9,i1[1]+20-op.battleRaise[i],0.5,0.5);
 				if (op.menuPep == i) and ( (oMenuBattle.canSpare and op.party[i]._buttons[j] == 3) or (oMenuBattle.canTired and op.party[i]._buttons[j] == 5 and array_contains(oMenuBattle.pacify[0],i)) )

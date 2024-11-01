@@ -1,3 +1,5 @@
+//creates a (oChar) object
+//party members, cutscene people & enemys are all the (oChar) object
 function create_char(_type=0,_numb=-1,_x=0,_y=0,_walkSprites=-1,_seed=[])
 {
 	with (instance_create_depth(_x,_y,-9999,oChar))
@@ -11,6 +13,7 @@ function create_char(_type=0,_numb=-1,_x=0,_y=0,_walkSprites=-1,_seed=[])
 	}
 }
 
+//create a (oChar) object that has the stats of an enemy struct
 function create_char_enemy(_numb=-1,_x=0,_y=0,_enemyStruct=-1,_path=-1,_pathSpeed=2,_seed=[])
 {
 	if (array_contains(op.killRooms,room) and op.mode != "battle") { return; }
@@ -32,8 +35,9 @@ function create_char_enemy(_numb=-1,_x=0,_y=0,_enemyStruct=-1,_path=-1,_pathSpee
 	}
 }
 
-//
 
+
+//checks if an (oChar) object exists and if it does returns it's instance
 function char(_numb=0)
 {
 	var _self=-1;
@@ -41,6 +45,7 @@ function char(_numb=0)
 	return (_self);
 }
 
+//returns true if the designated (oChar) object exists and is on screen
 function char_exists(_numb=0,_destroyOffscreen)
 {
 	offscreen=false;
@@ -52,11 +57,10 @@ function char_exists(_numb=0,_destroyOffscreen)
 	return(exists);
 }
 
+//this function is used to animate (ochar) objects for any occasion (most used for creating cutscenes)
 function char_animate(_numb=0,_delay=1,_image_speed=-1,_sprite=-1,_subimg=-1,_x=-1,_y=-1,_funcBegin=-1,_funcEnd=-1,_seed=[])
 {
 	if (_numb == 0 and op.mode == "overworld") { op.mode="cutscene"; }
-	
-	//
 	
 	if (_numb == 0 or _numb == 1 or _numb == 2)
 	{
@@ -82,10 +86,9 @@ function char_animate(_numb=0,_delay=1,_image_speed=-1,_sprite=-1,_subimg=-1,_x=
 	}
 }
 
-//
-//
-//
 
+
+//adds a person who is follows the party but isn't actualy in the party 
 function add_follower(_numbOffset=1,_numb="a",_walkSprites,_slideSprite=sSusie_Slide,_x=0,_y=0)
 {
 	array_push(op.followers,[_numbOffset,_walkSprites,_numb,_slideSprite]);
@@ -94,6 +97,7 @@ function add_follower(_numbOffset=1,_numb="a",_walkSprites,_slideSprite=sSusie_S
 	create_char("follower",_numb,_x,_y,_walkSprites);
 }
 
+//adds a person who  follows the party but isn't actualy in the party
 function remove_follower(_arrayNumb=0)
 {
 	with (oChar) { if (type == "follower" and followerNumb == _arrayNumb) { instance_destroy(); } }

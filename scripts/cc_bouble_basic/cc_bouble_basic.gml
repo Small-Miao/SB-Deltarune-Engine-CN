@@ -1,3 +1,4 @@
+//the scnene for random encouner bouble text
 function cc_bouble_basic() : cc_base() constructor
 {
 	_dialogue=[op.textCC[0]];

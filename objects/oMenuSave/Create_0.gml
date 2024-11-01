@@ -1,9 +1,5 @@
 drText=get_text("t_menuSave");
 
-//
-//
-//
-
 update_allData(); update_stats();
 
 reset_keys();
@@ -12,6 +8,7 @@ master_reset();
 
 op.mode="menuSave";
 
+//draw save file
 drawFile=function(_x,_y,_color=c_white,_xoffset=0,_numb=-1)
 {
 	var _seed=["menu","soul1","save",_numb];
@@ -45,9 +42,7 @@ drawFile=function(_x,_y,_color=c_white,_xoffset=0,_numb=-1)
 	}
 }
 
-//
-//
-//
+
 
 readyToSave=true;
 

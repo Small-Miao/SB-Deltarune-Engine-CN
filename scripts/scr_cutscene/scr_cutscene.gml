@@ -1,3 +1,5 @@
+//this triggers the dark entrance cutscene
+//don't touch this code it is horible
 function cutscene_darkEntrance(_x,_y,_room,_fast=false)
 {
 	music_fade(,0,1000,true);
@@ -6,6 +8,7 @@ function cutscene_darkEntrance(_x,_y,_room,_fast=false)
 	op.darkEntranceX=[0,0,0]; op.darkEntrancFast=_fast;
 	
 	camera_move(45-op.darkEntrancFast*25,_x,_y);
+	
 	//
 	
 	res_i(); res_j(); j1=[];
@@ -184,7 +187,7 @@ function cutscene_darkEntrance(_x,_y,_room,_fast=false)
 					char_animate(j1[i],1,0,op.party[j1[i]]._spriteRise,0,,,function(){ other.x-=4; other.y+=20; });
 					char_animate(j1[i],1,,,,,,function(){ other.x+=8; });
 					char_animate(j1[i],1,,,,,,function(){ other.x-=8; });
-					char_animate(j1[i],30,,,,,,function(){ other.x+=4; if (other.numb == 0) {   with(instance_create_depth(0,0,0,oRun)) { persistent=true; draw=function(){ depth=-7777; draw_ext(sPixel,0,-1000,-1000,9999,9999,,0,image_alpha); if (op.cameraMode == "overworld" and image_alpha > 0) { image_alpha-=0.1; }  } }   } },function(){  });
+					char_animate(j1[i],30,,,,,,function(){ other.x+=4; if (other.numb == 0) {   with (instance_create_depth(0,0,0,oRun)) { persistent=true; draw=function(){ depth=-7777; draw_ext(sPixel,0,-1000,-1000,9999,9999,,0,image_alpha); if (op.cameraMode == "overworld" and image_alpha > 0) { image_alpha-=0.1; }  } }   } },function(){  });
 					char_animate(j1[i],1,1,,,,,function(){ other.x=op.darkEntranceX[other.numb]; other.y=190; /**/ if (other.numb == 0) { sound(snd_himquick); room_goto(op.darkEntranceRoom); master_reset(); op.darkEntranceRoom=1; } },,["subnumber"]);
 					char_animate(j1[i],1,0,op.party[j1[i]]._spriteWalk[1],0);
 					++i;

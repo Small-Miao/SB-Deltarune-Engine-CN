@@ -1,7 +1,3 @@
-//
-//
-//
-
 if array_contains(op.battle_seed,"something")
 {
 	if (loopSignal)

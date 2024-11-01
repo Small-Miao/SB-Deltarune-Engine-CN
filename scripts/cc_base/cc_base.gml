@@ -1,75 +1,86 @@
-// Declaring values for dialogue
+//declaring values for dialogue and cutscenes
 function cc_base() constructor
 {
-	_dialogue=get_text("t_bakesale");
+	/*
+	gets text from the csv document (the function returns an array)
+	check this link:
+		https://docs.google.com/spreadsheets/d/1hj0DLNNkepahaFvXPdy9alGS68qjq8zwKMC-3khYpx0/edit?usp=sharing
+	and look for the realText named   "t_bakesale"   on the leftmost side
+	*/
 	
-	//_dialogue=["A B C A A A B C A A A B C A A A B C A A A B C A A A B C A A A B C A A A B C A A A B C A A A B C A A A B C A A A B C A A A B C A A A B C A A A","DEF"];
+	
+	
+	_dialogue=get_text("t_bakesale");
 	
 	_x=[12];
 	if (op.y < op.playerY-20) { _y=[1]; }else{ _y=[156]; }
 	_xScale=[296.5];
 	_yScale=[83.5];
 	
-	// [[FACE.SUSIE,1],-1,[FACE.RALSEI,5]]
+	//[[FACE.SUSIE,1],-1,[FACE.RALSEI,5]]
 	_face=[-1];
-	// (0 == Shuffle back and fourth)
+	//(0 == Shuffle back and fourth)
 	_faceAnimate=[-1];
 	
 	_font=[fDetermination];
 	_voice=[txt_text];
 	_textSpeed=[1];
 	
-	// Pause eveything and hide the box for a short time
+	//pauses eveything and hides the box for the designated time
 	_hideBox=[0];
 	
 	_seed=[];
 	
-	// if true will automaticaly use susie's voice if susie's face is being used and etcetera for other characters.
-	// (Declare this in object oDialouge create event bottom)
+	//if true will automaticaly use susie's voice if susie's face is being used and etcetera for other characters.
+	//(Declare this in object oDialouge create event bottom)
 	_match=true;
 	
 	
-	// (-1 == no box) // (0 == overworld box) // (1 == battle text bubble)
+	//(-1 == no box) // (0 == overworld box) // (1 == battle text bubble)
 	_box=[0];
-	// (0 == right side) // (1 == left side)
+	//(0 == right side) // (1 == left side)
 	_arrow=[-1];
-	// [ [letter number,duration,c_color],[],[] ],[ [],[],[] ] and so on...
+	
+	//[[[ OUTDATED LEAVE BE ]]]
 	_color=[];
-	// [ [3,5],[7,9] ]
 	_jump=[];
 	
+	
+	
 	_shopSprite=[-1];
-	// [[sprite1,sprite2,sprite3],-1,[sprite1,sprite3]]
+	//[[sprite1,sprite2,sprite3],-1,[sprite1,sprite3]]
 	_asteriskFace=[-1];
 	
-	// [["aaa"],["bbb"],["ccc"]]
+	//[["aaa"],["bbb"],["ccc"]]
 	_printSeed=-1;
-	// Executes when dialouge is over.
+	//executes when dialouge is over.
 	_func=-1;
 	if (op.locationCCcheck) { _func=function(){ op.locationCCcheck=false; op.locationCC=-1; instance_create_depth(0,0,-9999,oMenuSave); } }
-	// Execute every time a new line begins.
+	//execute every time a new line begins.
 	_funcLine=[];
-	// Execute with {func} command, moves a step every time you do. ///////// [1,2,3] {func} == 1 , {func} == 2 , {func} == 3
+	//execute with the {func} command, moves to the next function every time you use the command.
 	_funcAny=[];
 	
 	_boxOffsetXY=[17,18];
+	//increases to monospace width
 	_xOffset=0;
+	//how far to jump when you run out of space
 	_yOffset=18;
+	//if true will make the player able to move when the scene is done
 	_moveAfter=true;
+	//styles of going to the next line. can set to (-1 or "fade")
 	_proceedAnimate=-1;
-	// Set to anything more than 0
+	//set to anything more than 0
 	_proceedAuto=0;
-	
+	//will draw how much money and inventory space you have
 	_moneyBox=false;
 	
-	//
-	//
-	//
 	
-	//
-	//
-	//
 	
+	
+	
+	
+	//changes the base values when you are in battle
 	if (op.mode == "battle")
 	{
 		_box=[-1];
@@ -84,7 +95,7 @@ function cc_base() constructor
 		
 		if (op.continueOrders) { op.continueOrders=false; _func=function(){ continue_orders(); } }
 		
-		//
+		
 		
 		if (oMenuBattle.mode == "talk")
 		{
@@ -94,10 +105,12 @@ function cc_base() constructor
 		}
 	}
 	
-	//
-	//
-	//
 	
+	
+	
+	
+	
+	//changes the base values when you are in a shop
 	if (op.mode == "shop")
 	{
 		_x=[0];
@@ -110,6 +123,4 @@ function cc_base() constructor
 		
 		if (op.continueOrders) { _func=function(){ oMenuShop.dialogueDone=true; } }
 	}
-	
-	//
 }

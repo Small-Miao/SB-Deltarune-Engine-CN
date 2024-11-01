@@ -1,13 +1,18 @@
+//you won scene
 function cc_youWon() : cc_base() constructor
 {
 	if (!array_contains(oMenuBattle.enemyHere,true))
 	{
+		//change and add money stats
 		op.gainMoney+=round(oMenuBattle.tp*2.5);
 		op.money+=op.gainMoney;
+		
+		//win if you have spared all enemys
 		_dialogue=["* You WON! {jump} * Got 0 EXP and "+string(op.gainMoney)+" D$"];
 		
 		if (op.killedAny and !op.isBoss)
 		{
+			//win overide if you have killed any enemy
 			_dialogue=["* You WON! {jump} * Got "+string(op.gainMoney)+" D$ {jump} * You became stronger."];
 			
 			audio_sound_pitch(snd_dtranslw,2);
@@ -20,6 +25,9 @@ function cc_youWon() : cc_base() constructor
 		_dialogue=[];
 	}
 	
+	
+	
+	//move players back to where they stood before & other things related
 	_func=function()
 	{
 		if (op.isBoss) { audio_stop_all(); }
@@ -31,7 +39,7 @@ function cc_youWon() : cc_base() constructor
 		op.mode="battleOver"; op.battleTime=0;
 		
 		var i=0, i1=0;
-		repeat(array_length(op.party))
+		repeat (array_length(op.party))
 		{
 			op.partyPos[clamp(i*12,0,array_length(op.partyPos)-1)][2]=op.save_partyXY[i][3];
 			char(i).direction_=op.save_partyXY[i][3];
@@ -44,7 +52,7 @@ function cc_youWon() : cc_base() constructor
 		if array_contains(op.battle_seed,"enemyGlide")
 		{
 			i=0;
-			repeat(array_length(op.battle_enemy))
+			repeat (array_length(op.battle_enemy))
 			{
 				i1="ene"+string(i);
 				char_animate(i1,15,,,,op.oldEnemyXY[i][0],op.oldEnemyXY[i][1],,,["override"]);
@@ -64,7 +72,5 @@ function cc_youWon() : cc_base() constructor
 		
 		instance_destroy(ob);
 		update_allData();
-		
-		//
 	}
 }

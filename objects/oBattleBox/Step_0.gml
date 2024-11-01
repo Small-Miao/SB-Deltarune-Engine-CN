@@ -1,3 +1,4 @@
+//intro & outro spin animation
 if (counter > 0)
 {
 	if (counter == delay)
@@ -24,7 +25,12 @@ if (counter > 0)
 	
 	--counter;
 	
-	if (oMenuBattle.timer <= 0) { instance_destroy(oBullet); with (oRun) { if (type == "pattern") { instance_destroy(); } } }
+	if (oMenuBattle.timer <= 0)
+	{
+		instance_destroy(oBullet);
+		destroy_run_object("pattern");
+	}
+	
 	if (counter == 0)
 	{
 		if (oMenuBattle.timer <= 0) { instance_destroy(); }

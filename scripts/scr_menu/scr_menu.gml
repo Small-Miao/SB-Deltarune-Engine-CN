@@ -1,3 +1,4 @@
+//declare menu cursor variables
 function reset_cursor()
 {
 	page=0;
@@ -11,11 +12,9 @@ function reset_cursor()
 	undo=[];
 	
 	frame=false;
-	
-	//sound(snd_menumove);
-	//sound(snd_select);
 }
 
+//run auto curaor and undo controls
 function use_cursor()
 {
 	fix=false;
@@ -25,14 +24,16 @@ function use_cursor()
 	if (array_length(undo) > 0) { if tap_cancel() { page=undo[0][0]; cursor=undo[0][1]; array_delete(undo,0,1); } }
 }
 
+//force the run undo function (0 = stay in place) (1 == move back one step) (2 == move back two steps)
 function force_undo(_amount=1)
 {
 	audio_stop_sound(snd_select);
 	repeat(_amount+1) { page=undo[0][0]; cursor=undo[0][1]; array_delete(undo,0,1); }
 }
 
-//
 
+
+//auto make vertical cursor movement
 function vertical_cursor(_length=1)
 {
 	if !(tapConfirm or tapCancel)
@@ -42,6 +43,7 @@ function vertical_cursor(_length=1)
 	}
 }
 
+//auto make horizontal cursor movement
 function horizontal_cursor(_length=1)
 {
 	if !(tapConfirm or tapCancel)
@@ -51,6 +53,7 @@ function horizontal_cursor(_length=1)
 	}
 }
 
+//auto make 2 wide menu vertical cursor movement
 function wide_cursor(_length=1)
 {
 	var pastCursor=cursor;
@@ -67,10 +70,9 @@ function wide_cursor(_length=1)
 	if (cursor < 0) { cursor=pastCursor; }
 }
 
-//
-//
-//
 
+
+//spawn the soul prompt menu & add options and the results of each option
 function prompt(_func=[-1],_text=["Skip"],_xy=-1,_width=-1,_fa=["L"])
 {
 	with (instance_create_depth(0,0,-9999,oMenuPrompt))

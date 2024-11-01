@@ -12,9 +12,7 @@ mode=0;
 cspeed=1;
 mergeColor=-1;
 
-//
-//
-//
+
 
 anSpeed=1;
 
@@ -22,8 +20,6 @@ anModeTime=0;
 showColor=0; showFountain=0;
 showWhite=0;
 
-//
-//
-//
+
 
 anMode=0;
