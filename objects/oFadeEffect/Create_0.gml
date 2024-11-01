@@ -26,9 +26,7 @@ step=function()
 	
 	draw_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha,bright);
 	
-	//
-	//
-	//
+	
 
 	image_alpha-=0.1-array_contains(seed,"half")*0.05;
 	if array_contains(seed,"fade0.5") { image_alpha+=0.05; }
@@ -47,9 +45,7 @@ step=function()
 	
 	if array_contains(seed,"fallUp") { x+=i; y-=2-array_contains(seed,"half")*1; }
 	
-	//
-	//
-	//
+	
 
 	if (image_alpha <= 0) { instance_destroy(); }
 }

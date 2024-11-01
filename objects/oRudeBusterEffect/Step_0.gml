@@ -1,6 +1,6 @@
 if (time == 0) { x_=x; y_=y; }
 
-repeat(1)
+repeat (1)
 {
 	++time;
 

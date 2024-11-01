@@ -212,7 +212,10 @@ function declare_battle(_begin=false)
 	
 	if (!array_contains(op.battle_seed,"keeptarget")) { target=-1; }
 	
-	faimd=[0,0,0,-1]; locked=[false,false,false]; lockedPast=[];
+	faimd=[0,0,0,-1];
+	locked=[false,false,false];
+	lockedPast=[];
+	
 	partyUndo=[];
 	
 	faceImage=[1,1,1];
@@ -236,11 +239,20 @@ function declare_battle(_begin=false)
 	
 	handler=false;
 	handlerCounter=0;
-	patterns=[-1,-1,-1]; patternsFree=[true,true,true];
 	
-	priority=-2; priority_counter=0;
-	wait=true; waitDelay=0;
-	stackAction=false; priorityNegative=false; stackJump=0; singleStack=false;
+	patterns=[-1,-1,-1];
+	patternsFree=[true,true,true];
+	
+	priority=-2;
+	priority_counter=0;
+	
+	wait=true;
+	waitDelay=0;
+	
+	stackAction=false;
+	priorityNegative=false;
+	stackJump=0;
+	singleStack=false;
 	
 	
 	

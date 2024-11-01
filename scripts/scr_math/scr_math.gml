@@ -92,12 +92,12 @@ function get_keybind(_numb)
 function ability_amount(_ability)
 {
 	var i=0, j=0, found=0;
-	repeat(array_length(op.party))
+	repeat (array_length(op.party))
 	{
 		j=0;
-		repeat(3) { if (op.ability[i][j] == _ability) { ++found; } ++j; }
+		repeat (array_length(op.ability[i])) { if (op.ability[i][j] == _ability) { ++found; } ++j; }
 		++i;
 	}
 	
-	return(found);
+	return found;
 }

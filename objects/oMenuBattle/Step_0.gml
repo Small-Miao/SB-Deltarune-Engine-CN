@@ -9,6 +9,13 @@ canSpare=false; canTired=false;
 if (enemyHere[0] and op.battle_enemySpare[0] >= 100) or (enemyHere[1] and op.battle_enemySpare[1] >= 100) or (enemyHere[2] and op.battle_enemySpare[2] >= 100) { canSpare=true; }
 if (enemyHere[0] and op.battle_enemyTired[0]) or (enemyHere[1] and op.battle_enemyTired[1]) or (enemyHere[2] and op.battle_enemyTired[2]) { canTired=true; }
 
+//set how many enemys are left in the battle
+op.battle_enemysLeft=0;
+res_i();
+repeat (3) { if (enemyHere[i]) { ++op.battle_enemysLeft; } ++i; }
+
+
+
 if (page != "done")
 {
 	oChar.brightMode=0; op.stackFix=0;

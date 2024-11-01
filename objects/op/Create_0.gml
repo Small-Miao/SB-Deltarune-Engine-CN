@@ -166,6 +166,8 @@ battle_music=-1;
 battle_flavourText="A";
 battle_seed=[];
 
+battle_enemysLeft=0;
+
 menuPep=0;
 save_partyXY=[];
 gainMoney=0;

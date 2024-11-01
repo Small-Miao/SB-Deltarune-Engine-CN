@@ -11,7 +11,7 @@ function pattern1()
 	}
 }
 
-//
+
 
 function pattern2()
 {
@@ -23,14 +23,14 @@ function pattern2()
 	
 	
 	
-	if !(time mod 10)
+	if !(time mod (10*op.battle_enemysLeft))
 	{
 		spawn_bullet_ext(,,boxX+irandom_range(-30,30),boxY-60,0.5,0.5,,,,,[0,0,0,0.1,10],,,["mask"]);
 		spawn_bullet_ext(,,boxX+irandom_range(-30,30),boxY+60,0.5,0.5,,,,,[0,0,0,-0.1,10],,,["mask"]);
 	}
 }
 
-//
+
 
 function pattern3()
 {
@@ -42,7 +42,7 @@ function pattern3()
 	
 	
 	
-	if !(time mod 3)
+	if !(time mod (3*op.battle_enemysLeft))
 	{
 		spawn_bullet_ext(,,irandom_range(0,320),0,0.5,0.5,,,,,[0,0,0,0.1,10]);
 	}

@@ -213,3 +213,5 @@ print("object: "+string(sel_object),0,3+8*6,,,,0.5,0.5,,,,,,,["bc2"]);
 
 print(sel_person,0,3+8*1,,,,0.5,0.5,,,,,,,["bc2"]);
 */
+
+print(op.battle_enemysLeft,0,0);
