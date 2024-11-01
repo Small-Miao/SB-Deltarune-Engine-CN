@@ -8,7 +8,6 @@ updatestruct_items(); updatestruct_party();
 
 reset_keys();
 reset_cursor(); cursor=op.overworldMenuSaveCursor[0];
-master_reset();
 
 op.mode="menuOverworld";
 

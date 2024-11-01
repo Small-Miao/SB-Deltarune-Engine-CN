@@ -30,4 +30,6 @@ if (page == "start")
 			room_goto(rRoom1);
 		}
 	}
+	
+	if tap_confirm(0) { page="options"; cursor=0; }
 }

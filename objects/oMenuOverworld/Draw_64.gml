@@ -159,7 +159,7 @@ if (time > 0)
 		}
 		
 		//Left-down side (Equip)
-		draw_ext(sSymbols2,0,37,119);
+		draw_ext(sSymbols2,op.party[op.overworldMenuSaveCursor[2]]._numberExistence,37,119);
 		draw_ext(sSymbols3,0,37,119+13.5);
 		draw_ext(sSymbols3,1,37,119+13.5*2);
 		
@@ -291,7 +291,7 @@ if (time > 0)
 		
 		// Left-down (Power)
 		res_i(); i1=op.party[op.overworldMenuSaveCursor[2]];
-		print(drText[4],50,119); print(op.attack[op.overworldMenuSaveCursor[2]],115,119); draw_ext(sSymbols2,0,37,119);
+		print(drText[4],50,119); print(op.attack[op.overworldMenuSaveCursor[2]],115,119); draw_ext(sSymbols2,op.party[op.overworldMenuSaveCursor[2]]._numberExistence,37,119);
 		print(drText[5],50,119+12.5); print(op.defense[op.overworldMenuSaveCursor[2]],115,119+12.5); draw_ext(sSymbols3,0,37,119+12.5);
 		print(drText[6],50,119+12.5*2); print(op.magic[op.overworldMenuSaveCursor[2]],115,119+12.5*2); draw_ext(sSymbols3,1,37,119+12.5*2);
 		

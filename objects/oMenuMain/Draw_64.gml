@@ -7,7 +7,8 @@ if (page == "start")
 		print("Save File "+string(i+1),50,50+i*20,,,,,,,,,,,,["menu_yellow","soul1","start",i]);
 		++i;
 	}
-	print("New Game",50,50+i*20,,,,,,,,,,,,["menu_yellow","soul1","start",i]);
+	
+	print("New Game",50,50+i*20,,,,,,,,,,,,["menu_yellow","soul1","start",3]);
 	
 	print("======================================================",150,0,,,,,,-90);
 	

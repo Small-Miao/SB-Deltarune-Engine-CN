@@ -145,8 +145,11 @@ if (!cutsceneStarted and op.mode != "overworld" and op.mode != "battleOver")
 		number=_numb;
 		numbClamp=clamp(walkOffset+_numb*12,0,array_length(op.partyPos)-1);
 		
-		x=op.partyPos[numbClamp][0];
-		y=op.partyPos[numbClamp][1];
+		if (type == "pep" and array_contains(op.partyFollow,numb)) or (type == "follower")
+		{
+			x=op.partyPos[numbClamp][0];
+			y=op.partyPos[numbClamp][1];
+		}
 	}
 }
 

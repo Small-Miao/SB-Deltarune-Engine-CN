@@ -82,7 +82,6 @@ movement="overworld";
 cameraMode="overworld"; camOffsetX=0; camOffsetY=0;
 camShakeX=0; camShakeY=0; camShake=[0,0];
 camMove=[0,0,0,0,0,0,0,0,0,0];
-partyFollow=[0,1,2];
 
 currentMusic=-1; pastMusic=-1;
 
