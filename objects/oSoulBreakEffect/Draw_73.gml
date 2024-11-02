@@ -2,6 +2,8 @@
 
 if (time == 30) { sprite_index=sSoulBreak; sound(snd_break1); }
 
+
+
 if (time < 70)
 {
 	draw_self();

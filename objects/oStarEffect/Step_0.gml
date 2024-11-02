@@ -3,9 +3,7 @@
 if (time > 15) { image_alpha-=0.05; }
 if (image_alpha <= 0) { instance_destroy(); }
 
-//
-//
-//
+
 
 if (array_contains(seed,"heal") or array_contains(seed,"tp"))
 {
@@ -22,6 +20,8 @@ if (array_contains(seed,"heal") or array_contains(seed,"tp"))
 	i1*=0.9;
 	i2*=0.9;
 }
+
+
 
 if array_contains(seed,"spare")
 {

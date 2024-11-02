@@ -18,6 +18,8 @@ repeat (1)
 	y_=y;
 }
 
+
+
 if (time >= delay)
 {
 	res_i();

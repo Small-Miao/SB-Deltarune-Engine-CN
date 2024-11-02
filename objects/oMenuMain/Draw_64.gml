@@ -3,7 +3,6 @@ if (page == "start")
 	res_i();
 	repeat (3)
 	{
-		i1=c_white;
 		print("Save File "+string(i+1),50,50+i*20,,,,,,,,,,,,["menu_yellow","soul1","start",i]);
 		++i;
 	}

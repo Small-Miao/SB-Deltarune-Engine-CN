@@ -13,11 +13,11 @@ print(text,_x+24,_y,fFeild,,,,,,,,,,,["bc4"]);
 
 surface_reset_target();
 
-//
-//
-//
+
 
 draw_surface_ext(surf,x+offset,y,1,1,0,c_white,alpha);
+
+
 
 ++time;
 

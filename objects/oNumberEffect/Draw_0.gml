@@ -1,6 +1,4 @@
-// The code here was coppied and modified from deltarune
-//
-//
+//the code here was coppied and modified from deltarune
 
 if (delaytimer < delay)
 {
@@ -14,7 +12,7 @@ if (delaytimer == delay)
     hspeed = 10/2
 	//if (message_sprite != -1) { hspeed*=2; }
     vstart = vspeed
-    flip = 90
+    //flip = 90
 }
 if (delaytimer >= delay)
 {
