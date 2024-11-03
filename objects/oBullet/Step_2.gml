@@ -1,4 +1,4 @@
-//touch soul damage party
+//bullet touch soul damage party & delete bullet
 if (place_meeting(x,y,oSoul) and oSoul.counter == 0)
 {
 	if (oSoul.iframes == 0)
@@ -8,7 +8,8 @@ if (place_meeting(x,y,oSoul) and oSoul.counter == 0)
 		if (op.mode == "battle") { oSoul.damage+=oMenuBattle.enemyAttackExtra[numb]; }
 		oSoul.enemyNumb=numb;
 	}
-	instance_destroy();
+	
+	if (!array_contains(seed,"stay")) { instance_destroy(); }
 }
 
 //bullet graze
