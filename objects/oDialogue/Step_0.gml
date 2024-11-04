@@ -103,8 +103,9 @@ if (array_length(info._dialogue) > 0)
 		shopSprite=info._shopSprite[clamp(line,0,array_length(info._shopSprite)-1)];
 		if (shopSprite != -1) { oMenuShop.sprite=shopSprite; }
 		asteriskFace=info._asteriskFace[clamp(line,0,array_length(info._asteriskFace)-1)];
-	
+		
 		proceedAuto=info._proceedAuto;
+		if (info._autoSkipText[clamp(line,0,array_length(info._autoSkipText)-1)] != -1) { proceedAuto=1; }
 		
 		//match foices to face
 		if (info._match) { func_match(); }

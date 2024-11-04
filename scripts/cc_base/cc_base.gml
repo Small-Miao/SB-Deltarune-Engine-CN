@@ -70,8 +70,10 @@ function cc_base() constructor
 	_moveAfter=true;
 	//styles of going to the next line. can set to (-1 or "fade")
 	_proceedAnimate=-1;
-	//set to anything more than 0
+	//set to anything higher than 0 (This is for random encounter auto press confirm after a few frames)
 	_proceedAuto=0;
+	//set to anything other than -1 to auto press confirm when the line has finished printing
+	_autoSkipText=[-1];
 	//will draw how much money and inventory space you have
 	_moneyBox=false;
 	
