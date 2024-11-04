@@ -5,6 +5,7 @@ if (line > -1 and array_length(info._dialogue) > 0 and hideBox == 0)
 	{
 		//draw standard white or darkworld box
 		if (box == 0) { draw_box(x_,y_,xScale,yScale); }
+		
 		//enable surface and draw bouble box
 		if (box == 1)
 		{
@@ -15,6 +16,9 @@ if (line > -1 and array_length(info._dialogue) > 0 and hideBox == 0)
 			draw_ext(sBox,7,x_*2,y_*2,xScale/32,yScale/32);
 			draw_ext(sBoxArrows,0+(array_length(edges) > 0),(x_*2)+xScale,(y_*2)+yScale/2,1,1);
 		}
+		
+		//draw transparent box from Toriel car intro
+		if (box == 2) { draw_ext(sBox,8,x_,y_,xScale/32,yScale/32); }
 	}
 	
 	//reset values
