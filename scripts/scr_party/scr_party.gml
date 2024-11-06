@@ -1,6 +1,7 @@
 //places all party members ontop of kris + advanced mode
 function reset_party_position(_keepPos=false)
 {
+	updatestruct_party();
 	op.inputWait=true;
 	
 	with (oChar) { if (type == "pep") { instance_destroy(oChar); } }
@@ -22,6 +23,7 @@ function reset_party_position(_keepPos=false)
 	
 	with (oChar) { oChar.walkOffset=0; }
 	op.inputWait=true;
+	op.resetPartyPosTimer=1;
 }
 
 //will make the party seamlessly walk back in line after cutscene

@@ -56,6 +56,7 @@ fountainON=false;
 soul4XY=[0,0];
 dieSprite=-1;
 forceNotMove=false; canMoveAfter=true;
+resetPartyPosTimer=0;
 
 une=0;
 dead=false;

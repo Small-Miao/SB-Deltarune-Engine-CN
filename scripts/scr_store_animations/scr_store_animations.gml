@@ -1,4 +1,15 @@
-function an_kris_walk() { return([sKris_Up,sKris_Down,sKris_Left,sKris_Right,sKris_UpLight,sKris_DownLight,sKris_LeftLight,sKris_RightLight]); }
+//function an_kris_walk() { return([sKris_Up,sKris_Down,sKris_Left,sKris_Right,sKris_UpLight,sKris_DownLight,sKris_LeftLight,sKris_RightLight]); }
+function an_kris_walk()
+{
+	if (!has_progress("has_jacket"))
+	{
+		return([sKris_Up,sKris_Down,sKris_Left,sKris_Right,sKris_UpLight,sKris_DownLight,sKris_LeftLight,sKris_RightLight]);
+	}
+	else
+	{
+		return([sKris_UpLight,sKris_DownLight,sKris_LeftLight,sKris_RightLight]);
+	}
+}
 
 function an_susie_walk() { return([sSusie_Up,sSusie_Down,sSusie_Left,sSusie_Right,sSusie_UpLight,sSusie_DownLight,sSusie_LeftLight,sSusie_RightLight]); }
 

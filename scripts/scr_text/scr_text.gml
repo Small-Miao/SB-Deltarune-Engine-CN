@@ -139,6 +139,11 @@ function start_cutscene(_struct_text,_forceTextWait=0,_continueOrders=false)
 		struct(_struct_text);
 		info=str;
 	}
+	
+	
+	
+	//special sprite update fix
+	if (op.resetPartyPosTimer > 0) {  }
 }
 
 

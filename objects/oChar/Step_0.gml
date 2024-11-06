@@ -44,7 +44,7 @@ if (time == 1)
 
 
 //party members and followers | visuals and functionality
-if (type == "pep" or type == "follower") and (op.mode == "overworld" and array_length(animate) == 0)
+if (type == "pep" or type == "follower") and ((op.mode == "overworld" and array_length(animate) == 0) or (op.resetPartyPosTimer > 0))
 {
 	//set numb math
 	if (numb != 0)
@@ -105,7 +105,7 @@ if (type == "pep" or type == "follower") and (op.mode == "overworld" and array_l
 			y=op.partyPos[numbClamp][1];
 		}
 
-		if (op.inputWait)
+		if (op.inputWait or op.resetPartyPosTimer > 0)
 		{
 			//set sprites for following the player
 			direction_=op.partyPos[numbClamp][2];

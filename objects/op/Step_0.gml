@@ -122,3 +122,4 @@ else
 
 if (retryBattleTimer > 0) { --retryBattleTimer; }
 if (menuRoomTime > 0) { --menuRoomTime; }
+if (resetPartyPosTimer > 0) { --resetPartyPosTimer; }
