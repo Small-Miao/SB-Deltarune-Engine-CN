@@ -1,1 +1,0 @@
-func=function(){ add_progress("has_jacket"); reset_party_position(true); start_cutscene("cc_test3"); }
