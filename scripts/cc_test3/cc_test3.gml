@@ -10,6 +10,8 @@ function cc_test3() : cc_base() constructor
 	
 	_dialogue=get_text("t_doc1");
 	
+	_y=["d","u",100];
+	
 	_box=[2];
 	
 	//_autoSkipText=[-1,0,-1];

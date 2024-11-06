@@ -21,6 +21,7 @@ function reset_party_position(_keepPos=false)
 	repeat (array_length(op.followers)) { op.setFollowerNumb=i; create_char("follower",op.followers[i][2],,,op.followers[i][1]); ++i; }
 	
 	with (oChar) { oChar.walkOffset=0; }
+	op.inputWait=true;
 }
 
 //will make the party seamlessly walk back in line after cutscene

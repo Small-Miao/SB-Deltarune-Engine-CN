@@ -83,6 +83,8 @@ if (array_length(info._dialogue) > 0)
 	
 		x_=info._x[clamp(line,0,array_length(info._x)-1)];
 		y_=info._y[clamp(line,0,array_length(info._y)-1)];
+		if (y_ == "u") { y_=1; }
+		if (y_ == "d") { y_=156; }
 		xScale=info._xScale[clamp(line,0,array_length(info._xScale)-1)];
 		yScale=info._yScale[clamp(line,0,array_length(info._yScale)-1)];
 	
