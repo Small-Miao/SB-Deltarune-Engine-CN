@@ -43,4 +43,4 @@ if (false)
 
 //print([sFace_Susie,sFace_Ralsei,sFace_RalseiHat,sFace_Lancer],0,0,,,,,,,c_yellow,c_red,,,,["fade"]);
 
-print(progress);
+//print(progress);
