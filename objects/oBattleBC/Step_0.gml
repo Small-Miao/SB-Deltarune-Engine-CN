@@ -10,3 +10,10 @@ else
 	if (image_alpha > 0) { image_alpha-=1/15; }
 	if (image_alpha <= 0) { instance_destroy(); }
 }
+
+
+
+if array_contains(op.battle_seed,"mySpecialBackground")
+{
+	//draw stuff
+}

@@ -9,6 +9,9 @@ debug=true;
 
 noclip=false;
 
+//will make the save menu and other things related look like they did in chapter 1
+chapter1style=true;
+
 
 
 //settings, creating fonts from sprites, world time & language
@@ -61,6 +64,7 @@ resetPartyPosTimer=0;
 une=0;
 dead=false;
 darkEntranceRoom=-1; darkEntranceX=[0,0,0]; darkEntrancFast=false;
+debugSave=[0,0,0];
 
 promptCursor=0;
 structAt=0;

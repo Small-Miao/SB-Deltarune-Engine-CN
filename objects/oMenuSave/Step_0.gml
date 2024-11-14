@@ -1,5 +1,7 @@
 use_keys(true);
-if (page != "filesaved") { use_cursor(); }
+if (page != "filesaved" and !op.chapter1style) { use_cursor(); }
+
+
 
 if (page == "start")
 {
@@ -60,4 +62,37 @@ if (page == "filesaved")
 {
 	if (readyToSave) { readyToSave=false; file_save(); }
 	if (tap_confirm(,false) or tap_cancel(,false)) { op.mode="overworld"; page=0; instance_destroy(); }
+}
+
+
+
+//chapter 1 styled menu (step)
+if (page == "startC1")
+{
+	horizontal_cursor(2);
+	
+	if (tap_cancel(,false) or tap_confirm(1,false))
+	{
+		instance_destroy();
+		set_mode();
+	}
+	
+	if tap_confirm(0,false)
+	{
+		page="savedC1";
+		file_save();
+		
+		sound(snd_save);
+	}
+}
+
+
+
+if (page == "savedC1")
+{
+	if (tap_cancel(,false) or tap_confirm(,false))
+	{
+		instance_destroy();
+		set_mode();
+	}
 }

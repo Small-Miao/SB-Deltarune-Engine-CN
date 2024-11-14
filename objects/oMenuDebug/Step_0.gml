@@ -8,7 +8,7 @@ if (page == "start")
 	if tap_cancel() { op.mode="overworld"; instance_destroy(); }
 	
 	if tap_confirm(0) { if (op.noclip) { op.noclip=false; }else{ op.noclip=true; } force_undo(0); }
-	if tap_confirm(1) { page="room"; cursor=0; }
+	if tap_confirm(1) { page="room"; cursor=op.debugSave[0]; }
 	if tap_confirm(2) { room_goto(rMainMenu); }
 	if tap_confirm(3) { instance_create_depth(0,0,-9999,oMenuSave); instance_destroy(); }
 }
@@ -28,6 +28,8 @@ if (page == "room")
 		if tap_up() or (keyUp and tymeUp >= 10 and (!(op.time mod 2) or tymeUp >= 30)) { sound(snd_menumove); --cursor; if (cursor == -1) { cursor=i-1; } }
 		if tap_down() or (keyDown and tymeDown >= 10 and (!(op.time mod 2) or tymeDown >= 30)) { sound(snd_menumove); ++cursor; if (cursor == i) { cursor=0; } }
 	}
+	
+	op.debugSave[0]=cursor;
 	
 	if tap_confirm()
 	{

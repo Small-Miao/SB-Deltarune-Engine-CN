@@ -169,7 +169,7 @@ function file_load(_fileName=-1)
 
 
 //gets certian stats from a save file that can be drawn on screen
-function file_stats(_numb)
+function file_stats(_numb=op.fileOn)
 {
 	var fileName="save"+string(_numb);
 	

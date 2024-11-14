@@ -76,3 +76,59 @@ if (page == "filesaved")
 		++i;
 	}
 }
+
+
+
+//chapter 1 styled menu (draw)
+if (page == "startC1" or page == "savedC1")
+{
+	draw_box(54,49,423/2,172/2);
+	
+	res_i();
+	i1=op.party[0]._infoText[0];
+	i2="";
+	i3=1;
+	i4="0:00";
+	
+	i5=c_white;
+	if (page == "savedC1") { i5=c_yellow; }
+	
+	if file_exists("save"+string(op.fileOn))
+	{
+		file_stats();
+		i1=stat_name;
+		i2=stat_locationText;
+		i3=stat_level;
+		
+		res_j();
+		j1=""; if (stat_seconds < 10) { j1="0"; }
+		i4=string(stat_minutes)+":"+j1+string(stat_seconds);
+	}
+	
+	
+	//draw name
+	print(i1,70,64,,,,,,,i5);
+	
+	//draw room title
+	print(i2,70,84,,,,,,,i5);
+	
+	//draw LV
+	print(drText[4]+" "+string(i3),175,64,,,,,,,i5);
+	
+	//draw time
+	print(i4,210,64,,,,,,,i5);
+	
+	
+	
+	if (page == "startC1")
+	{
+		//draw cursor options
+		print(drText[0],85,114,,,,,,,i5,,,,,["menu","startC1","soul1",0]);
+		print(drText[1],175,114,,,,,,,i5,,,,,["menu","startC1","soul1",1]);
+	}
+	else
+	{
+		//draw file saved text
+		print(drText[7],85,114,,,,,,,i5);
+	}
+}

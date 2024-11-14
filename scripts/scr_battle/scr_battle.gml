@@ -66,7 +66,7 @@ function start_battle()
 	op.battle_enemyHP=[0,0,0]; op.battle_enemySpare=[0,0,0]; op.battle_enemyTired=[false,false,false];
 	op.save_partyXY=[];
 	
-	if (op.battle_background[0]) { op.battle_background=[true,true]; instance_create_depth(0,0,-room_height,oBattleBC); }
+	if (true) { op.battle_background[1]=true; instance_create_depth(0,0,-room_height,oBattleBC); }
 	
 	var counter=0, counter2=0, glideDelay=15;
 	

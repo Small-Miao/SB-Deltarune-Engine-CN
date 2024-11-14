@@ -29,8 +29,10 @@ if (page == "room")
 	}
 }
 
-//
-//
-//
 
-draw_ext(sSoul2,0,op.soul4XY[0],op.soul4XY[1],0.25,0.25);
+
+//draw soul
+if (page != 0)
+{
+	draw_ext(sSoul2,0,op.soul4XY[0],op.soul4XY[1],0.25,0.25);
+}

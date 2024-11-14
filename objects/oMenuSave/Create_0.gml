@@ -3,8 +3,11 @@ drText=get_text("t_menuSave");
 update_allData(); update_stats();
 
 reset_keys();
-reset_cursor(); page="start";
+reset_cursor();
 master_reset();
+
+page="start";
+if (op.chapter1style) { page="startC1"; }
 
 op.mode="menuSave";
 
