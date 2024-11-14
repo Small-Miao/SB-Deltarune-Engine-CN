@@ -10,7 +10,7 @@ debug=true;
 noclip=false;
 
 //will make the save menu and other things related look like they did in chapter 1
-chapter1style=true;
+chapter1style=false;
 
 
 
