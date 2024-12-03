@@ -77,22 +77,6 @@ if (mode == "overworld" and !noclip)
 	col=instance_place(playerX,playerY,oWall);
 	if (col != noone) { colObject=[oWall]; }
 	
-	//check for oChar object that is also a wall
-	col=instance_place(playerX,playerY,oChar);
-	if (col != noone)
-	{
-		if array_contains(col.seed,"wall")
-		{
-			colObject=[oWall,col];
-		}
-		else
-		{
-			col=noone;
-		}
-	}
-	
-	
-	
 	//find which way to push the player
 	if (colObject != -1)
 	{
