@@ -40,10 +40,11 @@ if (time == 1)
 	//give the oChar object collision
 	if array_contains(seed,"wall")
 	{
+		wallRandom=irandom_range(0,999999999);
 		with (instance_create_depth(-9999,-9999,0,oWall))
 		{
 			forceHide=true;
-			charData=other.une;
+			charData=other.wallRandom;
 		}
 	}
 }
@@ -418,7 +419,7 @@ if array_contains(seed,"wall")
 {
 	with (oWall)
 	{
-		if (charData == other.une)
+		if (charData == other.wallRandom)
 		{
 			x=other.x;
 			y=other.y;

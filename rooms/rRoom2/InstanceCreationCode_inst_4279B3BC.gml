@@ -9,7 +9,7 @@ func=function()
 	
 	++i;
 	if (i == 4) { i=1; }
-	if (i == 1) { char_animate("t",1,0,sToriel_Facepalm,0,,,,,["jumpa"]); }
-	if (i == 2) { char_animate("t",1,1,sToriel_Piano,0,,,,,["jumpa"]); }
-	if (i == 3) { char_animate("t",1,0,sToriel_Chair,0,,,,,["jumpa"]); }
+	if (i == 1) { char_animate("t",1,0,sToriel_Facepalm,0,,,,,["jump###"]); }
+	if (i == 2) { char_animate("t",1,1,sToriel_Piano,0,,,,,["jump###"]); }
+	if (i == 3) { char_animate("t",1,0,sToriel_Chair,0,,,,,["jump###"]); }
 }

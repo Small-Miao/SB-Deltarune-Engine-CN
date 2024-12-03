@@ -1,4 +1,7 @@
 une=op.une; ++op.une;
+wallRandom=0;
+
+
 
 func=-1;
 
