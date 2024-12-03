@@ -70,19 +70,52 @@ if (mode == "overworld" and !noclip)
 {
 	wallCounter=1; wallCheck=true;
 	
-	//find which way to push the player
-	while place_meeting(playerX,playerY,oWall)
-	{
-		if (!place_meeting(playerX-wallCounter,playerY,oWall) and wallCheck) { playerX-=wallCounter; wallCheck=false; runTimer=0; }
-		if (!place_meeting(playerX+wallCounter,playerY,oWall) and wallCheck) { playerX+=wallCounter; wallCheck=false; runTimer=0; }
-		if (!place_meeting(playerX,playerY-wallCounter,oWall) and wallCheck) { playerY-=wallCounter; wallCheck=false; runTimer=0; }
-		if (!place_meeting(playerX,playerY+wallCounter,oWall) and wallCheck) { playerY+=wallCounter; wallCheck=false; runTimer=0; }
+	var colObject=-1;
+	col=noone;
 	
-		if (!place_meeting(playerX+wallCounter,playerY-wallCounter,oWall) and wallCheck) { playerX+=wallCounter; playerY-=wallCounter; wallCheck=false; runTimer=0; }
-		if (!place_meeting(playerX+wallCounter,playerY+wallCounter,oWall) and wallCheck) { playerX+=wallCounter; playerY+=wallCounter; wallCheck=false; runTimer=0; }
-		if (!place_meeting(playerX-wallCounter,playerY-wallCounter,oWall) and wallCheck) { playerX-=wallCounter; playerY-=wallCounter; wallCheck=false; runTimer=0; }
-		if (!place_meeting(playerX-wallCounter,playerY+wallCounter,oWall) and wallCheck) { playerX-=wallCounter; playerY+=wallCounter; wallCheck=false; runTimer=0; }
-		++wallCounter;
+	//check for oWall object
+	col=instance_place(playerX,playerY,oWall);
+	if (col != noone) { colObject=[oWall]; }
+	
+	//check for oChar object that is also a wall
+	col=instance_place(playerX,playerY,oChar);
+	if (col != noone)
+	{
+		if array_contains(col.seed,"wall")
+		{
+			colObject=[oWall,col];
+		}
+		else
+		{
+			col=noone;
+		}
+	}
+	
+	
+	
+	//find which way to push the player
+	if (colObject != -1)
+	{
+		var playerPlace=[playerX,playerY];
+		
+		while (place_meeting(playerX,playerY,colObject))
+		{
+			wallCheck=true;
+			playerX=playerPlace[0];
+			playerY=playerPlace[1];
+			
+			if (!place_meeting(playerX-wallCounter,playerY,colObject) and wallCheck) { playerX-=wallCounter; wallCheck=false; runTimer=0; }
+			if (!place_meeting(playerX+wallCounter,playerY,colObject) and wallCheck) { playerX+=wallCounter; wallCheck=false; runTimer=0; }
+			if (!place_meeting(playerX,playerY-wallCounter,colObject) and wallCheck) { playerY-=wallCounter; wallCheck=false; runTimer=0; }
+			if (!place_meeting(playerX,playerY+wallCounter,colObject) and wallCheck) { playerY+=wallCounter; wallCheck=false; runTimer=0; }
+			
+			if (!place_meeting(playerX+wallCounter,playerY-wallCounter,colObject) and wallCheck) { playerX+=wallCounter; playerY-=wallCounter; wallCheck=false; runTimer=0; }
+			if (!place_meeting(playerX+wallCounter,playerY+wallCounter,colObject) and wallCheck) { playerX+=wallCounter; playerY+=wallCounter; wallCheck=false; runTimer=0; }
+			if (!place_meeting(playerX-wallCounter,playerY-wallCounter,colObject) and wallCheck) { playerX-=wallCounter; playerY-=wallCounter; wallCheck=false; runTimer=0; }
+			if (!place_meeting(playerX-wallCounter,playerY+wallCounter,colObject) and wallCheck) { playerX-=wallCounter; playerY+=wallCounter; wallCheck=false; runTimer=0; }
+			
+			++wallCounter;
+		}
 	}
 	
 	//slope collision
@@ -240,6 +273,8 @@ if (col != noone and mode == "overworld")
 //interact in the overworld by pressing the confirm button
 if tap_confirm()
 {
+	col=noone;
+	
 	if (playerDirection == "up") { col=instance_place(playerX,playerY-12,[oInteract,oChar]); }
 	if (playerDirection == "down") { col=instance_place(playerX,playerY+12,[oInteract,oChar]); }
 	if (playerDirection == "left") { col=instance_place(playerX-12,playerY,[oInteract,oChar]); }
