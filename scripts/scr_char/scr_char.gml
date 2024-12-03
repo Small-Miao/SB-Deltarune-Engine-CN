@@ -1,6 +1,6 @@
 //creates a (oChar) object
 //party members, cutscene people & enemys are all the (oChar) object
-function create_char(_type=0,_numb=-1,_x=0,_y=0,_walkSprites=-1,_seed=[])
+function create_char(_type=0,_numb=-1,_x=0,_y=0,_walkSprites=-1,_seed=[],_func=-1)
 {
 	with (instance_create_depth(_x,_y,-9999,oChar))
 	{
@@ -10,6 +10,8 @@ function create_char(_type=0,_numb=-1,_x=0,_y=0,_walkSprites=-1,_seed=[])
 		if (_walkSprites != -1) { walkSprites=_walkSprites; }
 		
 		if (type == "follower") { followerNumb=op.setFollowerNumb; op.setFollowerNumb=-1; }
+		
+		func=_func;
 	}
 }
 

@@ -240,10 +240,10 @@ if (col != noone and mode == "overworld")
 //interact in the overworld by pressing the confirm button
 if tap_confirm()
 {
-	if (playerDirection == "up") { col=instance_place(playerX,playerY-12,oInteract); }
-	if (playerDirection == "down") { col=instance_place(playerX,playerY+12,oInteract); }
-	if (playerDirection == "left") { col=instance_place(playerX-12,playerY,oInteract); }
-	if (playerDirection == "right") { col=instance_place(playerX+12,playerY,oInteract); }
+	if (playerDirection == "up") { col=instance_place(playerX,playerY-12,[oInteract,oChar]); }
+	if (playerDirection == "down") { col=instance_place(playerX,playerY+12,[oInteract,oChar]); }
+	if (playerDirection == "left") { col=instance_place(playerX-12,playerY,[oInteract,oChar]); }
+	if (playerDirection == "right") { col=instance_place(playerX+12,playerY,[oInteract,oChar]); }
 	
 	//check if you colided with any (oInteract) object
 	if (col != noone)

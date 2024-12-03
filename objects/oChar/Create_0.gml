@@ -1,5 +1,7 @@
 une=op.une; ++op.une;
 
+func=-1;
+
 type=0;
 numb=-1;
 number=0;
