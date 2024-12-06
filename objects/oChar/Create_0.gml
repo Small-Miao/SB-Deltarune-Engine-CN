@@ -1,5 +1,5 @@
 une=op.une; ++op.une;
-wallRandom=0;
+ranUne=irandom_range(0,999999999);
 
 
 

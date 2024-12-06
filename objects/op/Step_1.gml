@@ -259,10 +259,10 @@ if tap_confirm()
 {
 	col=noone;
 	
-	if (playerDirection == "up") { col=instance_place(playerX,playerY-12,[oInteract,oChar]); }
-	if (playerDirection == "down") { col=instance_place(playerX,playerY+12,[oInteract,oChar]); }
-	if (playerDirection == "left") { col=instance_place(playerX-12,playerY,[oInteract,oChar]); }
-	if (playerDirection == "right") { col=instance_place(playerX+12,playerY,[oInteract,oChar]); }
+	if (playerDirection == "up") { col=instance_place(playerX,playerY-12,oInteract); }
+	if (playerDirection == "down") { col=instance_place(playerX,playerY+12,oInteract); }
+	if (playerDirection == "left") { col=instance_place(playerX-12,playerY,oInteract); }
+	if (playerDirection == "right") { col=instance_place(playerX+12,playerY,oInteract); }
 	
 	//check if you colided with any (oInteract) object
 	if (col != noone)

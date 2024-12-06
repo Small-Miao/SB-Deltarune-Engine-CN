@@ -35,9 +35,6 @@
     "name":"sInteract",
     "path":"sprites/sInteract/sInteract.yy",
   },
-  "spriteMaskId":{
-    "name":"sInteract",
-    "path":"sprites/sInteract/sInteract.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }

@@ -37,14 +37,27 @@ if (time == 1)
 	
 	if (type == 0) { image_index=0; image_speed=0; }
 	
+	//spawn connections
+	if (func != -1)
+	{
+		with (instance_create_depth(x,y,0,oInteract))
+		{
+			forceHide=true;
+			charData=other.ranUne;
+			
+			func=other.func;
+			spawnWall=false;
+		}
+	}
+	func=-1;
+	
 	//give the oChar object collision
 	if array_contains(seed,"wall")
 	{
-		wallRandom=irandom_range(0,999999999);
 		with (instance_create_depth(-9999,-9999,0,oWall))
 		{
 			forceHide=true;
-			charData=other.wallRandom;
+			charData=other.ranUne;
 		}
 	}
 }
@@ -411,20 +424,3 @@ if (front) { depth=-9999; }
 
 //set the (oCharCol) object to the x & y of their corresponding (oChar) objects
 with (oCharCol) { if (type == other.type and numb == other.numb) { x=other.x; y=other.y; } }
-
-
-
-//hook wall & give the oChar object collision
-if array_contains(seed,"wall")
-{
-	with (oWall)
-	{
-		if (charData == other.wallRandom)
-		{
-			x=other.x;
-			y=other.y;
-			sprite_index=other.sprite_index;
-			image_index=other.image_index;
-		}
-	}
-}

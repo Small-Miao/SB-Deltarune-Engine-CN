@@ -4,14 +4,21 @@ if (func != -1) { func(); }
 
 
 
-//destroy wall if hooked oChar is gone
+//char connection
 if (charData != -1)
 {
 	charGone=true;
 	
 	with (oChar)
 	{
-		if (wallRandom == other.charData) { other.charGone=false; }
+		if (ranUne == other.charData)
+		{
+			other.charGone=false;
+			other.x=x;
+			other.y=y;
+			other.sprite_index=sprite_index;
+			other.image_index=image_index;
+		}
 	}
 	
 	if (charGone) { instance_destroy(); }

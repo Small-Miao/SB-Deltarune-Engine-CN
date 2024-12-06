@@ -6,6 +6,8 @@ func=-1; counter=0;
 step=-1;
 draw=-1;
 
+spawnWall=true;
+
 check=false;
 time=0;
 
@@ -14,3 +16,8 @@ time=0;
 drawSelf=false;
 
 _id=0;
+
+
+
+charData=-1;
+charGone=false;
