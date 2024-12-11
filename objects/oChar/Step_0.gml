@@ -292,7 +292,7 @@ if (effect == "fadeEffect" or effect == "fadeFast")
 
 
 //enemy | visuals and functionality (Warning this code sucks)
-if (type == "enemy")
+if (type == "enemy" and str != -1)
 {
 	if (op.mode != "battle")
 	{

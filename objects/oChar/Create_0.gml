@@ -46,7 +46,8 @@ image_blend=c_white;
 
 
 //enemy Variables
-str=-1; strString=-1;
+str=-1;
+strString=-1;
 
 startX=x; startY=y;
 pastXY=[x,y];
