@@ -90,7 +90,10 @@ else
 	draw_box(0,120,320,120);
 }
 
-print("$"+string(op.money),220,214);
+if (page != 0)
+{
+	print("$"+string(op.money),220,214);
+}
 
 //
 //
