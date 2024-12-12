@@ -1,6 +1,6 @@
 //creates a (oChar) object
 //party members, cutscene people & enemys are all the (oChar) object
-function create_char(_type=0,_numb=-1,_x=0,_y=0,_walkSprites=-1,_seed=[],_func=-1)
+function create_char(_type=0,_numb=-1,_x=x,_y=y,_walkSprites=-1,_seed=[],_func=-1)
 {
 	with (instance_create_depth(_x,_y,-9999,oChar))
 	{

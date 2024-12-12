@@ -11,6 +11,3 @@ create_char(0,"t",70,210,sToriel_Chair,["wall"]);
 
 //Spawns lancer:
 create_char(0,"s",60,60,an_lancer_walk(),["wall","look","defaultUp"],function(){ start_cutscene("cc_base"); });
-
-//Spawns 2nd Susie:
-create_char(0,"s",110,60,an_susie_walk(),["wall","look","speed1"],function(){ start_cutscene("cc_test3"); });
