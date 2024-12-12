@@ -9,6 +9,10 @@ if (walkOffset == 0 and walkOffsetMode != 0) { walkOffsetMode=0; }
 
 
 
+if (returnToNormal and op.mode="overworld") { returnToNormal=false; sprite_index=walkSprites[defaultWalkSprite]; image_index=0; image_speed=0; }
+
+
+
 //declare special variables
 if (time == 1)
 {
@@ -27,11 +31,19 @@ if (time == 1)
 	{
 		if is_array(walkSprites)
 		{
-			if (array_length(walkSprites) == 1) { sprite_index=walkSprites[0]; }else{ sprite_index=walkSprites[1]; }
+			if (array_length(walkSprites) == 1) { defaultWalkSprite=0; }else{ defaultWalkSprite=1; }
+			
+			if array_contains(seed,"defaultUp")    { defaultWalkSprite=0; }
+			if array_contains(seed,"defaultDown")  { defaultWalkSprite=1; }
+			if array_contains(seed,"defaultLeft")  { defaultWalkSprite=2; }
+			if array_contains(seed,"defaultRight") { defaultWalkSprite=3; }
+			
+			sprite_index=walkSprites[defaultWalkSprite];
 		}
 		else
 		{
 			sprite_index=walkSprites;
+			defaultWalkSprite=-1;
 		}
 	}
 	
@@ -177,7 +189,8 @@ if (type == "pep" or type == "follower") and ((op.mode == "overworld" and array_
 //set x & y to the right place when you suddenly can't move anymore
 if (!cutsceneStarted and op.mode != "overworld" and op.mode != "battleOver")
 {
-	cutsceneStarted=true; image_index=0; image_speed=0;
+	cutsceneStarted=true;
+	if (!returnToNormal) { image_index=0; image_speed=0; }
 	
 	if (numb == 0 or numb == 1 or numb == 2) or (type == "follower")
 	{

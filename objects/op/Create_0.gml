@@ -141,8 +141,6 @@ moving=false;
 
 wallCounter=0;
 wallCheck=true;
-dsList=ds_list_create();
-dsCounter=0;
 
 forceRun=0;
 

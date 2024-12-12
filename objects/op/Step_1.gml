@@ -259,9 +259,9 @@ if tap_confirm()
 {
 	col=noone;
 	
-	if (playerDirection == "up") { col=instance_place(playerX,playerY-12,oInteract); }
-	if (playerDirection == "down") { col=instance_place(playerX,playerY+12,oInteract); }
-	if (playerDirection == "left") { col=instance_place(playerX-12,playerY,oInteract); }
+	if (playerDirection == "up")    { col=instance_place(playerX,playerY-12,oInteract); }
+	if (playerDirection == "down")  { col=instance_place(playerX,playerY+12,oInteract); }
+	if (playerDirection == "left")  { col=instance_place(playerX-12,playerY,oInteract); }
 	if (playerDirection == "right") { col=instance_place(playerX+12,playerY,oInteract); }
 	
 	//check if you colided with any (oInteract) object
@@ -272,6 +272,33 @@ if tap_confirm()
 		{
 			col.check=true;
 			if (!is_array(col.func)) { col.func(); }else{ col.func[col.counter](); col.counter++; if (col.counter >= array_length(col.func)) { col.counter--; } }
+			
+			if (col.charData != -1)
+			{
+				//make oChar objects animate when you interact with them
+				with (oChar)
+				{
+					if (ranUne == col.charData)
+					{
+						if array_contains(seed,"look")
+						{
+							if (op.playerDirection == "up")    { sprite_index=walkSprites[1]; }
+							if (op.playerDirection == "down")  { sprite_index=walkSprites[0]; }
+							if (op.playerDirection == "left")  { sprite_index=walkSprites[3]; }
+							if (op.playerDirection == "right") { sprite_index=walkSprites[2]; }
+							
+							image_speed=0; image_index=0;
+							returnToNormal=true;
+						}
+						
+						if array_contains(seed,"speed1")
+						{
+							image_speed=1; image_index=0;
+							returnToNormal=true;
+						}
+					}
+				}
+			}
 		}
 	}
 }

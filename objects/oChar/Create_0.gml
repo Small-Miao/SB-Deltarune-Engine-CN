@@ -4,6 +4,8 @@ ranUne=irandom_range(0,999999999);
 
 
 func=-1;
+returnToNormal=false;
+defaultWalkSprite=-1;
 
 type=0;
 numb=-1;

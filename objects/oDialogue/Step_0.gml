@@ -209,4 +209,12 @@ if (array_length(info._dialogue) > 0)
 			if (showText == dialogue) { oMenuShop.image=0; }
 		}
 	}
+	
+	
+	
+	//stop oChar auto animation
+	if (showText == dialogue)
+	{
+		with (oChar) { if (returnToNormal) { image_index=0; } }
+	}
 }

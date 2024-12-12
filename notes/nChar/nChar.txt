@@ -21,3 +21,13 @@ Animation:
 	"faceLeft"        :   After the animation is done the character will set the spriet to their (LEFT Sprite & image=0;)
 	"faceRight"       :   After the animation is done the character will set the spriet to their (RIGHT Sprite & image=0;)
 	
+	
+
+Interact:
+	"look"            :   When interacting with an oChar object they will look towards you.
+	"speed1"          :   When interacting with an oChar object they will have image_speed set to 1.
+	
+	"defaultUp"       :   When done talking will look Up
+	"defaultDown"     :   When done talking will look Down
+	"defaultLeft"     :   When done talking will look Left
+	"defaultRight"    :   When done talking will look Right
