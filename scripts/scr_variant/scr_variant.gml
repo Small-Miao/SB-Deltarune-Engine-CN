@@ -11,10 +11,10 @@ function variant_face()
 {
 	enum FACE
 	{
-		SUSIE = 50,
-		RALSEI = 48,
-		RALSEIHAT = 49,
-		LANCER = 47
+		SUSIE = 51,
+		RALSEI = 49,
+		RALSEIHAT = 50,
+		LANCER = 48
 	}
 }
 
