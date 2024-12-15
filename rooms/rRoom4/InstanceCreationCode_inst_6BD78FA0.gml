@@ -1,2 +1,1 @@
-op.locationText="room4";
-op.locationCC="cc_base";
+savepoint_text("room4","cc_base");

@@ -18,6 +18,10 @@ function master_reset()
 	
 	op.forceNotMove=false;
 	
+	
+	
+	if (op.darkEntranceRoom == "wait") { op.darkEntranceRoom=-1; }
+	
 	update_allData();
 }
 
@@ -51,7 +55,7 @@ function update_allData()
 }
 
 //if you remove and then add back a party member into the party their stats will still be the same thanks to this function
-//You shouldn't have to use this function manualy, as it is connected to the function that adds a party member back to your team
+//you shouldn't have to use this function manualy, as it is connected to the function that adds a party member back to your team
 function update_stats()
 {
 	var numb=-1, data=-1;
@@ -106,7 +110,7 @@ function menu_room()
 	instance_destroy(oChar);
 }
 
-//Easy function that sets the players mode
+//easy function that sets the players mode
 function set_mode(_mode="overworld")
 {
 	op.mode=_mode;
@@ -123,7 +127,7 @@ function destroy_run_object(_type=-1)
 
 
 
-//This function will send the player to a different room in the same way walking into a door does
+//this function will send the player to a different room in the same way walking into a door does
 function regular_room_transition(_room,_canMoveAfter=true)
 {
 	with(instance_create_depth(op.playerX,op.playerY,9999,oDoor))
@@ -134,4 +138,13 @@ function regular_room_transition(_room,_canMoveAfter=true)
 	set_mode("overworld");
 	
 	op.canMoveAfter=_canMoveAfter;
+}
+
+
+
+//set the location text and the location cutscene
+function savepoint_text(_locationText="Skip",_locationCC=-1)
+{
+	op.locationText=_locationText;
+	op.locationCC=_locationCC;
 }

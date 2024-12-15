@@ -3,8 +3,7 @@ op.debug=false;
 
 music(mus_scarletForest);
 
-op.locationText="Forest - Push";
-op.locationCC="cc_base";
+savepoint_text("Forest - Push","cc_base");
 
 
 

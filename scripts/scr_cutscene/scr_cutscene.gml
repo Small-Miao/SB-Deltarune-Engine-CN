@@ -188,7 +188,7 @@ function cutscene_darkEntrance(_x,_y,_room,_fast=false)
 					char_animate(j1[i],1,,,,,,function(){ other.x+=8; });
 					char_animate(j1[i],1,,,,,,function(){ other.x-=8; });
 					char_animate(j1[i],30,,,,,,function(){ other.x+=4; if (other.numb == 0) {   with (instance_create_depth(0,0,0,oRun)) { persistent=true; draw=function(){ depth=-7777; draw_ext(sPixel,0,-1000,-1000,9999,9999,,0,image_alpha); if (op.cameraMode == "overworld" and image_alpha > 0) { image_alpha-=0.1; }  } }   } },function(){  });
-					char_animate(j1[i],1,1,,,,,function(){ other.x=op.darkEntranceX[other.numb]; other.y=190; /**/ if (other.numb == 0) { sound(snd_himquick); room_goto(op.darkEntranceRoom); master_reset(); op.darkEntranceRoom=1; } },,["subnumber"]);
+					char_animate(j1[i],1,1,,,,,function(){ other.x=op.darkEntranceX[other.numb]; other.y=190; /**/ if (other.numb == 0) { sound(snd_himquick); room_goto(op.darkEntranceRoom); master_reset(); op.darkEntranceRoom="wait"; } },,["subnumber"]);
 					char_animate(j1[i],1,0,op.party[j1[i]]._spriteWalk[1],0);
 					++i;
 				}
