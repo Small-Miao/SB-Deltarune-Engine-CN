@@ -148,3 +148,11 @@ function savepoint_text(_locationText="Skip",_locationCC=-1)
 	op.locationText=_locationText;
 	op.locationCC=_locationCC;
 }
+
+
+
+//will trigger this function after the party oChar objects spawn
+function party_guarantee(_func=-1)
+{
+	op.partyGuaranteeFunc=_func;
+}

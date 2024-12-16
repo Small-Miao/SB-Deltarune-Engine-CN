@@ -24,6 +24,14 @@ function reset_party_position(_keepPos=false)
 	with (oChar) { oChar.walkOffset=0; }
 	op.inputWait=true;
 	op.resetPartyPosTimer=1;
+	
+	
+	
+	if (op.partyGuaranteeFunc != -1)
+	{
+		op.partyGuaranteeFunc();
+	}
+	op.partyGuaranteeFunc=-1;
 }
 
 //will make the party seamlessly walk back in line after cutscene
