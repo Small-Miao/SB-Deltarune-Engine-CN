@@ -79,7 +79,7 @@ if (time > 0 and drawON)
 	//
 	//
 	//main draw sprite
-	draw_ext(sprite_index,image_index,x+extraX,y+extraY,xscale,,,image_blend,,bright);
+	draw_ext(sprite_index,image_index,x+extraX,y+extraY,xscale*image_xscale,image_yscale,image_angle,image_blend,image_alpha,bright);
 	//
 	//
 	//

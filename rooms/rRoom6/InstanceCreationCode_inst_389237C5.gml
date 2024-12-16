@@ -1,0 +1,1 @@
+create_char_enemy("ene0","enemy_viro",,,["oblivious"]);

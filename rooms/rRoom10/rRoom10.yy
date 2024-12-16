@@ -20,6 +20,7 @@
     {"name":"inst_21FD8452","path":"rooms/rRoom10/rRoom10.yy",},
     {"name":"inst_709B668A","path":"rooms/rRoom10/rRoom10.yy",},
     {"name":"inst_757A9585","path":"rooms/rRoom10/rRoom10.yy",},
+    {"name":"inst_159CF084","path":"rooms/rRoom10/rRoom10.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -39,6 +40,7 @@
         {"$GMRInstance":"v1","%Name":"inst_21FD8452","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_21FD8452","objectId":{"name":"oSavepoint","path":"objects/oSavepoint/oSavepoint.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":30.0,"y":210.0,},
         {"$GMRInstance":"v1","%Name":"inst_709B668A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_709B668A","objectId":{"name":"oMirrorFloor","path":"objects/oMirrorFloor/oMirrorFloor.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":4.0,"x":60.0,"y":140.0,},
         {"$GMRInstance":"v1","%Name":"inst_757A9585","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_757A9585","objectId":{"name":"oMirrorFloor","path":"objects/oMirrorFloor/oMirrorFloor.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":4.0,"x":120.0,"y":140.0,},
+        {"$GMRInstance":"v1","%Name":"inst_159CF084","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_159CF084","objectId":{"name":"oCharMarker","path":"objects/oCharMarker/oCharMarker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":270.0,"y":210.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4290938047,"depth":200,"effectEnabled":true,"effectType":null,"gridX":10,"gridY":10,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],

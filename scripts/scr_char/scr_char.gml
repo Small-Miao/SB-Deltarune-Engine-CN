@@ -16,7 +16,7 @@ function create_char(_type=0,_numb=-1,_x=x,_y=y,_walkSprites=-1,_seed=[],_func=-
 }
 
 //create a (oChar) object that has the stats of an enemy struct
-function create_char_enemy(_numb=-1,_x=0,_y=0,_enemyStruct=-1,_path=-1,_pathSpeed=2,_seed=[])
+function create_char_enemy(_numb=-1,_enemyStruct=-1,_path=-1,_pathSpeed=2,_seed=[],_x=x,_y=y)
 {
 	if (array_contains(op.killRooms,room) and op.mode != "battle") { return; }
 	
@@ -35,6 +35,12 @@ function create_char_enemy(_numb=-1,_x=0,_y=0,_enemyStruct=-1,_path=-1,_pathSpee
 			image_speed=1;
 		}
 	}
+}
+
+//create a (oChar) object that is an npc
+function create_char_npc(_numb=-1,_walkSprites=-1,_seed=[],_func=-1,_x=x,_y=y)
+{
+	create_char(0,_numb,_x,_y,_walkSprites,_seed,_func);
 }
 
 

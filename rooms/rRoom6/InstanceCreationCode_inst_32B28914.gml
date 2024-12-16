@@ -1,0 +1,1 @@
+create_char_enemy("ene1","enemy_ambu",,,["oblivious"]);

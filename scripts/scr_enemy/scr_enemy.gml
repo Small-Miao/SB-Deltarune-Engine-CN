@@ -187,14 +187,14 @@ function add_enemy(_struct_text,_numb=0,_xOffset=0,_yOffset=0,_animateSeed=[])
 	op.battle_enemy[_numb]=str;
 	op.battle_enemySpare[_numb]=0;
 	op.battle_enemyTired[_numb]=false;
-
+	
 	oMenuBattle.enemyHere[_numb]=true;
 	
 	op.battle_enemyHP[_numb]=op.battle_enemy[_numb]._hp;
 	
 	with (instance_create_depth(0,0,0,op.battle_enemy[_numb]._handler)) { declare_handler(_numb); }
 	
-	create_char_enemy("ene"+string(_numb),op.battle_enemyXY[_numb][0]+(op.x-160)+_xOffset,op.battle_enemyXY[_numb][1]+(op.y-120)+_yOffset,op.battle_enemyString[_numb]);
+	create_char_enemy("ene"+string(_numb),op.battle_enemyString[_numb],,,,op.battle_enemyXY[_numb][0]+(op.x-160)+_xOffset,op.battle_enemyXY[_numb][1]+(op.y-120)+_yOffset);
 	
 	//
 	char_animate("ene"+string(_numb),15,1,op.battle_enemy[_numb]._spriteIdle,0,op.battle_enemyXY[_numb][0],op.battle_enemyXY[_numb][1],,,_animateSeed);

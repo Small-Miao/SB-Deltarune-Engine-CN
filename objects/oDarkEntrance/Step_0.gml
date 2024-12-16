@@ -1,7 +1,7 @@
 //spawn oInteract in place of this object
 with(instance_create_depth(x,y,-y,oInteract))
 {
-	image_xscale=other.image_xscale; image_yscale=other.image_yscale;
+	image_xscale=2; image_yscale=1;
 
 	_id="darkEntrance";
 
@@ -18,7 +18,7 @@ with(instance_create_depth(x,y,-y,oInteract))
 
 	draw=function()
 	{
-		if (op.showHitboxes) { draw_ext(sDarkEntrance,0,x,y,image_xscale,image_yscale); }
+		if (op.showHitboxes) { draw_ext(sDarkEntrance,0,x,y,image_xscale/2,image_yscale); }
 	
 		draw_ext(sprite,image,x+20,y+20);
 	}

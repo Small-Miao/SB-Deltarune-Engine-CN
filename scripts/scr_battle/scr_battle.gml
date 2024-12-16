@@ -121,7 +121,7 @@ function start_battle()
 			}
 			else
 			{
-				create_char_enemy("ene"+string(counter),op.x+260,op.battle_enemyXY[counter][1]+(op.y-120),op.battle_enemyString[counter]);
+				create_char_enemy("ene"+string(counter),op.battle_enemyString[counter],,,,op.x+260,op.battle_enemyXY[counter][1]+(op.y-120));
 			}
 		}
 		
