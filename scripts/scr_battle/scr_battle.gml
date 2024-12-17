@@ -117,7 +117,7 @@ function start_battle()
 			//spawn enemy char if they don't exist
 			if (anyExists)
 			{
-				create_char_enemy("ene"+string(counter),op.battle_enemyTouchInfo[2],op.battle_enemyTouchInfo[3],op.battle_enemyString[counter]);
+				create_char_enemy("ene"+string(counter),op.battle_enemyString[counter],,,,op.battle_enemyTouchInfo[2],op.battle_enemyTouchInfo[3]);
 			}
 			else
 			{
