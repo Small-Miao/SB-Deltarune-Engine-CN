@@ -1,5 +1,6 @@
 //declares keyboard variables
-function reset_keys() {
+function reset_keys() 
+{
 	keyUp=false; tymeUp=2; tapUp=false;
 	keyDown=false; tymeDown=2; tapDown=false;
 	keyLeft=false; tymeLeft=2; tapLeft=false;
@@ -12,8 +13,8 @@ function reset_keys() {
 }
 
 //allows for keyboard inputs
-function use_keys(_sound=false) {
-	
+function use_keys(_sound=false)
+{
 	menuSound=_sound;
 	
 	if (op.keybinds[0][0] == 0) { keyDown=keyboard_check(op.keybinds[0][1]);    }else{ keyDown=keyboard_check(ord(op.keybinds[0][1])); }
