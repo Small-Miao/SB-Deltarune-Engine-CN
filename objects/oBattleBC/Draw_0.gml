@@ -19,7 +19,7 @@ if (op.battleTime > 60)
 	}
 }
 
-draw_ext(sPixel,0,op.x-160-30,op.y-120-30,320+60,240+60,0,c_white,alpha*(0.5+0.25/2));
+draw_ext(sPixel,0,op.x-160-30,op.y-120-30,320+60,240+60,0,0,alpha*(0.5+0.25/2));
 
 
 
