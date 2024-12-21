@@ -27,7 +27,7 @@ Interact:
 	"look"            :   When interacting with an oChar object they will look towards you.
 	"speed1"          :   When interacting with an oChar object they will have image_speed set to 1.
 	
-	"defaultUp"       :   When done talking will look Up
-	"defaultDown"     :   When done talking will look Down
-	"defaultLeft"     :   When done talking will look Left
-	"defaultRight"    :   When done talking will look Right
+	"defaultUp"       :   When done talking or when spawned will look Up
+	"defaultDown"     :   When done talking or when spawned will look Down
+	"defaultLeft"     :   When done talking or when spawned will look Left
+	"defaultRight"    :   When done talking or when spawned will look Right

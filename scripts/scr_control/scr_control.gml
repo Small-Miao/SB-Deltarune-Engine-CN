@@ -128,12 +128,14 @@ function destroy_run_object(_type=-1)
 
 
 //this function will send the player to a different room in the same way walking into a door does
-function regular_room_transition(_room,_canMoveAfter=true)
+function regular_room_transition(_room,_canMoveAfter=true,_direction=-1)
 {
 	with(instance_create_depth(op.playerX,op.playerY,9999,oDoor))
 	{
 		r=_room;
+		d=_direction;
 	}
+	
 	op.forceNotMove=true;
 	set_mode("overworld");
 	
