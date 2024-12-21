@@ -66,7 +66,7 @@ function char_exists(_numb=0,_destroyOffscreen)
 }
 
 //this function is used to animate (ochar) objects for any occasion (most used for creating cutscenes)
-function char_animate(_numb=0,_delay=1,_image_speed=-1,_sprite=-1,_subimg=-1,_x=-1,_y=-1,_funcBegin=-1,_funcEnd=-1,_seed=[])
+function char_animate(_numb=0,_duration=1,_image_speed=-1,_sprite=-1,_subimg=-1,_x=-1,_y=-1,_funcBegin=-1,_funcEnd=-1,_seed=[])
 {
 	if (_numb == 0 and op.mode == "overworld") { op.mode="cutscene"; }
 	
@@ -84,7 +84,7 @@ function char_animate(_numb=0,_delay=1,_image_speed=-1,_sprite=-1,_subimg=-1,_x=
 		
 		if array_contains(_seed,"override") { animate=[]; animateCheck=true; subnumber=false; }
 		
-		array_push(animate,[_delay,_delay,_image_speed,_sprite,_subimg,_x,_y,-1,-1,_funcBegin,_funcEnd,_seed]);
+		array_push(animate,[_duration,_duration,_image_speed,_sprite,_subimg,_x,_y,-1,-1,_funcBegin,_funcEnd,_seed]);
 	} }
 	
 	if (findChar != -1)

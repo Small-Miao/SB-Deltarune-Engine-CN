@@ -243,7 +243,8 @@ if (col != noone and mode == "overworld")
 					{
 						op.mode="overworld"; op.cameraMode="overworld";
 						op.locationCCcheck=false;
-						with(oMarker) { if (r == op.transitionInfo[0]) { op.playerX=x; op.playerY=y; if (op.transitionInfo[2] != -1) { op.playerDirection=op.transitionInfo[2]; } } }
+						with(oMarker) { if (r == op.transitionInfo[0]) { op.playerX=x; op.playerY=y; } }
+						if (op.transitionInfo[2] != -1) { op.playerDirection=op.transitionInfo[2]; }
 						reset_party_position();
 						
 						if (!op.canMoveAfter) { op.mode="cutscene"; op.cameraMode=0; }

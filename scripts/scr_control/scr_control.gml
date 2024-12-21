@@ -130,6 +130,11 @@ function destroy_run_object(_type=-1)
 //this function will send the player to a different room in the same way walking into a door does
 function regular_room_transition(_room,_canMoveAfter=true,_direction=-1)
 {
+	if (_direction == 0)    { _direction="up"; }
+	if (_direction == 1)  { _direction="down"; }
+	if (_direction == 2)  { _direction="left"; }
+	if (_direction == 3) { _direction="right"; }
+	
 	with(instance_create_depth(op.playerX,op.playerY,9999,oDoor))
 	{
 		r=_room;
