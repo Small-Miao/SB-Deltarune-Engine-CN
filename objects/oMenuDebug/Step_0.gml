@@ -11,6 +11,9 @@ if (page == "start")
 	if tap_confirm(1) { page="room"; cursor=op.debugSave[0]; }
 	if tap_confirm(2) { room_goto(rMainMenu); }
 	if tap_confirm(3) { instance_create_depth(0,0,-9999,oMenuSave); instance_destroy(); }
+	if tap_confirm(4) { destroy_battle(); set_mode(); audio_stop_all(); op.currentMusic=-1; op.pastMusic=-1; instance_destroy(); }
+	
+	if tap_confirm(5) { instance_create_depth(0,0,-9999,oMenuDebugPlace); set_mode(); instance_destroy(); }
 }
 
 
