@@ -1,6 +1,23 @@
 ++time;
 pastXY=[x,y];
 
+//shake char
+if (shakeInfo[0] > -1)
+{
+	if (shakeInfo[3] > 0 and shakeInfo[0] > 0) { shakeX=(shakeInfo[0]/shakeInfo[3])*shakeInfo[3]*sign(shakeX); shakeY=(shakeInfo[0]/shakeInfo[3])*shakeInfo[3]*sign(shakeY); }
+	shakeInfo[0]--;
+	if (shakeInfo[1] > 0) { if (shakeX == 0) { shakeX=shakeInfo[1]; }else{ shakeX*=-1; } }
+	if (shakeInfo[2] > 0) { if (shakeY == 0) { shakeY=shakeInfo[2]; }else{ shakeY*=-1; } }
+	
+	
+	
+	if (shakeInfo[0] == -1)
+	{
+		shakeInfo=[-1,0,0,0];
+		shakeX=0; shakeY=0;
+	}
+}
+
 var _numb=-1;
 var _i=0;
 

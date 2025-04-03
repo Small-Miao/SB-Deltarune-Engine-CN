@@ -94,6 +94,12 @@ function char_animate(_numb=0,_duration=1,_image_speed=-1,_sprite=-1,_subimg=-1,
 	}
 }
 
+//shakes oChar objects
+function char_shake(_numb=0,_shakeDuration=3,_shakeXpower=2,_shakeYpower=0,_decay=false)
+{
+	char(_numb).shakeInfo=[_shakeDuration,_shakeXpower,_shakeYpower,_shakeDuration*_decay];
+}
+
 
 
 //adds a person who is follows the party but isn't actualy in the party 

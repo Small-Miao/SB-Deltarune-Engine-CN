@@ -34,7 +34,7 @@ if (time > 0 and drawON)
 			res_u();
 			repeat (array_length(red))
 			{
-				draw_ext(sprite_index,image_index,x+extraX,y+extraY,xscale*(1+red[u]/4),(1+red[u]/4),,c_red,(1-red[u]/2));
+				draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY,xscale*(1+red[u]/4),(1+red[u]/4),,c_red,(1-red[u]/2));
 				red[u]+=0.02;
 				++u;
 			}
@@ -64,9 +64,9 @@ if (time > 0 and drawON)
 	if (op.fountainON)
 	{
 		gpu_set_fog(true,oFountain.color,0,0);
-		draw_ext(sprite_index,image_index,x+extraX,y+extraY-2,xscale,,,image_blend,,bright);
+		draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY-2,xscale,,,image_blend,,bright);
 		gpu_set_fog(false,0,0,0);
-		draw_ext(sprite_index,image_index,x+extraX,y+extraY-4,xscale,-3,,0,,bright);
+		draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY-4,xscale,-3,,0,,bright);
 		image_blend=0;
 	}
 	else
@@ -79,7 +79,7 @@ if (time > 0 and drawON)
 	//
 	//
 	//main draw sprite
-	draw_ext(sprite_index,image_index,x+extraX,y+extraY,xscale*image_xscale,image_yscale,image_angle,image_blend,image_alpha,bright);
+	draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY,xscale*image_xscale,image_yscale,image_angle,image_blend,image_alpha,bright);
 	//
 	//
 	//
@@ -98,24 +98,24 @@ if (time > 0 and drawON)
 			shader_set_uniform_f(shader_get_uniform(sha_rgb,"col_g"),-1);
 			shader_set_uniform_f(shader_get_uniform(sha_rgb,"col_b"),-1);
 			shader_set_uniform_f(shader_get_uniform(sha_rgb,"col_a"),bright);
-		
-			draw_ext(sprite_index,image_index,x+extraX-1,y+extraY,xscale,,,,0.8*op.dodge_alpha);
-			draw_ext(sprite_index,image_index,x+extraX+1,y+extraY,xscale,,,,0.8*op.dodge_alpha);
-			draw_ext(sprite_index,image_index,x+extraX,y+extraY-1,xscale,,,,0.8*op.dodge_alpha);
-			draw_ext(sprite_index,image_index,x+extraX,y+extraY+1,xscale,,,,0.8*op.dodge_alpha);
+			
+			draw_ext(sprite_index,image_index,x+extraX+shakeX-1,y+extraY+shakeY,xscale,,,,0.8*op.dodge_alpha);
+			draw_ext(sprite_index,image_index,x+extraX+shakeX+1,y+extraY+shakeY,xscale,,,,0.8*op.dodge_alpha);
+			draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY-1,xscale,,,,0.8*op.dodge_alpha);
+			draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY+1,xscale,,,,0.8*op.dodge_alpha);
 		
 			shader_reset();
 			
-			draw_ext(sprite_index,image_index,x+extraX,y+extraY,xscale);
+			draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY,xscale);
 			
 			gpu_set_fog(true, merge_color(c_black, c_dkgray, .5), 0,0);
-			draw_ext(sprite_index,image_index,x+extraX,y+extraY,xscale,,,,0.8*op.dodge_alpha);
+			draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY,xscale,,,,0.8*op.dodge_alpha);
 			gpu_set_fog(false,0,0,0);
 		}
 		else
 		{
 			//make followers darker
-			draw_ext(sprite_index,image_index,x+extraX,y+extraY,xscale,,,c_gray,op.dodge_alpha);
+			draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY,xscale,,,c_gray,op.dodge_alpha);
 		}
 	}
 	
@@ -124,7 +124,7 @@ if (time > 0 and drawON)
 	if (type == "pep" and op.mode == "battle" and op.battleTime > 60)
 	{
 		if (op.hp[numb] <= 0) and (oMenuBattle.mode == "talk" or oMenuBattle.mode == "dodge") { if (deadAlpha < 1) { deadAlpha+=0.1; } }else{ if (deadAlpha > 0) { deadAlpha-=0.1; } }
-		draw_ext(sprite_index,image_index,x+extraX,y+extraY,xscale,,,,(0.5+0.25/2)*deadAlpha,-1);
+		draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY,xscale,,,,(0.5+0.25/2)*deadAlpha,-1);
 	}
 	
 	//enemy struct _drawFunc apply shader

@@ -37,6 +37,8 @@ cutsceneStarted=false; cutsceneHappened=false;
 findAngle=-1;
 
 extraX=0; extraY=0;
+shakeX=0; shakeY=0; shakeInfo=[-1,0,0,0];
+
 subnumber=false;
 
 

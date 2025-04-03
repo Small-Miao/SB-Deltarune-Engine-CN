@@ -12,7 +12,7 @@ var i=0, i1=0, checkY=0;
 
 with(oChar)
 {
-	array_push(info,[sprite_index,image_index,x+extraX,y+extraY,xscale,1,0,image_blend,1,bright,walkSprites]);
+	array_push(info,[sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY,xscale,1,0,image_blend,1,bright,walkSprites]);
 }
 
 i=0; i1=0;
