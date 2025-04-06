@@ -1,1 +1,2 @@
 run=true;
+hideParty=true;

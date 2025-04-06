@@ -38,6 +38,7 @@ findAngle=-1;
 
 extraX=0; extraY=0;
 shakeX=0; shakeY=0; shakeInfo=[-1,0,0,0];
+dodgeAlpha2=1;
 
 subnumber=false;
 

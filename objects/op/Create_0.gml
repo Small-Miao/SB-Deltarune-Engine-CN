@@ -189,5 +189,5 @@ oldEnemyXY=[];
 //overworld dodging variables
 dodge=false;
 dodge_applyShaders=true;
-dodge_alpha=0;
+dodge_alpha=0; dodge_hideParty=false;
 dodge_hit=0;

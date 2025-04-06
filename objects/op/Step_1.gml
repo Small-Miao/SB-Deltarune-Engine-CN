@@ -217,6 +217,7 @@ else
 {
 	//overworld dodging is disabled
 	dodge=false;
+	dodge_hideParty=false;
 	
 	if (dodge_hit > 0) { --dodge_hit; }
 	

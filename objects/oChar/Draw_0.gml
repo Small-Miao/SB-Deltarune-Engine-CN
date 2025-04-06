@@ -64,9 +64,9 @@ if (time > 0 and drawON)
 	if (op.fountainON)
 	{
 		gpu_set_fog(true,oFountain.color,0,0);
-		draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY-2,xscale,,,image_blend,,bright);
+		draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY-2,xscale,,,image_blend,image_alpha,bright);
 		gpu_set_fog(false,0,0,0);
-		draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY-4,xscale,-3,,0,,bright);
+		draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY-4,xscale,-3,,0,image_alpha,bright);
 		image_blend=0;
 	}
 	else
@@ -74,12 +74,15 @@ if (time > 0 and drawON)
 		image_blend=c_white;
 	}
 	
+	//turn party invisible in dodge zones
+	if (type == "pep" or type == "follower") and (numb != 0) and (op.dodge_hideParty or dodgeAlpha2 < 1) { dodgeAlpha2=1-op.dodge_alpha; }
+	
 	
 	
 	//
 	//
 	//main draw sprite
-	draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY,xscale*image_xscale,image_yscale,image_angle,image_blend,image_alpha,bright);
+	draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY,xscale*image_xscale,image_yscale,image_angle,image_blend,image_alpha*dodgeAlpha2,bright);
 	//
 	//
 	//
@@ -115,7 +118,7 @@ if (time > 0 and drawON)
 		else
 		{
 			//make followers darker
-			draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY,xscale,,,c_gray,op.dodge_alpha);
+			draw_ext(sprite_index,image_index,x+extraX+shakeX,y+extraY+shakeY,xscale,,,c_gray,op.dodge_alpha*dodgeAlpha2);
 		}
 	}
 	
