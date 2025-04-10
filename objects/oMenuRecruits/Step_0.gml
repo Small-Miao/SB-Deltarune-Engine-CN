@@ -35,7 +35,5 @@ if (page == "more")
 {
 	horizontal_cursor(array_length(rec));
 	
-	if tap_confirm() { force_undo(0); }
-	
 	if tap_cancel() { page="start"; }
 }
