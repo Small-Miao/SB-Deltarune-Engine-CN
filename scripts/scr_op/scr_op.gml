@@ -2,6 +2,9 @@
 //run this when you launch a new save file
 function declare_gamestats()
 {
+	op.seconds=0;
+	op.minutes=0;
+	
 	op.progress=[];
 	op.winRooms=[];
 	op.killRooms=[];

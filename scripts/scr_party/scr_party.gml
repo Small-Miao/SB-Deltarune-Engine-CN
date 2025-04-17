@@ -4,11 +4,15 @@ function reset_party_position(_keepPos=false)
 	updatestruct_party();
 	op.inputWait=true;
 	
-	with (oChar) { if (type == "pep") { instance_destroy(oChar); } }
+	with (oChar) { if (type == "pep") { instance_destroy(); } }
 	
 	if (!_keepPos)
 	{
-		op.partyPos=array_create((array_length(op.party)+array_length(op.followers))*12,[op.playerX,op.playerY,op.playerDirection,0,"overworld"]);
+		op.partyPos = [];
+		repeat ((array_length(op.party)+array_length(op.followers))*12)
+		{
+			array_push(op.partyPos,[op.playerX,op.playerY,op.playerDirection,0,"overworld"]);
+		}
 	}
 	
 	var i=0;
