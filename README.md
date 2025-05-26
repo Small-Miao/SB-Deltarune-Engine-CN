@@ -1,2 +1,2 @@
 # SB-Deltarune-Engine
-Made with the latest version of GameMaker
+Made with a later version of GameMaker
