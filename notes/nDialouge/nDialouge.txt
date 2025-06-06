@@ -8,11 +8,9 @@ commands:
 
 	format: {command:value1}
 
-	"{setup}"   :   can set up a different command to be done when you tybe the # symbol ( ex: {setup:delay:10} )
+	"{setup}"   :   can set up a different command to be run when you type the # symbol ( ex: {setup:delay:10} )
 	
 	
-	
-	"{color}"   :   changes the color the text is being printed in             ( ex: {color:yellow} or {hex:FFFF00} )
 	
 	"{color}"   :   changes the color the text is being printed in             ( ex: {color:yellow} or {hex:FFFF00} )
 	

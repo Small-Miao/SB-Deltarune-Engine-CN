@@ -97,6 +97,8 @@ function enemy_mercy(_numb=0,_amount=1,_sound=true)
 function enemy_tired(_numb=0,_set=true)
 {
 	op.battle_enemyTired[_numb]=_set;
+	effect_number(,op.battle_enemyXY[_numb][0]-15,op.battle_enemyXY[_numb][1]-15-oMenuBattle.eneUp[_numb]*10,c_white,,9);
+	++oMenuBattle.eneUp[_numb];
 }
 
 //this function will force the enemy to say something when it's their turn to speak
