@@ -102,8 +102,8 @@ if (time > 0)
 		
 		res_i(); repeat (3) { i1=2-i; if (i == 0) { i1=2+op.party[op.overworldMenuSaveCursor[2]]._numberExistence; } if !(page == "equipped" and cursor == i) { draw_ext(sSymbols1,i1,151,55+i*15); } ++i; }
 		if (op.equipped[op.overworldMenuSaveCursor[2]][0] != -1) { draw_ext(sSymbols2,op.party[op.overworldMenuSaveCursor[2]]._numberExistence,171.5,60); }
-		if (op.equipped[op.overworldMenuSaveCursor[2]][1] != -1) { draw_ext(sSymbols3,0,171.5,75); }
-		if (op.equipped[op.overworldMenuSaveCursor[2]][2] != -1) { draw_ext(sSymbols3,0,171.5,90); }
+		if (op.equipped[op.overworldMenuSaveCursor[2]][1] != -1) { draw_ext(sSymbols3,op.equipped[op.overworldMenuSaveCursor[2]][1]._armorImageIndex,171.5,75); }
+		if (op.equipped[op.overworldMenuSaveCursor[2]][2] != -1) { draw_ext(sSymbols3,op.equipped[op.overworldMenuSaveCursor[2]][2]._armorImageIndex,171.5,90); }
 		
 		res_i();
 		repeat (3)
@@ -138,7 +138,7 @@ if (time > 0)
 					}
 					
 					print(j1[i]._infoText[0],192,119-j2*13.5+i*13.5,,,,,,,i2);
-					if (saveCur[0] == 0) { draw_ext(sSymbols2,j1[i]._numberExistence,182,119-j2*13.5+i*13.5,,,,i2); }else{ draw_ext(sSymbols3,0,182,119-j2*13.5+i*13.5,,,,i2); }
+					if (saveCur[0] == 0) { draw_ext(sSymbols2,j1[i]._numberExistence,182,119-j2*13.5+i*13.5,,,,i2); }else{ draw_ext(sSymbols3,j1[i]._armorImageIndex,182,119-j2*13.5+i*13.5,,,,i2); }
 				}
 				else
 				{ 

@@ -22,3 +22,13 @@ function item_whiteRibbon() : item_base() constructor
 	//susie doesn't want to equip this
 	_cantHave=[1];
 }
+
+function item_sparkle() : item_base() constructor
+{
+	_infoText=["Sparkle","different icon in\narmore menu","a","a"];
+	
+	_defense=10;
+	_magic=1;
+	
+	_armorImageIndex = 1;
+}
