@@ -34,8 +34,8 @@ function item_base() constructor
 	//how much it costs at shops
 	_price=100;
 	
-	//which image index to use from sSymbols3
-	_armorImageIndex = 0;
+	//which image index to use from sSymbols3 (-1 means 0 and 0 means 0)
+	_imageIndex = -1;
 	
 	
 	

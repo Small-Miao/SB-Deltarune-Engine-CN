@@ -48,3 +48,11 @@ function item_woodBlade() : item_base() constructor
 	_defense=1;
 	_magic=6;
 }
+
+function item_fireSword() : item_base() constructor
+{
+	_infoText=["Fire Sword","This sword is \nvery hot"];
+	_numberExistence=0;
+	
+	_imageIndex = 2;
+}

@@ -1,1 +1,1 @@
-get = "item_sparkle";
+get = "item_fireSword";

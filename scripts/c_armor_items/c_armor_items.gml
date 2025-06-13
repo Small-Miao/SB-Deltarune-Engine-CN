@@ -30,5 +30,5 @@ function item_sparkle() : item_base() constructor
 	_defense=10;
 	_magic=1;
 	
-	_armorImageIndex = 1;
+	_imageIndex = 1;
 }
