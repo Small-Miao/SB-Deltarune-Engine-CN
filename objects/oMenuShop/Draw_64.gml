@@ -1,4 +1,4 @@
-if (sstr._draw != -1) { sstr._draw(); }
+if (sstr._draw != -1 and !quickShop) { sstr._draw(); }
 
 draw_ext(sPixel,0,0,120,320,120,,0);
 

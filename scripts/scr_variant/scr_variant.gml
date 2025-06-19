@@ -6,38 +6,26 @@ function variant_csv()
 
 
 
-//declares an enum for dialogue faces if you don't want to input the sprite name every time
-function variant_face()
-{
-	enum FACE
-	{
-		SUSIE = 51,
-		RALSEI = 49,
-		RALSEIHAT = 50,
-		LANCER = 48
-	}
-}
-
 //automaticaly sets the voice based on what face is currently being used
 function variant_face_match(_face)
 {
 	//you can also set font's or any other value if you want to
-	if (_face == FACE.SUSIE) { voice=txt_sus; }
+	if (_face == sFace_Susie) { voice=txt_sus; }
 	
-	if (_face == FACE.RALSEI or _face == FACE.RALSEIHAT) { voice=txt_ral; }
+	if (_face == sFace_Ralsei or _face == sFace_RalseiHat) { voice=txt_ral; }
 		
-	if (_face == FACE.LANCER) { voice=txt_lan; }
+	if (_face == sFace_Lancer) { voice=txt_lan; }
 }
 
 //you can offset dialogue faces here if you want to and or permanetly in battle if you need to
 function variant_face_offset()
 {
 	faceXY=[0,0];
-	if (face[0] == FACE.SUSIE) { faceXY=[-5,-5]; }
+	if (face[0] == sFace_Susie) { faceXY=[-5,-5]; }
 		
 	if (op.mode == "battle")
 	{
-		if (face[0] == FACE.RALSEI or face[0] == FACE.RALSEIHAT) { faceXY=[-5,-5]; }
+		if (face[0] == sFace_Ralsei or face[0] == sFace_RalseiHat) { faceXY=[-5,-5]; }
 	}
 }
 

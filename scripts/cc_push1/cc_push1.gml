@@ -15,13 +15,13 @@ function cc_push1() : cc_base() constructor
 	_y=[156,1];
 	
 	_face=[
-		[FACE.SUSIE,23]
-		,[FACE.LANCER,2]
-		,[FACE.RALSEI,34]
-		,[FACE.SUSIE,33]
+		[sFace_Susie,23]
+		,[sFace_Lancer,2]
+		,[sFace_Ralsei,34]
+		,[sFace_Susie,33]
 		
-		,[FACE.RALSEI,5]
-		,[FACE.RALSEI,21]
+		,[sFace_Ralsei,5]
+		,[sFace_Ralsei,21]
 	];
 	
 	_hideBox=[0,30,0,125,0,0];
@@ -52,7 +52,7 @@ function cc_push1() : cc_base() constructor
 	];
 	
 	_funcAny=[
-		function(){ effect_smallface(FACE.SUSIE,33,"YES",150,42); }
+		function(){ effect_smallface(sFace_Susie,33,"YES",150,42); }
 	];
 	
 	_func=function(){ camera_reset(30,,,function(){ set_mode(); }); }

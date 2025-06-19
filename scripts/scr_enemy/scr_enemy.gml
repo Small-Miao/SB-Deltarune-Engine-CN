@@ -26,7 +26,7 @@ function enemy_damage(_from,_to=0,_accuracy=1,_pickDamage=-1,_sound=true)
 		if (_sound) { sound(snd_damage); }
 		
 		op.battle_enemyHP[_to]-=damage;
-		if (!op.isBoss) { if (op.battle_enemyHP[_to] < round(op.battle_enemy[_to]._hp/2) and !op.battle_enemyTired[_to]) { enemy_tired(_to); } }
+		if (!op.isBoss) { if (op.battle_enemyHP[_to] < round(op.battle_enemy[_to]._hp/2) and op.battle_enemyHP[_to] > 0 and !op.battle_enemyTired[_to]) { enemy_tired(_to); } }
 		
 		if (op.battle_enemyHP[_to] < 1)
 		{
@@ -94,10 +94,10 @@ function enemy_mercy(_numb=0,_amount=1,_sound=true)
 }
 
 //sets an enemy to be tired
-function enemy_tired(_numb=0,_set=true)
+function enemy_tired(_numb=0,_status=true)
 {
-	op.battle_enemyTired[_numb]=_set;
-	effect_number(,op.battle_enemyXY[_numb][0]-15,op.battle_enemyXY[_numb][1]-15-oMenuBattle.eneUp[_numb]*10,c_white,,9);
+	op.battle_enemyTired[_numb]=_status;
+	effect_number(,op.battle_enemyXY[_numb][0]-15,op.battle_enemyXY[_numb][1]-15-oMenuBattle.eneUp[_numb]*10,c_white,,9+(_status == false));
 	++oMenuBattle.eneUp[_numb];
 }
 
@@ -123,7 +123,7 @@ function enemy_spare(_numb,_tiredSpare=false)
 	if (op.battle_enemySpare[_numb] == 100 or op.battle_enemyTired[_numb])
 	{
 		// Recruit
-		if (!op.isBoss and !array_contains(op.lost,op.battle_enemyString[_numb]))
+		if (!op.isBoss and !array_contains(op.lost,op.battle_enemyString[_numb]) and !array_contains(op.battle_seed,"purify"))
 		{
 			var i=0, i1=0, i2=-1;
 			while(i < array_length(op.recruits))
@@ -140,7 +140,12 @@ function enemy_spare(_numb,_tiredSpare=false)
 			if (i2 != -1) { if (op.recruits[i2][2] <= op.recruits[i2][1]) { effect_recruit(_numb,i2); } }
 		}
 		
-		oMenuBattle.enemyHere[_numb]=false; op.gainMoney+=op.battle_enemy[_numb]._money;
+		//purify text
+		if (array_contains(op.battle_seed,"purify"))
+			effect_recruit(_numb,,12);
+		
+		oMenuBattle.enemyHere[_numb]=false;
+		if (!array_contains(op.battle_seed,"purify")) { op.gainMoney+=op.battle_enemy[_numb]._money; }
 		with(op.battle_enemy[_numb]._handler) { if (numb_from == _numb) { instance_destroy(); } }
 		
 		char_animate(_char,20);

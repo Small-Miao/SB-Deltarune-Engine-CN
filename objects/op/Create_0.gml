@@ -1,6 +1,6 @@
-variant_face();
 fileVer=1;
 
+mainMenuRoom = rMainMenu;
 
 
 //debug Variables
@@ -173,6 +173,8 @@ battle_music=-1;
 battle_flavourText="A";
 battle_seed=[];
 
+battle_tpMult = 1;
+
 battle_enemysLeft=0;
 
 menuPep=0;
@@ -191,3 +193,6 @@ dodge=false;
 dodge_applyShaders=true;
 dodge_alpha=0; dodge_hideParty=false;
 dodge_hit=0;
+
+//extra
+slopesAmount = 0; slopeTouch = 0;

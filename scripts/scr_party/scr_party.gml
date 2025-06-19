@@ -136,10 +136,11 @@ function party_damage(_numb=0,_amount=100)
 		if (op.hp[_numb] < 1)
 		{
 			op.hp[_numb]=-round(op.hpMax[_numb]/2);
+			if (array_contains(op.battle_seed,"swoon")) { op.hp[_numb] = -999; }
 		
-			char_animate(_numb,1,0,op.party[_numb]._spriteDead,1,,,,,["override"]);
+			char_animate(_numb,1,0,op.party[_numb]._spriteDead,1+array_contains(op.battle_seed,"swoon"),,,,,["override"]);
 			
-			effect_number(0,op.battle_partyXY[_numb][0]-15,op.battle_partyXY[_numb][1]-15,c_red,,1);
+			effect_number(0,op.battle_partyXY[_numb][0]-15,op.battle_partyXY[_numb][1]-15,c_red,,1+array_contains(op.battle_seed,"swoon")*10);
 		}
 		else
 		{

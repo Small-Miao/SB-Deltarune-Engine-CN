@@ -192,7 +192,7 @@ if (page == "config1")
 	if tap_confirm(3) { force_undo(0); if (window_get_fullscreen()) { window_set_fullscreen(false); window_set_size(320*4,240*4); window_center(); }else{ window_set_fullscreen(true); } }
 	if tap_confirm(4) { force_undo(0); if (op.option_autoRun) { op.option_autoRun=false; }else{ op.option_autoRun=true; } config_save(); }
 	
-	if tap_confirm(5) { page="mainMenuRoom"; cursor=0; music_stop(); transition(,function(){ room_goto(oMenuOverworld.mainMenuRoom); }); }
+	if tap_confirm(5) { page="mainMenuRoom"; cursor=0; music_stop(); transition(,function(){ room_goto(op.mainMenuRoom); }); }
 	if tap_confirm(6) { force_undo(1); }
 }
 

@@ -1,12 +1,20 @@
-if (page == "start")
+if (page == "start" or page == "start_wait")
 {
 	draw_box(46,49,227,109);
 	
 	print(drText[0],85,114,,,,,,,,,,,,["menu","soul1","start",0]);
 	print(drText[1],175,114,,,,,,,,,,,,["menu","soul1","start",1]);
-	print(drText[2],85,134,,,,,,,,,,,,["menu","soul1","start",2]);
-	res_i(); if (array_length(op.recruits) == 0) { i1=c_gray; }else{ i1=c_white; }
-	print(drText[3],175,134,,,,,,,i1,,,,,["menu","soul1","start",3]);
+	
+	if (op.world == "dark")
+	{
+		print(drText[2],85,134,,,,,,,,,,,,["menu","soul1","start",2]);
+		res_i(); if (array_length(op.recruits) == 0) { i1=c_gray; }else{ i1=c_white; }
+		print(drText[3],175,134,,,,,,,i1,,,,,["menu","soul1","start",3]);
+	}
+	else
+	{
+		print(drTextLight[5],85,134,,,,,,,,,,,,["menu","soul1","start","start_wait",2]);
+	}
 	
 	res_i(); i1=""; if (op.seconds < 10) { i1="0"; }
 	print(op.name_,60,64);
@@ -23,9 +31,9 @@ if (page == "save" or page == "ask")
 	draw_box(30,6,520/2,106/2);
 	draw_box(30,62,520/2,322/2);
 	
-	draw_ext(sMenu,17,37,108,493/2);
-	draw_ext(sMenu,17,37,150,493/2);
-	draw_ext(sMenu,17,37,192,493/2);
+	draw_ext(sMenu,17,37,108,493/2,,,,,(op.world == "light"));
+	draw_ext(sMenu,17,37,150,493/2,,,,,(op.world == "light"));
+	draw_ext(sMenu,17,37,192,493/2,,,,,(op.world == "light"));
 	
 	res_i();
 	repeat (4)
@@ -63,8 +71,8 @@ if (page == "filesaved")
 	draw_box(30,6,520/2,106/2);
 	draw_box(30,62,520/2,274/2);
 	
-	draw_ext(sMenu,17,37,108,493/2);
-	draw_ext(sMenu,17,37,150,493/2);
+	draw_ext(sMenu,17,37,108,493/2,,,,,(op.world == "light"));
+	draw_ext(sMenu,17,37,150,493/2,,,,,(op.world == "light"));
 	
 	res_i();
 	repeat (4)

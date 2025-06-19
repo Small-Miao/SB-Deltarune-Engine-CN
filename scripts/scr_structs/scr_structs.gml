@@ -245,13 +245,18 @@ function add_cell(_struct_text)
 
 
 //spawn the shop object with information from a struct
-function create_shop(_struct_text="shop_base")
+function create_shop(_struct_text="shop_base",_quickShop=false)
 {
+	if (!_quickShop)
+		menu_room();
+	
 	with (instance_create_depth(0,0,-9999,oMenuShop))
 	{
 		struct(_struct_text);
 		sstr=str;
 		strText=_struct_text;
+		
+		quickShop = _quickShop;
 	}
 }
 

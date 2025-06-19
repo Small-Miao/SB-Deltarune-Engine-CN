@@ -6,6 +6,10 @@ seed:
 	"grayspare0" or "grayspare1" or "grayspare2"   :   makes the enemy's mercy meter gray of the coresponding enemy (Also you can't select this enemy)
 
 	"corner"                                       :   Makes the soul spawn from the top right corner.
+	"noCheck"                                      :   Removes check from the act menu.
+	
+	"swoon"                                        :   If a character runs out of HP in battle their HP is set to -999 and they won't be automatically healed.
+	"purify"                                       :   Won't recruit the enemies fought
 
 	"stopEnd"                                      :   Instead of ending the battle when all enemy's are gone ob.endSignal is set to true (that's "OB" NOT "OP")
 

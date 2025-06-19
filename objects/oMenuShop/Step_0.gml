@@ -17,7 +17,7 @@ use_cursor();
 ++time;
 if (time == 2)
 {
-	music(sstr._music,true);
+	if (!quickShop) { music(sstr._music,true); }
 	
 	items=[];
 	res_i();
@@ -44,7 +44,20 @@ if (page == "start")
 	if tap_confirm(0) { page=i1[sstr._mainButtons[0]]; cursor=0; }
 	if tap_confirm(1) { page=i1[sstr._mainButtons[1]]; cursor=0; }
 	if tap_confirm(2) { page=i1[sstr._mainButtons[2]]; cursor=0; }
-	if tap_confirm(3) { page=0; cursor=0; start_cutscene("cc_shopExit"); }
+	if tap_confirm(3)
+	{
+		page=0; cursor=0;
+		
+		if (!quickShop)
+		{
+			start_cutscene("cc_shopExit");
+		}
+		else
+		{
+			op.mode = "overworld";
+			instance_destroy();
+		}
+	}
 	
 	if (page == "buy") { spawnThin=true; textThin=[sstr._textBuy[0]]; }
 	if (page == "sell") { spawnThin=true; textThin=[sstr._textSell[0]]; cursor=saveCur[1]; }

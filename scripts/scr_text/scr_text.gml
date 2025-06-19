@@ -44,7 +44,7 @@ function print(_text="Skip",_x=0,_y=0,_font=fDetermination,_sep=12,_width=320,_x
 	}
 	
 	//moves the text over when a face is draw next to it in battle
-	if array_contains(_seed,"partyHelp") { _x+=15*array_length(grab[i]._partyHelp); }
+	if array_contains(_seed,"partyHelp") { _x+=15*partyHelp; }
 	
 	
 	
@@ -69,6 +69,19 @@ function print(_text="Skip",_x=0,_y=0,_font=fDetermination,_sep=12,_width=320,_x
 		draw_text_ext_transformed_color(_x+xOffset+1,_y+yOffset,_text,_sep,_width,_xscale,_yscale,_angle,_c1d,_c1d,_c1d,_c1d,_alpha);
 		draw_text_ext_transformed_color(_x+xOffset,_y+yOffset-1,_text,_sep,_width,_xscale,_yscale,_angle,_c1d,_c1d,_c1d,_c1d,_alpha);
 		draw_text_ext_transformed_color(_x+xOffset,_y+yOffset+1,_text,_sep,_width,_xscale,_yscale,_angle,_c1d,_c1d,_c1d,_c1d,_alpha);
+	}
+	
+	if array_contains(_seed,"bc5")
+	{
+		draw_text_ext_transformed_color(_x+xOffset-0.5,_y+yOffset,_text,_sep,_width,_xscale,_yscale,_angle,0,0,0,0,_alpha);
+		draw_text_ext_transformed_color(_x+xOffset+0.5,_y+yOffset,_text,_sep,_width,_xscale,_yscale,_angle,0,0,0,0,_alpha);
+		draw_text_ext_transformed_color(_x+xOffset,_y+yOffset-0.5,_text,_sep,_width,_xscale,_yscale,_angle,0,0,0,0,_alpha);
+		draw_text_ext_transformed_color(_x+xOffset,_y+yOffset+0.5,_text,_sep,_width,_xscale,_yscale,_angle,0,0,0,0,_alpha);
+		
+		draw_text_ext_transformed_color(_x+xOffset+0.5,_y+yOffset+0.5,_text,_sep,_width,_xscale,_yscale,_angle,0,0,0,0,_alpha);
+		draw_text_ext_transformed_color(_x+xOffset+0.5,_y+yOffset-0.5,_text,_sep,_width,_xscale,_yscale,_angle,0,0,0,0,_alpha);
+		draw_text_ext_transformed_color(_x+xOffset-0.5,_y+yOffset+0.5,_text,_sep,_width,_xscale,_yscale,_angle,0,0,0,0,_alpha);
+		draw_text_ext_transformed_color(_x+xOffset-0.5,_y+yOffset-0.5,_text,_sep,_width,_xscale,_yscale,_angle,0,0,0,0,_alpha);
 	}
 	
 	
@@ -144,6 +157,18 @@ function start_cutscene(_struct_text,_forceTextWait=0,_continueOrders=false)
 	
 	//special sprite update fix
 	if (op.resetPartyPosTimer > 0) {  }
+}
+
+//don't create a new struct for a new cutscene just do it in code
+function anything_cutscene(_dialogue=["Test"],_func=-1,_face=[-1])
+{
+	op.textCC = _dialogue;
+	
+	op.funcCC = _func;
+	
+	op.faceCC = _face;
+	
+	start_cutscene("cc_anything");
 }
 
 

@@ -113,7 +113,7 @@ function effect_darkentrance(_numb)
 
 
 //spawns the small faces that can apear in text boxes
-function effect_smallface(_face=FACE.SUSIE,_image=1,_text="Skip",_x=150,_y=42,_font=fDetermination,_sep=12,_width=320,_angle=0,_c1=c_white,_c2=c_white,_c3=c_white,_c4=c_white,_alpha=1,_seed=[])
+function effect_smallface(_face=sFace_Susie,_image=1,_text="Skip",_x=150,_y=42,_font=fDetermination,_sep=12,_width=320,_angle=0,_c1=c_white,_c2=c_white,_c3=c_white,_c4=c_white,_alpha=1,_seed=[])
 {
 	--_image;
 	
@@ -139,7 +139,7 @@ function effect_smallface(_face=FACE.SUSIE,_image=1,_text="Skip",_x=150,_y=42,_f
 
 
 //spawns the numbers that apear when you recruit an enemy
-function effect_recruit(_enemyNumb,_recruitNumb)
+function effect_recruit(_enemyNumb,_recruitNumb = -1,_image=5)
 {
 	var _x=op.battle_enemyXY[_enemyNumb][0];
 	var _y=op.battle_enemyXY[_enemyNumb][1];
@@ -148,8 +148,13 @@ function effect_recruit(_enemyNumb,_recruitNumb)
 	
 	with(instance_create_depth(_x,_y,-9999,oRecruitEffect))
 	{
-		numb=_recruitNumb;
-		text=string(op.recruits[_recruitNumb][2])+"/"+string(op.recruits[_recruitNumb][1]);
+		if (_recruitNumb != -1)
+		{
+			numb=_recruitNumb;
+			text=string(op.recruits[_recruitNumb][2])+"/"+string(op.recruits[_recruitNumb][1]);
+		}
+		
+		image = _image;
 	}
 }
 
@@ -203,5 +208,31 @@ function effect_fieldtext(_text="Song title goes here",_x=0,_y=0)
 	with (instance_create_depth(_x,_y,-9999,oFieldTextEffect))
 	{
 		text=_text;
+	}
+}
+
+//spawns text instructions
+function effect_puzzleText(_confirmText=["text1z","text2z"],_confirmPos=[-120,223-30,8,223-30],_cancelText=["Hold","Exit"],_cancelPos=[-120,223-15,8,223-15],_menuText=["text1c","text2c"],_menuPos=[-120,223,8,223],_delay=15,_exitFunc=function(){ camera_reset(15,,,function(){ set_mode(); }); },_textSeed=[])
+{
+	with (instance_create_depth(0,0,-9999,oEffectPuzzleText))
+	{
+		confirmText = _confirmText;
+		confirmPos = _confirmPos;
+		cancelText = _cancelText;
+		cancelPos = _cancelPos;
+		menuText = _menuText;
+		menuPos = _menuPos;
+		
+		exitFunc = _exitFunc;
+		
+		seed = ["bc5"];
+		repeat (array_length(_textSeed))
+		{
+			array_push(seed,_textSeed[0]);
+			array_delete(_textSeed,0,1);
+		}
+		
+		pos = [_confirmPos[0],_confirmPos[1],_cancelPos[0],_cancelPos[1],_menuPos[0],_menuPos[1]];
+		delay = _delay; endTime = _delay;
 	}
 }

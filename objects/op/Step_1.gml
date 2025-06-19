@@ -103,10 +103,31 @@ if (mode == "overworld" and !noclip)
 	}
 	
 	//slope collision
-	while place_meeting(playerX,playerY,oSlopeUL) { runTimer=0; if key_left()  { ++playerY; } if key_up()   { ++playerX; } }
-	while place_meeting(playerX,playerY,oSlopeUR) { runTimer=0; if key_right() { ++playerY; } if key_up()   { --playerX; } }
-	while place_meeting(playerX,playerY,oSlopeDL) { runTimer=0; if key_left()  { --playerY; } if key_down() { ++playerX; } }
-	while place_meeting(playerX,playerY,oSlopeDR) { runTimer=0; if key_right() { --playerY; } if key_down() { --playerX; } }
+	slopesAmount = 0;
+	
+	if (key_left() or key_up())    { if place_meeting(playerX,playerY,oSlopeUL) { slopesAmount++; slopeTouch = 1; } }
+	if (key_right() or key_up())   { if place_meeting(playerX,playerY,oSlopeUR) { slopesAmount++; slopeTouch = 1; } }
+	if (key_left() or key_down())  { if place_meeting(playerX,playerY,oSlopeDL) { slopesAmount++; slopeTouch = 1; } }
+	if (key_right() or key_down()) { if place_meeting(playerX,playerY,oSlopeDR) { slopesAmount++; slopeTouch = 1; } }
+	
+	if (place_meeting(playerX,playerY,oSlopeUR) and place_meeting(playerX,playerY,oSlopeDR))
+	or (place_meeting(playerX,playerY,oSlopeUL) and place_meeting(playerX,playerY,oSlopeDL))
+	{ slopesAmount = 0; playerX = pastXY[0]; }
+	
+	if (place_meeting(playerX,playerY,oSlopeUL) and place_meeting(playerX,playerY,oSlopeUR))
+	or (place_meeting(playerX,playerY,oSlopeDL) and place_meeting(playerX,playerY,oSlopeDR))
+	{ slopesAmount = 0; playerY = pastXY[1]; }
+	
+	if (key_left() or key_up())    { while (place_meeting(playerX,playerY,oSlopeUL) and slopesAmount < 4) { runTimer=0; if key_left()  { ++playerY; } if key_up()   { ++playerX; } if (place_meeting(playerX,playerY,oWall)) { slopesAmount = 10; } } }
+	if (key_right() or key_up())   { while (place_meeting(playerX,playerY,oSlopeUR) and slopesAmount < 4) { runTimer=0; if key_right() { ++playerY; } if key_up()   { --playerX; } if (place_meeting(playerX,playerY,oWall)) { slopesAmount = 10; } } }
+	if (key_left() or key_down())  { while (place_meeting(playerX,playerY,oSlopeDL) and slopesAmount < 4) { runTimer=0; if key_left()  { --playerY; } if key_down() { ++playerX; } if (place_meeting(playerX,playerY,oWall)) { slopesAmount = 10; } } }
+	if (key_right() or key_down()) { while (place_meeting(playerX,playerY,oSlopeDR) and slopesAmount < 4) { runTimer=0; if key_right() { --playerY; } if key_down() { --playerX; } if (place_meeting(playerX,playerY,oWall)) { slopesAmount = 10; } } }
+	
+	if (slopesAmount > 1)
+	{
+		playerX = pastXY[0];
+		playerY = pastXY[1];
+	}
 }
 else
 {

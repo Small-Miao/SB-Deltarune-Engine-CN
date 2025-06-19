@@ -34,15 +34,15 @@ loop=true;
 normalEnd=true;
 if array_contains(op.battle_seed,"stopEnd") { normalEnd=false; }
 
-declare_battle(true);
-
 if (array_length(op.battle_enemy) == 1) { enemyHere=[true,false,false]; }
 if (array_length(op.battle_enemy) == 2) { enemyHere=[true,true,false]; }
 if (array_length(op.battle_enemy) == 3) { enemyHere=[true,true,true]; }
 
+declare_battle(true);
+
 sideText=["",""];
 knockX=[0,0,0];
-canSpare=false; canTired=false;
+canSpare=false; canTired=false; alertTP=999;
 
 
 

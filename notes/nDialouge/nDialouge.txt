@@ -8,17 +8,19 @@ commands:
 
 	format: {command:value1}
 
-	"{setup}"   :   can set up a different command to be run when you type the # symbol ( ex: {setup:delay:10} )
+	"{setup}"    :   can set up a different command to be run when you type the # symbol ( ex: {setup:delay:10} )
 	
 	
 	
-	"{color}"   :   changes the color the text is being printed in             ( ex: {color:yellow} or {hex:FFFF00} )
+	"{color}"    :   changes the color the text is being printed in             ( ex: {color:yellow} or {hex:FFFF00} )
 	
-	"{jump}"    :   will force the text to start printing on the next row      ( ex: "* And it was {jump} * Epic" )
+	"{sprite}"   :   draw a sprite in the text box                              ( ex : {sprite:spriteName:xOffset:yOffset:image:imageSpeed} )
 	
-	"{delay}"   :   will make the text printer pause for the designated frames ( ex: "* And it was {delay:10} Epic" )
+	"{jump}"     :   will force the text to start printing on the next row      ( ex: "* And it was {jump} * Epic" )
 	
-	"{func}"    :   will trigger a function from the variable (_funcAny) in the struct. First time the command is used it triggers _funcAny[0]; second time _funcAny[1] and so on.
+	"{delay}"    :   will make the text printer pause for the designated frames ( ex: "* And it was {delay:10} Epic" )
+	
+	"{func}"     :   will trigger a function from the variable (_funcAny) in the struct. First time the command is used it triggers _funcAny[0]; second time _funcAny[1] and so on.
 
 
 

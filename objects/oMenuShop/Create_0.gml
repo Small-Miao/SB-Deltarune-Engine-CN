@@ -1,9 +1,11 @@
-menu_room(); op.mode="shop";
+op.mode="shop";
 
 time=0; sstr=-1; strText="";
 reset_keys();
 reset_cursor(); page="start"; sellType=0; sellArray=[]; offSetFill=[-1,-1,-1,-1,-1];
 master_reset();
+
+quickShop = false;
 
 surf=-1; boxY=0;
 

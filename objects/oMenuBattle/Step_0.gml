@@ -9,6 +9,11 @@ canSpare=false; canTired=false;
 if (enemyHere[0] and op.battle_enemySpare[0] >= 100) or (enemyHere[1] and op.battle_enemySpare[1] >= 100) or (enemyHere[2] and op.battle_enemySpare[2] >= 100) { canSpare=true; }
 if (enemyHere[0] and op.battle_enemyTired[0]) or (enemyHere[1] and op.battle_enemyTired[1]) or (enemyHere[2] and op.battle_enemyTired[2]) { canTired=true; }
 
+//if (op.party[op.menuPep])
+//if (grab[i]._alert and tp >= grab[i]._tp) op.party[i]._buttons[j]
+
+
+
 //set how many enemys are left in the battle
 op.battle_enemysLeft=0;
 res_i();
@@ -76,7 +81,7 @@ if (page == 0)
 		/*act   */ if (i1 == 1) { page="enemy_select"; sel_priority[op.menuPep]=0; cursor=0; }
 		/*item  */ if (i1 == 2) { if (array_length(op.item) == 0) { force_undo(0); }else{ page="item_select"; sel_priority[op.menuPep]=1; cursor=0; } }
 		/*spare */ if (i1 == 3) { page="enemy_select"; sel_priority[op.menuPep]=2; cursor=0; }
-		/*defend*/ if (i1 == 4) { sel_priority[op.menuPep]=5; char_animate(op.menuPep,1,1,op.party[op.menuPep]._spriteDefend,0,,,,,["subnumber"]); next_party(); tp+=16; }
+		/*defend*/ if (i1 == 4) { sel_priority[op.menuPep]=5; char_animate(op.menuPep,1,1,op.party[op.menuPep]._spriteDefend,0,,,,,["subnumber"]); next_party(); tp+=16 * op.battle_tpMult; }
 		/*magic */ if (i1 == 5) { page="magic_select"; sel_priority[op.menuPep]=3; cursor=0; fix=true; }
 	}
 }
@@ -168,7 +173,12 @@ if (page == "act_select")
 	{
 		fix=false; grab=[]; grab2=[];
 		
-		res_i(); repeat (array_length(op.spells[op.menuPep])) { array_push(grab,op.spells[op.menuPep][i]); ++i; }
+		//add check
+		if (!array_contains(op.battle_seed,"noCheck"))
+		{
+			res_i(); repeat (array_length(op.spells[op.menuPep])) { array_push(grab,op.spells[op.menuPep][i]); ++i; }
+		}
+		
 		res_i();
 		repeat (array_length(op.battle_enemy[sel_person[op.menuPep]]._spells))
 		{
@@ -193,7 +203,7 @@ if (page == "act_select")
 	{
 		if (!array_contains(grab2,cursor) and tp >= grab[cursor]._tp)
 		{
-			if (cursor >= array_length(op.spells[op.menuPep]) and array_length(grab[cursor]._partyHelp) == 0) { sel_priority[op.menuPep]=-1; }
+			if (cursor >= array_length(op.spells[op.menuPep]) or array_contains(op.battle_seed,"noCheck")) and (array_length(grab[cursor]._partyHelp) == 0) { sel_priority[op.menuPep]=-1; }
 			
 			res_i(); repeat (array_length(grab[cursor]._partyHelp)) { locked[existence_to_numb(grab[cursor]._partyHelp[i])]=true; ++i; }
 			sel_object[op.menuPep]=grab[cursor]._object;

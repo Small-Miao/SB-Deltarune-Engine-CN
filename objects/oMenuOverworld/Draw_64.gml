@@ -132,6 +132,7 @@ if (time > 0)
 			if (j2 != 0) { draw_ext(sMenu,13,275.5,116.5+round(sin(op.ti/40)*3)/2,0.5,0.5); }
 			if (j2 != 42) { draw_ext(sMenu,13,275.5,200.5-round(sin(op.ti/40)*3)/2,0.5,-0.5); }
 		}
+		
 		repeat (48)
 		{
 			if (i >= j2 and i < j2+6)
@@ -144,8 +145,23 @@ if (time > 0)
 						if (saveCur[0] == 0 and j1[cursor] != -1 and i2 == c_white) { if (j1[cursor]._attack < op.equipped[op.overworldMenuSaveCursor[2]][0]._attack) { i2=c_gray; } }
 					}
 					
+					//draw item text (bottom right)
 					print(j1[i]._infoText[0],192,119-j2*13.5+i*13.5,,,,,,,i2);
-					if (saveCur[0] == 0) { draw_ext(sSymbols2,j1[i]._numberExistence,182,119-j2*13.5+i*13.5,,,,i2); }else{ draw_ext(sSymbols3,clamp(j1[i]._imageIndex,0,999),182,119-j2*13.5+i*13.5,,,,i2); }
+					
+					if (saveCur[0] == 0)
+					{
+						//draw weapon symbol
+						if (j1[i]._imageIndex == -1)
+							draw_ext(sSymbols2,j1[i]._numberExistence,182,119-j2*13.5+i*13.5,,,,i2);
+						
+						if (j1[i]._imageIndex != -1)
+							draw_ext(sSymbols3,j1[i]._imageIndex,182,119-j2*13.5+i*13.5,,,,i2);
+					}
+					else
+					{
+						//draw armor symbol
+						draw_ext(sSymbols3,clamp(j1[i]._imageIndex,0,999),182,119-j2*13.5+i*13.5,,,,i2);
+					}
 				}
 				else
 				{ 

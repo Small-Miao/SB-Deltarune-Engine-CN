@@ -1,5 +1,3 @@
-mainMenuRoom=rMainMenu;
-
 updatestruct_items(); updatestruct_party();
 
 reset_keys();

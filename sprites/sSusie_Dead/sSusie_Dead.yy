@@ -14,6 +14,7 @@
   "frames":[
     {"$GMSpriteFrame":"","%Name":"117a36e9-76dc-4bf4-83ae-580e12ad4069","name":"117a36e9-76dc-4bf4-83ae-580e12ad4069","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"22407995-e130-4bd8-ac12-f4d354f3cd5f","name":"22407995-e130-4bd8-ac12-f4d354f3cd5f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"148e0b16-526e-4fa8-9542-58b949f966a7","name":"148e0b16-526e-4fa8-9542-58b949f966a7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":40,
   "gridY":16,
@@ -23,7 +24,26 @@
     {"$GMImageLayer":"","%Name":"596b01e2-793a-4fc0-a328-8b85b5b593a3","blendMode":0,"displayName":"default","isLocked":false,"name":"596b01e2-793a-4fc0-a328-8b85b5b593a3","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sSusie_Dead",
-  "nineSlice":null,
+  "nineSlice":{
+    "$GMNineSliceData":"",
+    "bottom":0,
+    "enabled":false,
+    "guideColour":[4294902015,4294902015,4294902015,4294902015,],
+    "highlightColour":1728023040,
+    "highlightStyle":0,
+    "left":0,
+    "resourceType":"GMNineSliceData",
+    "resourceVersion":"2.0",
+    "right":0,
+    "tileMode":[
+      0,
+      0,
+      0,
+      0,
+      0,
+    ],
+    "top":0,
+  },
   "origin":9,
   "parent":{
     "name":"Susie_Battle",
@@ -50,7 +70,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":2.0,
+    "length":3.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -75,6 +95,9 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"22407995-e130-4bd8-ac12-f4d354f3cd5f","path":"sprites/sSusie_Dead/sSusie_Dead.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"fd534d5a-2172-4c43-ad0f-31b891dfd333","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"148e0b16-526e-4fa8-9542-58b949f966a7","path":"sprites/sSusie_Dead/sSusie_Dead.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d4ab1bc9-957c-4c92-bab7-e539e3c45f8c","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

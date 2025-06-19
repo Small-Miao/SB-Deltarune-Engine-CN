@@ -41,7 +41,11 @@ function music_stop(_soundid=op.currentMusic)
 
 
 //play sound effect
-function sound(_soundid=-1,_loops=false)
+function sound(_soundid=-1,_loops=false,_stopSoundid=false)
 {
-	if (_soundid != -1) { audio_play_sound(_soundid,999,_loops); }
+	if (_stopSoundid)
+		audio_stop_sound(_soundid)
+	
+	if (_soundid != -1)
+		audio_play_sound(_soundid,999,_loops);
 }

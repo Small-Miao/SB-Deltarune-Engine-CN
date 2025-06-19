@@ -1,4 +1,5 @@
 drText=get_text("t_menuSave");
+drTextLight = get_text("t_menuOverworldSettings");
 
 update_allData(); update_stats();
 

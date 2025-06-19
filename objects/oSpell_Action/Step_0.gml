@@ -21,8 +21,8 @@ op.textCC=[name_from+" the thing!"];
 
 if (oMenuBattle.singleStack)
 {
-	if (numberExistenceFrom == 1) { array_push(op.textCC,"* Susie did this.");  op.faceCC=[-1,[FACE.SUSIE,1]]; }
-	if (numberExistenceFrom == 2) { array_push(op.textCC,"* Ralsei did this."); op.faceCC=[-1,[FACE.RALSEIHAT,8]]; }
+	if (numberExistenceFrom == 1) { array_push(op.textCC,"* Susie did this.");  op.faceCC=[-1,[sFace_Susie,1]]; }
+	if (numberExistenceFrom == 2) { array_push(op.textCC,"* Ralsei did this."); op.faceCC=[-1,[sFace_Ralsei,8]]; }
 }
 
 start_cutscene("cc_anything",,true);

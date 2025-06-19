@@ -1,6 +1,6 @@
 //this function sets up the stats that the battle will have
 //like the enemy types, music used, background type, enemy and party member x&y positions & other things related
-function setup_battle(_enemyStructs=["enemy_base"],_flavourTextFirst="SKIP",_partyXY=-1,_enemyXY=-1,magic_actions=[[],["spell_standard"]],_isBoss=false,_battle_music=mus_rudeBuster,_endCC=-1,_background=true,_seed=[])
+function setup_battle(_enemyStructs=["enemy_base"],_flavourTextFirst="SKIP",_partyXY=-1,_enemyXY=-1,magic_actions=[[],["spell_standard"]],_isBoss=false,_battle_music=mus_rudeBuster,_endCC=-1,_background=true,_seed=[],_tpMult=1)
 {
 	var counter=0;
 	
@@ -13,6 +13,8 @@ function setup_battle(_enemyStructs=["enemy_base"],_flavourTextFirst="SKIP",_par
 	op.battle_flavourText=_flavourTextFirst;
 	op.isBoss=_isBoss;
 	op.endCC=_endCC;
+	
+	op.battle_tpMult = _tpMult;
 	
 	op.battle_music=_battle_music;
 	
@@ -206,7 +208,7 @@ function declare_battle(_begin=false)
 	
 	updatestruct_party();
 	
-	var i=0;
+	var i=0, j = 0;
 	
 	mode="menu";
 	
@@ -264,11 +266,25 @@ function declare_battle(_begin=false)
 	
 	
 	
+	alertTP=999;
 	i=0;
 	repeat (3)
 	{
 		if (extraStatsTimer[i] > 0) { --extraStatsTimer[i]; }
 		if (extraStatsTimer[i] == 0) { enemyAttackExtra[i]=0; enemyDefenseExtra[i]=0; }
+		
+		//find cheapest alert action price
+		if (enemyHere[i])
+		{
+			j = 0;
+			repeat (array_length(op.battle_enemy[i]._spells))
+			{
+				struct(op.battle_enemy[i]._spells[j]);
+				if (str._alert and str._tp < alertTP) { alertTP = str._tp; }
+			
+				j++;
+			}
+		}
 		++i;
 	}
 	
@@ -282,7 +298,9 @@ function declare_battle(_begin=false)
 	
 	start_cutscene("cc_flavourText");
 	
-	if (!_begin)
+	
+	
+	if (!_begin and !array_contains(op.battle_seed,"swoon"))
 	{
 		i=0;
 		repeat (array_length(op.party))

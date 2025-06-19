@@ -124,6 +124,12 @@ if (line > -1 and array_length(info._dialogue) > 0 and hideBox == 0)
 				}
 			}
 			
+			//draw a sprite in the text box
+			if (command[0] == "sprite")
+			{
+				draw_ext(asset_get_index(command[1]),real(command[4]) + real(command[5])*op.time,real(command[2])+info._boxOffsetXY[0]+xOffset+(x_*surfMult),real(command[3])+info._boxOffsetXY[1]+yOffset+(y_*surfMult));
+			}
+			
 			//change color command (hex)
 			if (command[0] == "hex") { colorMain=hex_to_dec(command[1]); }
 			

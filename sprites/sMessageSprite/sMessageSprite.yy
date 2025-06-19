@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":9,
   "bbox_left":0,
-  "bbox_right":41,
+  "bbox_right":44,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -22,6 +22,9 @@
     {"$GMSpriteFrame":"","%Name":"4cbfa133-1b6a-42ef-9dc1-4c5c2f3dbab1","name":"4cbfa133-1b6a-42ef-9dc1-4c5c2f3dbab1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"2573a12b-3f07-45dd-8c88-a93cc87d228f","name":"2573a12b-3f07-45dd-8c88-a93cc87d228f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"7f39c123-cfd7-41e3-9d93-56667d2d871d","name":"7f39c123-cfd7-41e3-9d93-56667d2d871d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"5a89d1fe-ecb7-4354-961d-439092194632","name":"5a89d1fe-ecb7-4354-961d-439092194632","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"8563b18d-3a90-44d5-83ce-84bc9753e6f7","name":"8563b18d-3a90-44d5-83ce-84bc9753e6f7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"2d74062c-2dfc-4577-850d-0c02bba6bb2d","name":"2d74062c-2dfc-4577-850d-0c02bba6bb2d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -32,7 +35,7 @@
   ],
   "name":"sMessageSprite",
   "nineSlice":null,
-  "origin":2,
+  "origin":9,
   "parent":{
     "name":"Fonts_Sprites",
     "path":"folders/Fonts/Fonts_Sprites.yy",
@@ -58,7 +61,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":10.0,
+    "length":13.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -107,11 +110,20 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7f39c123-cfd7-41e3-9d93-56667d2d871d","path":"sprites/sMessageSprite/sMessageSprite.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"afdc063c-f614-415c-af63-7340deb6c984","IsCreationKey":false,"Key":9.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5a89d1fe-ecb7-4354-961d-439092194632","path":"sprites/sMessageSprite/sMessageSprite.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"ff5c4731-2a89-4e73-a92d-4d50d04831a6","IsCreationKey":false,"Key":10.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8563b18d-3a90-44d5-83ce-84bc9753e6f7","path":"sprites/sMessageSprite/sMessageSprite.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"287ad1d8-e3a1-4d4d-bb50-24c5f6d3434f","IsCreationKey":false,"Key":11.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2d74062c-2dfc-4577-850d-0c02bba6bb2d","path":"sprites/sMessageSprite/sMessageSprite.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"fde7e7d3-3e08-4219-adaf-d7a87b7f12df","IsCreationKey":false,"Key":12.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":42,
+    "xorigin":43,
     "yorigin":0,
   },
   "swatchColours":null,
@@ -122,5 +134,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":42,
+  "width":45,
 }

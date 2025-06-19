@@ -90,7 +90,7 @@ function draw_party_hud()
 			repeat (array_length(op.party[i]._buttons))
 			{
 				draw_ext(sButtons,(op.party[i]._buttons[j]*3)+(j == faimd[op.menuPep] and op.menuPep == i),i1[0]+10+j*17.5+(5-array_length(op.party[i]._buttons))*9,i1[1]+20-op.battleRaise[i],0.5,0.5);
-				if (op.menuPep == i) and ( (oMenuBattle.canSpare and op.party[i]._buttons[j] == 3) or (oMenuBattle.canTired and op.party[i]._buttons[j] == 5 and array_contains(oMenuBattle.pacify[0],i)) )
+				if (op.menuPep == i) and ( (oMenuBattle.canSpare and op.party[i]._buttons[j] == 3) or (oMenuBattle.canTired and op.party[i]._buttons[j] == 5 and array_contains(oMenuBattle.pacify[0],i)) or (op.party[i]._buttons[j] == 1 and oMenuBattle.tp >= oMenuBattle.alertTP) )
 				{
 					draw_ext(sButtons,(op.party[i]._buttons[j]*3)+(2),i1[0]+10+j*17.5+(5-array_length(op.party[i]._buttons))*9,i1[1]+20-op.battleRaise[i],0.5,0.5,,,0.5+sin(op.ti/20)*0.5);
 				}

@@ -7,7 +7,7 @@ if (page == "start")
 {
 	saveCur=[0,0,0,0,0,0,0,0,0];
 	
-	wide_cursor(4);
+	wide_cursor(4 - (op.world == "light"));
 	
 	if tap_cancel() { op.mode="overworld"; page=0; instance_destroy(); }
 	
@@ -16,7 +16,22 @@ if (page == "start")
 	{
 		if (cursor == 0 and i == 0) { i=1; page="save"; cursor=op.fileOn; }
 		if (cursor == 1 and i == 0) { i=1; op.mode="overworld"; page=0; instance_destroy(); }
-		if (cursor == 2 and i == 0) { i=1; instance_create_depth(0,0,-9999,oMenuStorage); instance_destroy(); }
+		if (cursor == 2 and i == 0)
+		{
+			i=1;
+			if (op.world == "dark")
+			{
+				instance_create_depth(0,0,-9999,oMenuStorage);
+				instance_destroy();
+			}
+			else
+			{
+				page = "start_wait";
+				music_stop();
+				transition(,function(){ room_goto(op.mainMenuRoom); });
+			}
+		}
+		
 		if (cursor == 3 and i == 0)
 		{
 			i=1;

@@ -7,8 +7,10 @@ if (time > 0)
 	
 	
 	
-	print(text,x+introX,y-30,op.fontGold,,,,1+scale,,,,,,image_alpha,["fa_center"]);
-	draw_ext(sMessageSprite,5,x+image_xscale*21,y-50,image_xscale,image_yscale+scale,,,image_alpha);
+	if (image == 5)
+		print(text,x+introX,y-30,op.fontGold,,,,1+scale,,,,,,image_alpha,["fa_center"]);
+	
+	draw_ext(sMessageSprite,image,x+image_xscale*21,y-50,image_xscale,image_yscale+scale,,,image_alpha);
 	
 	
 	

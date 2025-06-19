@@ -95,8 +95,22 @@ if (page == "act_select" or page == "magic_select")
 		
 		i1=15; i2=191.5+floor(i/2)*15;
 		if (i mod 2) { i1+=115; }
+		
+		//draw help heads
 		i3=0; repeat (array_length(grab[i]._partyHelp)) { draw_ext(op.party[existence_to_numb(grab[i]._partyHelp[i3])]._UIface,1,i1+15*i3,i2-4,0.5,0.5); ++i3; }
+		i5 = 0; repeat (array_length(grab[i]._extraHeads)) { draw_ext(sExtraHeads,grab[i]._extraHeads[i5],i1+15*i3,i2-4,0.5,0.5); ++i3; ++i5; }
+		
+		partyHelp = array_length(grab[i]._partyHelp) + array_length(grab[i]._extraHeads);
+		
+		//print our move name
 		print(grab[i]._infoText[0],i1,i2,,,,,,,i4,,,,,["partyHelp","menu","soul2","act_select","magic_select",i]);
+		
+		if (grab[i]._isPacify and canTired)
+			print(grab[i]._infoText[0],i1,i2,,,,,,,,,,,0.5+sin(op.ti*0.05)*0.5);
+		
+		if (grab[i]._alert and tp >= grab[i]._tp)
+			print(grab[i]._infoText[0],i1,i2,,,,,,,c_yellow,,,,0.5+sin(op.ti*0.05)*0.5,["partyHelp"]);
+		
 		++i;
 	}
 	
@@ -157,6 +171,23 @@ if (pastTP != tp) { tpShow[1]=tp-pastTP; }
 tpShow[0]+=(tp-tpShow[0])/3;
 tpShow[1]+=(0-tpShow[1])/5;
 
+if (op.battle_tpMult == 1)
+{
+	tpCol_main = c_orange;
+	tpCol_max = make_color_rgb(255,208,32);
+	tpCol_back = c_maroon;
+	tpCol_goDown = c_red;
+}
+else
+{
+	tpCol_main = make_color_rgb(4,63,190);
+	tpCol_max = make_color_rgb(0,96,161);
+	tpCol_back = make_color_rgb(0,0,128);
+	tpCol_goDown = c_white;
+}
+
+
+
 if (!array_contains(enemyHere,true) and handlerCounter == 0 and priority == -2) { tpX=clamp(tpX-4,-100,0); }else{ tpX=clamp(tpX+4,-100,0); }
 
 if (!surface_exists(surfTP)) { surfTP=surface_create(320,240); }
@@ -164,12 +195,13 @@ if (!surface_exists(surfTP)) { surfTP=surface_create(320,240); }
 surface_set_target(surfTP);
 draw_clear_alpha(c_white,0);
 
-draw_ext(sTP,1,0,0);
+draw_ext(sTP,1,0,0,,,,tpCol_back);
 gpu_set_colorwriteenable(1,1,1,0);
 
-res_i(); i1=c_orange; if (round(tpShow[0]) == 100) { i1=make_color_rgb(255,208,32); }
+
+res_i(); i1=tpCol_main; if (round(tpShow[0]) == 100) { i1=tpCol_max; }
 draw_ext(sPixel,0,3,192,18,-(tp/100)*186,,i1);
-i1=c_white; if (tpShow[1] < 0) { i1=c_red; }
+i1=c_white; if (tpShow[1] < 0) { i1=tpCol_goDown; }
 draw_ext(sPixel,0,3,192-(tp/100)*186,18,(tpShow[1]/100)*186,,i1);
 if (tp != 100) { draw_ext(sPixel,0,3,192-((tp-tpShow[1])/100)*186,18,2,,c_white); }
 draw_ext(sPixel,0,3,192-((tp-tpShow[1])/100)*186,18,(tpShow[2]/100)*186,,c_white,0.5+abs(sin(op.ti/20))*0.5);

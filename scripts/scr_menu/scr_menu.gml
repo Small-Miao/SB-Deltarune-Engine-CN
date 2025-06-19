@@ -96,3 +96,17 @@ function prompt(_func=[-1],_text=["Skip"],_xy=-1,_width=-1,_fa=["L"])
 		if (_width == -1) { width=[999,999,999,999]; }else{ width=_width; }
 	}
 }
+
+//spawn a box that you can input a number on
+function numberPrompt(_numberArray=[1,2,3,4],_maxNumber=9,_func=-1)
+{
+	with (instance_create_depth(0,0,-9999,oMenuNumberPrompt))
+	{
+		numbersKey = _numberArray;
+		length = array_length(_numberArray);
+		
+		maxNumber = _maxNumber;
+		
+		func = _func;
+	}
+}
