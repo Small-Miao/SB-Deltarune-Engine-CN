@@ -29,8 +29,8 @@ if (array_length(global.gamepads) > 0)
 	
 	if (global.gamepad == "xbox")
 	{
-		global.gamepad_sprite = sButtons_PS4;
-		global.gamepad_spriteText = "sButtons_PS4";
+		global.gamepad_sprite = sButtons_XBOX;
+		global.gamepad_spriteText = "sButtons_XBOX";
 	}
 	
 	if (global.gamepad == "ps")

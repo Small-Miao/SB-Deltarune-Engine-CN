@@ -19,5 +19,4 @@ exitTime = 0;
 
 
 
-cancelTextShow = "";
 cancelColor = c_white;

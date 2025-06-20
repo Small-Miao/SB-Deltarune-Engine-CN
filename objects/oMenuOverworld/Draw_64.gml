@@ -349,10 +349,10 @@ if (time > 0)
 			
 			if (i < 7)
 			{
-				print(get_keybind(i),162.5,74+i*14,,,,,,,i2);
+				print(get_keybind(i,false,true),162.5,74+i*14,,,,,,,i2);
 				 
 				if (global.gamepad != 0)
-					draw_ext(global.gamepad_sprite,get_gamepadBind(op.gamepadBinds[i]),260,70+i*15);
+					draw_ext(global.gamepad_sprite,get_gamepadBind(op.gamepadBinds[i]),229.5,68.5+i*(15 - (i > 3)*0.5) + (i > 3));
 			}
 			
 			++i;

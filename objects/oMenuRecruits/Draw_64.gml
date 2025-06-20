@@ -14,9 +14,8 @@ if (page == "start")
 	print(drText[2]+" "+string(rec[cursor]._recChapter),184,144);
 	print(drText[3]+" "+string(rec[cursor]._recLV),264,144);
 
-	print("["+get_keybind(4)+"]: "+drText[4],190,164);
-	print("["+get_keybind(5)+"]: "+drText[5],190,180);
-	
+	print("#: "+drText[4],190,164,,,,,,,,,,,,,get_keybind(4,,,true));
+	print("#: "+drText[5],190,180,,,,,,,,,,,,,get_keybind(5,,,true));
 	
 	res_i();
 	repeat (array_length(rec))
@@ -49,7 +48,7 @@ if (page == "more")
 	draw_ext(sMenu,18,11+round(dsin(op.time*10)),109);
 	draw_ext(sMenu,18,309-round(dsin(op.time*10)),109,-1);
 	
-	print(drText[7]+" ["+get_keybind(5)+"] "+drText[8],40,204,,,,,,,,,,,,["menu","soul4","more",cursor]);
+	print(drText[7]+" # "+drText[8],40,204,,,,,,,,,,,,["menu","soul4","more",cursor],get_keybind(5,,,true));
 	
 	
 	

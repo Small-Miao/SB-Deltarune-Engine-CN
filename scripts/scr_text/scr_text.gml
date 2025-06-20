@@ -1,6 +1,9 @@
 //draws proportional text in draw events
-function print(_text="Skip",_x=0,_y=0,_font=fDetermination,_sep=12,_width=320,_xscale=1,_yscale=1,_angle=0,_c1=c_white,_c2=c_white,_c3=c_white,_c4=c_white,_alpha=1,_seed=[])
+function print(_text="Skip",_x=0,_y=0,_font=fDetermination,_sep=12,_width=320,_xscale=1,_yscale=1,_angle=0,_c1=c_white,_c2=c_white,_c3=c_white,_c4=c_white,_alpha=1,_seed=[],_sprites=-1)
 {
+	//normal data
+	superStringWidth = 0;
+	
 	var xOffset=0, yOffset=0;
 	
 	if (_font == fDetermination) { yOffset=-4; }
@@ -14,13 +17,31 @@ function print(_text="Skip",_x=0,_y=0,_font=fDetermination,_sep=12,_width=320,_x
 		}
 	}
 	
-	
 	//set halign
 	draw_set_halign(fa_left);
 	draw_set_font(_font);
 	
 	if array_contains(_seed,"fa_center") { draw_set_halign(fa_center); }
 	if array_contains(_seed,"fa_right") { draw_set_halign(fa_right); }
+	
+	//draw image
+	if (_sprites != -1)
+	{
+		if (string_length(_sprites) < 8)
+		{
+			_text = string_replace(_text,"#",_sprites);
+		}
+		else
+		{
+			var _splitImageData = string_split(_sprites,":");
+			var _splitForImage = string_split(_text,"#");
+			_text = string_replace(_text,"#","      ");
+			
+			draw_ext(asset_get_index(_splitImageData[0]),real(_splitImageData[1]),_x + string_width(_splitForImage[0]) + (draw_get_halign() == fa_center) * (string_width(_text)/-2) + (draw_get_halign() == fa_right) * (-string_width(_text)),_y -2,,,,_c1);
+		}
+		
+		superStringWidth = string_width(_text) + (draw_get_halign() == fa_center) * (string_width(_text)/-2) + (draw_get_halign() == fa_right) * (-string_width(_text));
+	}
 	
 	//menu mode
 	if (array_contains(_seed,"menu") or array_contains(_seed,"menu_yellow"))

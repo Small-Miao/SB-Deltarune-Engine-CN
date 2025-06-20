@@ -75,15 +75,37 @@ function hex_to_dec(_hex)
 
 
 //return the string of the keybind of the chosen key
-function get_keybind(_numb)
+function get_keybind(_numb,_brackets=true,_forceKeyboardText=false,_isForPrint=false)
 {
-	if (op.keybinds[_numb][0] == 0)
+	var _string = "";
+	
+	if (global.gamepad == 0 or _forceKeyboardText)
 	{
-		if (op.keybinds[_numb][1] == vk_down) { return("Down"); }
-		if (op.keybinds[_numb][1] == vk_right) { return("Right"); }
-		if (op.keybinds[_numb][1] == vk_up) { return("Up"); }
-		if (op.keybinds[_numb][1] == vk_left) { return("Left"); }
-	}else{ return(op.keybinds[_numb][1]); }
+		if (op.keybinds[_numb][0] == 0)
+		{
+			if (op.keybinds[_numb][1] == vk_down) { _string = "Down"; }
+			if (op.keybinds[_numb][1] == vk_right) { _string = "Right"; }
+			if (op.keybinds[_numb][1] == vk_up) { _string = "Up"; }
+			if (op.keybinds[_numb][1] == vk_left) { _string = "Left"; }
+		}
+		else { _string = op.keybinds[_numb][1]; }
+	
+		if (_brackets)
+			_string = "[" + _string + "]";
+	}
+	else
+	{
+		if (!_isForPrint)
+		{
+			_string = "{sprite:" + global.gamepad_spriteText + ":-5:-2:" + string(get_gamepadBind(op.gamepadBinds[_numb])) + ":0}  ";
+		}
+		else
+		{
+			_string = global.gamepad_spriteText + ":" + string(get_gamepadBind(op.gamepadBinds[_numb]));
+		}
+	}
+	
+	return _string;
 }
 
 //return image index of the button
