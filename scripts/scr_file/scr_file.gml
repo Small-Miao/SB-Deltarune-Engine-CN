@@ -78,7 +78,7 @@ function file_save(_fileName=-1)
 		
 		_allData : op.allData,
 		
-		_fileVer : 1
+		_fileVer : op.fileVer
 	};
 	
 	var json=json_stringify(_rootStruct);
@@ -94,6 +94,9 @@ function file_save(_fileName=-1)
 //load save file
 function file_load(_fileName=-1)
 {
+	if (!op.load)
+		return;
+	
 	var fileName=-1;
 	if (_fileName == -1) { fileName="save"+string(op.fileOn); op.checkpointProgress=[]; }else{ fileName=_fileName; }
 	
@@ -199,7 +202,10 @@ function config_save()
 		_option_volume : op.option_volume,
 		_option_simplifyVFX : op.option_simplifyVFX,
 		_option_autoRun : op.option_autoRun,
-		_keybinds : op.keybinds
+		_keybinds : op.keybinds,
+		_gamepadBinds : op.gamepadBinds,
+		
+		_fileVer : op.fileVer
 	};
 	
 	var json=json_stringify(_rootStruct);
@@ -210,6 +216,9 @@ function config_save()
 //load saved settings 
 function config_load(_fileName=-1)
 {
+	if (!op.load)
+		return;
+	
 	var fileName="config";
 	
 	if (!file_exists(fileName)) return;
@@ -223,6 +232,7 @@ function config_load(_fileName=-1)
 	op.option_simplifyVFX=_rootStruct._option_simplifyVFX;
 	op.option_autoRun=_rootStruct._option_autoRun;
 	op.keybinds=_rootStruct._keybinds;
+	op.gamepadBinds = _rootStruct._gamepadBinds;
 	
 	audio_group_set_gain(audiogroup_default,op.option_volume/100,0);
 }

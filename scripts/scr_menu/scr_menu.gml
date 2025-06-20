@@ -73,8 +73,22 @@ function wide_cursor(_length=1)
 
 
 //spawn the soul prompt menu & add options and the results of each option
-function prompt(_func=[-1],_text=["Skip"],_xy=-1,_width=-1,_fa=["L"])
+function prompt(_func=[-1],_text=["Skip"],_xy=-1,_width=-1,_fa=["L"],_autoDimensions=-1)
 {
+	if (_autoDimensions == "u")
+	{
+		op.menuPrompt = [12,1,296.5,83.5];
+		set_mode(0);
+	}
+	
+	if (_autoDimensions == "d")
+	{
+		op.menuPrompt = [12,156,296.5,83.5];
+		set_mode(0);
+	}
+	
+	
+	
 	with (instance_create_depth(0,0,-9999,oMenuPrompt))
 	{
 		func=_func;

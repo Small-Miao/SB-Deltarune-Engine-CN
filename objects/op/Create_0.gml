@@ -1,4 +1,5 @@
-fileVer=1;
+fileVer = 2;
+load = true;
 
 mainMenuRoom = rMainMenu;
 
@@ -33,6 +34,7 @@ option_volume=60;
 option_simplifyVFX=false;
 option_autoRun=false;
 keybinds=[[0,vk_down],[0,vk_right],[0,vk_up],[0,vk_left],[1,"Z"],[1,"X"],[1,"C"]];
+gamepadBinds = [gp_padd,gp_padr,gp_padu,gp_padl,gp_face1,gp_face2,gp_face4];
 config_load();
 audio_group_set_gain(audiogroup_default,op.option_volume/100,0);
 

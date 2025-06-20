@@ -86,6 +86,19 @@ function get_keybind(_numb)
 	}else{ return(op.keybinds[_numb][1]); }
 }
 
+//return image index of the button
+function get_gamepadBind(_gp)
+{
+	var i = 0;
+	
+	while (global.gamepadButtons[i] != _gp)
+	{
+		i++;
+	}
+	
+	return i;
+}
+
 
 
 //returns how many of an ability your party currently has combined

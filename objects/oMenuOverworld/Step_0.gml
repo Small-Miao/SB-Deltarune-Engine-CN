@@ -209,7 +209,12 @@ if (page == "controls")
 	
 	if (cursor < 7) { if tap_confirm() { page="bind"; keybindWait=true; } }
 	
-	if tap_confirm(7) { force_undo(0); reset_keys(); sound(snd_levelup); keybindGlow=1; op.keybinds=[[0,vk_down],[0,vk_right],[0,vk_up],[0,vk_left],[1,"Z"],[1,"X"],[1,"C"]]; }
+	if tap_confirm(7)
+	{
+		force_undo(0); reset_keys(); sound(snd_levelup); keybindGlow=1;
+		op.keybinds=[[0,vk_down],[0,vk_right],[0,vk_up],[0,vk_left],[1,"Z"],[1,"X"],[1,"C"]];
+		op.gamepadBinds = [gp_padd,gp_padr,gp_padu,gp_padl,gp_face1,gp_face2,gp_face4];
+	}
 	if tap_confirm(8) { force_undo(1); }
 	
 	config_save();
@@ -219,6 +224,7 @@ if (keybindWait and !key_confirm()) { keybindWait=false; }
 if (page == "bind" and !keybindWait)
 {
 	res_i();
+	//keyboard
 	i1="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"; i2=-1; i3=-1;
 	repeat (string_length(i1))
 	{
@@ -243,6 +249,36 @@ if (page == "bind" and !keybindWait)
 		op.keybinds[cursor]=[i3,i2];
 		force_undo(0);
 		
+		sound(snd_select);
+	}
+	
+	//gamepad
+	res_k(); k1 = -1; k2 = -1;
+	
+	var _gp = global.gamepad_main;
+	repeat (array_length(global.gamepadButtons))
+	{
+		if (_gp != undefined and k1 == -1)
+		{
+			if (gamepad_button_check(_gp,global.gamepadButtons[k]))
+			{
+				k1 = global.gamepadButtons[k];
+			}
+		}
+		
+		k++;
+	}
+	
+	
+	if (k1 != -1)
+	{
+		res_j(); j1 = true
+		repeat (7) { if (op.gamepadBinds[j] == k1 and j1) { op.gamepadBinds[j] = op.gamepadBinds[cursor]; j1 = false; } ++j; }
+		
+		reset_keys();
+		op.gamepadBinds[cursor] = k1;
+		
+		force_undo(0);
 		sound(snd_select);
 	}
 }

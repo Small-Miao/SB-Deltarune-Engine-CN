@@ -25,12 +25,39 @@ function use_keys(_sound=false)
 	if (op.keybinds[5][0] == 0) { keyCancel=keyboard_check(op.keybinds[5][1]);  }else{ keyCancel=keyboard_check(ord(op.keybinds[5][1])); }
 	if (op.keybinds[6][0] == 0) { keyMenu=keyboard_check(op.keybinds[6][1]);    }else{ keyMenu=keyboard_check(ord(op.keybinds[6][1])); }
 	
-	
-	
 	if (keyboard_check(vk_enter)) { keyConfirm=true; }
 	if (keyboard_check(vk_shift)) { keyCancel=true; }
 	if (keyboard_check(vk_control)) { keyMenu=true; }
-
+	
+	//gamePad
+	var _gp = global.gamepad_main;
+	
+	if (_gp != undefined)
+	{
+		if (gamepad_axis_value(_gp,gp_axislv) < -0.3) or (gamepad_button_check(_gp,op.gamepadBinds[2]))
+			keyUp = true;
+		
+		if (gamepad_axis_value(_gp,gp_axislv) > 0.3) or (gamepad_button_check(_gp,op.gamepadBinds[0]))
+			keyDown = true;
+			
+		if (gamepad_axis_value(_gp,gp_axislh) < -0.3) or (gamepad_button_check(_gp,op.gamepadBinds[3]))
+			keyLeft = true;
+		
+		if (gamepad_axis_value(_gp,gp_axislh) > 0.3) or (gamepad_button_check(_gp,op.gamepadBinds[1]))
+			keyRight = true;
+				
+		if gamepad_button_check(_gp,op.gamepadBinds[4])
+			keyConfirm = true;
+			
+		if gamepad_button_check(_gp,op.gamepadBinds[5])
+			keyCancel = true;
+			
+		if gamepad_button_check(_gp,op.gamepadBinds[6])
+			keyMenu = true;
+	}
+	
+	
+	
 	if (keyUp)      { tymeUp+=1;      }else{ tymeUp=0; }
 	if (keyDown)    { tymeDown+=1;    }else{ tymeDown=0; }
 	if (keyLeft)    { tymeLeft+=1;    }else{ tymeLeft=0; }

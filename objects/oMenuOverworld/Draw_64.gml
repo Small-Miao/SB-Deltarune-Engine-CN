@@ -335,7 +335,11 @@ if (time > 0)
 	{
 		draw_box(25,40,270,170,["bc"]);
 		
-		print(drText[12],52.5,54); print(drText[13],162.5,54);
+		print(drText[12],52.5,54);
+		print(drText[13],162.5,54);
+		
+		if (global.gamepad != 0)
+			print(drText[14],217.5,54);
 		
 		res_i();
 		repeat (9)
@@ -346,6 +350,9 @@ if (time > 0)
 			if (i < 7)
 			{
 				print(get_keybind(i),162.5,74+i*14,,,,,,,i2);
+				 
+				if (global.gamepad != 0)
+					draw_ext(global.gamepad_sprite,get_gamepadBind(op.gamepadBinds[i]),260,70+i*15);
 			}
 			
 			++i;
