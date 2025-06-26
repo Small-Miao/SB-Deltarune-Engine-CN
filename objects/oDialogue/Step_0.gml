@@ -175,7 +175,7 @@ if (array_length(info._dialogue) > 0)
 		if (box == 1) { yScale=36+array_length(edges)*20; if (arrow == 0) { x_-=xScale/2; } y_-=yScale/4; }
 	
 		//if press menu key auto set visible text to all real text
-		if key_menu() { showText=dialogue; }
+		if (key_menu() and hideBox == 0) { showText=dialogue; }
 	}
 
 

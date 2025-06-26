@@ -255,6 +255,9 @@ if (array_length(animate) > 0)
 			findAngle=pos_to_ang(animate[0][7],animate[0][8],animate[0][5],animate[0][6],true);
 			sprite_index=walkSprites[findAngle]; image_index=1;
 		}
+		
+		extraX=0;
+		extraY=0;
 	}
 	
 	//move x & y
