@@ -72,7 +72,7 @@ function cc_base() constructor
 	_proceedAnimate=-1;
 	//set to anything higher than 0 (This is for random encounter auto press confirm after a few frames)
 	_proceedAuto=0;
-	//set to anything other than -1 to auto press confirm when the line has finished printing
+	//set to anything higher than -1 to auto press confirm when the line has finished printing (it waits the amount of frames you replace -1 with)
 	_autoSkipText=[-1];
 	//will draw how much money and inventory space you have
 	_moneyBox=false;
