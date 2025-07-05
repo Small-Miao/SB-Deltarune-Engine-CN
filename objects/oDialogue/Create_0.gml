@@ -117,3 +117,7 @@ colorRandom=[]; repeat(10) { array_push(colorRandom,make_color_rgb(irandom_range
 colorRandomCounter=0;
 
 currentFunc=0;
+
+
+
+auto = -1;

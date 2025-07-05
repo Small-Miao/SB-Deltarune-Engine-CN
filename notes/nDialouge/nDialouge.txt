@@ -12,15 +12,17 @@ commands:
 	
 	
 	
-	"{color}"    :   changes the color the text is being printed in             ( ex: {color:yellow} or {hex:FFFF00} )
+	"{color}"    :   changes the color the text is being printed in               ( ex: {color:yellow} or {hex:FFFF00} )
 	
-	"{sprite}"   :   draw a sprite in the text box                              ( ex : {sprite:spriteName:xOffset:yOffset:image:imageSpeed} )
+	"{sprite}"   :   draw a sprite in the text box                                ( ex : {sprite:spriteName:xOffset:yOffset:image:imageSpeed} )
 	
-	"{jump}"     :   will force the text to start printing on the next row      ( ex: "* And it was {jump} * Epic" )
+	"{jump}"     :   will force the text to start printing on the next row        ( ex: "* And it was {jump} * Epic" )
 	
-	"{delay}"    :   will make the text printer pause for the designated frames ( ex: "* And it was {delay:10} Epic" )
+	"{delay}"    :   will make the text printer pause for the designated frames   ( ex: "* And it was {delay:10} Epic" )
 	
-	"{func}"     :   will trigger a function from the variable (_funcAny) in the struct. First time the command is used it triggers _funcAny[0]; second time _funcAny[1] and so on.
+	"{auto}"     :   will make it so that the text proceeds to the next page automatically within a picked duration (or manual if you press Z)   ( ex: "* {auto:30} Hello everyone" )
+	
+	"{func}"     :   will trigger a function from the variable (_funcAny) in the struct. First time the command is used it triggers _funcAny[0]; second time _funcAny[1]; and so on.
 
 
 
@@ -30,9 +32,13 @@ seed:
 	
 	"proportional"   :   will make the text proportional instead of mono spaced.
 
+
+
 proceedAnimate:
 
 	"fade"   :   Makes the text fade out when you proceed the text.
+
+
 
 other:
 

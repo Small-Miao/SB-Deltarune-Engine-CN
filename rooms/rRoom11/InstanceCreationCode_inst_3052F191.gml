@@ -16,8 +16,9 @@ func = function()
 	,"* You can add extra head icons to a spell like {color:green} old man actions {color:white} from chapter 4."
 	,"* Number code prompt box was added."
 	,"* You can now create quick shops with the {color:yellow} create_shop(); {color:white} function."
-	,"* You can draw sprites in text boxes with a new command. {sprite:sKris_Down:10:30:0:0}"
+	,"* You can draw sprites in text boxes with a new command. {sprite:sKris_Down:10:30:0:0} {color:yellow} \"sprite\"."
 	,"* Added puzzle text maker with {color:yellow} effect_puzzleText();"
+	,"* You can make dialogue auto proceed after a delay with the new command. {color:yellow} \"auto\"."
 	]);
 }
 

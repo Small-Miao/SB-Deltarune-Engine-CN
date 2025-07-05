@@ -144,12 +144,14 @@ if (line > -1 and array_length(info._dialogue) > 0 and hideBox == 0)
 			{
 				array_push(commandDid,currentAtLetter);
 				
-				
 				//command run   _funcAny   functions
 				if (command[0] == "func") { if (info._funcAny[currentFunc] != -1) { info._funcAny[currentFunc](); } currentFunc++; }
 				
 				//delay command
 				if (command[0] == "delay") { delay=real(command[1]); }
+				
+				//press or auto
+				if (command[0] == "auto") { auto=real(command[1]); }
 			}
 		}
 	}

@@ -5,9 +5,14 @@ use_keys(); if (hideBox > 0) { reset_keys(); }
 if (array_length(info._dialogue) == 0) { showText=dialogue; op.forceTextWait=0; }
 if (showText == dialogue) { --proceedAuto; if array_contains(info._seed,"noConfirm") { tapConfirm=false; } op.ccImage=0; }else{ ++op.ccImage; }
 
+if (auto > -1 and showText == dialogue)
+	auto--;
+
 //press to confirm, skip or hold for auto skip
-if ((showText == dialogue and proceedAnimate == -1) and ((tap_confirm() or key_menu() or proceedAuto == 0) and !array_contains(info._seed,"noConfirm")) or (autoConfirm)) or (array_length(info._dialogue) == 0)
+if ((showText == dialogue and proceedAnimate == -1) and ((tap_confirm() or key_menu() or proceedAuto == 0 or auto == 0) and !array_contains(info._seed,"noConfirm")) or (autoConfirm)) or (array_length(info._dialogue) == 0)
 {
+	auto = -1;
+	
 	if (line+1 == array_length(info._dialogue))
 	{
 		if (op.forceTextWait == 0)
@@ -76,6 +81,8 @@ if (array_length(info._dialogue) > 0)
 		proceedLine=false; proceedAnimate=-1; line++;
 	
 		op.ccLine=line;
+		
+		auto = -1;
 	
 		//grab all new (line info) from the struct
 		dialogue=info._dialogue[clamp(line,0,array_length(info._dialogue)-1)];
