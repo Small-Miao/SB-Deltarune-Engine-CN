@@ -1,4 +1,4 @@
-camera_move()    :   Moves the camera
+camera_move()    :   移动摄像机
 
-camera_reset()   :   Puts the camera back on the player.
+camera_reset()   :   将摄像机重置到玩家位置。
 

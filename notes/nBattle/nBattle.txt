@@ -1,41 +1,41 @@
 seed:
-	"enemyGlide"                                   :   makes the enemy go back to where it stood when the battle ends if (isBoss == true)
-	"keeptarget"                                   :   will not reset the target variable to -1 when a pattern ends
+	"enemyGlide"                                   :   如果(isBoss == true)，战斗结束时让敌人回到原来的位置
+	"keeptarget"                                   :   模式结束时不会重置目标变量为-1
 
-	"xspare0" or "xspare1" or "xspare2"            :   puts an x graphic over the mercy meter of the coresponding enemy
-	"grayspare0" or "grayspare1" or "grayspare2"   :   makes the enemy's mercy meter gray of the coresponding enemy (Also you can't select this enemy)
+	"xspare0" or "xspare1" or "xspare2"            :   在对应敌人的仁慈计量表上放置一个X图形
+	"grayspare0" or "grayspare1" or "grayspare2"   :   使对应敌人的仁慈计量表变灰（同时无法选择该敌人）
 
-	"corner"                                       :   Makes the soul spawn from the top right corner.
-	"noCheck"                                      :   Removes check from the act menu.
+	"corner"                                       :   让灵魂从右上角生成。
+	"noCheck"                                      :   从行动菜单中移除检查选项。
 	
-	"swoon"                                        :   If a character runs out of HP in battle their HP is set to -999 and they won't be automatically healed.
-	"purify"                                       :   Won't recruit the enemies fought
+	"swoon"                                        :   如果角色在战斗中血量耗尽，血量将设为-999且不会自动恢复。
+	"purify"                                       :   不会招募战斗的敌人
 
-	"stopEnd"                                      :   Instead of ending the battle when all enemy's are gone ob.endSignal is set to true (that's "OB" NOT "OP")
-
-
-
-variables:
-	oMenuBattle.target        :   Will target and only hurt that party member or everyone set to (0 or 1 or 2 or "all") (-1 means dont target (default))
-	
-	oMenuBattle.enemyStatus   :   Will give an enemy a status next to their name if they are not tiered. ( ex: oMenuBattle.enemyStatus[1]="(Warned)" )
-	
-	oMenuBattle.loop          :   Will make it so that the battle freeze after the enemy's turn ends if loop is set to false. Everything will resume when it's set to true.
-	
-	
-	
-functions:
-	enemy_extraStats()   :   Will temporarely increase an enemys stats. The time you insert is the amount of turns it will take for the effect to ware off.
-	
-	party_extraStats()   :   Will temporarely increase a party members stats. The time you insert is the amount of turns it will take for the effect to ware off.
-	
-	add_enemy()          :   Use this to add an enemy to the board while the battle has already started (this should only be used to replace enemy's that are already gone from battle)
-	
-	force_enemyTurn()    :   Will force the enemy turn to start.
-	
-	force_partyTurn()    :   Will force the party turn to start.
-	
+	"stopEnd"                                      :   当所有敌人消失时，不会结束战斗，而是将ob.endSignal设为true（注意是"OB"不是"OP"）
 
 
-other:
-	Setting the battels music to -1 will keep the overworld music
+
+变量:
+	oMenuBattle.target        :   将目标锁定为特定队员或所有人，设置为(0 或 1 或 2 或 "all") (-1表示不锁定目标（默认）)
+	
+	oMenuBattle.enemyStatus   :   如果敌人未被安抚，将在其名称旁边显示状态。( 例: oMenuBattle.enemyStatus[1]="(已警告)" )
+	
+	oMenuBattle.loop          :   如果loop设为false，敌人回合结束后战斗将冻结。当设为true时一切恢复正常。
+	
+	
+	
+函数:
+	enemy_extraStats()   :   临时增加敌人属性。插入的时间是效果消失所需的回合数。
+	
+	party_extraStats()   :   临时增加队员属性。插入的时间是效果消失所需的回合数。
+	
+	add_enemy()          :   在战斗已经开始后使用此函数向战场添加敌人（这应该只用于替换已经离开战斗的敌人）
+	
+	force_enemyTurn()    :   强制开始敌人回合。
+	
+	force_partyTurn()    :   强制开始队员回合。
+	
+
+
+其他:
+	将战斗音乐设为-1将保持大地图音乐

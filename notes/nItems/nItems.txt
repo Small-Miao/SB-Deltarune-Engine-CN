@@ -1,4 +1,4 @@
 seed:
-	"everyone"      :   effects everyone on the team instead of just one person.
+	"everyone"      :   影响队伍中的所有人而不是只影响一个人。
 	
-	"noShopTitle"   :   Removes the text in a shop that says the item type.
+	"noShopTitle"   :   移除商店中显示物品类型的文本。

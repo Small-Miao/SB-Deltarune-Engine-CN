@@ -1,33 +1,33 @@
 Seed:
-	"oblivious"       :   Make an enemy char not chase you
+	"oblivious"       :   让敌人角色不追击你
 
 
-Animation:
+动画:
 	Seed:
 	
-	"subnumber"       :   Insted of waiting for the delay to reach 0 the animation will be done when every frame of the sprite has been flipped through.
-	"autooff"         :   Will disable some values being automaticaly set, like setting the image to zero when the animation is done, or setting which sprite direction to walk when not declared.
-	"jump"            :   When walking from point A to point B the character's y will be effected by a sin function making the jump.
-	"jumpOffset"      :   Should be applied if your character jumps with the ball sprite.
+	"subnumber"       :   不是等待延迟达到0，而是当精灵的每一帧都被翻过后动画完成。
+	"autooff"         :   将禁用一些自动设置的值，比如动画完成时将图像设为0，或未声明时设置精灵行走方向。
+	"jump"            :   从A点走到B点时，角色的y坐标会受到sin函数影响产生跳跃效果。
+	"jumpOffset"      :   如果你的角色使用球精灵跳跃，应该应用此选项。
 	
-	"override"        :   Will stop the current animation and emedietly play the now one instead of waiting or stacking.
+	"override"        :   将停止当前动画并立即播放新动画，而不是等待或堆叠。
 	
-	"fadeEffect"      :   Will leave a fading trail behind the character as they move.
-	"fadeFast"        :   In combo with "fadeEffect" will make the fade disapear faster.
+	"fadeEffect"      :   角色移动时会在身后留下淡化的轨迹。
+	"fadeFast"        :   与"fadeEffect"组合使用，使淡化效果消失得更快。
 	
-		(You don't need to have this if the sprite set before is already a walking sprite)
-	"faceUp"          :   After the animation is done the character will set the spriet to their (UP Sprite & image=0;)
-	"faceDown"        :   After the animation is done the character will set the spriet to their (DOWN Sprite & image=0;)
-	"faceLeft"        :   After the animation is done the character will set the spriet to their (LEFT Sprite & image=0;)
-	"faceRight"       :   After the animation is done the character will set the spriet to their (RIGHT Sprite & image=0;)
+		(如果之前设置的精灵已经是行走精灵，则不需要此选项)
+	"faceUp"          :   动画完成后角色将精灵设置为其(上精灵 & image=0;)
+	"faceDown"        :   动画完成后角色将精灵设置为其(下精灵 & image=0;)
+	"faceLeft"        :   动画完成后角色将精灵设置为其(左精灵 & image=0;)
+	"faceRight"       :   动画完成后角色将精灵设置为其(右精灵 & image=0;)
 	
 	
 
-Interact:
-	"look"            :   When interacting with an oChar object they will look towards you.
-	"speed1"          :   When interacting with an oChar object they will have image_speed set to 1.
+交互:
+	"look"            :   与oChar对象交互时，他们会看向你。
+	"speed1"          :   与oChar对象交互时，image_speed将设为1。
 	
-	"defaultUp"       :   When done talking or when spawned will look Up
-	"defaultDown"     :   When done talking or when spawned will look Down
-	"defaultLeft"     :   When done talking or when spawned will look Left
-	"defaultRight"    :   When done talking or when spawned will look Right
+	"defaultUp"       :   对话完成或生成时将看向上方
+	"defaultDown"     :   对话完成或生成时将看向下方
+	"defaultLeft"     :   对话完成或生成时将看向左侧
+	"defaultRight"    :   对话完成或生成时将看向右侧

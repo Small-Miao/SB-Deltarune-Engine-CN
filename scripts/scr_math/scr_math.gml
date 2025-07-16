@@ -62,13 +62,13 @@ function string_to_color(_string="red")
 function hex_to_dec(_hex) 
 {
     var dec = 0;
- 
+	
     var dig = "0123456789ABCDEF";
     var len = string_length(_hex);
     for (var pos = 1; pos <= len; pos += 1) {
         dec = dec << 4 | (string_pos(string_char_at(_hex, pos), dig) - 1);
     }
- 
+	
     return dec;
 }
 

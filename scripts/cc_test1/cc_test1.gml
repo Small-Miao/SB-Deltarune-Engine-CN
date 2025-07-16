@@ -7,7 +7,7 @@ function cc_test1() : cc_base() constructor
 	_proceedAnimate="fade";
 	_printSeed=[["fade"]];
 	_funcLine=[
-		function(){ effect_smallface(,,,100,15); },
+		function(){ effect_smallface(,,"真的吗",150,45); },
 		-1
 	];
 }

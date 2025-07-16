@@ -5,8 +5,8 @@ mainMenuRoom = rMainMenu;
 
 
 //调试变量
-showHitboxes=true;
-debug=true;
+showHitboxes=false;
+debug=false;
 
 noclip=false;
 
@@ -16,7 +16,7 @@ chapter1style=false;
 
 
 //设置，从精灵创建字体，世界时间和语言
-	//你当前在哪个文件上 (0, 1 或 2)
+//你当前在哪个文件上 (0, 1 或 2)
 fileOn=0;
 
 display_set_gui_size(320,240);

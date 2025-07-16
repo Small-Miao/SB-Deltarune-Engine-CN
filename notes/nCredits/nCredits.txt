@@ -1,4 +1,4 @@
-creator:
+创作者:
 
 Sad Bread
 
@@ -8,7 +8,7 @@ Sad Bread
 
 
 
-help:
+帮助:
 
 Markus
 Ben
@@ -19,7 +19,7 @@ Ben
 
 
 
-special thanks:
+特别感谢:
 
 tweex
 zem

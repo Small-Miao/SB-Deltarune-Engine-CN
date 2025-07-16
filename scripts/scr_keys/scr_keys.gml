@@ -74,7 +74,6 @@ function use_keys(_sound=false)
 	if (keyCancel and tymeCancel == 1)   { tapCancel=true;  }else{ tapCancel=false; }
 	if (keyMenu and tymeMenu == 1)       { tapMenu=true;    }else{ tapMenu=false; }
 }
-
 //hold keys input
 function key_up() { return(keyUp); }
 function key_down() { return(keyDown); }

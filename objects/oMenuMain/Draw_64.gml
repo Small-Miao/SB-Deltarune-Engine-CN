@@ -3,13 +3,13 @@ if (page == "start")
 	res_i();
 	repeat (3)
 	{
-		print("Save File "+string(i+1),50,50+i*20,,,,,,,,,,,,["menu_yellow","soul1","start",i]);
+		print("存档 "+string(i+1),50,50+i*20,,,,,,,,,,,,["menu_yellow","soul1","start",i]);
 		++i;
 	}
 	
-	print("New Game",50,50+i*20,,,,,,,,,,,,["menu_yellow","soul1","start",3]);
+	print("新游戏",50,50+i*20,,,,,,,,,,,,["menu_yellow","soul1","start",3]);
 	
-	print("======================================================",150,0,,,,,,-90);
+	print("=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=\n=",150,0,,,,,,-90);
 	
 	if (cursor != 3)
 	{

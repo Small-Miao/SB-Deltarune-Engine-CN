@@ -1,2 +1,2 @@
 seed:
-	"greed"   :   For this party member you can't replace an armore with nothing and downgrade the weapon. (Susie has this)
+	"greed"   :   对于这个队员，你不能用空装备替换护甲并降级武器。（Susie有这个特性）

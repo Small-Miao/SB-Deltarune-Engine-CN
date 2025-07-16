@@ -1,13 +1,13 @@
-Press F1 to open the debug menu, you can make this menu unaccessible at the top of the op creation event.
+按F1打开调试菜单，你可以在op创建事件顶部禁用此菜单
 
-Check the function catagory scr_variant to change some major values
-
-
-
-Use the function   :   declare_gamestats()   to set every party members stats when you start a new file.
-
-Use the function   :   regular_room_transition()   to send the party to a different room just as if they had touched a door.
+查看函数类别scr_variant来更改一些主要值
 
 
 
-Subimage shop face variable   :   oMenuShop.image
+使用函数   :   declare_gamestats()   在开始新文件时设置每个队员的属性。
+
+使用函数   :   regular_room_transition()   将队伍发送到不同房间，就像他们触摸了门一样。
+
+
+
+商店头像子图像变量   :   oMenuShop.image
