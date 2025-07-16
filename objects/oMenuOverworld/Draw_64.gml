@@ -49,7 +49,7 @@ if (time > 0)
 				i1=73; i2=80+floor(i/2)*15;
 				if (i mod 2) { i1+=105; }
 				if (page == "itemUSE" or page == "itemTOSS" or page == "itemUSEUSE" or page == "itemTOSSUSE") { i3=c_white; }else{ i3=c_gray; }
-				print(op.item[i]._infoText[0],i1,i2,,,,,,,i3,,,,,["bc3","menu","soul1","itemUSE","itemTOSS",i]);
+				print(op.item[i]._infoText[0],i1,i2,fDetermination,,,,,,i3,,,,,["bc3","menu","soul1","itemUSE","itemTOSS",i]);
 				++i;
 			}
 		}

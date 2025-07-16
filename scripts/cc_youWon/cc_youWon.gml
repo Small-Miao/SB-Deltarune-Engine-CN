@@ -8,12 +8,12 @@ function cc_youWon() : cc_base() constructor
 		op.money+=op.gainMoney;
 		
 		//win if you have spared all enemys
-		_dialogue=["* You WON! {jump} * Got 0 EXP and "+string(op.gainMoney)+" D$"];
+		_dialogue=["* You WON! {jump} \n* Got 0 EXP and "+string(op.gainMoney)+" D$"];
 		
 		if (op.killedAny and !op.isBoss)
 		{
 			//win overide if you have killed any enemy
-			_dialogue=["* You WON! {jump} * Got "+string(op.gainMoney)+" D$ {jump} * You became stronger."];
+			_dialogue=["* You WON! {jump} \n* Got "+string(op.gainMoney)+" D$ {jump} \n* You became stronger."];
 			
 			audio_sound_pitch(snd_dtranslw,2);
 			audio_sound_gain(snd_dtranslw,1,0);

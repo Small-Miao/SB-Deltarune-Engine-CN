@@ -115,7 +115,7 @@
   "italic":false,
   "kerningPairs":[],
   "last":0,
-  "lineHeight":0,
+  "lineHeight":15,
   "maintainGms1Font":false,
   "name":"fDotum",
   "parent":{
@@ -126,6 +126,10 @@
   "ranges":[
     {"lower":32,"upper":127,},
     {"lower":9647,"upper":9647,},
+    {"lower":20013,"upper":20013,},
+    {"lower":20351,"upper":20351,},
+    {"lower":25991,"upper":25991,},
+    {"lower":29992,"upper":29992,},
   ],
   "regenerateBitmap":false,
   "resourceType":"GMFont",
@@ -134,10 +138,7 @@
   "sdfSpread":8,
   "size":10.0,
   "styleName":"Regular",
-  "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
-  },
+  "textureGroupId":null,
   "TTFName":"",
   "usesSDF":false,
 }

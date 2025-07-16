@@ -1,131 +1,133 @@
-lang,1 ENGLISH,2 JAPANEESE
-,,
-,[Download this document as a (.csv) file and replace the included text file of the same name in gamemaker],
-,,
-,,
-,,
-t_menuBattle,(Tired),
-,Heals,
-,HP,
-,Healing Varies,
-,Heals team,
-,,
-t_menuGameOver,CONTINUE,
-,GIVE UP,
-,RETRY BATTLE,
-,,
-t_menuOverworld,USE,
-,TOSS,
-,KEY,
-,(Nothing),
-,Attack:,
-,Defense:,
-,Magic:,
-,LV,
-,Guts:,
-,CONFIG,
-,ON,
-,OFF,
-,Function,
-,Key,
-,Gamepad,
-,,
-t_menuOverworldSettings,Master Volume,
-,Controls,
-,Simplify VFX,
-,Fullscreen,
-,Auto-Run,
-,Return to Title,
-,Back,
-,,
-t_menuOverworldBind,DOWN,
-,RIGHT,
-,UP,
-,LEFT,
-,CONFIRM,
-,CANCEL,
-,MENU,
-,Reset to default,
-,Finish,
-,,
-t_menuOverworldLight,ITEM,
-,STAT,
-,CELL,
-,USE,
-,INFO,
-,DROP,
-,LV,
-,HP,
-,AT,
-,DF,
-,EXP:,
-,NEXT:,
-,WEAPON:,
-,ARMOR:,
-,MONEY:,
-,,
-t_menuWriter,BACK,
-,END,
-,,
-t_menuSave,Save,
-,Return,
-,Storage,
-,Recruits,
-,LV,
-,Overwrite Slot,
-,New File,
-,File Saved,
-,,
-t_menuStorage,POCKET,
-,STORAGE,
-,Page,
-,,
-t_menuRecruits,Recruits,
-,PROGRESS,
-,CHAPTER,
-,LV,
-,More Info,
-,Quit,
-,Recruited!,
-,Press,
-,to Return,
-,Not yet fully recruited,
-,LIKE,
-,DISLIKE,
-,ELEMENT,
-,LEVEL,
-,ATTACK,
-,DEFENSE,
-,,
-t_menuShop,Sell Items,
-,Sell Weapons,
-,Sell Armor,
-,Sell Pocket Items,
-,ITEM,
-,ARMOR,
-,WEAPON,
-,KEYITEM,
-,Space:,
-,Yes,
-,No,
-,Buy it for,
-,Sell it for,
-,--SOLD OUT--,
-,,
-,,
-,,
-t_skip,Skip 1.,
-,Skip 2.,
-,Skip 3.,
-,,
-t_bakesale,"* In the heart of the woods, a bake sale stands quietly.",
-,* The power of reoccurring bake sales shines within you.,
-,,
-t_doc1,* Hello this is line 1,
-,* Line 2,
-,* What line 3 no way!!!,
-,,
-t_doc2,* Other text 1,
-,* What,
-,* Okay 3,
-,* And so on...,
+lang,1 ENGLISH,2 JAPANEESE,3 CHINESE
+,,,
+,[Download this document as a (.csv) file and replace the included text file of the same name in gamemaker],,
+,,,
+,,,
+,,,
+t_menuBattle,(Tired),,疲惫
+,Heals,,治疗
+,HP,,生命值
+,Healing Varies,,治疗效果不定
+,Heals team,,治疗队伍
+,,,
+t_menuGameOver,CONTINUE,,继续
+,GIVE UP,,放弃
+,RETRY BATTLE,,重新战斗
+,,,
+t_menuOverworld,USE,,使用
+,TOSS,,丢弃
+,KEY,,重要
+,(Nothing),,(无)
+,Attack:,,攻击:
+,Defense:,,防御:
+,Magic:,,魔法:
+,LV,,等级:
+,Guts:,,勇气:
+,CONFIG,,设置
+,ON,,开
+,OFF,,关
+,Function,,功能
+,Key,,按键
+,Gamepad,,手柄
+,,,
+t_menuOverworldSettings,Master Volume,,主音量
+,Controls,,控制
+,Simplify VFX,,简化特效
+,Fullscreen,,全屏
+,Auto-Run,,自动奔跑
+,Return to Title,,返回标题
+,Back,,返回
+,,,
+t_menuOverworldBind,DOWN,,下
+,RIGHT,,右
+,UP,,上
+,LEFT,,左
+,CONFIRM,,确认
+,CANCEL,,取消
+,MENU,,菜单
+,Reset to default,,重置为默认
+,Finish,,完成
+,,,
+t_menuOverworldLight,ITEM,,物品
+,STAT,,状态
+,CELL,,电池
+,USE,,使用
+,INFO,,信息
+,DROP,,丢弃
+,LV,,等级
+,HP,,生命值
+,AT,,攻击
+,DF,,防御
+,EXP:,,经验:
+,NEXT:,,下一级:
+,WEAPON:,,武器:
+,ARMOR:,,护甲:
+,MONEY:,,金钱:
+,,,
+t_menuWriter,BACK,,返回
+,END,,结束
+,,,
+t_menuSave,Save,,保存
+,Return,,返回
+,Storage,,仓库
+,Recruits,,招募
+,LV,,等级
+,Overwrite Slot,,覆盖存档
+,New File,,新存档
+,File Saved,,存档完成
+,,,
+t_menuStorage,POCKET,,背包
+,STORAGE,,仓库
+,Page,,页码
+,,,
+t_menuRecruits,Recruits,,招募
+,PROGRESS,,进度
+,CHAPTER,,章节
+,LV,,等级
+,More Info,,更多信息
+,Quit,,退出
+,Recruited!,,已招募!
+,Press,,按下
+,to Return,,返回
+,Not yet fully recruited,,尚未完全招募
+,LIKE,,喜欢
+,DISLIKE,,不喜欢
+,ELEMENT,,元素
+,LEVEL,,等级
+,ATTACK,,攻击
+,DEFENSE,,防御
+,,,
+t_menuShop,Sell Items,,出售物品
+,Sell Weapons,,出售武器
+,Sell Armor,,出售护甲
+,Sell Pocket Items,,出售背包物品
+,ITEM,,物品
+,ARMOR,,护甲
+,WEAPON,,武器
+,KEYITEM,,关键物品
+,Space:,,空间:
+,Yes,,是
+,No,,否
+,Buy it for,,购买价格:
+,Sell it for,,出售价格:
+,--SOLD OUT--,,已售罄
+,,,
+,,,
+,,,
+t_skip,Skip 1.,,跳过1.
+,Skip 2.,,跳过2.
+,Skip 3.,,跳过3.
+,,,
+t_bakesale,"* In the heart of the woods, a bake sale stands quietly.",,"*在森林深处,一个烘焙摊位\n静静地矗立着"
+,"* The power of reoccurring bake sales shines within you.",,"*重复出现的烘焙摊的力量在你体内闪耀。"
+,,,
+t_doc1,* Hello this is line 1,,* 你好，这是第一行
+,* Line 2,,* 第二行
+,* What line 3 no way!!!,,* 第三行，不会吧!!!
+,,,
+t_doc2,* Other text 1,,*其他文本1
+,* What,,*什么
+,* Okay 3,,*好的3
+,* And so on...,,*以此类推...
+,,, 
+t_test_doc,,,"*这是一个测试Dialog,{color:yellow}{delay:20} 测试一下"

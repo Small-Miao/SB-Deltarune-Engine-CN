@@ -1,31 +1,31 @@
 print()
 	seed:
 	
-	"fa_center"               :   Will set the pivot in the middle.
-	"fa_right"                :   Will set the pivot on the right side.
+	"fa_center"               :   将在中间设置轴心点。
+	"fa_right"                :   将在右侧设置轴心点。
 	
-	"menu" or "menu_yellow"   :   Will allow the text to interact with the menu variabels.
-	(Include in the seed the page value and the cursor value like so : ["start",i])
+	"menu" or "menu_yellow"   :   将允许文本与菜单变量交互。
+	(在seed中包含页面值和光标值，如：["start",i])
 	
-	"soul1" or "soul2" or "soul3" or "soul4"   :   Will draw a soul next to the menu word.
+	"soul1" or "soul2" or "soul3" or "soul4"   :   将在菜单词旁边绘制一个灵魂。
 	
-	"bc1"    :   Will give the text a thin drop shadow based on the color of the text.
-	"bc2"    :   Will give the text a thick black drop shadow.
-	"bc3"    :   (Why does this have to exist oh my god)
-	"bc4"    :   Will give the text a dark blue outline.
+	"bc1"    :   将根据文本颜色给文本一个细的投影。
+	"bc2"    :   将给文本一个粗的黑色投影。
+	"bc3"    :   (为什么这个必须存在啊我的天)
+	"bc4"    :   将给文本一个深蓝色轮廓。
 	
-	"fade"   :   Will apply a cool unused effect to the text.
-	"blur"   :   Will make the text blurry like in the opening where you create your character.
+	"fade"   :   将对文本应用一个很酷的未使用效果。
+	"blur"   :   将使文本模糊，就像在开场创建角色时一样。
 	
 get_text()
-	(Will return an array of strings from the csv document included in the game files based on the key word you put in)
+	(将根据你输入的关键字从游戏文件中包含的csv文档返回一个字符串数组)
 	
 get_text_string()
-	(Works the same as get_text() but returns a single string instead)
+	(与get_text()功能相同，但返回单个字符串)
 	
 
 
-other:
+其他:
 
-	To add new propper faces with auto voice you must first create a face enum in scr_variant.
-	Then you add the voice's there as well. (Among other things)
+	要添加带有自动语音的新头像，你必须先在scr_variant中创建一个face枚举。
+	然后在那里也添加语音。(以及其他内容)

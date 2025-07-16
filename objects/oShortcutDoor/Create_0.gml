@@ -81,7 +81,7 @@ with(instance_create_depth(x-20,y-20,-(y-20),oInteract))
 		}
 		else
 		{
-			op.textCC=["* (It's a door.) {delay:3} {jump} * (Where will you go?)"];
+			op.textCC=["* (It's a door.) {delay:3} {jump} \n* (Where will you go?)"];
 			op.funcCC=function()
 			{
 				prompt(options[0],options[1]);

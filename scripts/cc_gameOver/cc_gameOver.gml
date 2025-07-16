@@ -1,7 +1,7 @@
 //game over scene
 function cc_gameOver() : cc_base() constructor
 {
-	_dialogue=["This is not your fate...!","Please, {jump} {delay:3} don't give up!"];
+	_dialogue=["这不是你的命运!","请, {jump} {delay:3}不要放弃"];
 	
 	_x=[74]; _y=[154];
 	_xScale=[190,230];

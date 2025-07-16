@@ -51,7 +51,7 @@ if (line > -1 and array_length(info._dialogue) > 0 and hideBox == 0)
 		
 		
 		
-		if !(cutText or cutSpace) and (currentLetter != "#")
+		if !(cutText or cutSpace) and (currentLetter != "#" and currentLetter != "\n")
 		{
 			if (colorRepeat == 0) { colorDraw=colorMain; colorDraw2=colorMain2; }else{ if (string_char_at(showText,currentAtLetter) != " ") { --colorRepeat; } } if (line < array_length(color)) { if (string_char_at(showText,currentAtLetter) != " " and colorOn < array_length(color[line])) { ++colorCount; if (color[line][colorOn][0] == colorCount) { colorRepeat=color[line][colorOn][1]-1; colorDraw=color[line][colorOn][2]; ++colorOn; } } }
 			if (box == 1 or op.world == "light") { colorDraw2=colorDraw; }
@@ -78,6 +78,14 @@ if (line > -1 and array_length(info._dialogue) > 0 and hideBox == 0)
 		}
 		
 		
+		
+		// 处理手动换行符 \n
+		if (string_char_at(showText,currentAtLetter) == "\n")
+		{
+			xOffset=0;
+			if (face != -1) { xOffset+=58+58*(box == 1); }
+			yOffset+=info._yOffset;
+		}
 		
 		if (string_char_at(showText,currentAtLetter) == " ")
 		{

@@ -1,1 +1,1 @@
-setup_battle(["enemy_viro","enemy_ambu","enemy_ambu"]);
+setup_battle(["enemy_viro","enemy_ambu","enemy_ambu"],"测试文本");

@@ -1,11 +1,11 @@
-//declaring values for dialogue and cutscenes
+//声明对话和过场动画的值
 function cc_base() constructor
 {
 	/*
-	gets text from the csv document (the function returns an array)
-	check this link:
+	从csv文档获取文本（该函数返回一个数组）
+	查看此链接：
 		https://docs.google.com/spreadsheets/d/1hj0DLNNkepahaFvXPdy9alGS68qjq8zwKMC-3khYpx0/edit?usp=sharing
-	and look for the realText named   "t_bakesale"   on the leftmost side
+	并在最左侧查找名为 "t_bakesale" 的realText
 	*/
 	
 	
@@ -19,29 +19,29 @@ function cc_base() constructor
 	
 	//[[FACE.SUSIE,1],-1,[FACE.RALSEI,5]]
 	_face=[-1];
-	//(0 == Shuffle back and fourth)
+	//(0 == 前后切换)
 	_faceAnimate=[-1];
 	
 	_font=[fDetermination];
 	_voice=[txt_text];
 	_textSpeed=[1];
 	
-	//pauses eveything and hides the box for the designated time
+	//暂停所有内容并在指定时间内隐藏对话框
 	_hideBox=[0];
 	
 	_seed=[];
 	
-	//if true will automaticaly use susie's voice if susie's face is being used and etcetera for other characters.
-	//(Declare this in object oDialouge create event bottom)
+	//如果为真，当使用Susie的头像时会自动使用Susie的声音，对其他角色也是如此。
+	//(在对象oDialogue的create事件底部声明此变量)
 	_match=true;
 	
 	
-	//(-1 == no box) // (0 == overworld box) // (1 == battle text bubble)
+	//(-1 == 无对话框) // (0 == 世界地图对话框) // (1 == 战斗文本气泡)
 	_box=[0];
-	//(0 == right side) // (1 == left side)
+	//(0 == 右侧) // (1 == 左侧)
 	_arrow=[-1];
 	
-	//[[[ OUTDATED LEAVE BE ]]]
+	//[[[ 已过时，保留 ]]]
 	_color=[];
 	_jump=[];
 	
@@ -53,28 +53,28 @@ function cc_base() constructor
 	
 	//[["aaa"],["bbb"],["ccc"]]
 	_printSeed=-1;
-	//executes when dialouge is over.
+	//对话结束时执行。
 	_func=-1;
 	if (op.locationCCcheck) { _func=function(){ op.locationCCcheck=false; op.locationCC=-1; instance_create_depth(0,0,-9999,oMenuSave); } }
-	//execute every time a new line begins.
+	//每次新行开始时执行。
 	_funcLine=[];
-	//execute with the {func} command, moves to the next function every time you use the command.
+	//使用{func}命令执行，每次使用命令时移动到下一个函数。
 	_funcAny=[];
 	
 	_boxOffsetXY=[17,18];
-	//increases to monospace width
+	//增加到等宽字体宽度
 	_xOffset=0;
-	//how far to jump when you run out of space
+	//空间不足时跳转的距离
 	_yOffset=18;
-	//if true will make the player able to move when the scene is done
+	//如果为真，场景结束后玩家可以移动
 	_moveAfter=true;
-	//styles of going to the next line. can set to (-1 or "fade")
+	//转到下一行的样式。可以设置为(-1或"fade")
 	_proceedAnimate=-1;
-	//set to anything higher than 0 (This is for random encounter auto press confirm after a few frames)
+	//设置为大于0的任何值（这是为了在几帧后自动按确认键的随机遭遇）
 	_proceedAuto=0;
-	//set to anything higher than -1 to auto press confirm when the line has finished printing (it waits the amount of frames you replace -1 with)
+	//设置为大于-1的任何值以在行打印完成后自动按确认键（它会等待你替换-1的帧数）
 	_autoSkipText=[-1];
-	//will draw how much money and inventory space you have
+	//将绘制你有多少钱和物品栏空间
 	_moneyBox=false;
 	
 	
@@ -82,7 +82,7 @@ function cc_base() constructor
 	
 	
 	
-	//changes the base values when you are in battle
+	//在战斗中时更改基础值
 	if (op.mode == "battle")
 	{
 		_box=[-1];
@@ -112,7 +112,7 @@ function cc_base() constructor
 	
 	
 	
-	//changes the base values when you are in a shop
+	//在商店中时更改基础值
 	if (op.mode == "shop")
 	{
 		_x=[0];

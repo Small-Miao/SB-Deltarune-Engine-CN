@@ -13,6 +13,5 @@ function cc_test3() : cc_base() constructor
 	_y=["d","u",100];
 	
 	_box=[2];
-	
 	//_autoSkipText=[-1,0,-1];
 }

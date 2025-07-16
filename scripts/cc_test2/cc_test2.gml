@@ -1,12 +1,10 @@
 function cc_test2() : cc_base() constructor
 {
 	_dialogue=[
-		"* Line 1 {jump} * Line 2 {jump} * Line 3",
-		"* Uhhhhhhhhhhhhhhhh",
-		"AAAA HHAHAHAH AH HAHAHAHAH AAAHA AHA!"
+		"* 这 是 一 个 中 文 测 试"
 	];
 	
-	_asteriskFace=[[sFaceSmall1,sFaceSmall1,sFaceSmall1],-1];
+	_asteriskFace=[-1];
 	
 	_proceedAnimate="fade";
 }

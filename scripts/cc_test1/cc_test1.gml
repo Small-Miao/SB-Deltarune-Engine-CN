@@ -6,7 +6,6 @@ function cc_test1() : cc_base() constructor
 	_faceAnimate=[-1];
 	_proceedAnimate="fade";
 	_printSeed=[["fade"]];
-	
 	_funcLine=[
 		function(){ effect_smallface(,,,100,15); },
 		-1

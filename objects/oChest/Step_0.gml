@@ -26,7 +26,7 @@ with (instance_create_depth(x,y,-y,oInteract))
 		
 		if (i1[0] == 3) { i3="$"+string(i1[1]); }else{ struct(i1[1]); i3=str._infoText[0]; }
 		
-		i2="* (You opened the treasure chest.) {delay:9} {jump} * (Inside was {color:yellow} "+i3+".)";
+		i2="* (You opened the treasure chest.) {delay:9} {jump} \n* (Inside was {color:yellow} "+i3+".)";
 		
 		if has_progress(j)
 		{

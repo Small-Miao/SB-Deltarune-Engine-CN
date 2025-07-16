@@ -1,5 +1,5 @@
 {
-  "$GMProject":"",
+  "$GMProject":"v1",
   "%Name":"SB-Deltarune-Engine (v1.0)",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
@@ -112,16 +112,18 @@
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
-    {"$GMIncludedFile":"","%Name":"DR text.csv","CopyToMask":3035426170322551022,"filePath":"datafiles","name":"DR text.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"DR text.csv","CopyToMask":-1,"filePath":"datafiles","name":"DR text.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"SB-Deltarune-Engine (v1.0)",
   "resources":[
+    {"id":{"name":"fCNFont","path":"fonts/fCNFont/fCNFont.yy",},},
     {"id":{"name":"fCrypt","path":"fonts/fCrypt/fCrypt.yy",},},
     {"id":{"name":"fDetermination","path":"fonts/fDetermination/fDetermination.yy",},},
     {"id":{"name":"fDotum","path":"fonts/fDotum/fDotum.yy",},},

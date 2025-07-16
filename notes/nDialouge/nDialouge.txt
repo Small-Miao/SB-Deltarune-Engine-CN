@@ -1,46 +1,46 @@
-get the template from link:
+从链接获取模板：
 
 	https://docs.google.com/spreadsheets/d/1hj0DLNNkepahaFvXPdy9alGS68qjq8zwKMC-3khYpx0/edit?usp=sharing
 
 
 
-commands:
+命令：
 
-	format: {command:value1}
+	格式: {command:value1}
 
-	"{setup}"    :   can set up a different command to be run when you type the # symbol ( ex: {setup:delay:10} )
+	"{setup}"    :   可以设置当你输入#符号时运行的不同命令 ( 例: {setup:delay:10} )
 	
 	
 	
-	"{color}"    :   changes the color the text is being printed in               ( ex: {color:yellow} or {hex:FFFF00} )
+	"{color}"    :   改变文本打印的颜色               ( 例: {color:yellow} 或 {hex:FFFF00} )
 	
-	"{sprite}"   :   draw a sprite in the text box                                ( ex : {sprite:spriteName:xOffset:yOffset:image:imageSpeed} )
+	"{sprite}"   :   在文本框中绘制精灵                                ( 例 : {sprite:spriteName:xOffset:yOffset:image:imageSpeed} )
 	
-	"{jump}"     :   will force the text to start printing on the next row        ( ex: "* And it was {jump} * Epic" )
+	"{jump}"     :   将强制文本在下一行开始打印        ( 例: "* And it was {jump} * Epic" )
 	
-	"{delay}"    :   will make the text printer pause for the designated frames   ( ex: "* And it was {delay:10} Epic" )
+	"{delay}"    :   将使文本打印机在指定帧数内暂停   ( 例: "* And it was {delay:10} Epic" )
 	
-	"{auto}"     :   will make it so that the text proceeds to the next page automatically within a picked duration (or manual if you press Z)   ( ex: "* {auto:30} Hello everyone" )
+	"{auto}"     :   将使文本在指定时间内自动进入下一页（或按Z手动）   ( 例: "* {auto:30} Hello everyone" )
 	
-	"{func}"     :   will trigger a function from the variable (_funcAny) in the struct. First time the command is used it triggers _funcAny[0]; second time _funcAny[1]; and so on.
+	"{func}"     :   将触发结构体中变量(_funcAny)的函数。第一次使用命令时触发_funcAny[0]；第二次_funcAny[1]；以此类推。
 
 
 
 seed:
 
-	"noConfirm"      :   will make it so that pressing Z and C doens't do anything.
+	"noConfirm"      :   将使按Z和C不起任何作用。
 	
-	"proportional"   :   will make the text proportional instead of mono spaced.
+	"proportional"   :   将使文本按比例而不是等宽间距。
 
 
 
 proceedAnimate:
 
-	"fade"   :   Makes the text fade out when you proceed the text.
+	"fade"   :   当你继续文本时使文本淡出。
 
 
 
-other:
+其他:
 
-	you can use the variable op.ccImage to make stuff animate a little when dialogue is being printed. It sets to 0 when all dialogue is visible.
-	op.ccLine also exists, it is set to the dialogue's current line.
+	你可以使用变量op.ccImage在对话打印时让东西稍微动画化。当所有对话可见时它设置为0。
+	op.ccLine也存在，它设置为对话的当前行。

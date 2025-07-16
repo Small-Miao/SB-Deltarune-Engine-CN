@@ -97,6 +97,7 @@
     {"name":"Timelines","order":7,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"fCNFont","order":12,"path":"fonts/fCNFont/fCNFont.yy",},
     {"name":"fCrypt","order":8,"path":"fonts/fCrypt/fCrypt.yy",},
     {"name":"fDotum","order":5,"path":"fonts/fDotum/fDotum.yy",},
     {"name":"fFeild","order":10,"path":"fonts/fFeild/fFeild.yy",},
@@ -316,7 +317,7 @@
     {"name":"sBattleSymbols","order":5,"path":"sprites/sBattleSymbols/sBattleSymbols.yy",},
     {"name":"sBoxArrows","order":7,"path":"sprites/sBoxArrows/sBoxArrows.yy",},
     {"name":"sButtons_XBOX","order":1,"path":"sprites/sButtons_XBOX/sButtons_XBOX.yy",},
-    {"name":"sButtons","order":4,"path":"sprites/sButtons/sButtons.yy",},
+    {"name":"sButtons","order":8,"path":"sprites/sButtons/sButtons.yy",},
     {"name":"sCharMarker","order":2,"path":"sprites/sCharMarker/sCharMarker.yy",},
     {"name":"sCheckPoint","order":10,"path":"sprites/sCheckPoint/sCheckPoint.yy",},
     {"name":"sChest","order":1,"path":"sprites/sChest/sChest.yy",},

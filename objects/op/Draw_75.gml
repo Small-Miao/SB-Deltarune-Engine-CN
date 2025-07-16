@@ -46,3 +46,5 @@ if (false)
 //print(progress);
 
 //print(op.darkEntranceRoom);
+
+// 测试颜色命令功能 - 按F1测试

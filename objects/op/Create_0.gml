@@ -4,19 +4,19 @@ load = true;
 mainMenuRoom = rMainMenu;
 
 
-//debug Variables
+//调试变量
 showHitboxes=true;
 debug=true;
 
 noclip=false;
 
-//will make the save menu and other things related look like they did in chapter 1
+//将使保存菜单和其他相关内容看起来像第一章中的样子
 chapter1style=false;
 
 
 
-//settings, creating fonts from sprites, world time & language
-	//what file you are currently on (0, 1 or 2)
+//设置，从精灵创建字体，世界时间和语言
+	//你当前在哪个文件上 (0, 1 或 2)
 fileOn=0;
 
 display_set_gui_size(320,240);
@@ -27,8 +27,8 @@ reset_keys(); time=0; ti=0;
 seconds=0; minutes=0;
 
 variant_csv();
-	//the row text is grabed from in the csv file
-language=1;
+	//从csv文件中获取文本的行
+language=3;
 
 option_volume=60;
 option_simplifyVFX=false;
@@ -46,7 +46,7 @@ textFadeAlpha=0;
 
 
 
-//finished Variables (you don't have to use or set these)
+//完成的变量（你不必使用或设置这些）
 image_alpha=0; reset_keys(); reset_cursor(); cursor=-1;
 
 #region
@@ -95,40 +95,40 @@ fullItem=false;
 fullWeapon=false;
 fullArmor=false;
 
-	//this variable (should usually) automaticaly be set to whatever party member you are sellecting in any cenario
+	//这个变量（通常应该）自动设置为你在任何场景中选择的队员
 partyOn=0;
 
 
 
-//control variables
+//控制变量
 world="dark";
 mode=0;
 movement="overworld";
 
-	//check the script catagory scr_camera for camera control
+	//查看脚本类别scr_camera了解相机控制
 cameraMode="overworld"; camOffsetX=0; camOffsetY=0;
 camShakeX=0;
 camShakeY=0;
 camShake=[0,0];
 camMove=[0,0,0,0,0,0,0,0,0,0];
 
-	//there are custom audio functions that control music and sound. Check the script catagory scr_sound
+	//有控制音乐和声音的自定义音频函数。查看脚本类别scr_sound
 currentMusic=-1;
 pastMusic=-1;
 
-	//in a oCreate object whatever you set this text to will be what 
+	//在oCreate对象中，无论你设置什么文本都将是
 locationText="Skip";
 locationCC=-1;
 locationCCcheck=false;
 
 
 
-//declare and reset data
+//声明和重置数据
 declare_gamestats();
 
 
 
-//overworld
+//世界地图
 partyPos=[[0,0,"down",0,"overworld"]]; pastXY=[0,0];
 
 playerX=x;
@@ -151,7 +151,7 @@ checkpointProgress=[];
 
 
 
-//battle variables
+//战斗变量
 continueOrders=false;
 isBoss=false;
 endCC=-1;
@@ -183,18 +183,18 @@ menuPep=0;
 save_partyXY=[];
 gainMoney=0;
 
-	//is set to false when any battle begins. Is set to true when you kill atleast one enemy in battle. (Not for bosses)
+	//任何战斗开始时设置为false。当你在战斗中杀死至少一个敌人时设置为true。（对boss无效）
 killedAny=false;
 
 oldEnemyXY=[];
 
 
 
-//overworld dodging variables
+//世界地图闪避变量
 dodge=false;
 dodge_applyShaders=true;
 dodge_alpha=0; dodge_hideParty=false;
 dodge_hit=0;
 
-//extra
+//额外
 slopesAmount = 0; slopeTouch = 0;

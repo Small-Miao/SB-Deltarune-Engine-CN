@@ -138,40 +138,8 @@ if (array_length(info._dialogue) > 0)
 	
 		proportional=false; if array_contains(info._seed,"proportional") { proportional=true; }
 	
-		//figure out when to have line breaks (switch rows) should happen in the text
-		draw_set_font(font);
-		repeat(array_length(dialogueSplit))
-		{
-			//check every letter in a word (special cases)
-			currentAtL=0;
-			repeat(string_length(dialogueSplit[currentAt]))
-			{
-				currentAtL++;
-				if (string_char_at(dialogueSplit[currentAt],currentAtL) == "#") { currentLength-=func_spaceAdd("#"); }
-			}
-		
-			//ddd word length
-			if (string_char_at(dialogueSplit[currentAt],1) != "{") { currentLength+=func_spaceAdd(dialogueSplit[currentAt],(string_length(dialogueSplit[currentAt]))); }else{ currentLength-=func_spaceAdd(" "); }
-		
-			jumpForce=false; if (line < array_length(jump)) { if array_contains(jump[line],currentAt) { jumpForce=true; } }
-			if (dialogueSplit[currentAt] == "{jump}") { jumpForce=true; }
-		
-			//(I don't remember what these numbers stand for but they might be important)
-			//change row 34
-			//(+16)
-			if (currentLength > xScale-32-58*(face != -1) or jumpForce)
-			{
-				currentLength=func_spaceAdd("* ",2) if (string_char_at(dialogue,1) != "*" or jumpForce) { currentLength=0; }
-				if (string_char_at(dialogueSplit[currentAt],1) != "{") { currentLength+=func_spaceAdd(dialogueSplit[currentAt],(string_length(dialogueSplit[currentAt]))); }
-				array_push(edges,currentAt);
-			}
-		
-			//add space length
-			currentLength+=func_spaceAdd(" ");
-		
-			//increase word check counter
-			++currentAt;
-		}
+		// 删除自动换行逻辑，只使用手动 \n 换行
+		// 保留 edges 数组为空，这样就不会有自动换行
 	
 		//if box type is a bubble automaticaly set the y scale here
 		if (box == 1) { yScale=36+array_length(edges)*20; if (arrow == 0) { x_-=xScale/2; } y_-=yScale/4; }
