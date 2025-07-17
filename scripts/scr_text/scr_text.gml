@@ -1,6 +1,6 @@
 //在绘制事件中绘制比例文本
 function print(_text="Skip",_x=0,_y=0,_font=fDetermination,_sep=12,_width=320,_xscale=1,_yscale=1,_angle=0,_c1=c_white,_c2=c_white,_c3=c_white,_c4=c_white,_alpha=1,_seed=[],_sprites=-1)
-{
+{	
     //正常数据
     superStringWidth = 0;
     

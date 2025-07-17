@@ -3,19 +3,59 @@
 //get key input
 use_keys(); if (hideBox > 0) { reset_keys(); }
 if (array_length(info._dialogue) == 0) { showText=dialogue; op.forceTextWait=0; }
-if (showText == dialogue) { --proceedAuto; if array_contains(info._seed,"noConfirm") { tapConfirm=false; } op.ccImage=0; }else{ ++op.ccImage; }
+
+// 基于 text_typer 状态更新显示文本
+if (instance_exists(text_typer_instance)) {
+    // 如果 text_typer 存在，使用其当前显示的文本
+    showText = text_typer_instance.text;
+    if (text_typer_instance._char_proc > string_length(text_typer_instance.text)) {
+        // text_typer 打印完成
+        --proceedAuto; 
+        if array_contains(info._seed,"noConfirm") { tapConfirm=false; } 
+        op.ccImage=0;
+    } else {
+        // text_typer 还在打印中
+        ++op.ccImage;
+    }
+} else {
+    // 如果没有 text_typer 实例，使用原来的逻辑
+    if (showText == dialogue) { 
+        --proceedAuto; 
+        if array_contains(info._seed,"noConfirm") { tapConfirm=false; } 
+        op.ccImage=0; 
+    } else { 
+        ++op.ccImage; 
+    }
+}
 
 
+
+// 检查 text_typer 是否打印完成
+var text_typer_finished = false;
+if (instance_exists(text_typer_instance)) {
+    // 检查 text_typer 是否已经打印完所有文本
+    text_typer_finished = (text_typer_instance._char_proc > string_length(text_typer_instance.text));
+} else {
+    // 如果没有 text_typer 实例，使用原来的逻辑
+    text_typer_finished = (showText == dialogue);
+}
 
 //press to confirm, skip or hold for auto skip
-if ((showText == dialogue and proceedAnimate == -1) and ((tap_confirm() or key_menu() or proceedAuto == 0) and !array_contains(info._seed,"noConfirm")) or (autoConfirm)) or (array_length(info._dialogue) == 0)
+if ((text_typer_finished and proceedAnimate == -1) and ((tap_confirm() or key_menu() or proceedAuto == 0) and !array_contains(info._seed,"noConfirm")) or (autoConfirm)) or (array_length(info._dialogue) == 0)
 {
 	if (line+1 == array_length(info._dialogue))
 	{
 		if (op.forceTextWait == 0)
 		{
 			//enable end dialouge box
-			proceedTime=0; if (info._proceedAnimate != -1) { proceedAnimate=info._proceedAnimate; }else{ proceedLine=true; }
+			proceedTime=0;
+			if (info._proceedAnimate != -1) 
+			{ 
+				proceedAnimate=info._proceedAnimate;
+			}else
+			{ 
+				proceedLine=true; 
+			}
 			done=true;
 		}
 		else
@@ -57,6 +97,7 @@ if (proceedLine and done)
 	
 	instance_destroy(oMenuOverworldLight);
 	instance_destroy(oSmallFaceEffect);
+	instance_destroy(text_typer_instance)
 	instance_destroy();
 }
 
@@ -65,7 +106,14 @@ if (proceedLine and done)
 if (array_length(info._dialogue) > 0)
 {
 	//pres cancel or menu to show all text
-	if (key_cancel() or key_menu()) { showText=dialogue; }
+	if (key_cancel() or key_menu()) { 
+		if (instance_exists(text_typer_instance)) {
+			text_typer_instance._skipping = true;
+			text_typer_instance._instant = true;
+		} else {
+			showText=dialogue; 
+		}
+	}
 
 	//proceed to the next value in every array (clamps if above)
 	if (proceedLine and !done)
@@ -145,29 +193,16 @@ if (array_length(info._dialogue) > 0)
 		if (box == 1) { yScale=36+array_length(edges)*20; if (arrow == 0) { x_-=xScale/2; } y_-=yScale/4; }
 	
 		//if press menu key auto set visible text to all real text
-		if (key_menu() and hideBox == 0) { showText=dialogue; }
-	}
-
-
-
-	//addone symbol at a time to the visible text
-	if !(time mod textSpeed)
-	{
-		if (showText != dialogue and delay == 0 and hideBox == 0)
-		{
-			addLetter=string_char_at(dialogue,string_length(showText)+1);
-		
-			if !(time mod (textSpeed)) and (!array_contains(noVoice,addLetter)) { sound(voice); }
-		
-			if (addLetter == "{" or addLetter == "#") { cutSpeed=true; }
-	
-			if (!cutSpeed) { showText+=addLetter; }
-			while (cutSpeed) { addLetter=string_char_at(dialogue,string_length(showText)+1); showText+=addLetter; if (string_char_at(dialogue,string_length(showText)-1) == "}" or string_char_at(dialogue,string_length(showText)-1) == "#") { cutSpeed=false; } }
+		if (key_menu() and hideBox == 0) { 
+			if (instance_exists(text_typer_instance)) {
+				text_typer_instance._skipping = true;
+				text_typer_instance._instant = true;
+			} else {
+				showText=dialogue; 
+			}
 		}
+		func_init_text_typer(info._boxOffsetXY[0]+xOffset+(x_*surfMult),info._boxOffsetXY[1]+yOffset+(y_*surfMult))
 	}
-	if (delay > 0) { --delay; }
-	if (hideBox > 0) { --hideBox; }
-	
 	
 	
 	//find inventory space value
@@ -176,15 +211,36 @@ if (array_length(info._dialogue) > 0)
 		if (time > 1)
 		{
 			++oMenuShop.image;
-			if (showText == dialogue) { oMenuShop.image=0; }
+			var shop_text_complete = false;
+			if (instance_exists(text_typer_instance)) {
+				shop_text_complete = (text_typer_instance._char_proc > string_length(text_typer_instance.text));
+			} else {
+				shop_text_complete = (showText == dialogue);
+			}
+			if (shop_text_complete) { oMenuShop.image=0; }
 		}
 	}
 	
 	
 	
 	//stop oChar auto animation
-	if (showText == dialogue)
+	var text_complete = false;
+	if (instance_exists(text_typer_instance)) {
+		text_complete = (text_typer_instance._char_proc > string_length(text_typer_instance.text));
+	} else {
+		text_complete = (showText == dialogue);
+	}
+	
+	if (text_complete)
 	{
 		with (oChar) { if (returnToNormal) { image_index=0; } }
 	}
+}
+
+if(instance_exists(text_typer_instance)){
+	if(visible){
+	text_typer_instance.visible = true;
+}else{
+	text_typer_instance.visible = false;
+}
 }

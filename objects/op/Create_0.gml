@@ -105,7 +105,7 @@ world="dark";
 mode=0;
 movement="overworld";
 
-	//查看脚本类别scr_camera了解相机控制
+//查看脚本类别scr_camera了解相机控制
 cameraMode="overworld"; camOffsetX=0; camOffsetY=0;
 camShakeX=0;
 camShakeY=0;
